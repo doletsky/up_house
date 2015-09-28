@@ -1,0 +1,16 @@
+.cat_item_border, .cat_item_buy{
+    display: block;
+    border-color: #EEEEEE;
+}
+
+.b_grid_container .b_grid_unit-1-4 {
+    margin-bottom: 50px;
+}
+
+.left-col, .right-col{
+    display: none;
+}
+
+.wrapper{
+    width: 100%;
+}

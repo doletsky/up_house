@@ -1,0 +1,1 @@
+<?$arTemplate = array("NAME"=>"Шаблон интернет-магазина", "DESCRIPTION"=>"");?>

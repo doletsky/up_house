@@ -1,0 +1,1 @@
+<?$arTemplate = Array("NAME"=>"unified_2014", "DESCRIPTION"=>"Unified template for up-house. 07.08.2014");?>

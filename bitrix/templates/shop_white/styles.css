@@ -1,0 +1,33 @@
+.element_other_color_one {
+	display: inline-block;
+	width:25px;
+	height:25px;
+	border-radius: 15px;
+	border:2px solid #bde0f1;
+	margin-bottom:-10px;
+	margin-left:5px;
+	box-shadow:inset 1px 1px 2px 1px rgba(72,161,216,0.34);
+	opacity: .9
+	}
+	
+.element_other_color_one_two {
+	display: block;
+	width:12px;
+	height:25px;
+	float:right;
+	border-radius: 0px 15px 15px 0px;
+	margin:0px;
+	box-shadow:inset 0px 1px 1px 0px rgba(72,161,216,0.34);
+	}
+	
+.element_other_color_one:hover {
+	border:2px solid #73bbdf;
+	opacity:1;
+}
+
+.element_other_colors {
+	margin:10px 0px 20px 0px;
+	font-size: 16px;
+	font-weight: normal;
+	
+}

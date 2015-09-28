@@ -1,0 +1,2986 @@
+// Theme: Up house
+// Date: 28.06.2014
+// Description: 
+// ------------------------------------------------------------------------------------------------
+
+// MIXINS
+.transition (@prop: all, @time: 300ms, @ease: ease) {
+    -webkit-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+.flex-container {
+    -ms-box-orient: horizontal;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+
+.flex-item {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.flex-container-2 {
+     display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.flex-item-2 {
+     -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+// COLORS
+@white: #fff;
+@black: #000;
+@blue: #3399cc;
+@blue-2: #259ccf;
+@gray: #666;
+
+// URL
+@img: "../img";
+@font: "../fonts";
+
+// FONTS
+// Segoe Regular
+@font-face {
+    font-family: 'Segoe UI';
+    src: local('segoeui'), url('@{font}/segoeui.ttf') format('truetype');
+}
+
+// Segoe Light
+@font-face {
+    font-family: 'Segoe UI Light';
+    src: local('segoeuil'), url('@{font}/segoeuil.ttf') format('truetype');
+}
+
+// Segoe Regular Bold
+@font-face {
+    font-family: 'Segoe UI Bold';
+    src: local('segoeuib'), url('@{font}/segoeuib.ttf') format('truetype');
+}
+
+// Segoe Regular Italic
+@font-face {
+    font-family: 'Segoe UI Italic';
+    src: local('segoeuii'), url('@{font}/segoeuii.ttf') format('truetype');
+}
+
+// Segoe Regular Semilight
+@font-face {
+    font-family: 'Segoe UI Semilight';
+    src: local('segoeuisl'), url('@{font}/segoeuisl.ttf') format('truetype');
+}
+
+// Segoe Regular Semibold
+@font-face {
+    font-family: 'Segoe UI Semibold';
+    src: local('seguisb'), url('@{font}/seguisb.ttf') format('truetype');
+}
+
+// Global
+.mt { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mt-4 { margin-top: 40px; }
+.mt-5 { margin-top: 50px; }
+.mt-6 { margin-top: 60px; }
+
+.mr { margin-right: 10px; }
+.mr-2 { margin-right: 20px; }
+.mr-3 { margin-right: 30px; }
+.mr-4 { margin-right: 40px; }
+
+.mb { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.mb-4 { margin-bottom: 40px; }
+
+.ml { margin-left: 10px; }
+.ml-2 { margin-left: 20px; }
+.ml-3 { margin-left: 30px; }
+.ml-4 { margin-left: 40px; }
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI Semilight';
+    background: #efefef;
+    color: #828282;
+
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #3399cc;
+}
+
+.site-container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 972px !important;
+}
+
+.vertical-line {
+    border-left: 1px solid @white;
+    height: 100%;
+}
+
+.horizontal-line {
+    border-bottom: 1px dotted #ccc;
+    width: 100%;
+
+    &.horizontal-line-main {
+        margin: 0 0 0 -30px;
+        position: absolute;
+        width: 97%;
+    }
+}
+
+.article-pr {
+    font-weight: bold;
+    font-family: "Segoe UI Bold";
+    color: #000;
+}
+
+// title
+.entry-title,
+.entry-title-2 {
+    font-family: "Segoe UI Semilight";
+    font-size: 48px;
+    color: #000;
+    margin: -20px 0 30px;
+    text-transform: none;
+}
+
+.entry-title-2 {
+    font-size: 36px;
+    margin: -10px 0 15px 0;
+}
+
+.entry-title-3 {
+    font-size: 36px;
+    margin: 0;
+    color: #000;
+}
+
+// section
+.section-container {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+// link
+.button-link-underline {
+    text-decoration: none;
+    border-bottom: 1px dotted #3399cc;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-family: "Segoe UI Semibold";
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+// form
+input[type="submit"] {
+    background: @blue-2;
+    border: none;
+    color: @white;
+}
+
+.product-select {
+    border: 1px solid #ccc;
+    color: #666;
+    font-style: italic;
+    padding: 7px 10px;
+    outline: none;
+}
+
+.form-input {
+    border: none;
+    display: inline-block;
+    background: #e7e7e7;
+    font-size: 14px;
+    padding: 10px 20px;
+    outline: none;
+    font-style: italic;
+    margin: 0 0 15px;
+}
+
+// form textarea
+.form-textarea {
+    background: #e7e7e7;
+    border: none;
+    padding: 10px 20px;
+    resize: none;
+    width: 400px;
+    height: 90px;
+    outline: none;
+    font-style: italic;
+}
+
+// form select
+.form-select-wrapper {
+    background: url("/@{img}/arrow-bottom.png") no-repeat 95% 50%;
+    width: 185px;
+    overflow: hidden;
+
+    &.light {
+        border: 1px solid #797979;
+    }
+
+    &.dark {
+        background: url("/@{img}/arrow-bottom-dark.png") no-repeat 92% 50% #e7e7e7;;
+    }
+}
+
+.form-select {
+    margin: 0;
+    padding: 7px 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    width: 185px;
+}
+
+// form radio
+.input-row {
+    margin-bottom: 20px;
+}
+
+.input-helper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    font-family: "Segoe UI";
+    font-weight: normal;
+    font-size: 16px;
+
+    
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+}
+ 
+.input-helper--radio {
+    padding-left: 18px;
+ 
+    &:before {
+        top: 10px;
+        left: -25px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: transparent;
+    }
+
+    &:after {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #797979;
+        top: 5px;
+        left: -30px;
+    }
+}
+ 
+input[type="radio"] {
+    display: none;
+ 
+    &:checked + label:before {
+        background: #259ccf;
+    }
+}
+
+// placeholder
+:focus::-webkit-input-placeholder { color: transparent }
+:focus::-moz-placeholder          { color: transparent }
+:focus:-moz-placeholder           { color: transparent }
+:focus:-ms-input-placeholder      { color: transparent }
+
+// table
+.table-container {
+    font-size: 16px;
+    line-height: 18px;
+    width: 100%;
+    max-width: 100%;
+
+    tr {
+        &:last-child {
+            .table-cell {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.table-title,
+.table-cell {
+    padding: 13px 15px;
+}
+
+.table-title {
+    font-family: "Segoe UI Semilight";
+    color: #000;
+    background: #efefef;
+    border-top: 1px dotted transparent;
+    border-bottom: 1px dotted #ccc;
+}
+
+.table-cell {
+    border: none;
+    border-bottom: 1px dotted #ccc;
+
+}
+
+// Social button
+.social-icon {
+    background: url("/@{img}/social-button.png") no-repeat;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    margin: 0 15px 0 0;
+
+    &.instagram {
+        background-position: 0 0;
+
+        &:hover {
+            background-position: 0 -46px;
+        }
+    }
+
+    &.facebook {
+        background-position: -50px 0;
+
+        &:hover {
+            background-position: -50px -46px;
+        }
+    }
+
+    &.vk {
+        background-position: -100px 0;
+
+        &:hover {
+            background-position: -100px -46px;
+        }
+    }
+
+    &.twitter {
+        background-position: -150px 0;
+
+        &:hover {
+            background-position: -150px -46px;
+        }
+    }
+}
+
+// Header
+.header-bg {
+    background: @blue-2;
+    padding: 20px 13px;
+}
+
+#header {
+    color: @white;
+
+    img {
+        max-width: none;
+    }
+
+    .header-section,
+    .header-section-2,
+    .header-section-3 {
+        float: left;
+    }
+
+    .header-section {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+
+    .header-section-2 {
+        margin-right: 20px;
+    }
+
+    .header-section-3 {
+        position: relative;
+
+        .vertical-line {
+            position: absolute;
+            left: 130px;
+        }
+    }
+
+    .header-section-4 {
+        float: left;
+        margin-right: 42px;
+    }
+
+    .vertical-line {
+        height: 68px;
+        float: left;
+        margin: 0;
+        padding-right: 20px;
+    }
+
+    // vcard
+    .tel {
+        font-family: 'Segoe UI Light';
+        font-size: 27px;
+        line-height: 29px;
+        margin: -6px 0 8px 0;
+    }
+    .tel-bold {
+        font-family: 'Segoe UI Bold';
+    }
+    
+    // nav menu pages
+    .menu-page-block {
+        margin: -7px 0 10px;
+    }
+
+    .menu-page-item {
+        color: @white;
+        text-transform: lowercase;
+        border-bottom: 1px dotted @white;
+        padding: 0 0 5px 0;
+        text-decoration: none;
+        margin: 0 16px 0 0;
+
+        &:first-child {
+            margin-right: 35px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+
+    .skype-icon {
+        background: url("/@{img}/header-sprite.png") no-repeat;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-bottom: -3px;
+    }
+
+    .skype-text {
+        font-family: 'Segoe UI Bold';
+    }
+
+    .workhours {
+        font-size: 11px;
+        line-height: 12px;
+    }
+
+    .cart,
+    .search-input {
+        width: 157px;
+        height: 36px;
+        background: @white;
+        float: left;
+        margin-top: 8px;
+        outline: none;
+    }
+    
+    .cart {
+        margin-right: 10px;
+        font-family: 'Segoe UI Italic';
+        color: #006699;
+        font-size: 12px;
+        text-transform: lowercase;
+        padding: 8px;
+
+        &.added {
+            background: #a7e5ff;
+        }
+
+        &:before {
+            content: "";
+            background: url("/@{img}/header-sprite.png") -16px 0 no-repeat;
+            width: 21px;
+            height: 14px;
+            display: inline-block;
+            margin: 0 22px 0 5px;
+            position: relative;
+            top: 3px;
+        }
+    }
+
+    .search-input {
+        border: 0;
+        background: @white;
+        color: @gray;
+        font-family: 'Segoe UI Italic';
+        font-size: 12px;
+        padding: 0 20px;
+        float: none;
+    }
+    
+    .search-block {
+        position: relative;
+    }
+
+    .search-button {
+        background: url("@{img}/header-sprite.png") no-repeat -40px 0;
+        display: inline-block;
+        width: 15px;
+        height: 14px;
+        border: none;
+        position: absolute;
+        right: 10px;
+        top: 17px;
+    }
+
+    // nav menu catalog block
+    .menu-catalog-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .flex-container();
+    }
+
+    .menu-catalog-list-item {
+        float: left;
+        border-right: 1px dotted #c3c2c2;
+
+        .flex-item();
+
+        &:first-child {
+            .menu-catalog-item,
+            .submenu-catalog-link {
+                padding: 10px 10px 10px 23px;
+            }
+
+
+        }
+
+        &:last-child {
+            border-right: none;
+            .menu-catalog-item {
+                padding: 10px 28px 10px 10px;
+            }
+        }
+
+        &:hover {
+            .submenu-catalog {
+                display: block;
+            }
+        }
+    }
+
+    .menu-catalog-block {
+        background: @white;
+        box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+        margin: 0 0 25px;
+    }
+
+    .menu-catalog-item {
+        color: @blue;
+        font-family: 'Segoe UI Bold';
+        padding: 10px;
+        display: inline-block;
+        
+        text-decoration: none;
+
+        &.current,
+        &:hover {
+            color: @black;
+        }
+
+        &.current {
+            pointer-events: none;
+        }
+
+        .transition();
+    }
+
+    // submenu
+    .submenu-catalog,
+    .submenu-three-catalog {
+        position: absolute;
+        background: @white;
+        z-index: 99;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        box-shadow: 0 5px 8px rgba(0,0,0, .2);
+    }
+
+    .submenu-catalog-item,
+    .submenu-three-catalog-item {
+        border-bottom: 1px dotted #c3c2c2;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .submenu-catalog-link,
+    .submenu-three-catalog-link {
+        color: @blue;
+        font-family: 'Segoe UI Bold';
+        text-decoration: none;
+        padding: 10px;
+        display: inline-block;
+        width: 205px;
+
+        .transition();
+
+        &:hover {
+            color: @black;
+        }
+    }
+
+    // nav submenu three
+    .submenu-three-catalog {
+        right: -210px;
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: -40px;
+
+        .transition();
+    }
+
+    .submenu-catalog-item {
+        position: relative;
+
+         &:hover {
+            .submenu-three-catalog {
+                visibility: visible;
+                opacity: 1;
+                right: -205px;
+            }
+        }
+    }
+
+    .glyphicon-chevron-right {
+        color: #999;
+        margin-right: 5px;
+    }
+}
+
+// Slider
+#slider {
+    width: 1280px;
+    height: 500px;
+    margin: -25px auto 0 auto;
+
+    ul {
+        padding: 0;
+    }
+
+    .bx-controls-direction {
+        display: none;
+    }
+
+    .slider-title {
+        font-family: 'Segoe UI Bold';
+        font-size: 48px;
+        line-height: 50px;
+        color: @black;
+        margin: 0 0 20px;
+    }
+
+    .slider-content {
+        font-family: 'Segoe UI';
+        font-size: 30px;
+        line-height: 32px;
+        color: @gray;
+        margin: 0 0 20px 0;
+    }
+
+    .slider-button {
+        display: inline-block;
+        border: 2px solid @blue-2;
+        padding: 4px 33px 10px 33px;
+        text-decoration: none;
+        text-transform: lowercase;
+        font-family: 'Segoe UI';
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: bold;
+        color: @blue-2;
+
+        .transition();
+
+        &:hover {
+            background: @blue-2;
+            color: @white;
+        }
+    }
+
+    .bx-wrapper .bx-pager {
+        bottom: 220px;
+        left: 206px;
+    }
+}
+
+// carousel
+.main-section {
+    .bx-wrapper .bx-pager {
+        top: -74px;
+        right: 85px;
+    }
+
+    .bx-controls {
+        
+    }
+
+    // arrow
+    .bx-wrapper .bx-prev {
+        right: 50px;
+    }
+
+    .bx-wrapper .bx-next {
+        right: 0;
+    }
+}
+
+// Main
+#main {
+
+    .main-section {
+        background: @white;
+        box-shadow: 0 0 10px rgba(0,0,0, .1);
+        padding: 30px 30px 30px 35px;
+        margin-bottom: 30px;
+    }
+
+    .main-shadow {
+        background: @white;
+        box-shadow: 0 0 10px rgba(0,0,0, .1);
+    }
+
+    // Новости и обзоры
+    .news-reviews {
+        margin-top: -204px;
+
+        position: relative; // IE 9
+        z-index: 50; // IE 9
+
+        .col-xs-3 {
+            margin-left: -20px;
+        }
+    }
+
+    .news-reviews-title {
+        
+    }
+
+    
+
+    .news-reviews-item {
+        float: left;
+        width: 126px;
+        margin: 0 40px 0 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .news-reviews-date {
+        color: @blue;
+        font-family: "Segoe UI Semilight";
+        font-size: 12px;
+        border: 1px solid @blue;
+        padding: 4px 6px;
+        display: inline-block;
+        margin: 0 0 10px;
+    }
+
+    .news-reviews-text {
+        color: @gray;
+        font-size: 16px;
+        line-height: 20px;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    // подписка
+    .subscribe {
+        background: #e7e7e7;
+        width: 215px;
+    }
+
+    .subscribe-title {
+        font-family: "Segoe UI Semilight";
+        font-size: 18px;
+        line-height: 20px;
+        color: @gray;
+        margin: 0 0 20px 30px;
+        padding-top: 20px;
+    }
+
+    .subscribe-button {
+        width: 100%;
+        padding: 10px;
+        text-transform: lowercase;
+    }
+
+    .subscribe-input {
+        width: 150px;
+        margin: 0 0 20px 30px;
+    }
+
+    // product
+    .product-link {
+        text-decoration: none;
+    }
+
+    .product-content {
+        opacity: 1;
+
+        .transition();
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .product-desc {
+        color: @gray;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 20px;
+        height: 75px;
+    }
+
+    .product-price {
+        font-family: 'Segoe UI Bold';
+        font-size: 28px;
+        line-height: 30px;
+        color: @gray;
+        margin-bottom: 10px;
+    }
+
+    .product-img {
+        height: 175px;
+        margin-bottom: 20px;
+    }
+
+    .button-buy {
+        padding: 5px 21.5px;
+        display: inline-block;
+        border: 1px solid @blue;
+        text-transform: lowercase;
+        text-decoration: none;
+        float: left;
+        margin-right: 10px;
+
+        .transition();
+
+         &:hover {
+            background: #E0F6FF;
+            border: 1px solid #E0F6FF;
+            color: @blue;
+        }
+    }
+
+    .button-credit {
+        display: inline-block;
+        padding: 5px 21.5px;
+        border: 1px solid @blue;
+        color: @blue;
+        font-family: 'Segoe UI Semilight';
+        text-decoration: none;
+        text-transform: lowercase;
+        float: left;
+        
+        .transition();
+
+        &:hover {
+            background: #E0F6FF;
+            border: 1px solid #E0F6FF;
+        }
+    }
+
+    .button-one-click {
+        padding: 5px 17px;
+        display: inline-block;
+        border: 1px solid @blue;
+        text-transform: lowercase;
+    }
+
+    // advantage
+    .advantage-subtitle {
+        font-family: 'Segoe UI Semilight';
+        font-size: 18px;
+        line-height: 20px;
+        color: @blue;
+        margin: 0 0 30px;
+    }
+
+    .advantage-item {
+        float: left;
+        margin-right: 28px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .advantage-num {
+        color: @blue;
+        border: 1px solid @blue;
+        padding: 5px 10px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .advantage-content {
+        font-size: 12px;
+        line-height: 14px;
+        width: 195px;
+    }
+}
+
+// home page
+.home {
+    #header {
+        .menu-catalog-block {
+            margin: 0;
+        }
+    }
+
+    #slider {
+        margin: 0 auto;
+    }
+}
+
+#page-home {
+    .entry-title {
+        text-transform: lowercase;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        background: @white;
+        border: none;
+        font-family: 'Segoe UI Italic';
+        color: @gray;
+        font-size: 12px;
+        padding: 10px 20px;
+        outline: none;
+    }
+}
+
+// footer
+#footer {
+    margin: 20px 0 60px;
+
+    .footer-logo {
+        margin: 0 0 0 20px;
+    }
+
+    .copy {
+        font-size: 12px;
+        line-height: 14px;
+        padding-left: 10px;
+    }
+
+    .footer-nav {
+        text-align: right;
+        margin-right: 20px;
+        margin-top: -6px;
+    }
+
+    .footer-nav-item {
+        color: @blue;
+        text-decoration: none;
+        border-bottom: 1px dotted @blue;
+        padding-bottom: 5px;
+        margin-right: 10px;
+        text-transform: lowercase;
+        margin-bottom: 6px;
+        display: inline-block;
+    }
+
+    .footer-seo,
+    .footer-strangebrain {
+        text-align: right;
+        margin-right: 27px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+
+    // menu footer
+    .footer-item {
+        float: left;
+        width: 158px;
+        height: 161px;
+        margin: 0 19px 32px 0;
+
+        &:nth-child(1),
+        &:nth-child(6) {
+            margin-left: 30px;
+        }
+
+        &:nth-child(5) {
+            margin-right: 0;
+        }
+    }
+
+    .footer-nav-list {
+        line-height: 15px;
+    }
+
+    .footer-nav-list-item {
+        font-size: 12px;
+        
+
+        &:first-child {
+            font-family: "Segoe UI Bold";
+        }
+    }
+}
+
+// breadcrumbs
+.breadcrumbs {
+    padding: 10px 14px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.breadcrumbs-item {
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+    margin-left: 10px;
+    font-family: "Segoe UI Bold";
+    font-size: 13px;
+    line-height: 15px;
+
+    &:last-child {
+        font-family: 'Segoe UI';
+
+        &:after {
+            display: none;
+        }
+    }
+
+    // arrow breadcrumbs
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 13px;
+        background: url("/@{img}/arrow-right.gif") no-repeat;
+        position: absolute;
+        top: 2px;
+        right: 0;
+    }
+}
+
+// stranica kartochka tovara
+#page-product-info {
+    .main-section {
+        padding: 30px;
+    }
+
+    .button-buy,
+    .button-credit {
+        padding: 5px 19px;
+    }
+
+    .product-info {
+        padding: 30px 30px 15px 30px;
+    }
+
+    .product-title {
+        width: 610px;
+        font-size: 36px;
+        line-height: 40px;
+        margin: -7px 0 0 0;
+    }
+
+    .product-info-img {
+        height: auto;
+        margin: 0 0 10px;
+    }
+
+    .product-article {
+        margin: 15px 0 0;
+    }
+
+    .product-thumbnail {
+        display: inline-block;
+        border: 1px solid transparent;
+        cursor: pointer;
+
+        .transition();
+
+        &.current {
+            border: 1px solid #259ccf;
+        }
+    }
+
+    @productButtonBg: #259ccf;
+
+    .product-button {
+        display: inline-block;
+        position: relative;
+        line-height: 16px;
+        text-decoration: none;
+        margin: 0 10px 13px 0;
+        padding: 14px 60px 14px 20px;
+        border: 1px solid #259ccf;
+        width: 167px;
+
+        .transition();
+
+        &:hover {
+            background: #E0F6FF;
+            border: 1px solid #E0F6FF;
+        }
+        
+        .play-icon {
+            position: absolute;
+            right: 20px;
+            top: 17px;
+        }
+
+        .text-icon {
+            position: absolute;
+            right: 20px;
+            top: 19px;
+        }
+
+    }
+
+    // social button
+    .social-icon {
+        background: url("/@{img}/product-social-button.gif") no-repeat;
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        margin-right: 9px;
+
+        .transition();
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.facebook {
+            background-position: 0 0;
+
+            &:hover {
+                background: url("/@{img}/social-button.png") no-repeat;
+                background-position: -50px -46px;
+            }
+        }
+
+        &.vk {
+            background-position: -50px 0;
+
+            &:hover {
+                background: url("/@{img}/social-button.png") no-repeat;
+                background-position: -100px -46px;
+            }
+        }
+
+        &.twitter {
+            background-position: -100px 0;
+
+            &:hover {
+                background: url("/@{img}/social-button.png") no-repeat;
+                background-position: -150px -46px;
+            }
+        }
+    }
+
+    // prinimaem k oplate
+    .accept {
+        color: #000;
+    }
+
+    .visa-icon {
+        margin: 0 14px -4px 12px;
+    }
+
+    .master-card-icon {
+        margin: 0 0 -7px;
+    }
+
+    // ceny
+    .price {
+        margin: 0 0 20px;
+    }
+
+    .price-text {
+        font-size: 16px;
+        line-height: 18px;
+        margin: 0 0 10px;
+    }
+
+    .price-num {
+        font-family: "Segoe UI Bold";
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    .rub {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    // dopolnitelnye uslugi
+    .additional-services {
+        background: #e0f6ff;
+        padding: 30px 30px 26px 30px;
+        margin: 0 0 30px;
+    }
+
+    .additional-services-title {
+        font-family: "Segoe UI Bold";
+        font-size: 16px;
+        line-height: 18px;
+        margin: -4px 0 15px;
+    }
+
+    .additional-services-item {
+        margin: 0 0 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .input-checkbox {
+        float: left;
+    }
+
+    .additional-services-text {
+        float: left;
+        font-size: 13px;
+        line-height: 15px;
+        margin: 2px 0 0 10px;
+    }
+
+    // knopki kupit
+    .product-buy {
+        margin: 0 0 30px;
+
+        .button-buy,
+        .button-credit,
+        .button-one-click {
+            font-family: "Segoe UI Bold";
+            text-decoration: none;
+            padding: 10px 25px;
+        }
+
+
+        .button-buy {
+            font-family: "Segoe UI Bold";
+            background: #259CCF;
+            color: #fff;
+        }
+
+        .button-credit {
+            margin-right: 10px;
+        }
+
+        .button-one-click {
+            padding: 10px 27px;
+            background: #A7E5FF;
+            border: 1px solid transparent;
+        }
+    }
+
+
+    // opisanie producta
+    .product-info {
+        .product-desc {
+            margin: 0 0 30px;
+            height: auto;
+        }
+    }
+    
+    .product-select-wrapper {
+        width: 280px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        margin: 0 0 30px;
+        background: url("/@{img}/arrow-bottom.png") no-repeat 95% 50%;
+    }
+
+    .product-select {
+        width: 280px;
+        -webkit-appearance: none;
+        background: transparent;
+        border: 0
+    }
+
+    .product-item {
+        
+    }
+
+    // dostavka
+    .product-delivery {
+        
+    }
+
+    .product-delivery-item {
+        margin: 0 0 30px;
+    }
+
+    .car-icon {
+        margin: 5px 0 0;
+    }
+
+    .metro-icon {
+        margin: 0 auto;
+        display: block;
+    }
+
+    // section preimuschestva
+    .advantage {
+        margin: 30px 0 0;
+        padding: 30px;
+    }
+
+    .advantage-title {
+        font-family: "Segoe UI Bold";
+        font-size: 20px;
+        line-height: 22px;
+        color: #000;
+        margin: 0 0 35px;
+    }
+
+    .advantage-item {
+        margin-bottom: 40px;
+        margin-right: 40px;
+
+        &:nth-child(4) {
+            margin-right: 0;
+        }
+
+        &:nth-child(5),
+        &:nth-child(6) {
+            margin-bottom: 0;
+        }
+    }
+
+    .advantage-container {
+        
+    }
+
+    .advantage-img {
+        float: left;
+        width: 40px;
+        height: 34px;
+        margin-right: 20px;
+
+        i {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .advantage-text {
+        float: left;
+        width: 130px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    // opisanie
+    .description {
+        margin-top: 30px;
+
+        .horizontal-line {
+            margin: 0 0 0 -30px;
+            position: absolute;
+            width: 97%;
+        }
+    }
+
+    .nav-tabs {
+        border: none;
+    }
+
+    .nav-tab-item {
+        margin: 0;
+
+        &:last-child {
+            .nav-tab-link {
+                margin-right: 0;
+            }
+        }
+
+        &.active {
+            .nav-tab-link {
+                background: #797979;
+            }
+        }
+    }
+
+    .nav-tab-link {
+        border: none;
+        border-radius: 0;
+        width: 187.6px;
+        text-align: center;
+        background: #bdbdbd;
+        font-size: 16px;
+        line-height: 18px;
+        color: #fff;
+        margin-right: 1px;
+        padding: 14px 0;
+    }
+
+    .tab-pane {
+        padding: 30px;
+        font-size: 16px;
+        line-height: 20px;
+
+        &#tab-description-model {
+            padding: 0 30px 30px 30px;
+
+            .tab-title {
+                margin-bottom: 20px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            p {
+                margin: 0 0 30px;
+            }
+        }
+    }
+
+    .tab-title {
+        font-family: "Segoe UI Semilight";
+        font-size: 36px;
+        line-height: 38px;
+        color: #000;
+    }
+
+    .tab-footer {
+        font-size: 13px;
+        line-height: 15px;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        padding-top: 30px;
+    }
+
+    // vkladka otzyvy
+    .reviews-item {
+        padding: 0 0 25px;
+        border-bottom: 1px dotted #ccc;
+        margin: 20px 0 0;
+    }
+
+    .reviews-title,
+    .reviews-text,
+    .reviews-user {
+        font-size: 18px;
+        line-height: 20px;
+        color: #000;
+    }
+
+    .reviews-title,
+    .reviews-img,
+    .reviews-user,
+    .reviews-time {
+        float: left;
+    }
+
+    .reviews-img {
+        margin: -2px 0 0 0;
+        margin-left: 20px;
+    }
+
+    .reviews-time {
+        margin-left: 20px;
+        color: #000;
+        font-size: 12px;
+        position: relative;
+        top: 2px;
+    }
+
+    .reviews-section {
+        padding: 0 0 20px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    .reviews-header {
+        margin: 0 0 17px;
+    }
+
+    .reviews-desc {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .reviews-more {
+        margin: 20px 0 0;
+    }
+
+    .similar-products {
+        margin: 30px 0;
+    }
+}
+
+// dostavka
+.product-delivery-img {
+    width: 10%;
+    float: left;
+}
+
+.product-delivery-content {
+    width: 87%;
+    float: left;
+    margin-left: 3%;
+}
+
+.product-delivery-title {
+    margin: 0 0 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+}
+
+.product-delivery-text {
+    font-size: 13px;
+    line-height: 15px;
+}
+
+// end dostavka
+
+.product-container {
+
+    .product-item {
+        float: left;
+        position: relative;
+        width: 198px;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .product-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .button-buy {
+        padding: 5px 17px;
+        display: inline-block;
+        border: 1px solid #3399cc;
+        text-transform: lowercase;
+        float: left;
+        margin-right: 10px;
+    }
+}
+
+// spait kartinki
+.product-sprite {
+    background: url("/@{img}/product-sprite.png") no-repeat;
+    display: inline-block;
+
+    &.play-icon {
+        background-position: 0 0;
+        width: 24px;
+        height: 27px;
+    }
+
+    &.text-icon {
+        background-position: -30px 0;
+        width: 20px;
+        height: 26px;
+    }
+
+    &.visa-icon {
+        background-position: 0 -133px;
+        width: 63px;
+        height: 20px;
+    }
+
+    &.master-card-icon {
+        background-position: -70px -133px;
+        width: 46px;
+        height: 28px;
+    }
+
+    &.car-icon {
+        background-position: 0 -45px;
+        width: 37px;
+        height: 17px;
+    }
+
+    &.metro-icon {
+        background-position: -44px -45px;
+        width: 27px;
+        height: 23px;
+    }
+
+    &.warranty-icon {
+        background-position: 0 -86px;
+        width: 26px;
+        height: 33px;
+    }
+
+    &.exchange-icon {
+        background-position: -32px -86px;
+        width: 31px;
+        height: 25px;
+    }
+
+    &.nanosim-icon {
+        background-position: -68px -86px;
+        width: 18px;
+        height: 26px;
+    }
+
+    &.language-icon {
+        background-position: -92px -86px;
+        width: 25px;
+        height: 25px;
+    }
+
+    &.delivery-icon {
+        background-position: -123px -86px;
+        width: 40px;
+        height: 19px;
+    }
+
+    &.appstore-icon {
+        background-position: -168px -86px;
+        width: 24px;
+        height: 21px;
+    }
+
+    &.minus-icon {
+        background-position: 0 -166px;
+        width: 17px;
+        height: 18px;
+
+        .transition();
+        .hoverIcon();
+    }
+
+    &.plus-icon {
+        background-position: -25px -166px;
+        width: 17px;
+        height: 18px;
+
+        .transition();
+        .hoverIcon();
+    }
+
+    &.del-product-icon {
+        background-position: -51px -167px;
+        width: 17px;
+        height: 18px;
+
+        .transition();
+        .hoverIcon();
+    }
+
+    &.del-additiont-icon {
+        background-position: -77px -167px;
+        width: 17px;
+        height: 18px;
+
+        .transition();
+        .hoverIcon();
+    }
+
+    &.tick-icon {
+        background-position: 0 -196px;
+        width: 14px;
+        height: 9px;
+    }
+
+    &.tick-icon-dark {
+        background-position: -19px -196px;
+        width: 14px;
+        height: 9px;
+    }
+
+    &.pick-point-icon {
+        background-position: -79px -45px;
+        width: 47px;
+        height: 10px;
+    }
+
+    &.cash-icon {
+        background-position: -135px -45px;
+        width: 31px;
+        height: 32px;
+    }
+
+    &.credit-card-icon {
+        background-position: -173px -45px;
+        width: 31px;
+        height: 21px;
+    }
+
+    &.credit-icon {
+        background-position: -213px -45px;
+        width: 21px;
+        height: 21px;
+    }
+
+    &.del-icon {
+        background-position: -103px -169px;
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.hoverIcon {
+    &:hover {
+        opacity: .8;
+    }
+}
+
+// dizayn checkbox
+.input-checkbox {
+    position: relative;
+}
+
+.input-checkbox label {
+    cursor: pointer;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 4px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #797979;
+    
+}
+
+.input-checkbox label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 2px;
+    left: 1px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+    
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.input-checkbox label:hover::after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.5;
+}
+
+.input-checkbox input[type=checkbox]:checked + label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+// page cart
+#page-cart { 
+
+    .table-cart {
+        width: 100%;
+        
+    }
+
+    .table-cart-chill {
+        margin: 0;
+        padding: 0 0 20px;
+        vertical-align: middle;
+        
+    }
+
+    .table-cart-product-title {
+        width: 50%;
+        
+    }
+
+    .table-cart-product-select {
+        width: 18%;
+        
+    }
+
+    .table-cart-product-price {
+        width: 21%;
+        
+    }
+
+    .table-cart-product-del {
+        width: 2%;
+        
+    }
+
+    .cart-continue-shop {
+        font-size: 16px;
+        line-height: 18px;
+        float: right;
+    }
+
+    .cart-product-title-link {
+        font-family: "Segoe UI Semibold";
+        font-size: 16px;
+        line-height: 18px;
+        color: #3399cc;
+        text-decoration: none;
+    }
+
+    .cart-product-select-num {
+        display: inline-block;
+        vertical-align: top;
+        font-family: "Segoe UI Semibold";
+        font-size: 18px;
+        line-height: 20px;
+        margin: 2px 15px 0 15px;
+    }
+
+    .cart-product-price-num {
+        font-family: "Segoe UI Bold";
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .cart-product-price-cy {
+        font-family: "Segoe UI";
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .cart-addition-price-num {
+        font-family: "Segoe UI Bold";
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .cart-additiont-title-link {
+        font-family: "Segoe UI Semibold";
+        font-size: 14px;
+        line-height: 16px;
+        color: #666;
+        text-decoration: none;
+    }
+
+    .table-row-last {
+        .table-cart-chill {
+            padding-bottom: 40px;
+        }
+    }
+
+    .minus-icon,
+    .plus-icon,
+    .del-product-icon {
+        margin-top: 3px;
+    }
+
+    .tick-icon {
+        margin: 0 20px;
+    }
+
+    .coupon-code-input {
+        width: 245px;
+        padding: 7.7px 13px;
+        display: inline-block;
+        background: #e7e7e7;
+        float: left;
+        border: 1px solid transparent;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .coupon-code-button {
+        font-family: "Segoe UI Semibold";
+        font-size: 16px;
+        overflow: hidden;
+        margin: 0 0 0 15px;
+    }
+
+    .cart-total-button {
+        width: 245px;
+        height: 75px;
+        padding: 20px 0;
+
+        font-family: "Segoe UI Semibold";
+        font-size: 20px;
+        text-align: center;
+
+    } 
+
+    .cart-total-section,
+    .cart-total-section-2 {
+        float: left;
+    }
+
+    .cart-total-section-2 {
+        background: #e0f6ff;
+        width: 637px;
+        height: 75px;
+        text-align: right;
+    }
+    .cart-total-content {
+        margin: 12px 28px 0 0;
+    }
+
+    .cart-total-text {
+        font-size: 20px;
+        line-height: 22px;
+        color: #3399cc;
+        margin-right: 10px;
+    }
+
+    .cart-total-num,
+    .cart-total-cy {
+        font-family: "Segoe UI Bold";
+        font-size: 48px;
+        line-height: 50px;
+        color: #000;
+    }
+
+    .cart-total-cy {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .main-section {
+        .bx-wrapper {
+
+            .bx-pager {
+                top: -53px;
+            }
+        }
+    }
+
+    .bx-wrapper {
+        .bx-controls-direction {
+            a {
+                top: -31px;
+            }
+        }
+    }
+
+    // korzina oformlenie tovara
+    .entry-title-3 {
+        margin-bottom: 35px;
+    }
+
+    .form-select-wrapper {
+        float: left;
+        margin: 6px 0 0 25px;
+    }
+
+    .horizontal-line-main {
+        padding: 15px 0;
+    }
+
+    .cart-container-2 {
+        margin: 70px 0 0;
+    }
+
+    .product-delivery-content {
+        line-height: 17px;
+        width: 85%;
+        margin-left: 5%;
+        margin-bottom: 10px;
+    }
+
+    .car-icon {
+        margin: 4px 0 0 0;
+    }
+
+    .pick-point-icon {
+        margin: 0 0 0 -9px;
+    }
+
+    .product-delivery-title,
+    .product-delivery-img,
+    .product-delivery-content {
+        display: block;
+    }
+
+    .your-region {
+        .button-link-underline {
+            margin: 0 0 0 104px;
+        }
+    }
+
+    .cash-icon {
+        margin: -5px 0 0;
+    }
+
+    .credit-icon,
+    .metro-icon {
+        margin: 0 0 0 5px;
+    }
+
+    .payment-system {
+        .button-link-underline {
+            margin: 0 0 0 104px;
+        }
+    }
+    // kontaktnye dannye
+    .contact-details {
+        .form-input {
+            width: 289px;
+        }
+    }
+
+    // adres dostavki
+    .delivery-address,
+    .discount-coupon {
+        margin: 25px 0 0;
+    }
+
+    .discount-coupon {
+        .coupon-code-input {
+            width: 298px;
+        }
+    }
+
+    // sostav zakaza
+    .composition-order {
+        .table-cart {
+            font-size: 14px;
+        }
+
+        .table-cart-chill {
+            padding-bottom: 5px;
+            vertical-align: top;
+        }
+
+        .table-cart-product-title {
+            width: 60%;
+        }
+
+        .table-cart-product-select {
+            width: 10%;
+        }
+
+        .table-cart-product-price {
+            width: 30%;
+        }
+
+        .table-row-last {
+            .table-cart-chill {
+                padding-bottom: 35px;
+            }
+        }
+
+        .cart-product-title-link {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .cart-product-select-num {
+            font-size: 14px;
+        }
+
+        .cart-product-price-num {
+            font-size: 18px;
+            line-height: 20px;
+            color: #000;
+        }
+
+        .cart-additiont-title-link {
+            font-family: "Segoe UI";
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .cart-addition-price-num {
+            font-family: "Segoe UI";
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .tick-icon {
+            margin: 0 5px 0 0;
+        }
+    }
+
+    // kommentarii k zakazu
+    .comments-order {
+        .form-textarea {
+            width: 425px;
+        }
+    }
+    
+    // itogo
+    .cart-total {
+        &.ordering {
+            .cart-total-section-1 {
+                float: left;
+                width: 257px;
+                border-right: 1px dotted #6ac1eb;
+                background: #e0f6ff;
+                height: 75px;
+            }
+
+            .cart-total-section-2 {
+                float: left;
+                width: 423px;
+            }
+
+            .cart-total-button {
+                width: 200px;
+            }
+        }
+    }
+    .cart-total-text-2 {
+        font-family: "Segoe UI Semibold";
+        font-size: 14px;
+        line-height: 16px;
+        color: #3399cc;
+    }
+
+    .cart-total-num-2 {
+        font-family: "Segoe UI Bold";
+        font-size: 14px;
+        line-height: 16px;
+        color: #000;
+    }
+
+    .cart-total-content-2 {
+        margin: 16px 0 0 40px;
+    }
+}
+
+// vy dobavili korzinu v pop-up
+.pop-up-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 25px auto 0 auto;
+    min-width: 860px;
+}
+
+.pop-up-bg {
+    background: rgba(0,0,0, .5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.pop-up {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0, .3);
+    width: 860px;
+    height: 720px;
+    margin: 0 auto;
+    padding: 30px;
+    overflow: hidden;
+    position: relative;
+
+    .also-bought {
+        width: 797px;
+        overflow: auto;
+        margin: 0 auto;
+        white-space: nowrap;
+    }
+
+    .pop-up-title {
+        margin: -5px 0 5px;
+        font-size: 36px;
+        line-height: 24px;
+        color: #000;
+    }
+
+    .pop-up-close-icon { 
+        margin: 10px 0 0;
+    }
+
+    .horizontal-line-main {
+        margin: 20px 0 0 -30px;
+        width: 100%;
+    }
+
+    .pop-up-content {
+        margin: 40px 0 0;
+    }
+
+    .pop-up-content-title {
+        margin: 0 0 30px;
+        font-size: 36px;
+        line-height: 38px;
+        color: #000;
+    }
+
+    .pop-up-product-img,
+    .pop-up-product-title {
+        float: left;
+    }
+
+    .pop-up-product-item {
+        margin: 40px 0 0;
+    }
+
+    .pop-up-product-title-link {
+        font-size: 16px;
+        font-family: "Segoe UI Semibold";
+        margin: 28px 0 0 20px;
+        display: inline-block;
+    }
+
+    .product-item {
+        float: none;
+        display: inline-block;
+        white-space: normal;
+        width: 137px;
+        margin: 0 22px 20px 0;
+    }
+
+    .product-img {
+        display: block;
+        margin: 0 auto;
+        height: 133px;
+    }
+
+    .pop-up-product-price {
+        font-size: 24px;
+        font-family: "Segoe UI Bold";
+        float: right;
+        margin: 19px 20px 0 0;
+    }
+
+    .pop-up-product-price-cy {
+        font-size: 18px;
+        font-family: "Segoe UI";
+    }
+
+    .product-link {
+        text-decoration: none;
+        line-height: 17px;
+    }
+
+    .product-desc {
+        color: #666;
+        text-decoration: none;
+        margin: 20px 0 0;
+        max-height: 50px;
+    }
+
+    .button-buy {
+        padding: 5px 40px;
+        margin: 15px 0 0;
+    }
+
+    .product-price {
+        font-size: 20px;
+        font-family: "Segoe UI Bold";
+        margin: 10px 0 0;
+    }
+
+    .product-price-cy {
+        font-size: 16px;
+        font-family: "Segoe UI";
+    }
+
+    .button-link-underline {
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        top: -5px;
+    }
+    
+    .button-bg {
+        width: 260px;
+        height: 54px;
+        line-height: 36px;
+        text-align: center;
+        margin: 0 0 0 40px;
+        display: inline-block;
+
+        font-size: 20px;
+        font-family: "Segoe UI Semibold";
+    }
+
+    .pop-up-footer {
+        margin: 35px 0 0; 
+    }
+
+}
+
+.pop-up-close-icon {
+    background: url("/@{img}/pop-up-close.png");
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+// button
+.button-transparent,
+.button-bg {
+    border: 1px solid #259ccf;
+    padding: 6px 13px;
+    background: transparent;
+    text-decoration: none;
+    display: inline-block;
+
+    .transition();
+
+    &:hover {
+        border: 1px solid transparent;
+        text-decoration: none;
+        background: #e0f6ff;
+        color: #3399cc;
+    }
+}
+
+.button-bg {
+    border: none;
+    background: #259ccf;
+    color: #fff;
+
+    &:hover {
+        border: none;
+    }
+}
+
+// stranica kataloga
+.catalog {
+    #header {
+        .menu-catalog-block {
+            margin: 0;
+        }
+    }
+}
+
+// menu model
+.menu-model {
+    background: #fff;
+    margin: 0 0 25px;
+    padding: 25px 0;
+    border-top: 1px dotted #c3c2c2;
+
+    &:before {
+        content: "";
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        width: 97%;
+        display: block;
+        position: absolute;
+        height: 163px;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        margin: 0 15px;
+    }
+}
+
+.menu-model-item {
+    float: left;
+    text-align: center;
+    margin: 0 51.5px;
+    font-family: "Segoe UI Bold";
+
+    &.current {
+        pointer-events: none;
+        color: #000;
+
+        .menu-model-img {
+            border: 1px solid #259ccf;
+        }
+    }
+}
+
+.menu-model-img {
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+.menu-model-title {
+    display: inline-block;
+}
+
+#page-catalog {
+    .catalog-row {
+        width: 206px;
+    }
+
+    .catalog-row-2 {
+        width: 400px;
+        margin-left: 35px;
+    }
+
+    .catalog-row-3 {
+        width: 190px;
+        margin-left: 35px;
+    }
+
+    .catalog-header {
+        margin: 0 0 30px;
+    }
+
+    // breadcrumbs
+    .breadcrumbs {
+        padding: 0;
+        margin: 0 0 5px;
+        border: none;
+        font-size: 12px;
+        color: #000;
+    }
+
+    .breadcrumbs-item {
+        font-family: "Segoe UI";
+
+        &:after {
+            background: url("/@{img}/arrow-right.png") no-repeat;
+            display: inline-block;
+            width: 7px;
+            height: 10px;
+            margin: 2px 0 0 0;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            &:after {
+                background: none;
+            }
+        }
+    }
+
+    .catalog-title {
+        margin: 0;
+    }
+
+    .catalog-desc {
+        color: #666;
+        line-height: 17px;
+    }
+
+    .catalog-benefits {
+        font-size: 12px;
+        text-align: right;
+    }
+
+    .catalog-benefits-img {
+        margin: 10px 0 0;
+    }
+
+    // catalog submenu
+    .catalog-menu-apps {
+        padding: 20px 0;
+        margin: 0 0 30px;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            width: 100%;
+            border-bottom: 1px dotted #ccc;
+        }
+        
+        &:before {
+            margin: -21px 0 0;
+        }
+
+        &:after {
+            margin: 50px 0 0;
+        }
+    }
+
+    .catalog-menu-apps-item {
+        font-size: 13px;
+        line-height: 15px;
+        display: inline-block;
+        margin-right: 23px;
+        float: left;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.current {
+            color: #000;
+            pointer-events: none;
+        }
+    }
+
+
+    // catalog filter
+    .catalog-filter {
+        float: left;
+        width: 209px;
+    }
+
+    .catalog-filter-title {
+        font-family: "Segoe UI Bold";
+        font-size: 16px;
+        border-bottom: 1px dotted #3399cc;
+        display: inline-block;
+        color: #3399cc;
+        padding-bottom: 10px;
+        cursor: pointer;
+        margin: 0 0 30px;
+    }
+
+    .catalog-filter-price-inp {
+        width: 55px;
+        padding: 5px;
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .catalog-filter-price-label {
+        font-size: 13px;
+        font-weight: normal;
+
+        &:nth-child(2) {
+            margin-left: 15px;
+        }
+    }
+
+    // manufacturer
+    .input-helper--radio {
+        padding-left: 10px;
+    }
+
+    .form-select {
+        font-size: 12px;
+        font-style: italic;
+        padding: 7.5px 10px;
+        width: 212px;
+    }
+
+    // catalog filter buttons
+    .filter-del {
+        width: 36px;
+        height: 36px;
+        background-color: #a7e5ff;
+        display: inline-block;
+        position: relative;
+    }
+
+    .del-icon {
+        position: absolute;
+        top: 11px;
+        left: 11px;
+    }
+
+    .filter-button {
+        width: 89px;
+        text-align: center;
+        padding: 6.9px 13px;
+        margin: 0 10px 0 0;
+    }
+
+    // catalog content
+    .catalog-pr-content {
+        float: left;
+        width: 668px;
+        border-left: 1px dotted #ccc;
+    }
+
+    .catalog-pr-item {
+        width: 215px;
+        padding: 15px;
+        margin: 10px 3px;
+        float: left;
+        border: 1px solid transparent;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        .transition();
+
+        &:hover {
+            border: 1px solid #259ccf;
+            
+
+            .catalog-pr-buy {
+                background: #fff;
+                display: block;
+                padding: 20px 0 15px;
+                width: 215px;
+                margin-left: -16px;
+                border: 1px solid #259ccf;
+                border-top: none;
+                z-index: 1;
+            }
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+         &:nth-child(3n-2) {
+            margin-left: 10px;
+        }
+    }
+
+    .catalog-pr-buy {
+        padding: 0;
+        position: absolute;
+        display: none;
+        border: 1px solid transparent;
+        background: transparent;
+
+        .transition();
+    }
+
+    .catalog-pr-picture-img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .catalog-pr-title {
+        font-size: 16px;
+        line-height: 18px;
+        margin: 0 0 2px;
+    }
+
+    .catalog-pr-title-link {
+        color: #828282;
+        text-decoration: none;
+    }
+    
+    .catalog-pr-price-text {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .catalog-pr-price-text-2 {
+        font-size: 28px;
+        font-family: "Segoe UI Bold";
+        margin: 0 0 5px;
+        display: inline-block;
+
+        .cy {
+            font-size: 16px;
+        }
+    }
+
+    .catalog-pr-characteristics {
+        font-size: 12px;
+        line-height: 13px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .catalog-pr-picture {
+        margin: 0 0 20px;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            background: url("/@{img}/4G-LTE1.png");
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 12px;
+        }
+    }
+
+    .article {
+        font-family: "Segoe UI Bold";
+        font-weight: bold;
+        color: #000;
+    }
+
+    .button-buy {
+        margin: 0;
+        font-family: "Segoe UI Semibold";
+    }
+
+    .button-bg {
+        margin-right: 10px;
+        margin-left: 15px;
+    }
+
+    // pagination 
+    .catalog-pagination {
+        width: 295px;
+    }
+
+    .catalog-pagination-next {
+        background: url("/@{img}/carousel-arrow.png") -50px 0 no-repeat;
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        margin-left: 10px;
+        position: relative;
+        top: 7px;
+    }
+
+    .catalog-pagination-item {
+        font-size: 16px;
+        padding: 2px;
+        border-bottom: 1px dotted #3399cc;
+        text-decoration: none;
+        margin: 0 5px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .reviews-stars {
+        display: inline-block;
+    }
+
+    .product-button {
+        display: inline-block;
+        position: relative;
+        line-height: 16px;
+        text-decoration: none;
+        margin: 0;
+        padding: 14px 60px 14px 20px;
+        border: 1px solid #259ccf;
+        width: 167px;
+
+        .transition();
+
+        &:hover {
+            background: #E0F6FF;
+            border: 1px solid #E0F6FF;
+        }
+        
+        .play-icon {
+            position: absolute;
+            right: 20px;
+            top: 17px;
+        }
+
+        .text-icon {
+            position: absolute;
+            right: 20px;
+            top: 19px;
+        }
+
+    }
+
+    .product-review {
+        margin: 0;
+    }
+
+    .reviews-block {
+        margin: 4px 20px 0 172px;
+    }
+
+    .reviews-block-text {
+        color: #000;
+        margin-right: 5px;
+    }
+
+    .catalog-desc-section {
+        font-size: 16px;
+        line-height: 20px;
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        img {
+            margin-bottom: 30px;
+        }
+
+        iframe {
+            max-width: 100%;
+            height: 489px;
+        }
+    }
+
+    .input-helper {
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+
+    .input-helper--radio {
+ 
+    &:after {
+        width: 13px;
+        height: 13px;
+        top: 4px;
+        left: -29px;
+    }
+
+    &:before {
+        top: 8px;
+    }
+}
+
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+// pop-up quick order
+
+.pop-up-quick-order {
+    width: 530px;
+    height: 600px;
+
+    .pop-up-content {
+        margin: 50px 0 0;
+    }
+
+    .pop-up-product-title {
+        color: #3399cc;
+        font-family: "Segoe UI";
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0;
+    }
+
+    .pop-up-product-price {
+        font-size: 24px;
+        font-family: "Segoe UI Bold";
+        float: none;
+        margin: 166px 0 0;
+
+        .cy {
+            font-size: 18px;
+            font-family: "Segoe UI";
+        }
+    }
+
+    .pop-up-form-block {
+        margin: 30px 0 0;
+    }
+
+    .pop-up-picture {
+        width: 200px;
+        margin-right: 45px;
+    }
+
+    .pop-up-product {
+        width: 210px;
+    }
+
+    .contact-details {
+        float: left;
+        width: 214px;
+        margin-right: 35px;
+    }
+
+    .contact-details-2 {
+        float: left;
+        width: 221px;
+    }
+
+    .form-textarea,
+    .form-input {
+        width: 100%;
+    }
+
+    .form-textarea {
+        height: 150px;
+    }
+
+    .pop-up-buy-text {
+        width: 295px;
+        margin: 12px 0 0;
+        line-height: 14px;
+    }
+
+    .pop-up-buy-button {
+        width: 175px;
+    }
+
+    .button-bg {
+        width: 130px;
+        margin-left: 46px;
+    }
+
+    .pop-up-buy {
+        margin: 10px 0 0;
+    }
+
+    .pop-up-close-icon {
+        margin: 6px 0 0;
+    }
+}
