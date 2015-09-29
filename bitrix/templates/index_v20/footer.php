@@ -3,27 +3,27 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-2">
-                <img src="img/logo-footer.png" alt="up house" title="up house" class="footer-logo" />
+                <img src="<?=SITE_TEMPLATE_PATH?>/img/logo-footer.png" alt="up house" title="up house" class="footer-logo" />
             </div>
 
             <div class="col-xs-6">
                 <div class="copy">
-                    В© UP-House, 2014<br />
-                    Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹.<br />
-                    РРЅС„РѕСЂРјР°С†РёСЏ, РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅР°СЏ РЅР° РґР°РЅРЅРѕРј СЃР°Р№С‚Рµ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РѕС„РµСЂС‚РѕР№,<br />
-                    РѕРїСЂРµРґРµР»СЏРµРјРѕР№ РїРѕР»РѕР¶РµРЅРёСЏРјРё СЃС‚Р°С‚РµР№ 435, 437 Р“СЂР°Р¶РґР°РЅСЃРєРѕРіРѕ РљРѕРґРµРєСЃР° Р Р¤
+                    © UP-House, 2014<br />
+                    Все права защищены.<br />
+                    Информация, представленная на данном сайте не является офертой,<br />
+                    определяемой положениями статей 435, 437 Гражданского Кодекса РФ
                 </div>
             </div>
 
             <div class="col-xs-4">
                 <nav class="footer-nav" role="navigation">
-                    <a href="#" class="footer-nav-item">Рћ РєРѕРјРїР°РЅРёРё</a>
-                    <a href="#" class="footer-nav-item">РќРѕРІРѕСЃС‚Рё</a>
+                    <a href="#" class="footer-nav-item">О компании</a>
+                    <a href="#" class="footer-nav-item">Новости</a>
                     <a href="#" class="footer-nav-item">FAQ</a>
                 </nav>
 
-                <div class="footer-seo">РџСЂРѕРґРІРёР¶РµРЅРёРµ СЃР°Р№С‚Р° - <a href="#">РЎРµРѕСЂР°Р·СѓРј</a></div>
-                <div class="footer-strangebrain">Р”РёР·Р°Р№РЅ СЃР°Р№С‚Р° - <a href="http://strangebrain.ru/" target="_blank">StrangeBrain</a></div>
+                <div class="footer-seo">Продвижение сайта - <a href="#">Сеоразум</a></div>
+                <div class="footer-strangebrain">Дизайн сайта - <a href="http://strangebrain.ru/" target="_blank">StrangeBrain</a></div>
             </div>
         </div>
     </div>
@@ -32,20 +32,20 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
 
 <!-- slider script -->
 <script>
     $(document).ready(function () {
         $('.bxslider').bxSlider({
-            mode: 'fade',   // РІРєР»СЋС‡Р°РµРј, СЌС„С„РµРєС‚ Р·Р°С‚СѓС…Р°РЅРёСЏ
-            auto: true,     // РІРєР»СЋС‡Р°РµРј, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєСѓСЋ СЃРјРµРЅСѓ СЃР»Р°Р№РґРѕРІ, С‡РµСЂРµР· РєР°Р¶РґС‹Рµ 4 СЃРµРєСѓРЅРґС‹
-            captions: true, // РІРєР»СЋС‡Р°РµРј, РєРѕРЅС‚РµРЅС‚ РІ СЃР»Р°Р№РґРµ
-            pause: 4000,    // СЃРјРѕС‚СЂРёРј 2 РїСѓРЅРєС‚
-            speed: 1000     // СЃРєРѕСЂРѕСЃС‚СЊ СЌС„С„РµРєС‚Р° Р·Р°С‚СѓС…Р°РЅРёСЏ
+            mode: 'fade',   // включаем, эффект затухания
+            auto: true,     // включаем, автоматическую смену слайдов, через каждые 4 секунды
+            captions: true, // включаем, контент в слайде
+            pause: 4000,    // смотрим 2 пункт
+            speed: 1000     // скорость эффекта затухания
         });
     });
 </script>

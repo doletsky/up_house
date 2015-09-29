@@ -1,39 +1,37 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 ?>
-
-
-    <!-- content -->
+   <!-- content -->
     <main id="main" role="main">
     <div class="container" id="page-home">
     <div class="row">
     <div class="col-xs-12">
 
-    <!-- РЅРѕРІРѕСЃС‚Рё Рё РѕР±Р·РѕСЂС‹ -->
+    <!-- новости и обзоры -->
     <section class="news-reviews main-section">
         <div class="row">
             <div class="col-xs-9">
                 <div>
-                    <h2 class="news-reviews-title entry-title">РќРѕРІРѕСЃС‚Рё Рё РѕР±Р·РѕСЂС‹</h2>
+                    <h2 class="news-reviews-title entry-title">Новости и обзоры</h2>
                     <div class="news-reviews-content">
                         <article class="news-reviews-item">
                             <time class="news-reviews-date" datetime="16.06.2014">16.06.2014</time>
-                            <a href="#" class="news-reviews-text">Metal - Р±СѓРґСѓС‰РµРµ РјРѕР±РёР»СЊРЅРѕР№ РіСЂР°С„РёРєРё</a>
+                            <a href="#" class="news-reviews-text">Metal - будущее мобильной графики</a>
                         </article>
 
                         <article class="news-reviews-item">
                             <time class="news-reviews-date" datetime="15.06.2014">15.06.2014</time>
-                            <a href="#" class="news-reviews-text">OS X Yosemite Рё iOS 8: РЅР° РєР°РєРёРµ СѓСЃС‚СЂРѕР№СЃС‚РІР° РјРѕР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІС‹Рµ РћРЎ?</a>
+                            <a href="#" class="news-reviews-text">OS X Yosemite и iOS 8: на какие устройства можно установить новые ОС?</a>
                         </article>
 
                         <article class="news-reviews-item">
                             <time class="news-reviews-date" datetime="11.06.2014">11.06.2014</time>
-                            <a href="#" class="news-reviews-text">Р“СЂР°С„РёРє СЂР°Р±РѕС‚С‹ РЅР°С€РµРіРѕ РјР°РіР°Р·РёРЅР° РЅР° РёСЋРЅСЊСЃРєРёРµ РїСЂР°Р·РґРЅРёРєРё</a>
+                            <a href="#" class="news-reviews-text">График работы нашего магазина на июньские праздники</a>
                         </article>
 
                         <article class="news-reviews-item">
                             <time class="news-reviews-date" datetime="09.06.2014">09.06.2014</time>
-                            <a href="#" class="news-reviews-text">HomeKit - В«СѓРјРЅС‹Р№ РґРѕРјВ» РїРѕРґ РїРѕР»РЅС‹Рј РєРѕРЅС‚СЂРѕР»РµРј</a>
+                            <a href="#" class="news-reviews-text">HomeKit - «умный дом» под полным контролем</a>
                         </article>
                     </div>
                 </div>
@@ -41,24 +39,24 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
             <div class="col-xs-3">
 
-                <!-- РїРѕРґРїРёСЃР°С‚СЊСЃСЏ -->
+                <!-- подписаться -->
                 <aside class="subscribe">
                     <div class="subscribe-content">
-                        <div class="subscribe-title">РЈР·РЅР°РІР°Р№С‚Рµ РїРµСЂРІС‹Рј<br /> Рѕ РЅР°С€РёС… Р°РєС†РёСЏС…</div>
+                        <div class="subscribe-title">Узнавайте первым<br /> о наших акциях</div>
 
-                        <input type="text" class="subscribe-input" placeholder="РёРјСЏ" />
+                        <input type="text" class="subscribe-input" placeholder="имя" />
                         <input type="email" class="subscribe-input" placeholder="email" />
-                        <input type="submit" class="subscribe-button" value="РџРѕРґРїРёСЃР°С‚СЊСЃСЏ" />
+                        <input type="submit" class="subscribe-button" value="Подписаться" />
                     </div>
                 </aside>
             </div>
         </div>
     </section>
-    <!-- /РЅРѕРІРѕСЃС‚Рё Рё РѕР±Р·РѕСЂС‹ -->
+    <!-- /новости и обзоры -->
 
-    <!-- РЅРѕРІРёРЅРєРё -->
+    <!-- новинки -->
     <section class="novelty main-section">
-    <h2 class="novelty-title entry-title">РќРѕРІРёРЅРєРё СѓР¶Рµ РІ РїСЂРѕРґР°Р¶Рµ</h2>
+    <h2 class="novelty-title entry-title">Новинки уже в продаже</h2>
 
     <div class="carousel">
 
@@ -67,13 +65,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - РєРѕРјРїР»РµРєС‚ РёРЅРґРёРєР°С‚РѕСЂРѕРІ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕРєСЂСѓР¶Р°СЋС‰РµР№ СЃСЂРµРґС‹</figcaption>
+                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
             </figure>
         </a>
         <div class="product-price">7 980, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -82,13 +80,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° Jawbone Mini Jambox Blue Diamond</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
             </figure>
         </a>
         <div class="product-price">4 990, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -97,13 +95,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">РџРѕСЂС‚Р°С‚РёРІРЅР°СЏ Bluetooth-Р°РєСѓСЃС‚РёРєР° JBL Flip2 РґР»СЏ iPhone / iPod / iPad / Android Р±РµР»Р°СЏ</figcaption>
+                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
             </figure>
         </a>
         <div class="product-price">4 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -112,13 +110,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Lemon Lime (Р›РёРјРѕРЅРЅС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
             </figure>
         </a>
         <div class="product-price">6 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -127,13 +125,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - РєРѕРјРїР»РµРєС‚ РёРЅРґРёРєР°С‚РѕСЂРѕРІ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕРєСЂСѓР¶Р°СЋС‰РµР№ СЃСЂРµРґС‹</figcaption>
+                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
             </figure>
         </a>
         <div class="product-price">7 980, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -142,13 +140,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° Jawbone Mini Jambox Blue Diamond</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
             </figure>
         </a>
         <div class="product-price">4 990, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -157,13 +155,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">РџРѕСЂС‚Р°С‚РёРІРЅР°СЏ Bluetooth-Р°РєСѓСЃС‚РёРєР° JBL Flip2 РґР»СЏ iPhone / iPod / iPad / Android Р±РµР»Р°СЏ</figcaption>
+                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
             </figure>
         </a>
         <div class="product-price">4 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -172,13 +170,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Lemon Lime (Р›РёРјРѕРЅРЅС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
             </figure>
         </a>
         <div class="product-price">6 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -187,13 +185,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - РєРѕРјРїР»РµРєС‚ РёРЅРґРёРєР°С‚РѕСЂРѕРІ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕРєСЂСѓР¶Р°СЋС‰РµР№ СЃСЂРµРґС‹</figcaption>
+                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
             </figure>
         </a>
         <div class="product-price">7 980, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -202,13 +200,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° Jawbone Mini Jambox Blue Diamond</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
             </figure>
         </a>
         <div class="product-price">4 990, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -217,13 +215,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">РџРѕСЂС‚Р°С‚РёРІРЅР°СЏ Bluetooth-Р°РєСѓСЃС‚РёРєР° JBL Flip2 РґР»СЏ iPhone / iPod / iPad / Android Р±РµР»Р°СЏ</figcaption>
+                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
             </figure>
         </a>
         <div class="product-price">4 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -232,13 +230,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Lemon Lime (Р›РёРјРѕРЅРЅС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
             </figure>
         </a>
         <div class="product-price">6 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -247,13 +245,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - РєРѕРјРїР»РµРєС‚ РёРЅРґРёРєР°С‚РѕСЂРѕРІ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕРєСЂСѓР¶Р°СЋС‰РµР№ СЃСЂРµРґС‹</figcaption>
+                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
             </figure>
         </a>
         <div class="product-price">7 980, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -262,13 +260,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° Jawbone Mini Jambox Blue Diamond</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
             </figure>
         </a>
         <div class="product-price">4 990, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -277,13 +275,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">РџРѕСЂС‚Р°С‚РёРІРЅР°СЏ Bluetooth-Р°РєСѓСЃС‚РёРєР° JBL Flip2 РґР»СЏ iPhone / iPod / iPad / Android Р±РµР»Р°СЏ</figcaption>
+                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
             </figure>
         </a>
         <div class="product-price">4 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -292,23 +290,23 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Lemon Lime (Р›РёРјРѕРЅРЅС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
             </figure>
         </a>
         <div class="product-price">6 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
     </div>
 
     </section>
-    <!-- /РЅРѕРІРёРЅРєРё -->
+    <!-- /новинки -->
 
-    <!-- С…РёС‚ РїСЂРѕРґР°Р¶ -->
+    <!-- хит продаж -->
     <section class="hit-sales main-section">
-    <h2 class="novelty-title entry-title">XРёС‚ РїСЂРѕРґР°Р¶</h2>
+    <h2 class="novelty-title entry-title">Xит продаж</h2>
 
     <div class="carousel">
 
@@ -317,13 +315,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Persimmon (РћСЂР°РЅР¶РµРІС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
             </figure>
         </a>
         <div class="product-price">4 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -332,13 +330,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Р–РµР»С‚С‹Р№) MF093RU/A</figcaption>
+                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
             </figure>
         </a>
         <div class="product-price">23 900, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -347,13 +345,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° JBL Pulse</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
             </figure>
         </a>
         <div class="product-price">7 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -362,13 +360,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р Р°РґРёРѕСѓРїСЂР°РІР»СЏРµРјС‹Р№ РІРµР·РґРµС…РѕРґ Brookstone Rover Revolution</figcaption>
+                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
             </figure>
         </a>
         <div class="product-price">6 090, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -377,13 +375,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Persimmon (РћСЂР°РЅР¶РµРІС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
             </figure>
         </a>
         <div class="product-price">4 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -392,13 +390,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Р–РµР»С‚С‹Р№) MF093RU/A</figcaption>
+                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
             </figure>
         </a>
         <div class="product-price">23 900, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -407,13 +405,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° JBL Pulse</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
             </figure>
         </a>
         <div class="product-price">7 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -422,13 +420,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р Р°РґРёРѕСѓРїСЂР°РІР»СЏРµРјС‹Р№ РІРµР·РґРµС…РѕРґ Brookstone Rover Revolution</figcaption>
+                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
             </figure>
         </a>
         <div class="product-price">6 090, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -437,13 +435,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Persimmon (РћСЂР°РЅР¶РµРІС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
             </figure>
         </a>
         <div class="product-price">4 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -452,13 +450,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Р–РµР»С‚С‹Р№) MF093RU/A</figcaption>
+                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
             </figure>
         </a>
         <div class="product-price">23 900, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -467,13 +465,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° JBL Pulse</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
             </figure>
         </a>
         <div class="product-price">7 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -482,13 +480,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р Р°РґРёРѕСѓРїСЂР°РІР»СЏРµРјС‹Р№ РІРµР·РґРµС…РѕРґ Brookstone Rover Revolution</figcaption>
+                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
             </figure>
         </a>
         <div class="product-price">6 090, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -497,13 +495,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘СЂР°СЃР»РµС‚ Jawbone Up24 Persimmon (РћСЂР°РЅР¶РµРІС‹Р№) M</figcaption>
+                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
             </figure>
         </a>
         <div class="product-price">4 490, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -512,13 +510,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Р–РµР»С‚С‹Р№) MF093RU/A</figcaption>
+                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
             </figure>
         </a>
         <div class="product-price">23 900, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -527,13 +525,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р‘РµСЃРїСЂРѕРІРѕРґРЅР°СЏ Р°РєСѓСЃС‚РёС‡РµСЃРєР°СЏ СЃРёСЃС‚РµРјР° JBL Pulse</figcaption>
+                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
             </figure>
         </a>
         <div class="product-price">7 290, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
 
@@ -542,26 +540,26 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <a href="#" class="product-link">
             <figure class="product-content">
                 <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Р Р°РґРёРѕСѓРїСЂР°РІР»СЏРµРјС‹Р№ РІРµР·РґРµС…РѕРґ Brookstone Rover Revolution</figcaption>
+                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
             </figure>
         </a>
         <div class="product-price">6 090, -</div>
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="РљСѓРїРёС‚СЊ" />
-            <a href="#" class="button-credit">Р’ РєСЂРµРґРёС‚</a>
+            <input type="submit" class="button-buy" value="Купить" />
+            <a href="#" class="button-credit">В кредит</a>
         </div>
     </div>
     </div>
 
     </section>
-    <!-- /С…РёС‚ РїСЂРѕРґР°Р¶ -->
+    <!-- /хит продаж -->
 
-    <!-- РіРґРµ РєСѓРїРёС‚СЊ iPhone? -->
+    <!-- где купить iPhone? -->
     <section class="advantage main-section">
-        <h2 class="entry-title">РіРґРµ РєСѓРїРёС‚СЊ iPhone?</h2>
+        <h2 class="entry-title">где купить iPhone?</h2>
         <h3 class="advantage-subtitle entry-subtitle">
-            РџРѕС‡РµРјСѓ РјРЅРѕР¶РµСЃС‚РІРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ С‚РµС…РЅРёРєРё Apple РЅРµ С‚РѕР»СЊРєРѕ РІ РњРѕСЃРєРІРµ, РЅРѕ Рё РїРѕ РІСЃРµР№ Р РѕСЃСЃРёРё<br /> РїСЂРµРґРїРѕС‡РёС‚Р°СЋС‚ РїРѕРєСѓРїР°С‚СЊ РІ РЅР°С€РµРј РјР°РіР°Р·РёРЅРµ?
-            РЈ РЅР°СЃ РµСЃС‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ РІРµСЃРѕРјС‹С… Р°СЂРіСѓРјРµРЅС‚РѕРІ:
+            Почему множество пользователей техники Apple не только в Москве, но и по всей России<br /> предпочитают покупать в нашем магазине?
+            У нас есть несколько весомых аргументов:
         </h3>
 
         <div class="clearfix">
@@ -569,7 +567,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="advantage-item">
                 <div class="advantage-num">1</div>
                 <div class="advantage-content">
-                    Р’Рѕ-РїРµСЂРІС‹С…, РјС‹ РїСЂРѕРґР°РµРј С‚РѕР»СЊРєРѕ РЅРѕРІСѓСЋ Рё РѕСЂРёРіРёРЅР°Р»СЊРЅСѓСЋ РїСЂРѕРґСѓРєС†РёСЋ Apple, РІСЃСЏ С‚РµС…РЅРёРєР°, РїСЂРѕРґР°РІР°РµРјР°СЏ РЅР°РјРё, РЅРµ РёРјРµРµС‚ РЅРёРєР°РєРёС… РѕРіСЂР°РЅРёС‡РµРЅРёР№ РїРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЋ РЅР° С‚РµСЂСЂРёС‚РѕСЂРёРё Р РѕСЃСЃРёРё! РњРЅРѕРіРёРµ СЃС‚Р°Р»РєРёРІР°Р»РёСЃСЊ СЃ В«Р·Р°Р»РѕС‡РµРЅРЅС‹РјРёВ» Р°Р№С„РѕРЅР°РјРё (СЂР°Р±РѕС‚Р°СЋС‰РёРјРё С‚РѕР»СЊРєРѕ СЃ СЃРёРј-РєР°СЂС‚Р°РјРё РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ РѕРїРµСЂР°С‚РѕСЂР° СЃРІСЏР·Рё), РєРѕС‚РѕСЂС‹Рµ РїСЂРѕРґР°СЋС‚ В«РјР°РіР°Р·РёРЅС‹-РѕРґРЅРѕРґРЅРµРІРєРёВ», РґРѕСЃС‚Р°РІР»СЏСЏ РєСѓС‡Сѓ РїСЂРѕР±Р»РµРј СЃРІРѕРёРј РєР»РёРµРЅС‚Р°Рј. РќР°С€ РјР°РіР°Р·РёРЅ РїСЂРѕРґР°РµС‚ С‚РѕР»СЊРєРѕ В«РЅРµРїСЂРёРІСЏР·Р°РЅРЅС‹РµВ» С‚РµР»РµС„РѕРЅС‹, С‚Рѕ РµСЃС‚СЊ SIM-FREE iPhone. РљСѓРїРёС‚СЊ В«Р°Р№С„РѕРЅВ» РІ Up-House.ru, Р·РЅР°С‡РёС‚ Р±С‹С‚СЊ СѓРІРµСЂРµРЅРЅС‹Рј РІ С‚РѕРј, С‡С‚Рѕ Р’Р°С€ iPhone РёР»Рё iPad РІСЃРµРіРґР° Р±СѓРґСѓС‚ РѕР±РЅРѕРІР»СЏС‚СЊСЃСЏ С‡РµСЂРµР· РїСЂРѕРіСЂР°РјРјСѓ iTunes Рё СЂР°Р±РѕС‚Р°С‚СЊ СЃ Р»СЋР±С‹Рј GSM-РѕРїРµСЂР°С‚РѕСЂРѕРј Р»СЋР±РѕР№ СЃС‚СЂР°РЅС‹ РјРёСЂР°.
+                    Во-первых, мы продаем только новую и оригинальную продукцию Apple, вся техника, продаваемая нами, не имеет никаких ограничений по использованию на территории России! Многие сталкивались с «залоченными» айфонами (работающими только с сим-картами определенного оператора связи), которые продают «магазины-однодневки», доставляя кучу проблем своим клиентам. Наш магазин продает только «непривязанные» телефоны, то есть SIM-FREE iPhone. Купить «айфон» в Up-House.ru, значит быть уверенным в том, что Ваш iPhone или iPad всегда будут обновляться через программу iTunes и работать с любым GSM-оператором любой страны мира.
                 </div>
             </div>
 
@@ -577,7 +575,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="advantage-item">
                 <div class="advantage-num">2</div>
                 <div class="advantage-content">
-                    Р’Рѕ-РІС‚РѕСЂС‹С…, РІ РЅР°С€РµРј РјР°РіР°Р·РёРЅРµ РІСЃРµРіРґР° Р±РѕР»СЊС€РѕР№ РІС‹Р±РѕСЂ СЂР°Р·Р»РёС‡РЅС‹С… РјРѕРґРµР»РµР№ С‚РµР»РµС„РѕРЅРѕРІ iPhone 4/4S, iPhone 5/5РЎ/5S. Р’С‹ СЃРјРѕР¶РµС‚Рµ РєСѓРїРёС‚СЊ Р±РµР»С‹Р№, С‡РµСЂРЅС‹Р№ РёР»Рё С†РІРµС‚РЅРѕР№ iPhone, СЃ РѕР±СЉРµРјРѕРј РїР°РјСЏС‚Рё 8GB, 16GB, 32 РіРёРіР°Р±Р°Р№С‚Р° Рё РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ РјРѕРґРёС„РёРєР°С†РёСЋ СЃ 64Р“Р‘, Р РѕСЃС‚РµСЃС‚ СЃ РѕС„РёС†РёР°Р»СЊРЅРѕР№ РіР°СЂР°РЅС‚РёРµР№ Рё В«РµРІСЂРѕРїРµР№СЃРєСѓСЋВ» РІРµСЂСЃРёСЋ, РЅР° РєРѕС‚РѕСЂСѓСЋ РјС‹ РїСЂРµРґРѕСЃС‚Р°РІРёРј РіР°СЂР°РЅС‚РёСЋ 1 РіРѕРґ. РџРѕРјРёРјРѕ СЌС‚РѕРіРѕ, Р’С‹ РІСЃРµРіРґР° СЃРјРѕР¶РµС‚Рµ РїСЂРёРѕР±СЂРµСЃС‚Рё Р°РєСЃРµСЃСЃСѓР°СЂС‹ РґР»СЏ iPhone Рё iPad: С‡РµС…РѕР», Р°РІС‚РѕР·Р°СЂСЏРґРєСѓ, Р·Р°С‰РёС‚РЅСѓСЋ РїР»РµРЅРєСѓ, РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РєР°Р±РµР»Рё Рё Р·Р°СЂСЏРґРЅС‹Рµ СѓСЃС‚СЂРѕР№СЃС‚РІР°.
+                    Во-вторых, в нашем магазине всегда большой выбор различных моделей телефонов iPhone 4/4S, iPhone 5/5С/5S. Вы сможете купить белый, черный или цветной iPhone, с объемом памяти 8GB, 16GB, 32 гигабайта и максимальную модификацию с 64ГБ, Ростест с официальной гарантией и «европейскую» версию, на которую мы предоставим гарантию 1 год. Помимо этого, Вы всегда сможете приобрести аксессуары для iPhone и iPad: чехол, автозарядку, защитную пленку, дополнительные кабели и зарядные устройства.
                 </div>
             </div>
 
@@ -585,7 +583,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="advantage-item">
                 <div class="advantage-num">3</div>
                 <div class="advantage-content">
-                    Р’-С‚СЂРµС‚СЊРёС…, РЅР°С€Р° С†РµРЅРѕРІР°СЏ РїРѕР»РёС‚РёРєР° Р·Р°С‡Р°СЃС‚СѓСЋ РІС‹Р·С‹РІР°РµС‚ СѓРґРёРІР»РµРЅРёРµ РЅРµ С‚РѕР»СЊРєРѕ Сѓ РєР»РёРµРЅС‚РѕРІ, РЅРѕ Рё Сѓ РєРѕРЅРєСѓСЂРµРЅС‚РѕРІ! РќР°СЃ РѕС‡РµРЅСЊ С‡Р°СЃС‚Рѕ СЃРїСЂР°С€РёРІР°СЋС‚ РїРѕ СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ РїРѕС‡С‚Рµ Рё РїРѕ С‚РµР»РµС„РѕРЅСѓ: В«РџРѕС‡РµРјСѓ РІ Р’Р°С€РµРј РјР°РіР°Р·РёРЅРµ iPhone СЃС‚РѕРёС‚ С‚Р°Рє РґРµС€РµРІРѕ? РќРµ Р±СѓРґРµС‚ Р»Рё СЃ РЅРёРј РїСЂРѕР±Р»РµРј?В». Р•РґРёРЅСЃС‚РІРµРЅРЅРѕРµ, С‡С‚Рѕ РјС‹ РјРѕР¶РµРј СЃРєР°Р·Р°С‚СЊ РЅР° С‚Р°РєРёРµ РІРѕРїСЂРѕСЃС‹ вЂ” РЅРµ С‚Р°Рє СЃР»РѕР¶РЅРѕ РєСѓРїРёС‚СЊ iPhone РЅРµРґРѕСЂРѕРіРѕ, РІР°Р¶РЅРѕ РїСЂР°РІРёР»СЊРЅРѕ РІС‹Р±СЂР°С‚СЊ РјР°РіР°Р·РёРЅ. РњС‹ СЂР°Р±РѕС‚Р°РµРј С‚РѕР»СЊРєРѕ СЃ РїСЂРѕРІРµСЂРµРЅРЅС‹РјРё РїРѕСЃС‚Р°РІС‰РёРєР°РјРё, Сѓ РЅР°СЃ РЅРµ РІРѕР·РЅРёРєР°РµС‚ РїСЂРѕР±Р»РµРј СЃ Р·Р°РјРµРЅРѕР№ РёР»Рё СЂРµРјРѕРЅС‚РѕРј iPhone РїРѕ РіР°СЂР°РЅС‚РёРё, Сѓ РЅР°СЃ РЅРµС‚ РѕРіСЂРѕРјРЅС‹С… СЂР°СЃС…РѕРґРѕРІ РЅР° СЂРµРєР»Р°РјСѓ Рё Р°СЂРµРЅРґСѓ С€РёРєР°СЂРЅРѕРіРѕ РѕС„РёСЃР° вЂ” РїРѕСЌС‚РѕРјСѓ РЅР°С€Рё iPhone Рё iPad РїСЂРѕРґР°СЋС‚СЃСЏ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ РґРµС€РµРІРѕ, РїРѕ СЃСЂР°РІРЅРµРЅРёСЋ СЃ РґСЂСѓРіРёРјРё РёРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅР°РјРё Рё РєСЂСѓРїРЅС‹РјРё С‚РѕСЂРіРѕРІС‹РјРё СЃРµС‚СЏРјРё!
+                    В-третьих, наша ценовая политика зачастую вызывает удивление не только у клиентов, но и у конкурентов! Нас очень часто спрашивают по электронной почте и по телефону: «Почему в Вашем магазине iPhone стоит так дешево? Не будет ли с ним проблем?». Единственное, что мы можем сказать на такие вопросы — не так сложно купить iPhone недорого, важно правильно выбрать магазин. Мы работаем только с проверенными поставщиками, у нас не возникает проблем с заменой или ремонтом iPhone по гарантии, у нас нет огромных расходов на рекламу и аренду шикарного офиса — поэтому наши iPhone и iPad продаются действительно дешево, по сравнению с другими интернет магазинами и крупными торговыми сетями!
                 </div>
             </div>
 
@@ -593,12 +591,12 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="advantage-item">
                 <div class="advantage-num">4</div>
                 <div class="advantage-content">
-                    Р’-С‡РµС‚РІРµСЂС‚С‹С…, РјС‹ Р·Р°Р±РѕС‚РёРјСЃСЏ Рѕ СЃРІРѕРµРј РєР»РёРµРЅС‚Рµ! Р”Р°Р¶Рµ РµСЃР»Рё Р’С‹ РЅРµ СЃРѕР±РёСЂР°РµС‚РµСЃСЊ РїРѕРєСѓРїР°С‚СЊ В«Р°Р№С„РѕРЅВ» РІ РЅР°С€РµРј РјР°РіР°Р·РёРЅРµ, РЅРѕ Сѓ Р’Р°СЃ РµСЃС‚СЊ РІРѕРїСЂРѕСЃ вЂ” РїРѕР·РІРѕРЅРёС‚Рµ, Рё РјС‹ РіСЂР°РјРѕС‚РЅРѕ РїСЂРѕРєРѕРЅСЃСѓР»СЊС‚РёСЂСѓРµРј Р’Р°СЃ! РњС‹ РІСЃРµРіРґР° РїРѕРјРѕРіР°РµРј РЅР°С€РёРј РєР»РёРµРЅС‚Р°Рј СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РїСЂРѕРіСЂР°РјРјС‹ Рё РёРіСЂС‹ РЅР° iPhone РёР»Рё iPad, РїСЂРё СЌС‚РѕРј РјС‹ Р»РёР±Рѕ СЂР°СЃСЃРєР°Р¶РµРј, РєР°Рє СЌС‚Рѕ СЃРґРµР»Р°С‚СЊ СЃР°РјРѕРјСѓ, Р»РёР±Рѕ Р±РµСЃРїР»Р°С‚РЅРѕ В«РїСЂРѕРєР°С‡Р°РµРјВ» Р’Р°С€ С‚РµР»РµС„РѕРЅ РёР»Рё РїР»Р°РЅС€РµС‚ РїСЂРё РїРѕРєСѓРїРєРµ РІ РЅР°С€РµРј РјР°РіР°Р·РёРЅРµ! Р”Р»СЏ РЅР°СЃ РѕС‡РµРЅСЊ РІР°Р¶РЅРѕ, С‡С‚РѕР±С‹ Р’С‹ РѕСЃС‚Р°Р»РёСЃСЊ РґРѕРІРѕР»СЊРЅС‹ РїРѕРєСѓРїРєРѕР№. РњРЅРѕРіРёРµ РєР»РёРµРЅС‚С‹ РїСЂРёС…РѕРґСЏС‚ Рє РЅР°Рј РїРѕ СЂРµРєРѕРјРµРЅРґР°С†РёРё РґСЂСѓР·РµР№, РІРµРґСЊ РїРѕРјРѕС‰СЊ РЅР°С‡РёРЅР°СЋС‰РµРјСѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ РѕРєР°Р·С‹РІР°СЋС‚ РґР°Р»РµРєРѕ РЅРµ РІСЃРµ РјР°РіР°Р·РёРЅС‹.
+                    В-четвертых, мы заботимся о своем клиенте! Даже если Вы не собираетесь покупать «айфон» в нашем магазине, но у Вас есть вопрос — позвоните, и мы грамотно проконсультируем Вас! Мы всегда помогаем нашим клиентам установить программы и игры на iPhone или iPad, при этом мы либо расскажем, как это сделать самому, либо бесплатно «прокачаем» Ваш телефон или планшет при покупке в нашем магазине! Для нас очень важно, чтобы Вы остались довольны покупкой. Многие клиенты приходят к нам по рекомендации друзей, ведь помощь начинающему пользователю оказывают далеко не все магазины.
                 </div>
             </div>
         </div>
     </section>
-    <!-- /РіРґРµ РєСѓРїРёС‚СЊ iPhone? -->
+    <!-- /где купить iPhone? -->
 
     </div>
     </div>

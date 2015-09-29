@@ -3,26 +3,29 @@ IncludeTemplateLangFile(__FILE__); ?>
 <!DOCTYPE html>
 <html class="no-js home">
 <head>
-    <meta charset="utf-8">
+<!--    <meta charset="utf-8">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Iphone Р·Р°РіРѕР»РѕРІРѕРє</title>
-    <meta name="description" content="Iphone РѕРїРёСЃР°РЅРёРµ">
+    <title>Iphone заголовок</title>
+    <meta name="description" content="Iphone описание">
     <meta name="viewport" content="width=device-width">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/jquery.bxslider.css" rel="stylesheet" />
-    <link href="css/main.less" rel="stylesheet/less" />
+    <link href="<?=SITE_TEMPLATE_PATH?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="<?=SITE_TEMPLATE_PATH?>/css/main.less" rel="stylesheet/less" />
 
-    <script src="js/less-1.7.3.min.js" type="text/javascript"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?>/js/less-1.7.3.min.js" type="text/javascript"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?>/js/modernizr-2.6.2.min.js"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <? $APPLICATION->ShowHead(); ?>
 </head>
 <body>
+<div id="panel"><?$APPLICATION->ShowPanel();?></div>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -37,7 +40,7 @@ IncludeTemplateLangFile(__FILE__); ?>
             <div class="header-section">
                 <!-- logo -->
                 <a href="/">
-                    <img src="img/logo.png" alt="iphone" title="iphone" />
+                    <img src="<?=SITE_TEMPLATE_PATH?>/img/logo.png" alt="iphone" title="iphone" />
                 </a>
             </div>
             <div class="header-section-2">
@@ -65,12 +68,12 @@ IncludeTemplateLangFile(__FILE__); ?>
                 <div class="vertical-line"></div>
                 <!-- menu pages -->
                 <nav class="menu-page-block" role="navigation">
-                    <a href="#" class="menu-page-item">РћР±СЂР°С‚РЅС‹Р№ Р·РІРѕРЅРѕРє</a>
-                    <a href="#" class="menu-page-item">РќРѕРІРѕСЃС‚Рё</a>
-                    <a href="#" class="menu-page-item">РћРїР»Р°С‚Р°</a>
-                    <a href="#" class="menu-page-item">Р”РѕСЃС‚Р°РІРєР°</a>
-                    <a href="#" class="menu-page-item">РљСЂРµРґРёС‚</a>
-                    <a href="#" class="menu-page-item">Р“Р°СЂР°РЅС‚РёСЏ</a>
+                    <a href="#" class="menu-page-item">Обратный звонок</a>
+                    <a href="#" class="menu-page-item">Новости</a>
+                    <a href="#" class="menu-page-item">Оплата</a>
+                    <a href="#" class="menu-page-item">Доставка</a>
+                    <a href="#" class="menu-page-item">Кредит</a>
+                    <a href="#" class="menu-page-item">Гарантия</a>
                 </nav>
 
                 <div class="clearfix">
@@ -81,15 +84,15 @@ IncludeTemplateLangFile(__FILE__); ?>
                         </div>
 
                         <div class="vcard">
-                            <div class="workhours">РїРЅ-РїС‚ СЃ 09:00 РґРѕ 20:00</div>
-                            <div class="workhours">СЃР±-РІСЃ СЃ 10:00 РґРѕ 19:00</div>
+                            <div class="workhours">пн-пт с 09:00 до 20:00</div>
+                            <div class="workhours">сб-вс с 10:00 до 19:00</div>
                         </div>
                     </div>
 
                     <div class="header-section-5 pull-left">
-                        <div class="cart pull-left">РџРѕРєР° РїСѓСЃС‚Рѕ :(</div>
+                        <div class="cart pull-left">Пока пусто :(</div>
                         <div class="search-block pull-left">
-                            <input type="search" class="search-input" placeholder="РїРѕРёСЃРє" />
+                            <input type="search" class="search-input" placeholder="поиск" />
                             <input type="submit" class="search-button" value="" />
                         </div>
                     </div>
@@ -131,37 +134,37 @@ IncludeTemplateLangFile(__FILE__); ?>
                                     <a href="#" class="submenu-three-catalog-link">iPhone 5S Gold</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S РЎРІРµС‚РѕСЏР±Р»РѕРєРѕ</a>
+                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S Светояблоко</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S Р¦РІРµС‚РЅРѕР№</a>
+                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S Цветной</a>
                                 </li>
                             </ul>
                             <!-- /submenu three -->
                         </li>
                         <li class="submenu-catalog-item">
-                            <a href="#" class="submenu-catalog-link">РђРєСЃРµСЃСЃСѓР°СЂС‹ РґР»СЏ iPhone 5S</a>
+                            <a href="#" class="submenu-catalog-link">Аксессуары для iPhone 5S</a>
 
                             <!-- submenu three -->
                             <span class="glyphicon glyphicon-chevron-right"></span>
                             <ul class="submenu-three-catalog js-submenu-three-catalog">
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">Р—Р°С‰РёС‚РЅС‹Рµ РїР»РµРЅРєРё РґР»СЏ iPhone 5S</a>
+                                    <a href="#" class="submenu-three-catalog-link">Защитные пленки для iPhone 5S</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">РђРєСЃРµСЃСЃСѓР°СЂС‹ РґР»СЏ Р°РІС‚РѕРјРѕР±РёР»СЏ РґР»СЏ iPhone 5S</a>
+                                    <a href="#" class="submenu-three-catalog-link">Аксессуары для автомобиля для iPhone 5S</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">Р’РЅРµС€РЅРёРµ Р°РєРєСѓРјСѓР»СЏС‚РѕСЂС‹ РґР»СЏ iPhone 5S</a>
+                                    <a href="#" class="submenu-three-catalog-link">Внешние аккумуляторы для iPhone 5S</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">Р—Р°СЂСЏРґРЅС‹Рµ СѓСЃС‚СЂРѕР№СЃС‚РІР° Рё РґРѕРє-СЃС‚Р°РЅС†РёРё РґР»СЏ iPhone 5S</a>
+                                    <a href="#" class="submenu-three-catalog-link">Зарядные устройства и док-станции для iPhone 5S</a>
                                 </li>
                             </ul>
                             <!-- /submenu three -->
                         </li>
                         <li class="submenu-catalog-item">
-                            <a href="#" class="submenu-catalog-link">Р§РµС…Р»С‹ РґР»СЏ iPhone 5S</a>
+                            <a href="#" class="submenu-catalog-link">Чехлы для iPhone 5S</a>
                         </li>
                     </ul>
                     <!-- /submenu -->
@@ -178,7 +181,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                             <a href="#" class="submenu-catalog-link">iPhone 5C 32gb</a>
                         </li>
                         <li class="submenu-catalog-item">
-                            <a href="#" class="submenu-catalog-link">РђРєСЃРµСЃСЃСѓР°СЂС‹ РґР»СЏ iPhone 5C</a>
+                            <a href="#" class="submenu-catalog-link">Аксессуары для iPhone 5C</a>
 
                             <!-- submenu three -->
                             <span class="glyphicon glyphicon-chevron-right"></span>
@@ -190,16 +193,16 @@ IncludeTemplateLangFile(__FILE__); ?>
                                     <a href="#" class="submenu-three-catalog-link">iPhone 5S Gold</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S РЎРІРµС‚РѕСЏР±Р»РѕРєРѕ</a>
+                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S Светояблоко</a>
                                 </li>
                                 <li class="submenu-three-catalog-item">
-                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S Р¦РІРµС‚РЅРѕР№</a>
+                                    <a href="#" class="submenu-three-catalog-link">iPhone 5S Цветной</a>
                                 </li>
                             </ul>
                             <!-- /submenu three -->
                         </li>
                         <li class="submenu-catalog-item">
-                            <a href="#" class="submenu-catalog-link">Р§РµС…Р»С‹ РґР»СЏ iPhone 5C</a>
+                            <a href="#" class="submenu-catalog-link">Чехлы для iPhone 5C</a>
                         </li>
                     </ul>
                     <!-- /submenu -->
@@ -224,10 +227,10 @@ IncludeTemplateLangFile(__FILE__); ?>
                             <a href="#" class="submenu-catalog-link">iPhone 5 VIP</a>
                         </li>
                         <li class="submenu-catalog-item">
-                            <a href="#" class="submenu-catalog-link">iPhone 5 С†РІРµС‚РЅРѕР№</a>
+                            <a href="#" class="submenu-catalog-link">iPhone 5 цветной</a>
                         </li>
                         <li class="submenu-catalog-item">
-                            <a href="#" class="submenu-catalog-link">Р‘Р°РјРїРµСЂС‹ РґР»СЏ iPhone 5</a>
+                            <a href="#" class="submenu-catalog-link">Бамперы для iPhone 5</a>
                         </li>
                     </ul>
                     <!-- /submenu -->
@@ -265,13 +268,13 @@ IncludeTemplateLangFile(__FILE__); ?>
                     <a href="#" class="menu-catalog-item">iMac</a>
                 </li>
                 <li class="menu-catalog-list-item">
-                    <a href="#" class="menu-catalog-item">Р“Р°РґР¶РµС‚С‹</a>
+                    <a href="#" class="menu-catalog-item">Гаджеты</a>
                 </li>
                 <li class="menu-catalog-list-item">
-                    <a href="#" class="menu-catalog-item">Р‘СЂРµРЅРґС‹</a>
+                    <a href="#" class="menu-catalog-item">Бренды</a>
                 </li>
                 <li class="menu-catalog-list-item">
-                    <a href="#" class="menu-catalog-item current">РЎРєРёРґРєРё</a>
+                    <a href="#" class="menu-catalog-item current">Скидки</a>
                 </li>
             </ul>
         </nav>
@@ -284,51 +287,51 @@ IncludeTemplateLangFile(__FILE__); ?>
     <ul class="bxslider">
         <!-- 1 slide -->
         <li>
-            <img src="img/slider/slider.jpg" />
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider.jpg" />
             <div class="bx-caption">
                 <h2 class="slider-title">Jawbone UP24</h2>
                 <div class="slider-content">
-                    СЃР»РµРґРёС‚СЊ Р·Р° Р·РґРѕСЂРѕРІСЊРµРј<br />СЃС‚Р°Р»Рѕ РµС‰Рµ РїСЂРѕС‰Рµ
+                    следить за здоровьем<br />стало еще проще
                 </div>
-                <a href="#" class="slider-button">Р—Р°РєР°Р·Р°С‚СЊ</a>
+                <a href="#" class="slider-button">Заказать</a>
             </div>
         </li>
 
         <!-- 2 slide -->
         <li>
-            <img src="img/slider/slider-2.jpg" />
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider-2.jpg" />
             <div class="bx-caption">
                 <h2 class="slider-title">iPad mini</h2>
                 <div class="slider-content">
-                    СЃ РґРёСЃРїР»РµРµРј Retina<br /> СѓР¶Рµ РІ РїСЂРѕРґР°Р¶Рµ
+                    с дисплеем Retina<br /> уже в продаже
                 </div>
-                <a href="#" class="slider-button">Р—Р°РєР°Р·Р°С‚СЊ</a>
+                <a href="#" class="slider-button">Заказать</a>
             </div>
         </li>
 
         <!-- 3 slide -->
         <li>
-            <img src="img/slider/slider.jpg" />
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider.jpg" />
             <div class="bx-caption">
                 <h2 class="slider-title">Jawbone UP24</h2>
                 <div class="slider-content">
-                    СЃР»РµРґРёС‚СЊ Р·Р° Р·РґРѕСЂРѕРІСЊРµРј<br />
-                    СЃС‚Р°Р»Рѕ РµС‰Рµ РїСЂРѕС‰Рµ
+                    следить за здоровьем<br />
+                    стало еще проще
                 </div>
-                <a href="#" class="slider-button">Р—Р°РєР°Р·Р°С‚СЊ</a>
+                <a href="#" class="slider-button">Заказать</a>
             </div>
         </li>
 
         <!-- 4 slide -->
         <li>
-            <img src="img/slider/slider-2.jpg" />
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider-2.jpg" />
             <div class="bx-caption">
                 <h2 class="slider-title">iPad mini</h2>
                 <div class="slider-content">
-                    СЃ РґРёСЃРїР»РµРµРј Retina<br />
-                    СѓР¶Рµ РІ РїСЂРѕРґР°Р¶Рµ
+                    с дисплеем Retina<br />
+                    уже в продаже
                 </div>
-                <a href="#" class="slider-button">Р—Р°РєР°Р·Р°С‚СЊ</a>
+                <a href="#" class="slider-button">Заказать</a>
             </div>
         </li>
     </ul>
