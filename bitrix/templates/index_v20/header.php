@@ -3,7 +3,6 @@ IncludeTemplateLangFile(__FILE__); ?>
 <!DOCTYPE html>
 <html class="no-js home">
 <head>
-<!--    <meta charset="utf-8">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Iphone заголовок</title>
     <meta name="description" content="Iphone описание">
@@ -55,10 +54,10 @@ IncludeTemplateLangFile(__FILE__); ?>
 
                     <!-- social button -->
                     <div class="social-button-block">
-                        <a href="#" class="social-icon instagram" title="instagram"></a>
-                        <a href="#" class="social-icon facebook" title="facebook"></a>
-                        <a href="#" class="social-icon vk" title="vk"></a>
-                        <a href="#" class="social-icon twitter" title="twitter"></a>
+                        <a href="http://instagram.com/uphouseru" class="social-icon instagram" title="instagram"></a>
+                        <a href="https://www.facebook.com/uphouseru" class="social-icon facebook" title="facebook"></a>
+                        <a href="https://vk.com/uphouseru" class="social-icon vk" title="vk"></a>
+                        <a href="https://twitter.com/uphouseru" class="social-icon twitter" title="twitter"></a>
                     </div>
                 </div>
             </div>
@@ -68,7 +67,12 @@ IncludeTemplateLangFile(__FILE__); ?>
                 <div class="vertical-line"></div>
                 <!-- menu pages -->
                 <nav class="menu-page-block" role="navigation">
-                    <a href="#" class="menu-page-item">Обратный звонок</a>
+                    <a id="call_back" href="#" class="menu-page-item">Обратный звонок</a>
+                    <div id="call_back_form" style="padding: 15px; margin: 0;">
+                        <span>Ваш телефон</span> <input class="input_phone" id="cb_phone">
+                        <br>
+                        <div class="call_back_button">Перезвоните мне</div>
+                    </div>
                     <a href="#" class="menu-page-item">Новости</a>
                     <a href="#" class="menu-page-item">Оплата</a>
                     <a href="#" class="menu-page-item">Доставка</a>

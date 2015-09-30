@@ -35,6 +35,7 @@
 <script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
 
 <!-- slider script -->
@@ -98,6 +99,41 @@
         });
 
     });
+    // обработчик спрятать/показать форму обратной связи
+    $('#call_back').bind("click", function(){
+        var bFlagShowed = $("#call_back_form").css('display') == 'block';console.log(bFlagShowed);
+        if(!bFlagShowed)
+            $('#call_back_form').show();
+
+        $("#call_back_form").animate({
+            height: (bFlagShowed ? '0px' : '90px'),
+            opacity: (bFlagShowed ? '0' : '1'),
+            'padding-top': (bFlagShowed ? '0px' : '15px'),
+            'padding-bottom': (bFlagShowed ? '0px' : '15px')
+        }, 500, function() {
+            if(bFlagShowed)
+                $('#call_back_form').hide();
+        });
+
+    });
+
+    // обработчки нажатия кнопки "перезвоните мне"
+    $('.call_back_button').click(function(){
+        if($('#cb_phone').val()!=''){
+            $.ajax({
+                type: "POST",
+                url: '/formrequest.php',
+                data: { phone:$('#cb_phone').val(), type:'callback' }
+            }).done( function(data){ alert('Ваша заявка отправлена, мы скоро вам перезвоним!'); });
+
+            $('#call_back').click();
+        }else{
+            alert('Нужно ввести номер телефона');
+        }
+    });
+
+    // маска для поля "телефон" в форме обртаной связи
+    $('#cb_phone').mask('+7 ?(999) 999-99-99');
 </script>
 
 
