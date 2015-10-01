@@ -106,10 +106,13 @@ IncludeTemplateLangFile(__FILE__); ?>
 
                     <div class="header-section-5 pull-left">
                         <div class="cart pull-left">Пока пусто :(</div>
-                        <div class="search-block pull-left">
-                            <input type="search" class="search-input" placeholder="поиск" />
-                            <input type="submit" class="search-button" value="" />
-                        </div>
+                        <?$APPLICATION->IncludeComponent("bitrix:search.form", "searchForm", array(
+                                "PAGE" => "/search/",
+                                "USE_SUGGEST" => "N"
+                            ),
+                            false
+                        );?>
+
                     </div>
                 </div>
             </div>
