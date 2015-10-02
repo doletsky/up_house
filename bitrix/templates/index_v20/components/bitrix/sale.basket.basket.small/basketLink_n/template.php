@@ -13,10 +13,11 @@
 <? endif ?>
 <? 
 	if($totalSumm == 0) 
-		$totalSumm = 'Ïóñòî';
+		$totalSumm = 'Ïîêà ïóñòî :(';
 	else
 		$totalSumm = number_format($totalSumm, 0, '', ' ') . ' ğ.';
 ?>
-	<div class="new_basket">
-		<a class="<?=((int)$totalSumm)?' basket_active':''?>" href="<?=$arParams["PATH_TO_BASKET"]?>"><?=$totalSumm?></a>
-	</div>
+<div class="cart pull-left" onclick="location.href='<?=$arParams["PATH_TO_BASKET"]?>'"><?=$totalSumm?></div>
+<!--	<div class="new_basket">-->
+<!--		<a class="--><?//=((int)$totalSumm)?' basket_active':''?><!--" href="--><?//=$arParams["PATH_TO_BASKET"]?><!--">--><?//=$totalSumm?><!--</a>-->
+<!--	</div>-->

@@ -105,7 +105,12 @@ IncludeTemplateLangFile(__FILE__); ?>
                     </div>
 
                     <div class="header-section-5 pull-left">
-                        <div class="cart pull-left">Пока пусто :(</div>
+                        <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.small", "basketLink_n", array(
+                                "PATH_TO_BASKET" => "/personal/basket/",
+                                "PATH_TO_ORDER" => "/personal/order/"
+                            ),
+                            false
+                        );?>
                         <?$APPLICATION->IncludeComponent("bitrix:search.form", "searchForm", array(
                                 "PAGE" => "/search/",
                                 "USE_SUGGEST" => "N"
@@ -155,59 +160,71 @@ IncludeTemplateLangFile(__FILE__); ?>
 </div>
 
 <!-- slider -->
-<div id="slider">
-    <ul class="bxslider">
-        <!-- 1 slide -->
-        <li>
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider.jpg" />
-            <div class="bx-caption">
-                <h2 class="slider-title">Jawbone UP24</h2>
-                <div class="slider-content">
-                    следить за здоровьем<br />стало еще проще
-                </div>
-                <a href="#" class="slider-button">Заказать</a>
-            </div>
-        </li>
-
-        <!-- 2 slide -->
-        <li>
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider-2.jpg" />
-            <div class="bx-caption">
-                <h2 class="slider-title">iPad mini</h2>
-                <div class="slider-content">
-                    с дисплеем Retina<br /> уже в продаже
-                </div>
-                <a href="#" class="slider-button">Заказать</a>
-            </div>
-        </li>
-
-        <!-- 3 slide -->
-        <li>
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider.jpg" />
-            <div class="bx-caption">
-                <h2 class="slider-title">Jawbone UP24</h2>
-                <div class="slider-content">
-                    следить за здоровьем<br />
-                    стало еще проще
-                </div>
-                <a href="#" class="slider-button">Заказать</a>
-            </div>
-        </li>
-
-        <!-- 4 slide -->
-        <li>
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider-2.jpg" />
-            <div class="bx-caption">
-                <h2 class="slider-title">iPad mini</h2>
-                <div class="slider-content">
-                    с дисплеем Retina<br />
-                    уже в продаже
-                </div>
-                <a href="#" class="slider-button">Заказать</a>
-            </div>
-        </li>
-    </ul>
-</div>
+    <?$APPLICATION->IncludeComponent("bitrix:catalog.section", "promoSlider", array(
+            "IBLOCK_TYPE" => "services",
+            "IBLOCK_ID" => "12",
+            "SECTION_ID" => "210",
+            "SECTION_CODE" => "",
+            "SECTION_USER_FIELDS" => array(
+                0 => "",
+                1 => "",
+            ),
+            "ELEMENT_SORT_FIELD" => "sort",
+            "ELEMENT_SORT_ORDER" => "asc",
+            "FILTER_NAME" => "arrFilter",
+            "INCLUDE_SUBSECTIONS" => "Y",
+            "SHOW_ALL_WO_SECTION" => "N",
+            "PAGE_ELEMENT_COUNT" => "30",
+            "LINE_ELEMENT_COUNT" => "3",
+            "PROPERTY_CODE" => array(
+                0 => "",
+                1 => "",
+            ),
+            "OFFERS_LIMIT" => "5",
+            "SECTION_URL" => "",
+            "DETAIL_URL" => "",
+            "BASKET_URL" => "/personal/basket.php",
+            "ACTION_VARIABLE" => "action",
+            "PRODUCT_ID_VARIABLE" => "id",
+            "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+            "PRODUCT_PROPS_VARIABLE" => "prop",
+            "SECTION_ID_VARIABLE" => "SECTION_ID",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "AJAX_OPTION_HISTORY" => "N",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "36000000",
+            "CACHE_GROUPS" => "Y",
+            "META_KEYWORDS" => "-",
+            "META_DESCRIPTION" => "-",
+            "BROWSER_TITLE" => "-",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "DISPLAY_COMPARE" => "N",
+            "SET_TITLE" => "N",
+            "SET_STATUS_404" => "N",
+            "CACHE_FILTER" => "N",
+            "PRICE_CODE" => array(
+            ),
+            "USE_PRICE_COUNT" => "N",
+            "SHOW_PRICE_COUNT" => "1",
+            "PRICE_VAT_INCLUDE" => "Y",
+            "PRODUCT_PROPERTIES" => array(
+            ),
+            "USE_PRODUCT_QUANTITY" => "N",
+            "CONVERT_CURRENCY" => "N",
+            "DISPLAY_TOP_PAGER" => "N",
+            "DISPLAY_BOTTOM_PAGER" => "Y",
+            "PAGER_TITLE" => "Товары",
+            "PAGER_SHOW_ALWAYS" => "Y",
+            "PAGER_TEMPLATE" => "",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "Y",
+            "AJAX_OPTION_ADDITIONAL" => ""
+        ),
+        false
+    );?>
 <!-- /slider -->
 </header>
 <!-- /header -->
