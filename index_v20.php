@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 ?>
+
    <!-- content -->
     <main id="main" role="main">
     <div class="container" id="page-home">
@@ -56,300 +57,268 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         ),
         false
     );?>
-<!--    <section class="news-reviews main-section">-->
-<!--        <div class="row">-->
-<!--            <div class="col-xs-9">-->
-<!--                <div>-->
-<!--                    <h2 class="news-reviews-title entry-title">Новости и обзоры</h2>-->
-<!--                    <div class="news-reviews-content">-->
-<!--                        <article class="news-reviews-item">-->
-<!--                            <time class="news-reviews-date" datetime="16.06.2014">16.06.2014</time>-->
-<!--                            <a href="#" class="news-reviews-text">Metal - будущее мобильной графики</a>-->
-<!--                        </article>-->
-<!---->
-<!--                        <article class="news-reviews-item">-->
-<!--                            <time class="news-reviews-date" datetime="15.06.2014">15.06.2014</time>-->
-<!--                            <a href="#" class="news-reviews-text">OS X Yosemite и iOS 8: на какие устройства можно установить новые ОС?</a>-->
-<!--                        </article>-->
-<!---->
-<!--                        <article class="news-reviews-item">-->
-<!--                            <time class="news-reviews-date" datetime="11.06.2014">11.06.2014</time>-->
-<!--                            <a href="#" class="news-reviews-text">График работы нашего магазина на июньские праздники</a>-->
-<!--                        </article>-->
-<!---->
-<!--                        <article class="news-reviews-item">-->
-<!--                            <time class="news-reviews-date" datetime="09.06.2014">09.06.2014</time>-->
-<!--                            <a href="#" class="news-reviews-text">HomeKit - «умный дом» под полным контролем</a>-->
-<!--                        </article>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="col-xs-3">-->
-<!---->
-<!--                <!-- подписаться -->-->
-<!--                <aside class="subscribe">-->
-<!--                    <div class="subscribe-content">-->
-<!--                        <div class="subscribe-title">Узнавайте первым<br /> о наших акциях</div>-->
-<!---->
-<!--                        <input type="text" class="subscribe-input" placeholder="имя" />-->
-<!--                        <input type="email" class="subscribe-input" placeholder="email" />-->
-<!--                        <input type="submit" class="subscribe-button" value="Подписаться" />-->
-<!--                    </div>-->
-<!--                </aside>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
     <!-- /новости и обзоры -->
 
     <!-- новинки -->
-    <section class="novelty main-section">
-    <h2 class="novelty-title entry-title">Новинки уже в продаже</h2>
-
-    <div class="carousel">
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 980, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 990, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 980, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 990, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 980, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 990, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 980, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 990, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-    </div>
-
-    </section>
+    <?$APPLICATION->IncludeComponent(
+        "apple-house:catalog.specialoffers",
+        "v20",
+        Array(
+            "IBLOCK_SPEC_TYPE" => "catalog",
+            "IBLOCK_SPEC_ID" => "15",
+            "IBLOCK_CAT_TYPE" => "1c_catalog",
+            "IBLOCK_CAT_ID" => "8",
+            "IBLOCK_SPEC_SECTION" => "241"
+        ),
+        false
+    );?>
+<!--    <section class="novelty main-section">-->
+<!--    <h2 class="novelty-title entry-title">Новинки уже в продаже</h2>-->
+<!---->
+<!--    <div class="carousel">-->
+<!---->
+<!--    <!-- 1 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">7 980, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 2 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 990, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 3 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 290, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 4 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">6 490, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 1 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">7 980, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 2 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 990, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 3 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 290, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 4 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">6 490, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 1 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">7 980, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 2 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 990, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 3 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 290, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 4 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">6 490, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 1 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-1.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Lapka PEM - комплект индикаторов состояния окружающей среды</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">7 980, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 2 slide -->-->
+<!--    <div class="slide">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-2.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Беспроводная акустическая система Jawbone Mini Jambox Blue Diamond</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 990, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 3 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-3.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Портативная Bluetooth-акустика JBL Flip2 для iPhone / iPod / iPad / Android белая</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">4 290, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <!-- 4 slide -->-->
+<!--    <div class="slide product-item">-->
+<!--        <a href="#" class="product-link">-->
+<!--            <figure class="product-content">-->
+<!--                <img src="img/carousel-4.jpg" alt="Lapka PEM" class="product-img" />-->
+<!--                <figcaption class="product-desc">Браслет Jawbone Up24 Lemon Lime (Лимонный) M</figcaption>-->
+<!--            </figure>-->
+<!--        </a>-->
+<!--        <div class="product-price">6 490, -</div>-->
+<!--        <div class="clearfix">-->
+<!--            <input type="submit" class="button-buy" value="Купить" />-->
+<!--            <a href="#" class="button-credit">В кредит</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
+<!---->
+<!--    </section>-->
     <!-- /новинки -->
 
     <!-- хит продаж -->

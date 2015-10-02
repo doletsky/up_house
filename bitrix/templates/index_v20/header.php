@@ -103,7 +103,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                             <div class="workhours">סב-גס ס 10:00 המ 19:00</div>
                         </div>
                     </div>
-
+<pre><?print_r($_REQUEST)?></pre><?die;?>
                     <div class="header-section-5 pull-left">
                         <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.small", "basketLink_n", array(
                                 "PATH_TO_BASKET" => "/personal/basket/",
