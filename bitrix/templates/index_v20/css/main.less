@@ -2236,6 +2236,7 @@ input[type="radio"] {
     top: 0;
     margin: 25px auto 0 auto;
     min-width: 860px;
+    display: none;
 }
 
 .pop-up-bg {
@@ -2245,6 +2246,8 @@ input[type="radio"] {
     height: 100%;
     left: 0;
     top: 0;
+    z-index: 998;
+    display: none;
 }
 
 .pop-up {
@@ -2392,6 +2395,14 @@ input[type="radio"] {
     width: 13px;
     height: 13px;
     cursor: pointer;
+}
+
+.pop-up-container .pop-up-quick-order-success{
+    display: none;
+    display: block;
+    z-index: 999;
+    width: 530px;
+    height: 165px;
 }
 
 // button
@@ -2903,6 +2914,7 @@ input[type="radio"] {
 .pop-up-quick-order {
     width: 530px;
     height: 600px;
+    z-index: 999;
 
     .pop-up-content {
         margin: 50px 0 0;

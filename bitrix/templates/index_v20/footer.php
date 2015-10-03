@@ -16,11 +16,21 @@
             </div>
 
             <div class="col-xs-4">
-                <nav class="footer-nav" role="navigation">
-                    <a href="#" class="footer-nav-item">О компании</a>
-                    <a href="#" class="footer-nav-item">Новости</a>
-                    <a href="#" class="footer-nav-item">FAQ</a>
-                </nav>
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "bottomMenu", array(
+                        "ROOT_MENU_TYPE" => "bottom",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS" => array(
+                        ),
+                        "MAX_LEVEL" => "1",
+                        "CHILD_MENU_TYPE" => "left",
+                        "USE_EXT" => "N",
+                        "DELAY" => "N",
+                        "ALLOW_MULTI_SELECT" => "N"
+                    ),
+                    false
+                );?>
 
                 <div class="footer-seo">Продвижение сайта - <a href="#">Сеоразум</a></div>
                 <div class="footer-strangebrain">Дизайн сайта - <a href="http://strangebrain.ru/" target="_blank">StrangeBrain</a></div>
@@ -31,9 +41,64 @@
 <!-- /footer -->
 </div>
 
+<!-- pop-up-quick-order -->
+<div class="pop-up-bg"></div>
+<div class="pop-up-section">
+    <div class="pop-up-container">
+        <div class="pop-up pop-up-quick-order">
+            <div class="clearfix pop-up-header">
+                <h1 class="pull-left pop-up-title">Быстрый заказ</h1>
+                <div class="pull-right pop-up-close">
+                    <a href="#"><i class="pop-up-close-icon"></i></a>
+                </div>
+            </div>
+            <div class="horizontal-line horizontal-line-main"></div>
+
+            <div class="pop-up-content clearfix">
+                <div class="pull-left pop-up-picture">
+                    <img src="img/pop-up-quick-order.jpg" class="pop-up-img" alt="Смартфон OnePlus One 16Gb White (Белый)" />
+                </div>
+                <div class="pull-left pop-up-product">
+                    <h1 class="pop-up-product-title">Смартфон OnePlus One 16Gb White (Белый)</h1>
+                    <div class="pop-up-product-price">15 990 <span class="cy">руб.</span></div>
+                </div>
+            </div>
+
+            <div class="pop-up-form-block clearfix">
+                <div class="contact-details">
+                    <input type="text" placeholder="Ф.И.О.*" required="" class="form-input form-input-name"><br>
+                    <input type="email" placeholder="e-mail*" required="" class="form-input form-input-name"><br>
+                    <input type="tel" placeholder="контактный телефон*" required="" class="form-input form-input-name">
+                </div>
+                <div class="contact-details-2">
+                    <textarea class="form-textarea" placeholder="адрес и комментарий "></textarea>
+                </div>
+            </div>
+
+            <div class="pop-up-buy clearfix">
+                <div class="pop-up-buy-text pull-left">
+                    Менеджер нашего магазина свяжется с Вами для уточнения заказа и условий доставки.
+                </div>
+                <div class="pop-up-buy-button pull-left">
+                    <a href="#" class="button-bg">купить</a>
+                </div>
+            </div>
+        </div>
+        <div class="pop-up pop-up-quick-order-success">
+            <div class="pull-right pop-up-close">
+                <a href="#"><i class="pop-up-close-icon"></i></a>
+            </div>
+            <h3>Спасибо! Ваш заказ отправлен.</h3>
+            Менеджер нашего магазина свяжется с вами в ближайшее время.
+        </div>
+    </div>
+</div>
+<!-- /pop-up-quick-order -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>

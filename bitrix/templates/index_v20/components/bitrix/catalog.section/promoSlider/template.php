@@ -4,16 +4,6 @@
 <div id="slider">
 
 		<ul class="bxslider">
-            <li>
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/slider/slider.jpg" />
-                <div class="bx-caption">
-                    <h2 class="slider-title">Jawbone UP24</h2>
-                    <div class="slider-content">
-                        следить за здоровьем<br />стало еще проще
-                    </div>
-                    <a href="#" class="slider-button">«аказать</a>
-                </div>
-            </li>
 		<? foreach($arResult['ITEMS'] as $key=>$item): ?>
 			<li>
                 <img src="<?=$item['PREVIEW_PICTURE']['SRC']?>">
