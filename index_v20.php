@@ -60,6 +60,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
     <!-- /новости и обзоры -->
 
     <!-- новинки -->
+<section class="novelty main-section">
+<h2 class="novelty-title entry-title">Новинки уже в продаже</h2>
     <?$APPLICATION->IncludeComponent(
         "apple-house:catalog.specialoffers",
         "v20",
@@ -72,254 +74,25 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         ),
         false
     );?>
+</section>
     <!-- /новинки -->
 
     <!-- хит продаж -->
     <section class="hit-sales main-section">
     <h2 class="novelty-title entry-title">Xит продаж</h2>
 
-    <div class="carousel">
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">23 900, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 090, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">23 900, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 090, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">23 900, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 090, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 1 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">4 490, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 2 slide -->
-    <div class="slide">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">23 900, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 3 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">7 290, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-
-    <!-- 4 slide -->
-    <div class="slide product-item">
-        <a href="#" class="product-link">
-            <figure class="product-content">
-                <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
-                <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
-            </figure>
-        </a>
-        <div class="product-price">6 090, -</div>
-        <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" />
-            <a href="#" class="button-credit">В кредит</a>
-        </div>
-    </div>
-    </div>
+        <?$APPLICATION->IncludeComponent(
+            "apple-house:catalog.specialoffers",
+            "v20",
+            Array(
+                "IBLOCK_SPEC_TYPE" => "catalog",
+                "IBLOCK_SPEC_ID" => "15",
+                "IBLOCK_CAT_TYPE" => "1c_catalog",
+                "IBLOCK_CAT_ID" => "8",
+                "IBLOCK_SPEC_SECTION" => "242"
+            ),
+            false
+        );?>
 
     </section>
     <!-- /хит продаж -->
