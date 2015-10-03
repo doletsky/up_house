@@ -1,5 +1,4 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-
     <section class="novelty main-section">
     <h2 class="novelty-title entry-title">Новинки уже в продаже</h2>
 
@@ -14,11 +13,11 @@
             </figure>
         </a>
         <?if($arItem['PRICES']['Продажа']['VALUE_VAT'] > 0): ?>
-            <div class="product-price"><?=$arItem['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE_VAT']?>, -</div>
+            <div class="product-price"><?=str_replace(' руб.', '', $arItem['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE_VAT'])?>, -</div>
         <? endif ?>
 
         <div class="clearfix">
-            <input type="submit" class="button-buy" value="Купить" onclick="location.href='<?=$arItem['ADD_URL']?>'"/>
+            <input type="submit" class="button-buy" value="Купить" onclick="location.href='<?=$arItem['BUY_URL']?>'"/>
             <a href="#" class="button-credit">В 1 клик</a>
         </div>
     </div>

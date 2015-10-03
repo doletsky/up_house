@@ -103,7 +103,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                             <div class="workhours">סב-גס ס 10:00 המ 19:00</div>
                         </div>
                     </div>
-<pre><?print_r($_REQUEST)?></pre><?die;?>
+
                     <div class="header-section-5 pull-left">
                         <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.small", "basketLink_n", array(
                                 "PATH_TO_BASKET" => "/personal/basket/",
@@ -111,6 +111,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                             ),
                             false
                         );?>
+
                         <?$APPLICATION->IncludeComponent("bitrix:search.form", "searchForm", array(
                                 "PAGE" => "/search/",
                                 "USE_SUGGEST" => "N"
@@ -183,7 +184,7 @@ IncludeTemplateLangFile(__FILE__); ?>
             "OFFERS_LIMIT" => "5",
             "SECTION_URL" => "",
             "DETAIL_URL" => "",
-            "BASKET_URL" => "/personal/basket.php",
+            "BASKET_URL" => "/personal/basket/",
             "ACTION_VARIABLE" => "action",
             "PRODUCT_ID_VARIABLE" => "id",
             "PRODUCT_QUANTITY_VARIABLE" => "quantity",
