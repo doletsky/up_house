@@ -42,6 +42,7 @@
 </div>
 
 <!-- pop-up-quick-order -->
+<?if(0):?>
 <div class="pop-up-bg"></div>
 <div class="pop-up-section">
     <div class="pop-up-container">
@@ -68,7 +69,7 @@
                 <div class="contact-details">
                     <input type="text" placeholder="Ф.И.О.*" required="" class="form-input form-input-name"><br>
                     <input type="email" placeholder="e-mail*" required="" class="form-input form-input-name"><br>
-                    <input type="tel" placeholder="контактный телефон*" required="" class="form-input form-input-name">
+                    <input id="oneClickBuy_phone" type="tel" placeholder="контактный телефон*" required="" class="form-input form-input-name">
                 </div>
                 <div class="contact-details-2">
                     <textarea class="form-textarea" placeholder="адрес и комментарий "></textarea>
@@ -93,14 +94,31 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal_overlay" id="modal_overlay">
+    <div class="modal_overlay_wrap">
+        <div class="modal_overlay_cont" id="modal_overlay_cont">
+        </div>
+        <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn" id="modal_oneClickBuy_close" href="#">закрыть</a>
+    </div>
+</div>
+
+<?endif?>
+
+<div class="pop-up-section" id="modal_overlay">
+    <div class="pop-up-container" id="modal_overlay_cont">
+    </div>
+</div>
 <!-- /pop-up-quick-order -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order-v20.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
 
 <!-- slider script -->

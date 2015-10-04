@@ -270,7 +270,8 @@ $(document).ready(function() {
 					$('.modal_oneClickBuy_tbl_input').remove();
 					$('.modal_oneClickBuy_info').remove();
 					$('.modal_oneClickBuy_submit').remove();
-
+                    $('.pop-up-quick-order').remove();
+if(false){
                     ga('ecommerce:addTransaction', {
                         'id': '<?=$transid?>',                                              // Transaction ID. Required
                         'affiliation': 'Apple House',                                       // Affiliation or store name
@@ -312,7 +313,7 @@ $(document).ready(function() {
 					  //_gaq.push(['_trackTrans']); //submits transaction to the Analytics servers
                     ga('ecommerce:send'); //submits transaction to the Analytics servers
 
-					
+}
 					$('.modal_oneClickBuy_success').show();
 				}
 			}
@@ -320,6 +321,7 @@ $(document).ready(function() {
 	});
 });
 </script>
+    <?if(0):?>
 <div class="modal_oneClickBuy">
 	<table class="modal_oneClickBuy_tbl">
 		<tr>
@@ -366,6 +368,61 @@ $(document).ready(function() {
 		<div class="ff_helvetica-neue-light fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами в ближайшее время</div>
 	</div>
 </div>
+<?endif?>
+
+            <div class="pop-up pop-up-quick-order">
+                <div class="clearfix pop-up-header">
+                    <h1 class="pull-left pop-up-title">Быстрый заказ</h1>
+                    <div class="pull-right pop-up-close">
+                        <a href="#"><i class="pop-up-close-icon"></i></a>
+                    </div>
+                </div>
+                <div class="horizontal-line horizontal-line-main"></div>
+
+                <div class="pop-up-content clearfix">
+                    <div class="pull-left pop-up-picture">
+                        <img src="<?=$arElement['PREVIEW_PICTURE']['SRC']?>" class="pop-up-img" alt="<?=$arElement['NAME']?>" />
+                    </div>
+                    <div class="pull-left pop-up-product">
+                        <h1 class="pop-up-product-title"><?=$arElement['NAME']?></h1>
+                        <div class="pop-up-product-price"><?=$arElement['PRICE']['Продажа']['DISCOUNT_VALUE_VAT']?> <span class="cy">руб.</span></div>
+                    </div>
+                </div>
+
+                <div class="pop-up-form-block clearfix">
+                    <div class="contact-details">
+                        <input id="oneClickBuy_name" type="text" placeholder="Ф.И.О.*" required="" class="form-input form-input-name"><br>
+                        <input id="preOrder_email" type="email" placeholder="e-mail*" required="" class="form-input form-input-name"><br>
+                        <input id="oneClickBuy_phone" type="tel" placeholder="контактный телефон*"  class="form-input form-input-name">
+                    </div>
+                    <div class="contact-details-2">
+                        <textarea id="oneClickBuy_message" class="form-textarea" placeholder="адрес и комментарий "></textarea>
+                    </div>
+                </div>
+
+                <div class="pop-up-buy clearfix">
+                    <div class="pop-up-buy-text pull-left">
+                        Менеджер нашего магазина свяжется с Вами для уточнения заказа и условий доставки.
+                    </div>
+                    <div class="pop-up-buy-button pull-left">
+                        <a id="modal_oneClickBuy_submit" href="#" class="button-bg">купить</a>
+                    </div>
+                </div>
+
+                <div class="modal_overlay_wrap" style="display: none">
+                    <div class="modal_overlay_cont" id="modal_overlay_cont">
+                        <div class="modal_oneClickBuy">
+                            <div class="modal_oneClickBuy_success">
+                                <h3 class="ff_helvetica-neue-bold margin-top_15px">Спасибо! Ваш заказ отправлен.</h3>
+                                <div class="ff_helvetica-neue-light fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами в ближайшее время</div>
+                            </div>
+                            <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn" id="modal_oneClickBuy_close" href="#">закрыть</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 <?
 }
 ?>

@@ -15,7 +15,7 @@
 
         <div class="clearfix">
             <input type="submit" class="button-buy" value="Купить" onclick="location.href='<?=$arItem['BUY_URL']?>'"/>
-            <a href="#" class="button-credit">В 1 клик</a>
+            <a href="<?=$arItem['ADD_URL']?>" class="button-credit" data-buyid="<?=$arItem['ID']?>">В 1 клик</a>
         </div>
     </div>
 <?endforeach;?>

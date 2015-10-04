@@ -13,6 +13,7 @@ IncludeTemplateLangFile(__FILE__); ?>
     <link href="<?=SITE_TEMPLATE_PATH?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="<?=SITE_TEMPLATE_PATH?>/css/main.less" rel="stylesheet/less" />
+    <link href="<?=SITE_TEMPLATE_PATH?>/css/pop-up-quick-order-v20.css" rel="stylesheet/less" />
 
     <script src="<?=SITE_TEMPLATE_PATH?>/js/less-1.7.3.min.js" type="text/javascript"></script>
     <script src="<?=SITE_TEMPLATE_PATH?>/js/modernizr-2.6.2.min.js"></script>

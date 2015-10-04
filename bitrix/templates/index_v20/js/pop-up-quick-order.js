@@ -20,7 +20,31 @@ $('.button-credit').click(function(){
 
 $('.button-bg').click(function(){
 
-    $('.pop-up-quick-order').css('display','none');
+    /*validate form*/
+    console.log($('#oneClickBuy_phone').val().length);
+    var error = false;
 
-    $('.pop-up-quick-order-success').css('display','block');
+    if($('#oneClickBuy_phone').val().length!=18){
+        $('#oneClickBuy_phone').addClass('modal_error');
+        $('#oneClickBuy_phone').val('Не корректный телефон');
+        error = true;
+    }
+
+    if(!error){
+        $('.pop-up-quick-order').css('display','none');
+
+        $('.pop-up-quick-order-success').css('display','block');
+    }
+
+
+
+});
+
+
+/*init form quick order*/
+
+$('#oneClickBuy_phone').mask('+7 ?(999) 999-99-99');
+$('#oneClickBuy_phone').focusout(function(){
+    if($(this).val() == '+7 (___) ___-__-__')
+        $(this).val('');
 });
