@@ -270,8 +270,8 @@ $(document).ready(function() {
 					$('.modal_oneClickBuy_tbl_input').remove();
 					$('.modal_oneClickBuy_info').remove();
 					$('.modal_oneClickBuy_submit').remove();
-                    $('.pop-up-quick-order').remove();
-if(false){
+                    $('#pop-up-quick-order-form').remove();
+
                     ga('ecommerce:addTransaction', {
                         'id': '<?=$transid?>',                                              // Transaction ID. Required
                         'affiliation': 'Apple House',                                       // Affiliation or store name
@@ -313,7 +313,8 @@ if(false){
 					  //_gaq.push(['_trackTrans']); //submits transaction to the Analytics servers
                     ga('ecommerce:send'); //submits transaction to the Analytics servers
 
-}
+
+                    $('.modal_overlay_wrap').show();
 					$('.modal_oneClickBuy_success').show();
 				}
 			}
@@ -321,56 +322,9 @@ if(false){
 	});
 });
 </script>
-    <?if(0):?>
-<div class="modal_oneClickBuy">
-	<table class="modal_oneClickBuy_tbl">
-		<tr>
-			<td rowspan="3" class="modal_oneClickBuy_image">
-				<? if(is_array($arElement['PREVIEW_PICTURE'])): ?>
-				<img src="<?=$arElement['PREVIEW_PICTURE']['SRC']?>">
-				<? endif ?>
-			</td>
-			<td class="modal_oneClickBuy_title"><h3 class="ff_helvetica-neue-bold fs_18px">быстрый заказ</h3></td>
-		</tr>
-		<tr>
-			<td class="modal_oneClickBuy_name b_catalog-item_text ff_helvetica-neue-light color_007eb4 fs_18px"><?=$arElement['NAME']?></td>
-		</tr>
-		<tr>
-			<td class="modal_oneClickBuy_price b_catalog-item_price ff_helvetica-neue-light color_79b70d fs_18px"><?=$arElement['PRICE']['Продажа']['PRINT_DISCOUNT_VALUE_VAT']?></td>
-		</tr>
-	</table>
-	<table class="modal_oneClickBuy_tbl_input margin-top_10px">
-		<tr>
-			<td class="ff_helvetica-neue-light color_black fs_14px">имя</td>
-			<td class="ff_helvetica-neue-light color_black fs_14px">телефон</td>
-		</tr>
-		<tr>
-			<td><input id="oneClickBuy_name" class="b_input-text input-text_width_240px"></td>
-			<td><input id="oneClickBuy_phone" class="b_input-text input-text_width_240px"></td>
-		</tr>
-        <tr>
-            <td class="ff_helvetica-neue-light color_black fs_14px">e-mail</td>
-        </tr>
-        <tr>
-            <td><input id="preOrder_email" class="b_input-text input-text_width_240px"></td>
-        </tr>
-		<tr>
-			<td colspan="2" class="ff_helvetica-neue-light color_black fs_14px">адрес и комментарий</td>
-		</tr>
-		<tr>
-			<td colspan="2"><textarea id="oneClickBuy_message" class="b_textarea"></textarea></td>
-		</tr>
-	</table>
-	<div class="modal_oneClickBuy_info ff_helvetica-neue-light color_black fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами для уточнения заказа и условий доставки.</div>
-	<div class="modal_oneClickBuy_submit margin-top_10px"><a class="b_button-buy button-buy_buy no-style-link" id="modal_oneClickBuy_submit" href="#"></a></div>
-	<div class="modal_oneClickBuy_success">
-		<h3 class="ff_helvetica-neue-bold margin-top_15px">Спасибо! Ваш заказ отправлен.</h3>
-		<div class="ff_helvetica-neue-light fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами в ближайшее время</div>
-	</div>
-</div>
-<?endif?>
 
-            <div class="pop-up pop-up-quick-order">
+
+            <div class="pop-up pop-up-quick-order" id="pop-up-quick-order-form">
                 <div class="clearfix pop-up-header">
                     <h1 class="pull-left pop-up-title">Быстрый заказ</h1>
                     <div class="pull-right pop-up-close">
@@ -409,20 +363,20 @@ if(false){
                     </div>
                 </div>
 
-                <div class="modal_overlay_wrap" style="display: none">
-                    <div class="modal_overlay_cont" id="modal_overlay_cont">
-                        <div class="modal_oneClickBuy">
-                            <div class="modal_oneClickBuy_success">
-                                <h3 class="ff_helvetica-neue-bold margin-top_15px">Спасибо! Ваш заказ отправлен.</h3>
-                                <div class="ff_helvetica-neue-light fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами в ближайшее время</div>
-                            </div>
-                            <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn" id="modal_oneClickBuy_close" href="#">закрыть</a>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
-
+    <div class="modal_overlay_wrap" style="display: none;width: 530px;margin: 0 auto;">
+        <div class="modal_overlay_cont" id="modal_overlay_cont">
+            <div class="modal_oneClickBuy">
+                <div class="modal_oneClickBuy_success">
+                    <h3 class="ff_helvetica-neue-bold margin-top_15px">Спасибо! Ваш заказ отправлен.</h3>
+                    <div class="ff_helvetica-neue-light fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами в ближайшее время</div>
+                </div>
+                <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn" id="modal_oneClickBuy_close" href="#">закрыть</a>
+            </div>
+        </div>
+    </div>
 <?
 }
 ?>

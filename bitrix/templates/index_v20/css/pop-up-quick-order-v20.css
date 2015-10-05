@@ -17,7 +17,7 @@
 				.modal_oneClickBuy_tbl, td .modal_preOrder_tbl td { padding:10px; }
 					.modal_oneClickBuy_image, .modal_preOrder_image { width:200px; height:200px; vertical-align:top; text-align:center; }
 					.modal_oneClickBuy_title, .modal_preOrder_title { width:220px; height:30px; text-align:left; }
-						#modal_oneClickBuy_close, #modal_preOrder_close { display:block; position:absolute; top:47px; right:25px; padding:0 20px 0 0; background:url(../images/delete.png) right center no-repeat; }
+						#modal_oneClickBuy_close, #modal_preOrder_close { display:block; position:absolute; top:47px; right:25px; padding:0 20px 0 0; background:url(../img/delete.png) right center no-repeat; }
 					.modal_oneClickBuy_name, .modal_preOrder_name { height:130px; }
 					.modal_oneClickBuy_price, .modal_preOrder_price { height:30px; }
 			.modal_oneClickBuy_tbl_input, .modal_preOrder_tbl_input { border-collapse:collapse; }

@@ -42,69 +42,6 @@
 </div>
 
 <!-- pop-up-quick-order -->
-<?if(0):?>
-<div class="pop-up-bg"></div>
-<div class="pop-up-section">
-    <div class="pop-up-container">
-        <div class="pop-up pop-up-quick-order">
-            <div class="clearfix pop-up-header">
-                <h1 class="pull-left pop-up-title">Быстрый заказ</h1>
-                <div class="pull-right pop-up-close">
-                    <a href="#"><i class="pop-up-close-icon"></i></a>
-                </div>
-            </div>
-            <div class="horizontal-line horizontal-line-main"></div>
-
-            <div class="pop-up-content clearfix">
-                <div class="pull-left pop-up-picture">
-                    <img src="img/pop-up-quick-order.jpg" class="pop-up-img" alt="Смартфон OnePlus One 16Gb White (Белый)" />
-                </div>
-                <div class="pull-left pop-up-product">
-                    <h1 class="pop-up-product-title">Смартфон OnePlus One 16Gb White (Белый)</h1>
-                    <div class="pop-up-product-price">15 990 <span class="cy">руб.</span></div>
-                </div>
-            </div>
-
-            <div class="pop-up-form-block clearfix">
-                <div class="contact-details">
-                    <input type="text" placeholder="Ф.И.О.*" required="" class="form-input form-input-name"><br>
-                    <input type="email" placeholder="e-mail*" required="" class="form-input form-input-name"><br>
-                    <input id="oneClickBuy_phone" type="tel" placeholder="контактный телефон*" required="" class="form-input form-input-name">
-                </div>
-                <div class="contact-details-2">
-                    <textarea class="form-textarea" placeholder="адрес и комментарий "></textarea>
-                </div>
-            </div>
-
-            <div class="pop-up-buy clearfix">
-                <div class="pop-up-buy-text pull-left">
-                    Менеджер нашего магазина свяжется с Вами для уточнения заказа и условий доставки.
-                </div>
-                <div class="pop-up-buy-button pull-left">
-                    <a href="#" class="button-bg">купить</a>
-                </div>
-            </div>
-        </div>
-        <div class="pop-up pop-up-quick-order-success">
-            <div class="pull-right pop-up-close">
-                <a href="#"><i class="pop-up-close-icon"></i></a>
-            </div>
-            <h3>Спасибо! Ваш заказ отправлен.</h3>
-            Менеджер нашего магазина свяжется с вами в ближайшее время.
-        </div>
-    </div>
-</div>
-
-
-<div class="modal_overlay" id="modal_overlay">
-    <div class="modal_overlay_wrap">
-        <div class="modal_overlay_cont" id="modal_overlay_cont">
-        </div>
-        <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn" id="modal_oneClickBuy_close" href="#">закрыть</a>
-    </div>
-</div>
-
-<?endif?>
 
 <div class="pop-up-section" id="modal_overlay">
     <div class="pop-up-container" id="modal_overlay_cont">
@@ -222,5 +159,14 @@
 
 
 <!-- /menu catalog -->
+
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = '129325';
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter10932967 = new Ya.Metrika({id:10932967, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/10932967" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

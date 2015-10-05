@@ -4,11 +4,9 @@ IncludeTemplateLangFile(__FILE__); ?>
 <html class="no-js home">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Iphone заголовок</title>
+    <title><?$APPLICATION->ShowTitle()?></title>
     <meta name="description" content="Iphone описание">
     <meta name="viewport" content="width=device-width">
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link href="<?=SITE_TEMPLATE_PATH?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bxslider.css" rel="stylesheet" />
@@ -22,7 +20,20 @@ IncludeTemplateLangFile(__FILE__); ?>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <script src="//service.dialogwidget.ru/widget/dialogw.js" charset="windows-1251" id="dw_script" data-dwk="lrL7hw6fq08WSfg"></script>
     <? $APPLICATION->ShowHead(); ?>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-35109714-1', 'auto');
+        ga('send', 'pageview');
+        ga('require', 'ecommerce', 'ecommerce.js');
+
+    </script>
+    <link rel="shortcut icon"  href="/favicon.ico" />
 </head>
 <body>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
