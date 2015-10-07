@@ -328,7 +328,7 @@ $(document).ready(function() {
                 <div class="clearfix pop-up-header">
                     <h1 class="pull-left pop-up-title">Быстрый заказ</h1>
                     <div class="pull-right pop-up-close">
-                        <a href="#"><i class="pop-up-close-icon"></i></a>
+                        <a href="#"><i class="pop-up-close-icon modal_oneClickBuy_close_v20"></i></a>
                     </div>
                 </div>
                 <div class="horizontal-line horizontal-line-main"></div>
@@ -373,7 +373,7 @@ $(document).ready(function() {
                     <h3 class="ff_helvetica-neue-bold margin-top_15px">Спасибо! Ваш заказ отправлен.</h3>
                     <div class="ff_helvetica-neue-light fs_14px margin-top_10px">Менеджер нашего магазина свяжется с вами в ближайшее время</div>
                 </div>
-                <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn" id="modal_oneClickBuy_close" href="#">закрыть</a>
+                <a class="modal_oneClickBuy_close link_007eb4 modal_overlay_close_btn modal_oneClickBuy_close_v20" id="modal_oneClickBuy_close" href="#">закрыть</a>
             </div>
         </div>
     </div>

@@ -5,7 +5,7 @@ $(document).ready(function(e) {
             content: 'ajax',
             contentContainer:'#modal_overlay_cont',
             loadUrl: '/include/tools/buyoneclick_v20.php?buy_id=' + $(this).attr('data-buyid'),
-            closeClass: 'modal_oneClickBuy_close',
+            closeClass: 'modal_oneClickBuy_close_v20',
             speed: 450,
             transition: 'slideDown',
             modalClose: false,
