@@ -4,6 +4,7 @@ $(document).ready(function(){
 
     $('.menu-catalog-list-item').click(function(eIn)
         {
+
             if($(this).children('a').hasClass('touch')){
                 $('.menu-catalog-list-item').children('a').addClass('touch');
                 $(this).children('a').removeClass('touch');

@@ -3,6 +3,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="windows-1251">
     <file url="file://$PROJECT_DIR$/bitrix/templates/index_v20/footer.php" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/bitrix/templates/index_v20/header.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/bitrix/templates/index_v20/js_menu_log.txt" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

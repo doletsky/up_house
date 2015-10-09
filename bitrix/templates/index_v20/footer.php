@@ -85,23 +85,23 @@
 <!-- /carousel script -->
 
 <!-- menu catalog -->
-<script>
-    var $menuItem = jQuery('.menu-catalog-list-item');
-    $('.js-submenu-catalog').hide();
-
-    $(document).ready(function () {
-
-
-        $menuItem.mouseenter(function () {
-            jQuery(this).find('.js-submenu-catalog').fadeIn(300);
-        });
-
-        $menuItem.mouseleave(function () {
-            jQuery(this).find('.js-submenu-catalog').fadeOut(300);
-        });
-
-    });
-</script>
+<!--<script>-->
+<!--    var $menuItem = jQuery('.menu-catalog-list-item');-->
+<!--    $('.js-submenu-catalog').hide();-->
+<!---->
+<!--    $(document).ready(function () {-->
+<!---->
+<!---->
+<!--        $menuItem.mouseenter(function () {-->
+<!--            jQuery(this).find('.js-submenu-catalog').fadeIn(300);-->
+<!--        });-->
+<!---->
+<!--        $menuItem.mouseleave(function () {-->
+<!--            jQuery(this).find('.js-submenu-catalog').fadeOut(300);-->
+<!--        });-->
+<!---->
+<!--    });-->
+<!--</script>-->
 
 <script>
     var $menuItem = jQuery('.menu-catalog-list-item');
