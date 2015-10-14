@@ -1,0 +1,13 @@
+.content{
+    display: inline-block;
+}
+
+.b_grid_container{
+    display: inline-block;
+}
+
+
+.b_grid_container .b_grid_unit-1-3{
+    width: inherit;
+}
+
