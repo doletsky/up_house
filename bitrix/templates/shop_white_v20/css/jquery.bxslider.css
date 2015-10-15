@@ -31,6 +31,7 @@
 
 .bx-wrapper .bx-viewport {
 	left: -5px;
+    height: 100%!important;
 
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);

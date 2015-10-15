@@ -174,7 +174,7 @@ IncludeTemplateLangFile(__FILE__); ?>
             <!-- submenu catalog -->
             <div class="row">
                 <div class="col-xs-12">
-                    <nav class="menu-model clearfix">
+                    <div class="menu-model clearfix" id="slide-submenu">
                         <a class="menu-model-item" href="#">
                             <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
                             <span class="menu-model-title">iPhone 6</span>
@@ -195,7 +195,19 @@ IncludeTemplateLangFile(__FILE__); ?>
                             <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
                             <span class="menu-model-title">iPhone 4/4S</span>
                         </a>
-                    </nav>
+                        <a class="menu-model-item" href="#">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
+                            <span class="menu-model-title">iPhone 3C</span>
+                        </a>
+                        <a class="menu-model-item" href="#">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
+                            <span class="menu-model-title">iPhone 3</span>
+                        </a>
+                        <a class="menu-model-item" href="#">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
+                            <span class="menu-model-title">iPhone 2/2S</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 

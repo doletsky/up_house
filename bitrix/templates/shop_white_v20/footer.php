@@ -84,6 +84,21 @@
 </script>
 <!-- /carousel script -->
 
+<!-- slider submenu -->
+<script>
+    $(document).ready(function () {
+        $('#slide-submenu').bxSlider({
+            slideWidth: 85,
+            minSlides: 1,
+            maxSlides: 5,
+            moveSlides: 1,
+            slideMargin: 100,
+            pager: false,
+            controls: true
+        });
+    });
+</script>
+<!-- /slider submenu -->
 <!-- menu catalog -->
 
 <script>
