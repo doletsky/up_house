@@ -31,7 +31,6 @@
 
 .bx-wrapper .bx-viewport {
 	left: -5px;
-    height: 100%!important;
 
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
@@ -98,12 +97,12 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-    right: 0;
+   left: -47px;
     background: url("../img/carousel-arrow.png") no-repeat;
 }
 
 .bx-wrapper .bx-next {
-    right: -52px;
+    right: -47px;
     background: url("../img/carousel-arrow.png") -50px 0 no-repeat;
 }
 
@@ -117,7 +116,7 @@
 
 .bx-wrapper .bx-controls-direction a {
     position: absolute;
-    top: -51px;
+    top: 50px;
     margin-top: -16px;
     outline: 0;
     width: 36px;

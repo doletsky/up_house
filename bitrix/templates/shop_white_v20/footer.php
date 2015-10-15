@@ -87,15 +87,19 @@
 <!-- slider submenu -->
 <script>
     $(document).ready(function () {
+        var countSlide=$('#slide-submenu a').length;
         $('#slide-submenu').bxSlider({
-            slideWidth: 85,
+            slideWidth: 89,
             minSlides: 1,
             maxSlides: 5,
             moveSlides: 1,
-            slideMargin: 100,
+            slideMargin: 85,
             pager: false,
-            controls: true
+            onSliderLoad: function(){
+                if(countSlide<6) $('.bx-controls-direction a').addClass('disabled');//console.log(this);
+            }
         });
+//        if(countSlide<6)$('#slide-submenu').bxSlider({controls: false});
     });
 </script>
 <!-- /slider submenu -->

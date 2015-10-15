@@ -174,39 +174,36 @@ IncludeTemplateLangFile(__FILE__); ?>
             <!-- submenu catalog -->
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="menu-model clearfix" id="slide-submenu">
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 6</span>
-                        </a>
-                        <a class="menu-model-item current" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 5S</span>
-                        </a>
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 5C</span>
-                        </a>
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 5</span>
-                        </a>
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 4/4S</span>
-                        </a>
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 3C</span>
-                        </a>
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 3</span>
-                        </a>
-                        <a class="menu-model-item" href="#">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
-                            <span class="menu-model-title">iPhone 2/2S</span>
-                        </a>
+                    <div class="menu-model clearfix">
+                        <div id="slide-submenu">
+                            <a class="menu-model-item" href="#">
+                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
+                                <span class="menu-model-title">iPhone 6</span>
+                            </a>
+                            <a class="menu-model-item current" href="#">
+                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
+                                <span class="menu-model-title">iPhone 5S</span>
+                            </a>
+                            <a class="menu-model-item" href="#">
+                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
+                                <span class="menu-model-title">iPhone 5C</span>
+                            </a>
+                            <a class="menu-model-item" href="#">
+                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
+                                <span class="menu-model-title">iPhone 5</span>
+                            </a>
+                            <a class="menu-model-item" href="#">
+                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
+                                <span class="menu-model-title">iPhone 5C</span>
+                            </a>
+                            <a class="menu-model-item" href="#">
+                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
+                                <span class="menu-model-title">iPhone 5C</span>
+                            </a>
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -216,3 +213,4 @@ IncludeTemplateLangFile(__FILE__); ?>
 
     </header>
     <!-- /header -->
+    <pre><?print_r($_SERVER)?></pre>
