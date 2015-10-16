@@ -174,37 +174,27 @@ IncludeTemplateLangFile(__FILE__); ?>
             <!-- submenu catalog -->
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="menu-model clearfix">
-                        <div id="slide-submenu">
-                            <a class="menu-model-item" href="#">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
-                                <span class="menu-model-title">iPhone 6</span>
-                            </a>
-                            <a class="menu-model-item current" href="#">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model.png" alt="iPhone 6" class="menu-model-img" />
-                                <span class="menu-model-title">iPhone 5S</span>
-                            </a>
-                            <a class="menu-model-item" href="#">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
-                                <span class="menu-model-title">iPhone 5C</span>
-                            </a>
-                            <a class="menu-model-item" href="#">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-3.png" alt="iPhone 6" class="menu-model-img" />
-                                <span class="menu-model-title">iPhone 5</span>
-                            </a>
-                            <a class="menu-model-item" href="#">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
-                                <span class="menu-model-title">iPhone 5C</span>
-                            </a>
-                            <a class="menu-model-item" href="#">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/catalog-menu-model-2.png" alt="iPhone 6" class="menu-model-img" />
-                                <span class="menu-model-title">iPhone 5C</span>
-                            </a>
-
-
-                        </div>
-
-                    </div>
+                    <?$firstSectionCode=explode("/",$APPLICATION->GetCurPage());?>
+                    <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","",
+                        Array(
+                            "VIEW_MODE" => "TEXT",
+                            "SHOW_PARENT_NAME" => "Y",
+                            "IBLOCK_TYPE" => "1c_catalog",
+                            "IBLOCK_ID" => "8",
+                            "SECTION_ID" => "",
+                            "SECTION_CODE" => $firstSectionCode[1],
+                            "SECTION_URL" => "",
+                            "COUNT_ELEMENTS" => "Y",
+                            "TOP_DEPTH" => "1",
+                            "SECTION_FIELDS" => "",
+                            "SECTION_USER_FIELDS" => "",
+                            "ADD_SECTIONS_CHAIN" => "Y",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_NOTES" => "",
+                            "CACHE_GROUPS" => "Y"
+                        )
+                    );?>
                 </div>
             </div>
 
@@ -213,4 +203,4 @@ IncludeTemplateLangFile(__FILE__); ?>
 
     </header>
     <!-- /header -->
-    <pre><?print_r($_SERVER)?></pre>
+
