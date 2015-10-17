@@ -1,3 +1,7 @@
+                </div>
+            </div>
+        </div>
+</main>
 <!-- footer -->
 <footer id="footer" role="contentinfo">
     <div class="container">
@@ -88,7 +92,7 @@
 <script>
     $(document).ready(function () {
         var countSlide=$('#slide-submenu a').length;
-        $('#slide-submenu').bxSlider({
+        slideSubmenu=$('#slide-submenu').bxSlider({
             slideWidth: 89,
             minSlides: 1,
             maxSlides: 5,
@@ -99,7 +103,7 @@
                 if(countSlide<6) $('.bx-controls-direction a').addClass('disabled');//console.log(this);
             }
         });
-//        if(countSlide<6)$('#slide-submenu').bxSlider({controls: false});
+        slideSubmenu.goToSlide(slideNum);console.log('sNm='+slideNum);
     });
 </script>
 <!-- /slider submenu -->
