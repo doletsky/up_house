@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
+<!--<pre>--><?//print_r($arResult["PATH"])?><!--</pre>-->
 
     <!-- каталог товаров -->
     <section class="catalog-section main-section">
@@ -8,7 +8,9 @@
         <div class="catalog-row pull-left">
             <div class="breadcrumbs">
                 <span class="breadcrumbs-item">Главная</span>
-                <span class="breadcrumbs-item">iPhone 5S</span>
+                <?foreach($arResult["PATH"] as $pathSect):?>
+                <span class="breadcrumbs-item"><?=$pathSect["NAME"]?></span>
+                <?endforeach?>
             </div>
             <h2 class="catalog-title entry-title"><?=$arResult['NAME']?></h2>
         </div>
@@ -16,16 +18,22 @@
         <div class="catalog-row-2 pull-left">
             <div class="catalog-desc"><?=htmlspecialchars_decode($arResult['DESCRIPTION_1'])?></div>
         </div>
-
+    <?if(!empty($arResult['UF_BONUS'])): ?>
         <div class="catalog-row-3 pull-left">
             <div class="catalog-benefits">
                                             <span class="catalog-benefits-text">
                                                 При покупке <?=$arResult['NAME']?> в магазине<br />
                                                 Up House Вы получаете:
                                             </span>
-                <img src="img/catalog-benefits.png" alt="При покупке iPhone 5S в магазине Up House Вы получаете" class="catalog-benefits-img" />
+                <ul class="bonus-img">
+                    <? foreach($arResult['UF_BONUS'] as $bonus): ?>
+                        <li class="bonus-<?=$arResult['BONUS'][$bonus]['XML_ID']?>" title="<?=$arResult['BONUS'][$bonus]['VALUE']?>"></li>
+                    <? endforeach ?>
+                </ul>
+                <div class="clearfix"></div>
             </div>
         </div>
+    <?endif?>
     </div>
 
     <nav class="catalog-menu-apps clearfix">

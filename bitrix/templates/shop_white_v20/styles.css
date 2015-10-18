@@ -39,3 +39,55 @@
     text-align: center;
     width: 190px;
 }
+.bonus-img {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 10px;
+}
+.bonus-img li {
+    float: left;
+    list-style-type: none;
+    margin-right: 10px;
+}
+.bonus-check {
+    width: 17px;
+    height: 21px;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
+}
+.bonus-round-arrow {
+    width: 26px;
+    height: 21px;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
+    -ms-background-position-x: 160px;background-position-x: 160px;
+}
+.bonus-car {
+    width: 31px;
+    height: 21px;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
+    -ms-background-position-x: 123px;background-position-x: 123px;
+}
+.bonus-masonry {
+    width: 20px;
+    height: 21px;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
+    -ms-background-position-x: 51px;background-position-x: 51px;
+}
+.bonus-sim {
+    width: 16px;
+    height: 21px;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
+    -ms-background-position-x: 80px;background-position-x: 80px;
+}
+.bonus-ru {
+    width: 20px;
+    height: 21px;
+    overflow: hidden;
+    background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
+    -ms-background-position-x: 20px;background-position-x: 20px;
+}
+
