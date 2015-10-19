@@ -8,7 +8,7 @@
 <div class="menu-model clearfix">
     <div id="slide-submenu">
 <?foreach($arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]] as $subSect): $count++;?>
-    <a class="menu-model-item<?if("/".$subSect["CODE"]==$curPage):$slideNum=$count;?> current<?endif?>" href="/<?=$subSect["CODE"]?>">
+    <a class="menu-model-item<?if(substr_count($curPage."/", "/".$subSect["CODE"])>0):$slideNum=$count;?> current<?endif?>" href="/<?=$subSect["CODE"]?>">
         <?if(is_array($subSect["PICTURE"])):?>
             <img src="<?=$subSect["PICTURE"]["SRC"]?>" alt="<?=$subSect["NAME"]?>" class="menu-model-img" />
         <?else:?>

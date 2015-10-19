@@ -79,4 +79,11 @@ if($arResult['IBLOCK_SECTION_ID']==0)$showfilter=true;
 			//$price["PRINT_DISCOUNT_VALUE_VAT"]="";
 }*/
 
+$arResult["SUBSECTION"]=array();
+$arFilterSubSect = array('IBLOCK_ID' => $arResult['IBLOCK_ID'],'SECTION_ID' => $arResult['PATH'][1]['ID'],'DEPTH_LEVEL' => 3);
+$rsSubSect = CIBlockSection::GetList(array('left_margin' => 'asc'),$arFilterSubSect);
+while ($arSubSect = $rsSubSect->GetNext())
+{
+    $arResult['SUBSECTION'][]=$arSubSect;
+}
 ?>

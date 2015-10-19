@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult["PATH"])?><!--</pre>-->
+<!--<pre>--><?//print_r($arResult["SUBSECTION"])?><!--</pre>-->
 
     <!-- каталог товаров -->
     <section class="catalog-section main-section">
@@ -7,8 +7,11 @@
     <div class="catalog-header clearfix">
         <div class="catalog-row pull-left">
             <div class="breadcrumbs">
-                <span class="breadcrumbs-item">Главная</span>
-                <?foreach($arResult["PATH"] as $pathSect):?>
+                <?
+                //оставить 2 последних пункта в хлебных крошках
+                $countBreak=count($arResult["PATH"])-2;
+                ?>
+                <?foreach($arResult["PATH"] as $pathSect): if($countBreak>0) {$countBreak--; continue;}?>
                 <span class="breadcrumbs-item"><?=$pathSect["NAME"]?></span>
                 <?endforeach?>
             </div>
@@ -22,12 +25,13 @@
         <div class="catalog-row-3 pull-left">
             <div class="catalog-benefits">
                                             <span class="catalog-benefits-text">
-                                                При покупке <?=$arResult['NAME']?> в магазине<br />
-                                                Up House Вы получаете:
+                                                При покупке <?=$arResult['NAME']?><br />
+                                                в магазине Up House<br />Вы получаете:
                                             </span>
-                <ul class="bonus-img">
+                <ul class="bonus-img" style="margin-left: <?=15.8*(6-count($arResult['UF_BONUS']))?>px">
                     <? foreach($arResult['UF_BONUS'] as $bonus): ?>
-                        <li class="bonus-<?=$arResult['BONUS'][$bonus]['XML_ID']?>" title="<?=$arResult['BONUS'][$bonus]['VALUE']?>"></li>
+                        <li class="bonus-<?=$arResult['BONUS'][$bonus]['XML_ID']?>" onmouseover="showNote('<?=$arResult['BONUS'][$bonus]['XML_ID']?>');" onmouseout="hideNote();"></li>
+                        <div class="bonus-note note-<?=$arResult['BONUS'][$bonus]['XML_ID']?>"><?=$arResult['BONUS'][$bonus]['VALUE']?></div>
                     <? endforeach ?>
                 </ul>
                 <div class="clearfix"></div>
@@ -35,20 +39,14 @@
         </div>
     <?endif?>
     </div>
-
+<?if(count($arResult["SUBSECTION"])>0):?>
     <nav class="catalog-menu-apps clearfix">
-        <a href="#" class="catalog-menu-apps-item current">16 Gb</a>
-        <a href="#" class="catalog-menu-apps-item">32 Gb</a>
-        <a href="#" class="catalog-menu-apps-item">64 Gb</a>
-        <a href="#" class="catalog-menu-apps-item">Чехлы</a>
-        <a href="#" class="catalog-menu-apps-item">Защитные<br /> плёнки</a>
-        <a href="#" class="catalog-menu-apps-item">Аксессуары<br /> для автомобиля</a>
-        <a href="#" class="catalog-menu-apps-item">Внешние<br /> аккумуляторы</a>
-        <a href="#" class="catalog-menu-apps-item">Зарядные устройства<br /> и док-станции</a>
-        <a href="#" class="catalog-menu-apps-item">Кабели<br /> и переходники</a>
-        <a href="#" class="catalog-menu-apps-item">Wi-Fi<br /> оборудование</a>
+       <?$curPage=$APPLICATION->GetCurPage();?>
+       <?foreach($arResult["SUBSECTION"] as $subSect):?>
+           <a href="/<?=$subSect['CODE']?>" class="catalog-menu-apps-item<?if($curPage=="/".$subSect['CODE']):?> current<?endif?>"><?=$subSect['NAME']?></a>
+       <?endforeach?>
     </nav>
-
+<?endif?>
     <div class="clearfix">
     <!-- каталог фильтр -->
     <aside class="catalog-filter">
@@ -598,6 +596,16 @@
     </section>
     <!-- /каталог описание -->
 
+    <script type="text/javascript">
+        function showNote(cnm){
+            var bcleft=$('.bonus-'+cnm).position().left-5;
+            $('.note-'+cnm).css('left',bcleft);
+            $('.note-'+cnm).css('display', 'block');
+        }
+        function hideNote(){
+            $('.bonus-note').css('display', 'none');
+        }
+    </script>
 
 
 <?if(0):?>
@@ -1042,5 +1050,8 @@ $(document).ready(function() {
         });
     }
 });
+    function showNote(cnm){
+
+    }
 </script>
 <?endif?>
