@@ -150,7 +150,7 @@ $APPLICATION->IncludeComponent("apple-house:catalog.section", "catalogList", arr
 	"DISPLAY_BOTTOM_PAGER" => "Y",
 	"PAGER_TITLE" => "Товары",
 	"PAGER_SHOW_ALWAYS" => "N",
-	"PAGER_TEMPLATE" => "appleHouse",
+	"PAGER_TEMPLATE" => "catalog_v20",
 	"PAGER_DESC_NUMBERING" => "N",
 	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 	"PAGER_SHOW_ALL" => "Y",

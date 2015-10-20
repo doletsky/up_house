@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult["SUBSECTION"])?><!--</pre>-->
+<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
 
     <!-- каталог товаров -->
     <section class="catalog-section main-section">
@@ -47,8 +47,9 @@
        <?endforeach?>
     </nav>
 <?endif?>
-    <div class="clearfix">
+    <div class="clearfix"<?if(count($arResult["SUBSECTION"])<=0):?> style="border-top: 1px dotted #ccc;"<?endif?>>
     <!-- каталог фильтр -->
+<?if(strlen($arParams["SMART_FILTER_OUTPUT"])>0):?>
     <aside class="catalog-filter">
 
         <!-- фильтр цена -->
@@ -181,419 +182,102 @@
         </div>
 
     </aside>
+<?endif?>
     <!-- /каталог фильтр -->
     <!-- каталог контент -->
-    <div class="catalog-pr-content">
+    <div class="catalog-pr-content"<?if(strlen($arParams["SMART_FILTER_OUTPUT"])<=0):?> style="border-left: 0px; width: 898px;"<?endif?>>
+<? foreach($arResult['ITEMS'] as $arItem): ?>
     <div class="catalog-pr-item">
         <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
+            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" class="catalog-pr-picture-img" alt="<?=$arItem['NAME']?>" />
             </a>
         </div>
         <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457
+            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="catalog-pr-title-link">
+                <?=$arItem['NAME']?>
             </a>
         </div>
+    <? if($arItem['CAN_BUY']):?>
         <div class="catalog-pr-price">
             <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">26 700 <span class="cy">руб.</span></span>
+            <span class="catalog-pr-price-text-2"><?=str_replace(' ', "&nbsp;", $arItem['PRICES']['Продажа']['VALUE'])?> <span class="cy">руб.</span></span>
         </div>
+    <? endif ?>
         <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: белый/серебристый</li>
-            <li>Артикул: <span class="article">1493</span>, есть в наличии</li>
+            <? if($arResult['HAS_MODEL']):?>
+                <li>Модель: <?=$arResult['UF_MODEL']?></li>
+            <? endif ?>
+            <? foreach($arResult['UF_SECTION_CHARS'] as $sectionChar): ?>
+                <? if($arItem['PROPERTIES'][$sectionChar]['VALUE']): ?>
+            <li><?=$arItem['PROPERTIES'][$sectionChar]['NAME']?>: <?=$arItem['PROPERTIES'][$sectionChar]['VALUE']?></li>
+                <? endif ?>
+            <? endforeach ?>
+            <? if(!empty($arItem['PROPERTIES']['CML2_ARTICLE']['VALUE'])):?>
+                <li>Артикул: <span class="article"><?=$arItem['PROPERTIES']['CML2_ARTICLE']['VALUE']?></span>, есть в наличии</li>
+            <? endif ?>
         </ul>
-
+        <? if($arItem['CAN_BUY']):?>
         <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
+            <a href="<?=$arItem['ADD_URL']?>" class="button-buy button-bg ">купить</a>
+            <a href="<?=$arItem['ADD_URL']?>" class="button-buy button-one-click button-credit" data-buyid="<?=$arItem['ID']?>">в 1 клик</a>
         </div>
+        <? endif ?>
     </div>
+<? endforeach ?>
 
-    <!-- gold -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-2.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB Gold (Золотой) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">25 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1161</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- black -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-3.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 32GB Black&Space Gray (Черный) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">30 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 32 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1015</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- gold -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-2.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB Gold (Золотой) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">25 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1161</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- black -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-3.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 32GB Black&Space Gray (Черный) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">30 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 32 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1015</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- white -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">26 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: белый/серебристый</li>
-            <li>Артикул: <span class="article">1493</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- black -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-3.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 32GB Black&Space Gray (Черный) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">30 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 32 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1015</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- white -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">26 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: белый/серебристый</li>
-            <li>Артикул: <span class="article">1493</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- gold -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-2.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB Gold (Золотой) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">25 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1161</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- white -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">26 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: белый/серебристый</li>
-            <li>Артикул: <span class="article">1493</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- gold -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-2.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 16GB Gold (Золотой) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">25 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 16 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1161</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
-
-    <!-- black -->
-    <div class="catalog-pr-item">
-        <div class="catalog-pr-picture">
-            <a href="#">
-                <img src="img/catalog-item-3.jpg" class="catalog-pr-picture-img" alt="Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457" />
-            </a>
-        </div>
-        <div class="catalog-pr-title">
-            <a href="#" class="catalog-pr-title-link">
-                Apple iPhone 5S 32GB Black&Space Gray (Черный) А1530/1457
-            </a>
-        </div>
-        <div class="catalog-pr-price">
-            <span class="catalog-pr-price-text">цена</span>
-            <span class="catalog-pr-price-text-2">30 700 <span class="cy">руб.</span></span>
-        </div>
-        <ul class="catalog-pr-characteristics">
-            <li>Модель: iPhone 5S</li>
-            <li>Процессор: Apple A7, Apple M7 (coprocessor)</li>
-            <li>Объем памяти: 32 Гб</li>
-            <li>Цвет: темно-серый/черный</li>
-            <li>Артикул: <span class="article">1015</span>, есть в наличии</li>
-        </ul>
-
-        <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-bg ">купить</a>
-            <a href="#" class="button-buy button-one-click">в 1 клик</a>
-        </div>
-    </div>
 
     </div>
     <!-- /каталог контент -->
     </div>
 
     <div class="catalog-container mt-5 clearfix">
-        <div class="catalog-pagination pull-left">
-            <a href="#" class="catalog-pagination-item">Все</a>
-            <a href="#" class="catalog-pagination-item">1</a>
-            <a href="#" class="catalog-pagination-item">2</a>
-            <a href="#" class="catalog-pagination-item">3</a>
-            <a href="#" class="catalog-pagination-item">4</a>
-            <a href="#" class="catalog-pagination-item">5</a>
-            <a href="#" class="catalog-pagination-item">...</a>
-            <a href="#" class="catalog-pagination-item">22</a>
-            <a href="#" class="catalog-pagination-next"></a>
-        </div>
 
-        <div class="reviews-block pull-left">
-            <span class="reviews-block-text">Оценка iPhone 5S</span>
-            <div class="reviews-stars"><img src="img/reviews-stars.png" alt="5 звёзд"></div><br />
-            <span class="reviews-block-text">Рейтинг 5 на основе</span>
-            <a href="#" class="reviews-block-link">10 отзывов</a>
-        </div>
+        <?=$arResult["NAV_STRING"]?>
 
+<? if($arResult['RATING']):?>
+        <div class="reviews-block pull-left" itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
+            <meta content="<?=$arResult['ITEMS'][0]['DETAIL_PICTURE']['SRC']?>" itemprop="photo">
+            <span class="reviews-block-text" itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating">Оценка <?=$arResult['RATING_NAME']?></span>
+            <div class="reviews-stars"><img src="/bitrix/templates/shop_white_v20/img/reviews-stars.png" alt="5 звёзд"></div><br />
+            <span class="reviews-block-text" itemprop="average">Рейтинг <?=$arResult['RATING']?> на основе</span>
+            <a href="<?=$arResult['RATING_LINK']?>" class="reviews-block-link"><?=$arResult['RATING_COUNT']?> отзывов</a>
+        </div>
+<? endif ?>
+<? if(preg_match('/iphone 5S/is',$arResult['NAME'])): ?>
         <div class="product-review pull-left">
-            <a href="#" class="product-button">
+            <a href="/show_news_obzor_apple_iphone_5s.html" class="product-button" target="_blank">
                 читать обзор<br />
                 iPhone 5S<i class="text-icon product-sprite"></i>
             </a>
         </div>
+<? endif ?>
+<? if(preg_match('/iphone 5C/is',$arResult['NAME'])): ?>
+    <div class="product-review pull-left">
+        <a href="/show_news_obzor-iphone-5c.html" class="product-button" target="_blank">
+            читать обзор<br />
+            iPhone 5C<i class="text-icon product-sprite"></i>
+        </a>
+    </div>
+<? endif ?>
     </div>
 
     </section>
     <!-- /каталог товаров -->
 
     <!-- каталог описание -->
+
+<? if($arResult['DESCRIPTION_2']):?>
+    <?if(empty($_REQUEST['PAGEN_1']) && empty($_REQUEST['SHOWALL_1'])):?>
+        <section class="catalog-desc-section main-section">
+        <?=htmlspecialchars_decode($arResult['DESCRIPTION_2'])?>
+        </section>
+    <?endif?>
+<?elseif($arResult['SEO_TEXT'] && empty($arResult['DESCRIPTION_2'])):?>
     <section class="catalog-desc-section main-section">
-        <h2 class="catalog-desc-title entry-title-2">Возможности iPhone 5S</h2>
-        <p>iPhone 5S был официально презентован компанией Apple 10 сентября 2013 года и на данный момент является флагманом в линейке легендарных айфонов. В период ожидания выхода девайса, он успел изрядно обрасти солидным грузом слухов относительно дизайна и электронных характеристик. Сегодня мы имеем возможность оценить все нюансы нового iPhone 5S из первых рук.</p>
-        <p>Первые изменения коснулись расцветки корпуса: iPhone 5S будет доступна в сером, серебристом и золотом цветах. Задняя крышка выполнена традиционно из анодированного алюминия, что придает устройству легкость и дополнительную прочность. Масса айфона осталась прежней, однако в Apple умудрились добавить в новую модель ряд функций, оставляющих далеко позади всех конкурентов.</p>
-        <img src="img/catalog-desc.jpg" class="img-center" alt="Возможности iPhone 5S" />
-        <p>Главный козырь iPhone 5S – переход на 64-битную архитектуру. Устройство собрано на основе принципиально нового процессора А7, работающего вдвое быстрее, против «пятерки». Графический ускоритель поддерживает OpenGL ES 3.0, как и хваленый Nexus 7, поэтому производительность в играх у iPhone 5s будет на высоте. Производитель оставил возможность устройству поддерживать любые 32-битные программы, хотя максимально потенциал процессора можно оценить только при работе с адаптированными приложениями, которые появятся в Apple Store словно грибы после дождя. Пока же пользователю предлагается ряд предустановленных программ и, естественно, iOS7, полностью совместимая с 64-битными гаджетами. Что касается новой системы, она приобрела около 200 полезных и «декоративных» функций – от новых рингтонов и интерфейса, до модификаций Центра сообщений.</p>
-        <img src="img/catalog-desc-2.jpg" class="img-center" alt="Возможности iPhone 5S" />
-        <p>Apple решила не останавливаться на достигнутом и ввела в конфигурацию айфон 5С сопроцессор М7, постоянно работающий с показаниями гироскопа, акселерометра и компаса. Посредством специальных программ, айфон теперь умеет считать скорость владельца, оценивать пройденное расстояние, считать расход калорий и еще много всякой всячины, полезной для спортсмена. </p>
-        <p>Следующий сокрушительный удар по конкурентам – камера. iPhone 5S снабжен по-прежнему 8 Мп-камерой, однако в ней увеличена диафрагма, площадь и чувствительность датчика. Но самое главное – вспышка: принцип ее действия заключается в синхронном срабатывании зеленого и желтого диодов. Смешанные в определенной пропорции «холодная» и «теплая» подсветки позволяют получить хорошее фото даже при минимальном внешнем освещении. Кроме того, новая камера снабжена опцией 4-кратного замедления при видеосъемке в разрешении 720р.</p>
-        <h2 class="catalog-desc-title entry-title-2">Новый уровень безопасности данных с iPhone 5S</h2>
-        <p>И, наконец, гвоздем программы является биометрический сенсор, о котором было столько разговоров. В айфон 5с теперь встроен датчик, снимающий отпечаток пальца владельца. Идентификатор превращает ваш телефон в абсолютно недоступное для других хранилище информации и позволяет владельцу авторизироваться за секунду в фирменных сервисах.</p>
-        <img src="img/catalog-desc-3.jpg" class="img-center" alt="Возможности iPhone 5S" />
-        <p>Компания Apple начинает продажи iPhone 5S с 20 сентября 2013 года. Цена iPhone 5S остается традиционно высокой: без оформления контракта его стоимость будет начинаться от 700 долларов и выше, и это без учета налогов. Первыми его смогут купить американцы, англичане, французы, японцы, канадцы, австралийцы, китайцы и жители Сингапура. В нашем интернет-магазине, Вы уже сейчас можете купить iPhone 5S с доставкой и гарантией по Москве и всей России.</p>
-        <iframe width="1280" height="720" src="//www.youtube.com/embed/XOcz4lEWgYw" frameborder="0" allowfullscreen></iframe>
+    <?=$arResult['SEO_TEXT'];?>
     </section>
+<?endif?>
     <!-- /каталог описание -->
 
     <script type="text/javascript">
