@@ -25,8 +25,7 @@
         <div class="catalog-row-3 pull-left">
             <div class="catalog-benefits">
                                             <span class="catalog-benefits-text">
-                                                При покупке <?=$arResult['NAME']?><br />
-                                                в магазине Up House<br />Вы получаете:
+                                                При покупке <?=$arResult['NAME']?> в магазине Up House Вы получаете:
                                             </span>
                 <ul class="bonus-img" style="margin-left: <?=15.8*(6-count($arResult['UF_BONUS']))?>px">
                     <? foreach($arResult['UF_BONUS'] as $bonus): ?>
