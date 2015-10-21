@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
+<!--<pre>--><?//print_r($arResult['SUBSECTION'])?><!--</pre>-->
 
     <!-- каталог товаров -->
     <section class="catalog-section main-section">
@@ -10,9 +10,12 @@
                 <?
                 //оставить 2 последних пункта в хлебных крошках
                 $countBreak=count($arResult["PATH"])-2;
+                if(count($arResult["PATH"])==1):
                 ?>
+                <span class="breadcrumbs-item">Главная</span>
+                <?endif?>
                 <?foreach($arResult["PATH"] as $pathSect): if($countBreak>0) {$countBreak--; continue;}?>
-                <span class="breadcrumbs-item"><?=$pathSect["NAME"]?></span>
+                <span class="breadcrumbs-item"<?if(strlen($pathSect["NAME"])>15):?> style="margin-left: 0px;width: 206px;"<?endif?>><?=$pathSect["NAME"]?></span>
                 <?endforeach?>
             </div>
             <h2 class="catalog-title entry-title"><?=$arResult['NAME']?></h2>
@@ -25,7 +28,8 @@
         <div class="catalog-row-3 pull-left">
             <div class="catalog-benefits">
                                             <span class="catalog-benefits-text">
-                                                При покупке <?=$arResult['NAME']?> в магазине Up House Вы получаете:
+                                                При покупке<?if(strlen($arResult['NAME'])>20) echo "<br>"; else echo " ";?>
+                                                <?=$arResult['NAME']?><br>в магазине Up House Вы получаете:
                                             </span>
                 <ul class="bonus-img" style="margin-left: <?=15.8*(6-count($arResult['UF_BONUS']))?>px">
                     <? foreach($arResult['UF_BONUS'] as $bonus): ?>
@@ -42,7 +46,7 @@
     <nav class="catalog-menu-apps clearfix">
        <?$curPage=$APPLICATION->GetCurPage();?>
        <?foreach($arResult["SUBSECTION"] as $subSect):?>
-           <a href="/<?=$subSect['CODE']?>" class="catalog-menu-apps-item<?if($curPage=="/".$subSect['CODE']):?> current<?endif?>"><?=$subSect['NAME']?></a>
+           <a href="/<?=$subSect['CODE']?>" class="catalog-menu-apps-item<?if($curPage=="/".$subSect['CODE']):?> current<?endif?>"><?=$subSect['FILTER_NAME']?></a>
        <?endforeach?>
     </nav>
 <?endif?>
@@ -221,6 +225,10 @@
             <a href="<?=$arItem['ADD_URL']?>" class="button-buy button-bg ">купить</a>
             <a href="<?=$arItem['ADD_URL']?>" class="button-buy button-one-click button-credit" data-buyid="<?=$arItem['ID']?>">в 1 клик</a>
         </div>
+        <? else: ?>
+        <div class="catalog-pr-buy">
+            <a href="#" class="button-buy button-order-no-price addElementPreorderLink" data-buyid="<?=$arItem['ID']?>">оформить предзаказ</a>
+        </div>
         <? endif ?>
     </div>
 <? endforeach ?>
@@ -270,11 +278,13 @@
     <?if(empty($_REQUEST['PAGEN_1']) && empty($_REQUEST['SHOWALL_1'])):?>
         <section class="catalog-desc-section main-section">
         <?=htmlspecialchars_decode($arResult['DESCRIPTION_2'])?>
+            <p style="clear: both"></p>
         </section>
     <?endif?>
 <?elseif($arResult['SEO_TEXT'] && empty($arResult['DESCRIPTION_2'])):?>
     <section class="catalog-desc-section main-section">
     <?=$arResult['SEO_TEXT'];?>
+        <p style="clear: both"></p>
     </section>
 <?endif?>
     <!-- /каталог описание -->

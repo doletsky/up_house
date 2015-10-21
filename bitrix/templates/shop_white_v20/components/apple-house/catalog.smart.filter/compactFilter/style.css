@@ -1,0 +1,234 @@
+.smartfilter li.lvl2_disabled {
+	color: #9b9b9b !important;
+	text-shadow: none !important;
+}
+
+.smartfilter {
+	float:left;
+	border:0px solid #eee;
+	border-radius: 3px;
+	padding:12px 2px 12px 14px;
+	margin:2px;
+	width:190px;
+	float:left;
+	display:block;
+	min-height:352px;
+	background: #e4f2f7;
+
+}
+
+.smartfilter>.filtren>ul>li:first-child {
+	/*display: none;*/
+}
+.smartfilter div, .smartfilter h5, .smartfilter p, .smartfilter ul, .smartfilter li {
+/*	background: none repeat scroll 0 0 transparent;*/
+	border: 0 none;
+	font-size: 100%;
+	margin: 0;
+	outline: 0 none;
+	padding: 0;
+	vertical-align: baseline;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.smartfilter .filtren, .smartfilter .vieweditems {
+	/*background: none repeat scroll 0 0 #FFFFFF;*/
+	/*border: 8px solid #FFFFFF;*/
+	/*margin-top: 20px;*/
+	/*padding: 17px;*/
+	width: 180px;
+}
+.smartfilter .filtren {
+	/*background: none repeat scroll 0 0 #FFFFFF;*/
+	position: relative;
+}
+.smartfilter .filtren h5 {
+	font-size: 15px;
+	margin-bottom: 23px;
+	text-shadow: 0 1px 1px #FFFFFF;
+}
+.smartfilter .filtren td {
+	padding-right: 8px;
+}
+.smartfilter #del_filter, .smartfilter #set_filter {
+	/*margin-top: 23px;*/
+    cursor: pointer;
+}
+.smartfilter ol, .smartfilter ul {
+	list-style: none outside none;
+}
+.smartfilter li {
+	list-style: none outside none;
+    margin: 3px 0;
+}
+.smartfilter .filtren > ul > li > a {
+	/*border-bottom: 1px dashed #007EB4;*/
+    color: black;
+	display: inline-block;
+	font-size: 16px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	text-decoration: none;
+}
+.smartfilter .filtren ul > li > ul {
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+.smartfilter .filtren .modef {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #8BBECB;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+    color: #3F3F3F;
+    font-size: 13px;
+    margin-top: -13px;
+    padding: 10px 25px 10px 10px;
+    position: absolute;
+    right: 6px!important;
+	top:340px!important;
+    white-space: nowrap;
+    z-index: 2000;
+    /*
+	background: none repeat scroll 0 0 white;
+	border: 1px solid #8BBECB;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+	color: #3F3F3F;
+	font-size: 13px;
+	margin-top: -13px;
+	padding: 10px 25px 10px 10px;
+	position: absolute;
+	right: 200px;
+	white-space: nowrap;*/
+}
+.smartfilter .filtren .ecke {
+	-moz-transform: scale(1) rotate(45deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-right: 1px solid #8BBECB;
+	border-top: 1px solid #8BBECB;
+	box-shadow: 2px -1px 4px -1px rgba(0, 0, 0, 0.2);
+	display: block;
+	height: 10px;
+	margin-top: -5px;
+	position: absolute;
+	right: -7px;
+	top: 50%;
+	width: 10px;
+}
+.smartfilter .filtren .lvl2 {
+	color: #000000;
+	font-size: 14px;
+	text-shadow: 0 1px 1px #FFFFFF;
+	vertical-align: top;
+    margin: 1px 0;
+}
+.smartfilter .filtren span.min-price, .smartfilter .filtren span.max-price, .smartfilter .filtren div.min-price, .smartfilter .filtren div.max-price {
+	border: medium none;
+	box-shadow: none;
+	color: #3F3F3F;
+	font-size: 14px;
+	height: 14px;
+}
+.smartfilter .filtren .max-price {
+	/*float: right;*/
+}
+
+.smartfilter .filtren .max-price, .smartfilter .filtren .min-price {
+	border: 1px solid #515151;
+	border-radius: 3px 3px 3px 3px;
+	/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75), 0 3px 6px rgba(215, 215, 215, 0.75) inset;*/
+	display: block;
+	height: 18px;
+	padding: 4px;
+	/*width: 60px;*/
+}
+
+
+.showchild{
+    margin-bottom: 10px !important;
+}
+
+.min-price, .max-price{
+    display: inline-block !important;
+}
+
+.smartfilter .filtren .lvl2 label {
+    display: inline-block;
+    margin: 4px 0 0px 10px;
+    vertical-align: top;
+    color: #555555;
+}
+
+
+.smartfilter .filtren .lvl2 .checkbox-invisible  {
+    display: none;
+}
+
+.smartfilter .filtren .lvl2 .checkbox-visible {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 4px 0 0 0;
+    background: url("/bitrix/templates/shop_white/private/images/smartfiler/check_box_fulinest.png") repeat scroll 0px 15px rgba(0, 0, 0, 0);
+}
+
+.smartfilter .filtren .lvl2 input:checked + .checkbox-visible {
+    /*background: url("link_to_another_image");*/
+    background: url("/bitrix/templates/shop_white/private/images/smartfiler/check_box_fulinest.png") repeat scroll 0px 0px rgba(0, 0, 0, 0);
+
+}
+
+#smart_filter_prices{
+    width: 100%;
+}
+
+#smart_filter_prices td{
+    width: 50%;
+}
+
+
+#arrFilter_P1_MIN, #arrFilter_P1_MAX{
+    width: inherit;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#set_filter, #del_filter {
+    border: 1px solid #515151;
+    border-radius: 3px;
+    display: inline-block;
+    height: 30px;
+    padding: 4px 10px;
+}
+
+#set_filter  {
+    background-color: #FFFFFF;
+}
+
+#del_filter {
+    background-color: #515151;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.smart_filter_submitbtns {
+    text-align: center;
+}
+
+.smart-filter-container {
+    margin: 5px 0 !important;
+}
+
+.plus_from_smart_filter, .plus_from_smart_filter:hover{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 132px;
+    text-decoration: none;
+}
+
+.filter_cont_SIZE {
+	margin-top:4px;
+}
+
+.b_grid_container, .content {
+	 width: 900px; 	
+}
