@@ -127,7 +127,7 @@
                 if(countSlide<6) $('.bx-controls-direction a').addClass('disabled');//console.log(this);
             }
         });
-        slideSubmenu.goToSlide(slideNum);console.log('sNm='+slideNum);
+        if(slideNum>0){slideSubmenu.goToSlide(slideNum);console.log('sNm='+slideNum);}
     });
 </script>
 <!-- /slider submenu -->

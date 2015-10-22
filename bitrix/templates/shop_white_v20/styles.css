@@ -61,35 +61,35 @@
     height: 21px;
     overflow: hidden;
     background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
-    -ms-background-position-x: 160px;background-position-x: 160px;
+    -ms-background-position-x: 160px;background-position: 160px 0;
 }
 .bonus-car {
     width: 31px;
     height: 21px;
     overflow: hidden;
     background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
-    -ms-background-position-x: 123px;background-position-x: 123px;
+    -ms-background-position-x: 123px;background-position: 123px 0;
 }
 .bonus-masonry {
     width: 20px;
     height: 21px;
     overflow: hidden;
     background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
-    -ms-background-position-x: 51px;background-position-x: 51px;
+    -ms-background-position-x: 51px;background-position: 51px 0;
 }
 .bonus-sim {
     width: 16px;
     height: 21px;
     overflow: hidden;
     background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
-    -ms-background-position-x: 80px;background-position-x: 80px;
+    -ms-background-position-x: 80px;background-position: 80px 0;
 }
 .bonus-ru {
     width: 20px;
     height: 21px;
     overflow: hidden;
     background-image: url("/bitrix/templates/shop_white_v20/img/catalog-benefits.png");
-    -ms-background-position-x: 20px;background-position-x: 20px;
+    -ms-background-position-x: 20px;background-position: 20px 0;
 }
 
 .bonus-note:before {

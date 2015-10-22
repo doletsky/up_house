@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?  $sec=$arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]];
     $curPage=$APPLICATION->GetCurPage();
-    $count=-1;?>
+    $slideNum=$count=-1;?>
 
 <!--<pre>--><?//print_r($sec)?><!--</pre>-->
 

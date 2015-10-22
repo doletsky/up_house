@@ -227,7 +227,7 @@
         </div>
         <? else: ?>
         <div class="catalog-pr-buy">
-            <a href="#" class="button-buy button-order-no-price addElementPreorderLink" data-buyid="<?=$arItem['ID']?>">оформить предзаказ</a>
+            <a href="#" class="button-buy button-order-no-price addElementPreorderLink" data-buyid="<?=$arItem['ID']?>" data-purl="<?=$arItem["DETAIL_PAGE_URL"]?>">оформить предзаказ</a>
         </div>
         <? endif ?>
     </div>

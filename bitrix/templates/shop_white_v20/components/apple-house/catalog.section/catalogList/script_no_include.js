@@ -4,7 +4,7 @@ $(document).ready(function(e) {
         $('#modal_overlay').bPopup({
             content: 'ajax',
             contentContainer:'#modal_overlay_cont',
-            loadUrl: '/include/tools/buyoneclick.php?buy_id=' + $(this).attr('data-buyid'),
+            loadUrl: '/include/tools/buyoneclick_v20.php?buy_id=' + $(this).attr('data-buyid'),
             closeClass: 'modal_oneClickBuy_close',
             speed: 450,
             transition: 'slideDown',
@@ -24,8 +24,8 @@ $(document).ready(function(e) {
         $('#modal_overlay').bPopup({
             content: 'ajax',
             contentContainer:'#modal_overlay_cont',
-            loadUrl: '/include/tools/preorder.php?buy_id=' + $(this).attr('data-buyid')
-                                         + '&product_url=' + encodeURIComponent($(this).closest('.b_catalog-item').find('.cat_item_cont').find('.b_catalog-item_image-container').find('a').attr('href')),
+            loadUrl: '/include/tools/preorder_v20.php?buy_id=' + $(this).attr('data-buyid')
+                                         + '&product_url=' + encodeURIComponent($(this).attr('data-purl')),
             closeClass: 'modal_preOrder_close',
             speed: 450,
             transition: 'slideDown',
