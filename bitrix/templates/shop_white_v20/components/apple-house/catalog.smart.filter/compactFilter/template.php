@@ -5,6 +5,50 @@
     list($uri)=explode('?',$_SERVER['REQUEST_URI']);
     
 ?>
+<!--<pre>--><?//print_r($arResult["DISPLAY_FILTER_ITEMS"])?><!--</pre>-->
+
+<!--    <div class="catalog-filter-price mt-3">-->
+<!--        <div class="catalog-filter-title catalog-filter-price-title">Цена</div>-->
+<!--        <div class="catalog-filter-price-container">-->
+<!--            <div>-->
+<!--                <label class="form-label catalog-filter-price-label">-->
+<!--                    От <input type="text" class="form-input catalog-filter-price-inp" />-->
+<!--                </label>-->
+<!--                <label class="form-label catalog-filter-price-label">-->
+<!--                    До <input type="text" class="form-input catalog-filter-price-inp" />-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <div><img src="img/catalog-filter-price.png" alt="филтер цены" /></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<form action="" method="get" name="smart-filter" id="smart-filter">
+    <input type="hidden" id="set_filter" name="set_filter" value="Показать">
+
+<?foreach($arResult["DISPLAY_FILTER_ITEMS"] as $ITEM){
+    ?>
+    <div class="catalog-filter-manufacturer mt-3">
+        <div class="catalog-filter-title"><?=$ITEM["NAME"]?></div>
+        <div class="input-row">
+        <?foreach($ITEM["VALUES"] as $PROP):?>
+            <input id="manufacturer-radio-<?=$PROP["CONTROL_ID"]?>" type="radio" value="Y" name="<?=$PROP["CONTROL_ID"]?>">
+            <label for="manufacturer-radio-<?=$PROP["CONTROL_ID"]?>" class="input-helper input-helper--radio"><?=$PROP["VALUE"]?></label>
+            <br />
+        <?endforeach?>
+        </div>
+    </div>
+    <?
+}?>
+
+
+    <div class="filter-buttons-block clearfix">
+        <a href="#" class="button-transparent filter-button pull-left" onclick="$('form#smart-filter').submit();">показать</a>
+        <a href="#" class="filter-del pull-left">
+            <span class="del-icon product-sprite"></span>
+        </a>
+    </div>
+</form>
+
+<?if(0):?>
 <form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smartfilter">
     <?foreach($arResult["HIDDEN"] as $arItem):?>
         <input
@@ -221,3 +265,4 @@
     var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>');
 </script>
 <? // $this->EndViewTarget("right_area");?>
+<?endif?>
