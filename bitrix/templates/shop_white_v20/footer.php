@@ -85,6 +85,68 @@
 <script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order-v20.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/bitrix/templates/shop_white/private/js/jquery-ui-1.10.4.custom.js"></script>
+<link rel="stylesheet" href="/bitrix/templates/shop_white_v20/css/jquery-ui-1.10.4.custom.css">
+<link rel="stylesheet" href="/bitrix/templates/shop_white_v20/css/private_smart_filter.css">
+<script>
+    // vvv ===================== часть шкалы цен для смартфильтра
+    // переменна хранит в себе всю ширину фильтра
+    var sliderRangeWidth = parseInt($('#slider-range').css('width'));
+
+    // #slider-fixed-range-max выводит серую область всего диапазона
+    $('#slider-range').append('<div id="slider-fixed-range-max" class="slider-range-styles" style="width: ' + (sliderRangeWidth - 10) + 'px"></div>');
+
+    // #slider-fixed-range выводит зеленую часть доступного диапазона
+    $('#slider-range').append('<div id="slider-fixed-range" class="slider-range-styles"></div>');
+    $('#slider-fixed-range').css('left',  (5 + $('#slider-range').attr('minval') * (sliderRangeWidth - 10) / $('#slider-range').attr('extrmaxval')) + 'px');
+    $('#slider-fixed-range').css('width', ($('#slider-range').attr('maxval') * (sliderRangeWidth - 10) / $('#slider-range').attr('extrmaxval') - parseInt($('#slider-fixed-range').css('left')) + 5) + 'px');
+
+    // ширина выбраннй области, не показывается пользователю и в текущей реализации в принципе не нужна
+    $('.ui-widget-header').css('width', (sliderRangeWidth - 10) + 'px');
+
+    // позиционирование засечек
+    var sliderRangeWidthQuarter = (sliderRangeWidth - 10) / 4;
+    for(var i=0; i<5; i++)
+        $('#slider-range').append('<div class="slider-pin" style="left: ' + (5 + sliderRangeWidthQuarter*i - ((i == 4) ? 1 : 0)) + 'px"></div>');
+
+    // позицонирование значений засечек
+    $sliderMiddles = $('#slider-scale .slider-middles');
+    $sliderMiddles.eq(0).css('left', '3px');
+    for(var i=1; i<$sliderMiddles.length-1; i++)
+        $sliderMiddles.eq(i).css('left', (3 + sliderRangeWidthQuarter*i - parseInt($sliderMiddles.eq(i).css('width'))/2) + 'px');
+    $sliderMiddles.eq(4).css('left', (sliderRangeWidth - parseInt($sliderMiddles.eq(4).css('width'))) + 'px');
+    // ^^^ ===================== часть шкалы цен для смартфильтра
+    $(function() {
+        $( "#slider-range" ).slider({
+            range: true,
+            /*                                    min: 149.00,
+             max: 59999.00,*/
+            min: 0,
+            max: 1000,
+
+            values: [ 0.49,
+                600.99 ],
+            slide: function( event, ui ) {console.log(ui);
+                $(".min-price").val(ui.values[0] * 100);
+                $(".max-price").val(ui.values[1] * 100);
+
+                var perCentMinPrice = (parseInt($("#slider-range a:first-of-type").css('left')) / parseInt($('#slider-range').css('width')));
+                var perCentMaxPrice = (parseInt($("#slider-range a:last-of-type").css('left')) / parseInt($('#slider-range').css('width')));
+
+                $("#slider-range a:first-of-type").css('margin-left', "-" + (10 * perCentMinPrice) + "px");
+                $("#slider-range a:last-of-type").css('margin-left', "-" + (10 * perCentMaxPrice) + "px");
+            }
+        });
+        $( ".min-price" ).val( $( "#slider-range" ).slider( "values", 0 ) * 100 );
+        $( ".max-price" ).val( $( "#slider-range" ).slider( "values", 1 ) * 100 );
+
+        var perCentMinPrice = (parseInt($("#slider-range a:first-of-type").css('left')) / parseInt($('#slider-range').css('width')));
+        var perCentMaxPrice = (parseInt($("#slider-range a:last-of-type").css('left')) / parseInt($('#slider-range').css('width')));
+
+        $("#slider-range a:first-of-type").css('margin-left', "-" + (10 * perCentMinPrice) + "px");
+        $("#slider-range a:last-of-type").css('margin-left', "-" + (10 * perCentMaxPrice) + "px");
+    });
+</script>
 
 <!-- slider script -->
 <script>

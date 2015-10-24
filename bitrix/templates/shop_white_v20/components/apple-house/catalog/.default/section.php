@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <!-- страница каталога -->
-<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
+<pre><?print_r($arResult)?></pre>
 <div id="page-catalog">
 
 

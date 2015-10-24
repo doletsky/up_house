@@ -81,7 +81,7 @@ if($arResult['IBLOCK_SECTION_ID']==0)$showfilter=true;
 
 //где сохранить пробелы
 $arNbsp=array(
-    " Gb", " GB", "и ", "для ", "в "
+    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP"
 );
 
 $arResult["SUBSECTION"]=array();
@@ -97,6 +97,10 @@ while ($arSubSect = $rsSubSect->GetNext())
         $arFieldsFilters = $obFilters->GetFields();
         $fName=$arFieldsFilters["NAME"];
         foreach($arNbsp as $nb) $fName=str_replace($nb, str_replace(" ", "&nbsp", $nb), $fName);//сохраняем пробелы
+        if(substr_count($fName, " ")==2){
+            $pos = strpos($fName, " ");
+            $fName=substr_replace($fName, "&nbsp", $pos, 1);
+        }
         $fName=str_replace(" ", "<br/>", $fName);//оставшиеся пробелы заменяем <br>
         $arSubSect["FILTER_NAME"]=$fName;
     }
