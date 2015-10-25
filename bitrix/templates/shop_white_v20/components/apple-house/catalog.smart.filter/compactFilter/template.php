@@ -14,6 +14,7 @@ parse_str($_SERVER['QUERY_STRING'], $urlParams);
 
 <?foreach($arResult["DISPLAY_FILTER_ITEMS"] as $ITEM){
     if($ITEM['PROPERTY_VIEW_TYPE']!='C'&&$ITEM['PRICE']!=1) {
+        continue;
         ?>
         <pre><?print_r($ITEM)?></pre>
     <?

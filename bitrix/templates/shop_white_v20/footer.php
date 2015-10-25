@@ -119,13 +119,11 @@
     $(function() {
         $( "#slider-range" ).slider({
             range: true,
-            /*                                    min: 149.00,
-             max: 59999.00,*/
             min: 0,
-            max: 1000,
+            max: $('#slider-range').attr('extrmaxval')/100,
 
-            values: [ 0.49,
-                600.99 ],
+            values: [ $('#slider-range').attr('minval')/100,
+                $('#slider-range').attr('maxval')/100 ],
             slide: function( event, ui ) {console.log(ui);
                 $(".min-price").val(ui.values[0] * 100);
                 $(".max-price").val(ui.values[1] * 100);
