@@ -1,5 +1,5 @@
 <?
-$uri=$APPLICATON->GetCurPage();
+$uri=$_SERVER['PHP_SELF'];
 $arResult["DISPLAY_FILTER_ITEMS"]=array();
 foreach($arResult["ITEMS"] as $item){
     if( in_array($item['NAME'], $arParams["FILTER_FIELDS"])) {

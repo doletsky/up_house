@@ -80,6 +80,9 @@
             <span class="catalog-pr-price-text">цена</span>
             <span class="catalog-pr-price-text-2"><?=str_replace(' ', "&nbsp;", $arItem['PRICES']['Продажа']['VALUE'])?> <span class="cy">руб.</span></span>
         </div>
+    <? else: ?>
+        <div class="catalog-pr-price" style="height: 45px;">
+        </div>
     <? endif ?>
         <ul class="catalog-pr-characteristics">
             <? if($arResult['HAS_MODEL']):?>

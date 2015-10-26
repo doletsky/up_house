@@ -81,7 +81,7 @@ if($arResult['IBLOCK_SECTION_ID']==0)$showfilter=true;
 
 //где сохранить пробелы
 $arNbsp=array(
-    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP"
+    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP", "Moto ",  " Gen.", " 6"
 );
 
 $arResult["SUBSECTION"]=array();
