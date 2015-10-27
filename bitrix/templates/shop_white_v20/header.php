@@ -175,6 +175,7 @@ IncludeTemplateLangFile(__FILE__); ?>
             <div class="row">
                 <div class="col-xs-12">
                     <?$firstSectionCode=explode("/",$APPLICATION->GetCurPage());?>
+
                     <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","",
                         Array(
                             "VIEW_MODE" => "TEXT",
@@ -182,10 +183,10 @@ IncludeTemplateLangFile(__FILE__); ?>
                             "IBLOCK_TYPE" => "1c_catalog",
                             "IBLOCK_ID" => "8",
                             "SECTION_ID" => "",
-                            "SECTION_CODE" => $firstSectionCode[1],
+                            "SECTION_CODE" => "",//$firstSectionCode[1],
                             "SECTION_URL" => "",
                             "COUNT_ELEMENTS" => "Y",
-                            "TOP_DEPTH" => "1",
+                            "TOP_DEPTH" => "3",
                             "SECTION_FIELDS" => "",
                             "SECTION_USER_FIELDS" => "",
                             "ADD_SECTIONS_CHAIN" => "Y",

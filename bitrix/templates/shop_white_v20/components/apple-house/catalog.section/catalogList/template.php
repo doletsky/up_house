@@ -1,6 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult['SUBSECTION'])?><!--</pre>-->
-
+<?if($_GET['debug']==1):?>
+    <pre><?print_r($arResult)?></pre>
+<?endif?>
     <!-- каталог товаров -->
     <section class="catalog-section main-section">
 

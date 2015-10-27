@@ -1,14 +1,14 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<?  $sec=$arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]];
+<?  //$sec=$arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]];
     $curPage=$APPLICATION->GetCurPage();
     $slideNum=$count=-1;?>
-
-<!--<pre>--><?//print_r($sec)?><!--</pre>-->
-
+<?if($_GET['debug']==1):?>
+    <pre><?print_r($arResult)?></pre>
+<?endif?>
 <div class="menu-model clearfix">
     <div id="slide-submenu">
-<?foreach($arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]] as $subSect): $count++;?>
-    <a class="menu-model-item<?if(substr_count($curPage."/", "/".$subSect["CODE"])>0):$slideNum=$count;?> current<?endif?>" href="/<?=$subSect["CODE"]?>">
+<?foreach($arResult["SECTIONS"]["CHILD"][$arResult["PARENT"]] as $subSect): $count++;?>
+    <a class="menu-model-item<?if(!strcmp(trim($curPage,"/"), trim($subSect["CODE"],"/"))):$slideNum=$count;?> current<?endif?>" href="/<?=$subSect["CODE"]?>">
         <?if(is_array($subSect["PICTURE"])):?>
             <img src="<?=$subSect["PICTURE"]["SRC"]?>" alt="<?=$subSect["NAME"]?>" class="menu-model-img" />
         <?else:?>
