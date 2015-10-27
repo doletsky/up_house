@@ -81,7 +81,7 @@ if($arResult['IBLOCK_SECTION_ID']==0)$showfilter=true;
 
 //где сохранить пробелы
 $arNbsp=array(
-    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP", "Moto ",  " Gen.", " 6"
+    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP", "Moto ",  " Gen.", " 6", "iPad ", "mini ", " 4", "4 ", " 3", "3 "
 );
 
 $arResult["SUBSECTION"]=array();
@@ -89,7 +89,14 @@ $arFilterSubSect = array('IBLOCK_ID' => $arResult['IBLOCK_ID'],'SECTION_ID' => $
 $rsSubSect = CIBlockSection::GetList(array('left_margin' => 'asc'),$arFilterSubSect);
 while ($arSubSect = $rsSubSect->GetNext())
 {
-    $arSubSect["FILTER_NAME"]="";
+    $fName=$arSubSect["NAME"];
+    foreach($arNbsp as $nb) $fName=str_replace($nb, str_replace(" ", "&nbsp", $nb), $fName);//сохраняем пробелы
+    if(substr_count($fName, " ")==2){
+        $pos = strpos($fName, " ");
+        $fName=substr_replace($fName, "&nbsp", $pos, 1);
+    }
+    $fName=str_replace(" ", "<br/>", $fName);//оставшиеся пробелы заменяем <br>
+    $arSubSect["FILTER_NAME"]=$fName;
     $arSelectFilters = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM","PROPERTY_SECTION");
     $arFilterFilters = Array("IBLOCK_ID"=>16, "ACTIVE"=>"Y", "PROPERTY_SECTION"=>$arSubSect['ID']);
     $resFilters = CIBlockElement::GetList(Array(), $arFilterFilters, false, false, $arSelectFilters);

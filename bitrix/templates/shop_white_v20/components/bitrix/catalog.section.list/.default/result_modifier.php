@@ -1,7 +1,40 @@
 <?
+$curPage=$APPLICATION->GetCurPage();
+$arDirUrl=explode("/",$curPage);
+$sectCode=trim($curPage ,"/");
+
+$arFilter = Array('IBLOCK_ID'=>$arResult["SECTION"]["IBLOCK_ID"], 'GLOBAL_ACTIVE'=>'Y', 'CODE'=>$sectCode);
+$db_list = CIBlockSection::GetList(Array($by=>$order), $arFilter);
+if($ar_result = $db_list->GetNext())
+{
+    $arResult["SECTION"]= $ar_result;
+}
+
+
+if(array_key_exists($arResult["SECTION"]["ID"],$arResult["SECTIONS"]["TOP"]))
+{
+    $arResult["PARENT"]=$arResult["SECTION"]["ID"];
+    $arResult["CUR_CODE"]="";
+}
+elseif(array_key_exists($arResult["SECTION"]["IBLOCK_SECTION_ID"],$arResult["SECTIONS"]["TOP"]))
+{
+    $arResult["PARENT"]=$arResult["SECTION"]["IBLOCK_SECTION_ID"];
+    $arResult["CUR_CODE"]=$arResult["SECTION"]["CODE"];
+}
+else
+{
+    $res = CIBlockSection::GetByID($arResult["SECTION"]["IBLOCK_SECTION_ID"]);
+    if($ar_res = $res->GetNext()){
+        $arResult["PARENT"]=$ar_res["IBLOCK_SECTION_ID"];
+        $arResult["CUR_CODE"]=$ar_res["CODE"];
+    }
+}
+$arTMP=$arResult["SECTIONS"]["CHILD"][$arResult["PARENT"]];
+$arResult["SECTIONS"]["CHILD"]=array();
+$arResult["SECTIONS"]["CHILD"][$arResult["PARENT"]]=$arTMP;
+
 if(0){
-    $curPage=$APPLICATION->GetCurPage();
-    $arDirUrl=explode("/",$curPage);
+
     $sectCode=$arDirUrl[1];
     if(count($arDirUrl)>2)$sectCode=$arDirUrl[1]."/".$arDirUrl[2];
     $arResult["DEBUG"][]=$arResult["SECTION"]["CODE"];
