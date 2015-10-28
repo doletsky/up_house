@@ -1,5 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<pre><?print_r($arResult)?></pre>
+<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
+<?$this->SetViewTarget("mycontent");//дальше контент который буферизируется?>
+<div class="test">detail catalog page</div>
+<?$this->EndViewTarget();//конец буферизации?>
 <? $APPLICATION->SetAdditionalCSS("/news/style.css", true); ?>
 <script type="text/javascript">
 $(document).ready(function() {

@@ -2,9 +2,7 @@
 <?  //$sec=$arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]];
     $curPage=$APPLICATION->GetCurPage();
     $slideNum=$count=-1;?>
-<?if($_GET['debug']==1):?>
-    <pre><?print_r($arResult)?></pre>
-<?endif?>
+
 <div class="menu-model clearfix">
     <div id="slide-submenu">
 <?foreach($arResult["SECTIONS"]["CHILD"][$arResult["PARENT"]] as $subSect): $count++;?>
