@@ -2,9 +2,7 @@
 <?if($_GET['debug']==1&&0):?>
     <pre><?print_r($arResult)?></pre>
 <?endif?>
-<?$this->SetViewTarget("mycontent");//дальше контент который буферизируется?>
-    <div class="test">section catalog page</div>
-<?$this->EndViewTarget();//конец буферизации?>
+
     <!-- каталог товаров -->
     <section class="catalog-section main-section">
 

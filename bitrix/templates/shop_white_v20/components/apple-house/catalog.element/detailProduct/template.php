@@ -1,8 +1,719 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
-<?$this->SetViewTarget("mycontent");//дальше контент который буферизируется?>
-<div class="test">detail catalog page</div>
-<?$this->EndViewTarget();//конец буферизации?>
+<pre><?print_r($arResult)?></pre>
+
+
+    <!-- страница карточка товара -->
+    <div id="page-product-info" style="margin-top: 25px;">
+
+    <!-- верхний блок карточки товара -->
+    <div class="main-shadow">
+        <!-- breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs-item">Главная</a>
+            <?foreach($arResult['SECTION']['PATH'] as $path):?>
+            <a href="/<?=$path["CODE"]?>" class="breadcrumbs-item"><?=$path["NAME"]?></a>
+            <?endforeach;?>
+            <div class="breadcrumbs-item"><?=$arResult['NAME']?></div>
+        </div>
+        <!-- /breadcrumbs -->
+
+        <section class="product-info">
+            <div class="clearfix mb-3">
+                <div class="pull-left">
+                    <h1 class="product-title entry-title"><?=$arResult['NAME']?></h1>
+                </div>
+
+                <div class="pull-right">
+                    <!-- социальные иконки -->
+                    <div class="social-button">
+                        <a href="#" class="social-icon facebook" title="facebook"></a>
+                        <a href="#" class="social-icon vk" title="vk"></a>
+                        <a href="#" class="social-icon twitter" title="twitter"></a>
+                    </div>
+                    <!-- /социальные иконки -->
+                    <? if(!empty($arResult['PROPERTIES']['CML2_ARTICLE']['VALUE'])):?>
+                    <div class="product-article">артикул товара: <span class="article-pr"><?=$arResult['PROPERTIES']['CML2_ARTICLE']['VALUE'];?></span></div>
+                    <?endif?>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- левая колонка -->
+                <div class="col-xs-6">
+                    <div class="product-info-img">
+                        <img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" alt="iphone" title="iphone" />
+                    </div>
+
+                    <?  if ($arResult["ARR_IMAGES"]["VALUE"]): ?>
+                        <?  $iCounter = 0; $current=" current";
+                        foreach($arResult["ARR_IMAGES"]["VALUE"] as $imgCode):
+                            if(5 < ++$iCounter)
+                                break;
+                            ?>
+                            <?$renderImage = CFile::ResizeImageGet($imgCode, array("width" => 70, "height" => 100));?>
+                            <div class="product-thumbnail<?=$current?>">
+                                <img src="<?=$renderImage['src']?>" alt="<?=$arResult['NAME']?>" title="<?=$arResult['NAME']?>" />
+                            </div>
+                            <?$current="";?>
+                        <? endforeach; ?>
+                    <? endif ?>
+
+                    <div class="product-review mt-4">
+                        <a href="#" class="product-button">видео обзор<br /> iPhone 5S<i class="play-icon product-sprite"></i></a>
+                        <a href="#" class="product-button">читать обзор<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
+                        <a href="#" class="product-button">инструкция<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
+                    </div>
+
+                    <div class="accept mt-2">
+                        Принимаем к оплате:
+                        <i class="visa-icon product-sprite"></i>
+                        <i class="master-card-icon product-sprite"></i>
+                    </div>
+                </div>
+
+                <!-- правая колонка -->
+                <div class="col-xs-6">
+
+                    <!-- цена -->
+                    <div class="price">
+                        <div class="price-text">Цена:</div>
+                        <? if($arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE']):?>
+                        <div class="price-num"><?=str_replace('руб.', '<span class="rub">руб.</span>', $arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE'])?></div>
+                        <? elseif($arResult['PRICES']['Продажа']['PRINT_VALUE']):?>
+                            <div class="price-num"><?=str_replace('руб.', '<span class="rub">руб.</span>',$arResult['PRICES']['Продажа']['PRINT_VALUE'])?></div>
+                        <? endif ?>
+                    </div>
+
+<?if($arResult['CAN_BUY']):?>
+    <? if(count($arResult["SECTION"]["OPTIONS"])):?>
+                    <!-- дополнительные услуги -->
+                    <div class="additional-services">
+                        <h3 class="additional-services-title">Дополнительные услуги:</h3>
+        <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
+            <? if(!empty($optionGroup["ITEMS"])): ?>
+                <div class="option_group">
+                <? if($optionGroup['ID'] == '228' || $optionGroup['ID'] == '304'):?>
+                    <a href="/inet" target="_blank" class="option_additional_link">подробнее о тарифах</a>
+                <? endif;?>
+                <? /*if($optionGroup['ID'] == '5902'):?>
+                                            <a href="/tariff" class="option_additional_link">подробнее о тарифах</a>
+                                        <? endif;*/?>
+                <?
+                $someComment = false;
+
+                //                                        if($optionGroup['ID'] == '423' || $optionGroup['ID'] == '420' || $optionGroup['ID'] == '421' || $optionGroup['ID'] == '458')
+                if($optionGroup['NAME'] == 'Сим-карта в подарок')
+                    $someComment = '<a href="/tariff" target="_blank" class="option_additional_comment">выбрать красивый номер</a>';
+                if($optionGroup['NAME'] == 'Гарнитура')
+                    $someComment = '<a href="/brands/sony/headset" target="_blank" class="option_additional_comment">выбрать цвет гарнитуры</a>';
+
+                ?>
+<!--                --><?// if(count($optionGroup["ITEMS"]) > 1): ?>
+                        <div class="additional-services-item clearfix">
+                            <div class="input-checkbox">
+                                <input type="checkbox" value="None" id="input-checkbox" name="check" />
+                                <label for="input-checkbox"></label>
+                            </div>
+                            <div class="additional-services-text">Обрезка сим-карты (бесплатно)</div>
+                        </div>
+            <?endif?>
+        <?endforeach?>
+                        <div class="additional-services-item clearfix">
+                            <div class="input-checkbox">
+                                <input type="checkbox" value="None" id="input-checkbox-2" name="check" />
+                                <label for="input-checkbox-2"></label>
+                            </div>
+                            <span class="additional-services-text">Установка глянцевой пленки на iPhone 5 (500 руб.)</span>
+                        </div>
+
+                        <div class="additional-services-item clearfix">
+                            <div class="input-checkbox">
+                                <input type="checkbox" value="None" id="input-checkbox-3" name="check" />
+                                <label for="input-checkbox-3"></label>
+                            </div>
+                            <span class="additional-services-text">Установка матовой пленки на iPhone 5 (500 руб.)</span>
+                        </div>
+
+                        <div class="additional-services-item clearfix">
+                            <div class="input-checkbox">
+                                <input type="checkbox" value="None" id="input-checkbox-4" name="check" />
+                                <label for="input-checkbox-4"></label>
+                            </div>
+                            <span class="additional-services-text">Установка программ (бесплатно)</span>
+                        </div>
+
+                    </div>
+    <?endif?>
+
+                    <!-- кнопки купить -->
+                    <div class="product-buy">
+                        <a href="#" class="button-buy">Купить</a>
+                        <a href="#" class="button-credit">В кредит</a>
+                        <a href="#" class="button-one-click">Купить в один клик</a>
+                    </div>
+
+<?endif?>
+
+                    <?if($arResult['CAN_BUY']):?>
+                        <div class="margin-top_10px">
+                            <span itemprop="availability"content="in_stock"></span>
+                            <? if(count($arResult["SECTION"]["OPTIONS"])):?>
+                                <div class="color_black fs_14px fs_bold margin-bottom_5px">Дополнительные услуги</div>
+                            <? endif ?>
+                            <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
+                                <? if(!empty($optionGroup["ITEMS"])): ?>
+                                    <div class="option_group">
+                                        <? if($optionGroup['ID'] == '228' || $optionGroup['ID'] == '304'):?>
+                                            <a href="/inet" target="_blank" class="option_additional_link">подробнее о тарифах</a>
+                                        <? endif;?>
+                                        <? /*if($optionGroup['ID'] == '5902'):?>
+                                            <a href="/tariff" class="option_additional_link">подробнее о тарифах</a>
+                                        <? endif;*/?>
+                                        <?
+                                        $someComment = false;
+
+                                        //                                        if($optionGroup['ID'] == '423' || $optionGroup['ID'] == '420' || $optionGroup['ID'] == '421' || $optionGroup['ID'] == '458')
+                                        if($optionGroup['NAME'] == 'Сим-карта в подарок')
+                                            $someComment = '<a href="/tariff" target="_blank" class="option_additional_comment">выбрать красивый номер</a>';
+                                        if($optionGroup['NAME'] == 'Гарнитура')
+                                            $someComment = '<a href="/brands/sony/headset" target="_blank" class="option_additional_comment">выбрать цвет гарнитуры</a>';
+
+                                        ?>
+                                        <? if(count($optionGroup["ITEMS"]) > 1): ?>
+                                            <div class="option_radio_title"><span class="color_black fs_14px"><?=$optionGroup['NAME']?>:</span>
+                                                <? if($optionGroup['NAME'] == 'Комплекты со скидкой'):?>
+                                                    <? if(  $arResult['SECTION']['ID'] == 261
+                                                        || $arResult['SECTION']['ID'] == 263
+                                                        || $arResult['SECTION']['ID'] == 377
+                                                    ):?>
+                                                        (<a href="/iphone-6/accessories/set" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                    <? endif ?>
+                                                    <? if(  $arResult['SECTION']['ID'] == 385
+                                                        || $arResult['SECTION']['ID'] == 386
+                                                        || $arResult['SECTION']['ID'] == 387
+                                                        || $arResult['SECTION']['ID'] == 384
+                                                    ):?>
+                                                        (<a href="/iphone-6-plus/accessories/set" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                    <? endif ?>
+                                                <? endif ?>
+                                            </div>
+                                            <div class="option_radio_group">
+                                                <div class="option_input option_input_radio"><input checked="checked" type="radio" id="option_<?=$optionGroup['ID']?>_0" value="0" name="opiton_<?=$optionGroup['ID']?>" data-price="0"></div>
+                                                <div class="option_name_radio"><label class="option_label" for="option_<?=$optionGroup['ID']?>_0"><span class="color_black fs_14px">не требуется</span></label></div>
+                                            </div>
+                                            <? foreach($optionGroup["ITEMS"] as $option): ?>
+                                                <div class="option_radio_group">
+                                                    <div class="option_input option_input_radio"><input type="radio" id="option_<?=$option['ID']?>" value="<?=$option['ID']?>" name="opiton_<?=$optionGroup['ID']?>" data-price="<?=round($option['CATALOG_PRICE_1'])?>"></div>
+                                                    <div class="option_name_radio"><label class="option_label" for="option_<?=$option['ID']?>"><span class="color_black fs_14px"><?=$option['NAME']?></span></label> <? if($option['CATALOG_PRICE_1'] > 0):?>(<span class="color_79b70d"><?=$option['PRICES']['Продажа']['PRINT_VALUE_VAT']?></span>)<? else: ?>(<span class="color_79b70d">бесплатно</span>)<? endif ?></div>
+                                                </div>
+                                            <? endforeach ?>
+                                        <? elseif(count($optionGroup["ITEMS"]) == 1):?>
+                                            <? $option = $optionGroup["ITEMS"][0];
+                                            if($option['CATALOG_PRICE_1'] == 0 && $someComment == false) $someComment = 'бесплатно';
+                                            ?>
+                                            <div class="option_input option_input_checkbox"><input type="checkbox" id="option_<?=$option['ID']?>" value="<?=$option['ID']?>" name="opiton_<?=$optionGroup['ID']?>" data-price="<?=round($option['CATALOG_PRICE_1'])?>"></div>
+                                            <div class="option_name_checkbox"><label class="option_label" for="option_<?=$option['ID']?>"><span class="color_black fs_14px"><?=$optionGroup['NAME']?></span></label> <? if($option['CATALOG_PRICE_1'] > 0):?>(<span class="color_79b70d"><?=$option['PRICES']['Продажа']['PRINT_VALUE_VAT']?></span>)&nbsp;<? endif; ?><? if ($someComment): ?>(<span class="color_79b70d"><?=$someComment?></span>)<? endif ?>
+                                                <? if(  $arResult['SECTION']['ID'] == 502 // Apple Watch
+                                                    || $arResult['SECTION']['ID'] == 503 // Apple Watch Edition
+                                                    || $arResult['SECTION']['ID'] == 504 // Apple Watch Sport
+                                                ):
+                                                    ?>
+                                                    <? if ($optionGroup['ID'] == 889 // Чехол от
+                                                ):
+                                                    ?>
+                                                    (<a href="/gadgets/watch/iwatch/accessories/cases" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                <? endif ?>
+                                                    <? if ($optionGroup['ID'] == 888 // Сменный ремешок от
+                                                ):
+                                                    ?>
+                                                    (<a href="/gadgets/watch/iwatch/accessories/bands" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                <? endif ?>
+                                                <? endif ?>
+                                                <?// if(  $arResult['SECTION']['IBLOCK_SECTION_ID'] == 182 // MacBook Air
+                                                //   || $arResult['SECTION']['IBLOCK_SECTION_ID'] == 181 // MacBook Pro Retina
+                                                //   ):
+                                                ?>
+                                                <? if ($optionGroup['ID'] == 923 // Чехол от MacBook Air
+                                                ):
+                                                    ?>
+                                                    (<a href="/macbook/cases/air" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                <? endif ?>
+                                                <? if ($optionGroup['ID'] == 927 // Чехол от MacBook Pro Retina
+                                                ):
+                                                    ?>
+                                                    (<a href="/macbook/cases/pro_retina" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                <? endif ?>
+                                                <? if ($optionGroup['ID'] == 891 // Чехол от MacBook 12
+                                                ):
+                                                    ?>
+                                                    (<a href="/macbook/12/macbook/cases" target="_blank" class="option_additional_comment">подробнее</a>)
+                                                <? endif ?>
+                                                <? // endif ?>
+                                            </div>
+                                        <? endif ?>
+                                    </div>
+                                <? endif ?>
+                            <? endforeach ?>
+                            <? /*else: ?>
+                            <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
+                                <? if(!empty($optionGroup["ITEMS"])): ?>
+                                <div class="margin-bottom_5px">
+                                    <span class="color_black fs_14px"><?=$optionGroup['NAME']?>:</span>
+                                    <div class="b_select-styled">
+                                        <select data-group="<?=$optionGroup['ID']?>" class="b_select-styled_select product_options">
+                                            <option value="0" data-price="0" class="b_select-styled_option">Не требуется</option>
+                                            <? foreach($optionGroup["ITEMS"] as $option): ?>
+                                            <option value="<?=$option['ID']?>" data-price="<?=round($option['CATALOG_PRICE_1'])?>" class="b_select-styled_option"><?=$option['NAME']?></option>
+                                            <? endforeach ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <? endif ?>
+                            <? endforeach ?>
+                        <? endif*/ ?>
+                            <? /*
+                        <? foreach($arResult['SERVICE_LIST']['SECTIONS'] as $serviceSection): ?>
+                            <div class="margin-top_5px">
+                                <span class="color_black fs_14px"><?=$serviceSection['NAME']?>:</span>
+                                <div class="b_select-styled">
+                                    <select data-service="<?=$serviceSection['ID']?>" class="b_select-styled_select additional_service">
+                                        <option value="0" data-price="0" class="b_select-styled_option">Не требуется</option>
+                                        <? foreach($arResult['SERVICE_LIST']['SERVICES'][$serviceSection['ID']] as $service): ?>
+                                        <option value="<?=$service['ID']?>" data-price="<?=round($service['CATALOG_PRICE_1'])?>" class="b_select-styled_option"><?=$service['PROPERTY_LIST_NAME_VALUE']?></option>
+                                        <? endforeach ?>
+                                    </select>
+                                </div>
+                            </div>
+                        <? endforeach ?>
+                        */ ?>
+                        </div>
+                        <? if($arResult['SECTION']['UF_BUY_DISABLE']): ?>
+                            <a class="b_button-buy button-buy_preorder no-style-link" id="addElementLink" href="<?=$arResult['ADD_URL']?>&preorder=Y"></a>
+                        <? else: ?>
+                            <a class="b_button-buy button-buy_buy no-style-link" id="addElementLink" href="<?=$arResult['ADD_URL']?>" onclick="ga('send', 'event', 'Acc window', 'Open', '');"></a>
+                            <? if(false): ?>
+                                <a class="b_button-buy button-buy_buy-credit no-style-link" id="addElementCreditLink" href="<?=$arResult['ADD_URL']?>&credit=Y"></a>
+                            <? endif;?>
+                            <a class="b_button-buy button-buy_buy-one-click no-style-link" id="oneClickBuyLink" data-buyid="<?=$arResult["ID"]?>" href="<?=$arResult['ADD_URL']?>"></a>
+                        <? endif ?>
+                    <? else: ?>
+                        <span itemprop="availability" content="out_of_stock"></span>
+                        <? //if($USER->IsAdmin()): ?>
+                        <?  /* <a class="b_button-buy button-buy_buy no-style-link" id="addElementLink" href="<?=$arResult['ADD_URL']?>" onclick="_gaq.push(['_trackEvent', 'Acc window', 'Open', '']);"></a> */ ?>
+                        <a class="b_button-buy button-buy_preorder no-style-link" id="addElementPreorderLink" data-buyid="<?=$arResult["ID"]?>" href="#"></a>
+                        <?  /* <a class="b_button-buy button-buy_buy-one-click no-style-link" id="oneClickBuyLink" data-buyid="<?=$arResult["ID"]?>" href="<?=$arResult['ADD_URL']?>"></a> */ ?>
+                        <? //endif;?>
+                    <? endif ?>
+
+
+
+                    <!-- описание продукта -->
+                    <article class="product-desc">
+                        Новый, совершенный смартфон от компании Apple. Оснащен дисплеем Retina диагональю 4 дюйма, мощным процессором Apple A7, 8-ми мегапиксельной камерой iSight и функцией Touch ID, которая разблокирует устройство с помощью ваших отпечатков пальцев.
+                    </article>
+
+                    <div class="product-select-wrapper">
+                        <select class="product-select">
+                            <option class="product-item">выберите Ваш город</option>
+                            <option class="product-item">Москва</option>
+                            <option class="product-item">Московская область</option>
+                        </select>
+                    </div>
+
+                    <!-- доставка -->
+                    <div class="product-delivery">
+                        <div class="product-delivery-item clearfix">
+                            <div class="product-delivery-img">
+                                <i class="car-icon product-sprite"></i>
+                            </div>
+                            <div class="product-delivery-content">
+                                <h4 class="product-delivery-title">Доставка по Москве в пределах МКАД - 300 руб.</h4>
+                                <div class="product-delivery-text">
+                                    Ближайшая доставка: <strong>Сегодня</strong>, до 24:00<br />
+                                    При оформлении заказа до 19:00
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-delivery-item clearfix">
+                            <div class="product-delivery-img">
+                                <i class="car-icon product-sprite"></i>
+                            </div>
+                            <div class="product-delivery-content">
+                                <h4 class="product-delivery-title">Доставка по Москве в пределах МКАД - 400 руб.</h4>
+                                <div class="product-delivery-text">
+                                    Ближайшая доставка: <strong>Сегодня</strong>, до 24:00<br />
+                                    При оформлении заказа до 19:00
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-delivery-item clearfix">
+                            <div class="product-delivery-img">
+                                <i class="metro-icon product-sprite"></i>
+                            </div>
+                            <div class="product-delivery-content">
+                                <h4 class="product-delivery-title">Самовывоз - бесплатно, <a href="#">м. Багратионовская</a></h4>
+                                <div class="product-delivery-text">
+                                    Ближайший самовывоз: Завтра, 06.07.2014
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <!-- /верхний блок карточки товара -->
+
+    <!-- преимущества -->
+    <section class="advantage main-shadow">
+        <h2 class="advantage-title">При покупке iPhone 5S 16gb в магазине UP-House Вы получаете:</h2>
+
+        <div class="advantage-container clearfix">
+            <div class="advantage-item">
+                <div class="advantage-img">
+                    <i class="warranty-icon product-sprite"></i>
+                </div>
+
+                <div class="advantage-text">1 год полной<br /> гарантии</div>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-img">
+                    <i class="exchange-icon product-sprite"></i>
+                </div>
+
+                <div class="advantage-text">2 недели на обмен<br /> в случае брака</div>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-img">
+                    <i class="nanosim-icon product-sprite"></i>
+                </div>
+
+                <div class="advantage-text">Изготовим nano-SIM<br /> из Вашей SIM-карты</div>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-img">
+                    <i class="language-icon product-sprite"></i>
+                </div>
+
+                <div class="advantage-text">Русский язык в<br /> заводской прошивке</div>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-img">
+                    <i class="delivery-icon product-sprite"></i>
+                </div>
+
+                <div class="advantage-text">Срочную доставку<br /> по Москве</div>
+            </div>
+
+            <div class="advantage-item">
+                <div class="advantage-img">
+                    <i class="appstore-icon product-sprite"></i>
+                </div>
+
+                <div class="advantage-text">Более 100 програм<br /> AppStore бесплатно</div>
+            </div>
+        </div>
+    </section>
+    <!-- /преимущества -->
+
+    <!-- Описание -->
+    <section class="description main-shadow">
+
+    <!-- меню-табы описания -->
+    <ul class="nav nav-tabs" role="tablist" id="myTab">
+        <li class="nav-tab-item active ">
+            <a href="#tab-description-model" role="tab" data-toggle="tab" class="nav-tab-link">описание модели</a>
+        </li>
+        <li class="nav-tab-item"><a href="#tab-characteristics" role="tab" data-toggle="tab" class="nav-tab-link">характеристики</a></li>
+        <li class="nav-tab-item"><a href="#tab-video-review" role="tab" data-toggle="tab" class="nav-tab-link">видео обзор</a></li>
+        <li class="nav-tab-item"><a href="#tab-reviews" role="tab" data-toggle="tab" class="nav-tab-link">отзывы</a></li>
+        <li class="nav-tab-item"><a href="#tab-accessories" role="tab" data-toggle="tab" class="nav-tab-link">аксессуары</a></li>
+    </ul>
+
+    <!-- контент описания -->
+    <div class="tab-content">
+        <!-- описание модели -->
+        <article class="tab-pane active" id="tab-description-model">
+            <h2 class="tab-title">Под полной защитой</h2>
+            <p>Состояние окружающей среды с каждым днем вызывает все больше опасений. Воздух, которым Вы дышите, еда которую едите – знаете ли Вы насколько они безопасны для Вас и Вашей семьи? Оригинальный набор индикаторов состояния окружающей среды Lapka PEM поможет Вам получить самую полную картину. Не ограничивайте себя измерением лишь одного показателя, ведь все показатели одинаково важны. Температура и относительная влажность воздуха, уровень электромагнитного излучения и даже радиации, количество нитратов во фруктах и овощах – набор индикаторов Lapka PEM создан специально для комплексного отслеживания состояния окружающей среды.</p>
+            <img src="img/product-description-model.jpg" alt="Под полной защитой" />
+            <h2 class="tab-title">Умный контроль</h2>
+            <p>Все показатели, снятые высокоточными датчиками Lapka PEM, будут доступны Вам в любой момент прямо на экране Вашего гаджета. Вам нужно лишь загрузить на Ваш iPhone, iPad или iPod специальное бесплатное приложение с App Store и дальнейший обмен данными через канал Bluetooth в автоматическом режиме не потребует никаких усилий. Однако сухие цифры мало о чем могут поведать. Вот почему Ваши индикаторы не просто собирают показатели, а анализируют их, предоставляя Вам самую полезную информацию. В зависимости от конкретного типа окружающей среды, Вы получаете зафиксированные показатели в сравнении с нормами именно данной среды (показатели в детской, в метро, в самолете будут отличаться). Использование электрических приборов, употребление свежих фруктов и овощей – даже повседневные занятия требуют постоянного контроля.</p>
+            <img src="img/product-description-model-2.jpg" alt="Умный контроль" />
+            <h2 class="tab-title">Максимальный комфорт</h2>
+            <p>Lapka PEM не только займет достойное место в Вашем доме, но и отлично впишется в Ваш интерьер. Интересный дизайн, невероятно маленькие размеры прочных и надежных индикаторов позволят им стать Вашим верным и уникальным помощником в борьбе за максимально качественные условия жизни. И пусть Ваш дом и в самом деле станет Вашей крепостью.</p>
+            <img src="img/product-description-model-3.jpg" alt="Максимальный комфорт" />
+            <h2 class="tab-title">В комплекте </h2>
+            <p>Датчик влажности и температуры; датчик уровня нитратов; датчик электромагнитных излучений; датчик радиации (счётчик Гейгера); чехол.</p>
+            <div class="horizontal-line"> </div>
+            <div class="tab-footer">Lapka PEM - комплект индикаторов состояния окружающей среды в интернет-магазине Apple-House с доставкой и гарантией. На странице Lapka PEM - комплект индикаторов состояния окружающей среды вы так же найдете отзывы покупателей, технические характеристики и фотографии товара. Смотреть все товары <a href="#">Гаджеты.</a></div>
+
+        </article>
+        <!-- /описание модели -->
+        <!-- характеристики -->
+        <div class="tab-pane" id="tab-characteristics">
+            <table class="table-container">
+                <tbody>
+                <tr>
+                    <th class="table-title table-characteristics-title" colspan="2">Общие характеристики</th>
+                </tr>
+
+                <tr>
+                    <td class="table-cell">Материал корпуса</td>
+                    <td class="table-cell">Пластик/Металл/Резина</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Цвет</td>
+                    <td class="table-cell">белый/коричневый</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Артикул</td>
+                    <td class="table-cell">2042</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Совместимость</td>
+                    <td class="table-cell">iPhone, iPad, iPad Mini, iPod</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Датчики</td>
+                    <td class="table-cell">t,радиации, влаж-и, электромаг-о излучение, нитратов</td>
+                </tr>
+                <tr>
+                    <th class="table-title table-connection" colspan="2">Связь</th>
+                </tr>
+
+                <tr>
+                    <td class="table-cell">Bluetooth</td>
+                    <td class="table-cell">+</td>
+                </tr>
+                <tr>
+                    <td class="table-cell">Интерфейсы</td>
+                    <td class="table-cell">Bluetooth</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /характеристики -->
+
+        <!--  видео обзор -->
+        <div class="tab-pane" id="tab-video-review">
+            <iframe width="853" height="480" src="//www.youtube.com/embed/hBl3kyX4YME?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!--  /видео обзор -->
+
+        <!-- отзывы -->
+        <div class="tab-pane" id="tab-reviews">
+            <div class="reviews">
+                <div class="clearfix reviews-section">
+                    <div class="pull-left">
+                        <div class="reviews-title">Средняя оценка Lapka PEM</div>
+                        <div class="reviews-img">
+                            <img src="img/reviews-stars.png" alt="5 звёзд" />
+                        </div>
+                    </div>
+
+                    <div class="pull-right"><span class="reviews-text">Рейтинг 5 на основе</span> <a href="#">10 отзывов</a></div>
+                </div>
+
+                <div class="reviews-item">
+                    <div class="reviews-header clearfix">
+                        <span class="reviews-user">Олег</span>
+                        <time class="reviews-time">07.07.2014</time>
+                        <div class="reviews-img">
+                            <img src="img/reviews-stars.png" alt="5 звёзд" />
+                        </div>
+                    </div>
+
+                    <div class="reviews-desc">Аксессуар — это не только наклейка или чехол. В дополнение к телефону можно купить всё что угодно. Портативную акустику, беспроводную зарядку, сканер отпечатков пальцев, миниатюрный принтер. Но и это ещё не всё. Есть, например, устройство для измерения радиации, влажности и даже нитратов в продуктах питания. Называется просто и лаконично — Lapka. Давайте выясним, чем она полезна и как работает.</div>
+                </div>
+
+                <div class="reviews-item">
+                    <div class="reviews-header clearfix">
+                        <span class="reviews-user">Никита</span>
+                        <time class="reviews-time">13.06.2014</time>
+                        <div class="reviews-img">
+                            <img src="img/reviews-stars.png" alt="5 звёзд" />
+                        </div>
+                    </div>
+
+                    <div class="reviews-desc">
+                        Заслышав название Lapka, можно представить всё, что угодно, только не набор датчиков для измерения параметров окружающей среды. Мы, например, чуть было не подумали, что это брелок в виде кроличьей лапки на удачу, или что-то похожее. Но в действительности всё оказалось гораздо интереснее.
+                    </div>
+                </div>
+
+                <div class="reviews-item">
+                    <div class="reviews-header clearfix">
+                        <span class="reviews-user">Алиса</span>
+                        <time class="reviews-time">11.12.2013</time>
+                        <div class="reviews-img">
+                            <img src="img/reviews-stars.png" alt="5 звёзд" />
+                        </div>
+                    </div>
+
+                    <div class="reviews-desc">
+                        Приложение Lapka предназначено для бытового использования, оно отображает информацию в более простом и понятном виде (фон меняет цвет в зависимости от уровня опасности). Отсюда же можно расшарить результат в социальные сети. Желаете похвастаться тем, что съели экологически чистое яблоко? Жмите кнопку! Обнаружили, что ваш дом «фонит»? Покажите собственнику квартиры и скиньте пару тысяч рублей с арендной платы. Словом, запостить результат в некоторых случаях определенно стоит. Главное —не злоупотреблять.
+                    </div>
+                </div>
+
+                <div class="reviews-more"><a href="#" >Читать все отзывы о Lapka PEM (10)</a></div>
+            </div>
+        </div>
+        <!-- /отзывы -->
+
+        <!-- аксессуары -->
+        <div class="tab-pane" id="tab-accessories">
+            <div class="product-container clearfix">
+
+                <!-- 1 slide -->
+                <div class="product-item">
+                    <a href="#" class="product-link">
+                        <figure class="product-content">
+                            <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
+                            <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
+                        </figure>
+                    </a>
+                    <div class="product-price">4 490, -</div>
+                    <div class="clearfix">
+                        <input type="submit" class="button-buy" value="Купить" />
+                        <a href="#" class="button-credit">В кредит</a>
+                    </div>
+                </div>
+
+                <!-- 2 slide -->
+                <div class="product-item">
+                    <a href="#" class="product-link">
+                        <figure class="product-content">
+                            <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
+                            <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
+                        </figure>
+                    </a>
+                    <div class="product-price">23 900, -</div>
+                    <div class="clearfix">
+                        <input type="submit" class="button-buy" value="Купить" />
+                        <a href="#" class="button-credit">В кредит</a>
+                    </div>
+                </div>
+
+                <!-- 3 slide -->
+                <div class="product-item">
+                    <a href="#" class="product-link">
+                        <figure class="product-content">
+                            <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
+                            <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
+                        </figure>
+                    </a>
+                    <div class="product-price">7 290, -</div>
+                    <div class="clearfix">
+                        <input type="submit" class="button-buy" value="Купить" />
+                        <a href="#" class="button-credit">В кредит</a>
+                    </div>
+                </div>
+
+                <!-- 4 slide -->
+                <div class="product-item">
+                    <a href="#" class="product-link">
+                        <figure class="product-content">
+                            <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
+                            <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
+                        </figure>
+                    </a>
+                    <div class="product-price">6 090, -</div>
+                    <div class="clearfix">
+                        <input type="submit" class="button-buy" value="Купить" />
+                        <a href="#" class="button-credit">В кредит</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /аксессуары -->
+    </div>
+
+    </section>
+    <!-- /Описание -->
+
+    <!-- похожие товары -->
+    <section class="similar-products main-section">
+        <h2 class="similar-products-title entry-title">похожие товары</h2>
+
+        <div class="product-container clearfix">
+
+            <!-- 1 slide -->
+            <div class="product-item">
+                <a href="#" class="product-link">
+                    <figure class="product-content">
+                        <img src="img/carousel-5.jpg" alt="Lapka PEM" class="product-img" />
+                        <figcaption class="product-desc">Браслет Jawbone Up24 Persimmon (Оранжевый) M</figcaption>
+                    </figure>
+                </a>
+                <div class="product-price">4 490, -</div>
+                <div class="clearfix">
+                    <input type="submit" class="button-buy" value="Купить" />
+                    <a href="#" class="button-credit">В кредит</a>
+                </div>
+            </div>
+
+            <!-- 2 slide -->
+            <div class="product-item">
+                <a href="#" class="product-link">
+                    <figure class="product-content">
+                        <img src="img/carousel-6.jpg" alt="Lapka PEM" class="product-img" />
+                        <figcaption class="product-desc">Apple iPhone 5C 32GB Yellow (Желтый) MF093RU/A</figcaption>
+                    </figure>
+                </a>
+                <div class="product-price">23 900, -</div>
+                <div class="clearfix">
+                    <input type="submit" class="button-buy" value="Купить" />
+                    <a href="#" class="button-credit">В кредит</a>
+                </div>
+            </div>
+
+            <!-- 3 slide -->
+            <div class="product-item">
+                <a href="#" class="product-link">
+                    <figure class="product-content">
+                        <img src="img/carousel-7.jpg" alt="Lapka PEM" class="product-img" />
+                        <figcaption class="product-desc">Беспроводная акустическая система JBL Pulse</figcaption>
+                    </figure>
+                </a>
+                <div class="product-price">7 290, -</div>
+                <div class="clearfix">
+                    <input type="submit" class="button-buy" value="Купить" />
+                    <a href="#" class="button-credit">В кредит</a>
+                </div>
+            </div>
+
+            <!-- 4 slide -->
+            <div class="product-item">
+                <a href="#" class="product-link">
+                    <figure class="product-content">
+                        <img src="img/carousel-8.jpg" alt="Lapka PEM" class="product-img" />
+                        <figcaption class="product-desc">Радиоуправляемый вездеход Brookstone Rover Revolution</figcaption>
+                    </figure>
+                </a>
+                <div class="product-price">6 090, -</div>
+                <div class="clearfix">
+                    <input type="submit" class="button-buy" value="Купить" />
+                    <a href="#" class="button-credit">В кредит</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- /похожие товары -->
+
+    </div>
+    <!-- /страница карточка товара -->
+
+<?if(0):?>
 <? $APPLICATION->SetAdditionalCSS("/news/style.css", true); ?>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -807,3 +1518,4 @@ $lteRegexp = '/^(' .
         <? endif  ?>
     </div>
 </div>
+<?endif?>

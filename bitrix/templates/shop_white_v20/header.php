@@ -174,32 +174,8 @@ IncludeTemplateLangFile(__FILE__); ?>
             </div>
 
             <!-- submenu catalog -->
-            <div class="row">
-                <div class="col-xs-12">
-                    <?$firstSectionCode=explode("/",$APPLICATION->GetCurPage());?>
+            <?$APPLICATION->ShowViewContent('submenu_catalog');?>
 
-                    <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","",
-                        Array(
-                            "VIEW_MODE" => "TEXT",
-                            "SHOW_PARENT_NAME" => "Y",
-                            "IBLOCK_TYPE" => "1c_catalog",
-                            "IBLOCK_ID" => "8",
-                            "SECTION_ID" => "",
-                            "SECTION_CODE" => "",//$firstSectionCode[1],
-                            "SECTION_URL" => "",
-                            "COUNT_ELEMENTS" => "Y",
-                            "TOP_DEPTH" => "3",
-                            "SECTION_FIELDS" => "",
-                            "SECTION_USER_FIELDS" => "",
-                            "ADD_SECTIONS_CHAIN" => "Y",
-                            "CACHE_TYPE" => "A",
-                            "CACHE_TIME" => "36000000",
-                            "CACHE_NOTES" => "",
-                            "CACHE_GROUPS" => "Y"
-                        )
-                    );?>
-                </div>
-            </div>
 
         </div>
 
