@@ -81,11 +81,13 @@
 <script type="text/javascript" src="/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
+
 <script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order-v20.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="/bitrix/templates/shop_white/private/js/jquery-ui-1.10.4.custom.js"></script>
+<script type="text/javascript" src="/bitrix/templates/shop_white_v20/js/jquery.fancybox.pack.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
 <link rel="stylesheet" href="/bitrix/templates/shop_white_v20/css/jquery-ui-1.10.4.custom.css">
 <link rel="stylesheet" href="/bitrix/templates/shop_white_v20/css/private_smart_filter.css">
 <script>

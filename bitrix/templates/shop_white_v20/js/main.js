@@ -12,3 +12,21 @@ if (!!('ontouchstart' in window))
 var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(m_i, s);
 console.log('ontouchstart' in window);
+
+$(document).ready(function(){
+    $(".product-thumbnail").fancybox({
+        // $("a.grouped_elements").fancybox(arrLoadedImgs, {
+
+        'padding' : 0,
+        'transitionIn' : 'none',
+        'transitionOut' : 'none',
+        'type' : 'image',
+        'changeFade' : 0
+        /*
+         'transitionIn'  :   'elastic',
+         'transitionOut' :   'elastic',
+         'speedIn'       :   600,
+         'speedOut'      :   200,
+         'overlayShow'   :   true*/
+    });
+})

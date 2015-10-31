@@ -80,21 +80,22 @@ if($arResult['IBLOCK_SECTION_ID']==0)$showfilter=true;
 }*/
 
 //где сохранить пробелы
-$arNbsp=array(
-    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP", "Moto ",  " Gen.", " 6", "iPad ", "mini ", " 4", "4 ", " 3", "3 "
-);
+//$arNbsp=array(
+//    " Gb", " GB", "и ", "для ", "в ", " 2", " C", " UP ", " UP", "Moto ",  " Gen.", " 6", "iPad ", "mini ", " 4", "4 ", " 3", "3 "
+//);
 
 $arResult["SUBSECTION"]=array();
 $arFilterSubSect = array('IBLOCK_ID' => $arResult['IBLOCK_ID'],'SECTION_ID' => $arResult['PATH'][1]['ID'],'DEPTH_LEVEL' => 3);
 $rsSubSect = CIBlockSection::GetList(array('left_margin' => 'asc'),$arFilterSubSect);
 while ($arSubSect = $rsSubSect->GetNext())
 {
-    $fName=$arSubSect["NAME"];
-    foreach($arNbsp as $nb) $fName=str_replace($nb, str_replace(" ", "&nbsp", $nb), $fName);//сохраняем пробелы
-    if(substr_count($fName, " ")==2){
-        $pos = strpos($fName, " ");
-        $fName=substr_replace($fName, "&nbsp", $pos, 1);
-    }
+//    $fName=$arSubSect["NAME"];
+//    foreach($arNbsp as $nb) $fName=str_replace($nb, str_replace(" ", "&nbsp", $nb), $fName);
+//    if(substr_count($fName, " ")==2){
+//        $pos = strpos($fName, " ");
+//        $fName=substr_replace($fName, "&nbsp", $pos, 1);
+//    }
+    $fName= str_replace("_", "&nbsp", $fName);//сохраняем пробелы
     $fName=str_replace(" ", "<br/>", $fName);//оставшиеся пробелы заменяем <br>
     $arSubSect["FILTER_NAME"]=$fName;
     $arSelectFilters = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM","PROPERTY_SECTION");
@@ -103,11 +104,7 @@ while ($arSubSect = $rsSubSect->GetNext())
     while($obFilters = $resFilters->GetNextElement()){
         $arFieldsFilters = $obFilters->GetFields();
         $fName=$arFieldsFilters["NAME"];
-        foreach($arNbsp as $nb) $fName=str_replace($nb, str_replace(" ", "&nbsp", $nb), $fName);//сохраняем пробелы
-        if(substr_count($fName, " ")==2){
-            $pos = strpos($fName, " ");
-            $fName=substr_replace($fName, "&nbsp", $pos, 1);
-        }
+        $fName= str_replace("_", "&nbsp", $fName);//сохраняем пробелы
         $fName=str_replace(" ", "<br/>", $fName);//оставшиеся пробелы заменяем <br>
         $arSubSect["FILTER_NAME"]=$fName;
     }
