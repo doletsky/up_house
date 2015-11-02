@@ -14,19 +14,16 @@ s.parentNode.insertBefore(m_i, s);
 console.log('ontouchstart' in window);
 
 $(document).ready(function(){
-    $(".product-thumbnail").fancybox({
-        // $("a.grouped_elements").fancybox(arrLoadedImgs, {
+    $(".product-thumbnail.current").css('left',$(".product-thumbnail:first").position().left+'px');
+    $(".product-thumbnail").unbind("click");
+    $(".product-thumbnail").click(function(){
+        var aClicked = $(this).position().left;
+        var imgSrc=$(this).attr('href');
+        $(".product-thumbnail.current").css('left',aClicked+'px');
+        $("#main-img").fadeTo("fast", 0.1, function(){
+            $("#main-img").attr('src',imgSrc);
+        });
 
-        'padding' : 0,
-        'transitionIn' : 'none',
-        'transitionOut' : 'none',
-        'type' : 'image',
-        'changeFade' : 0
-        /*
-         'transitionIn'  :   'elastic',
-         'transitionOut' :   'elastic',
-         'speedIn'       :   600,
-         'speedOut'      :   200,
-         'overlayShow'   :   true*/
+        $("#main-img").fadeTo("medium", 1);
     });
 })

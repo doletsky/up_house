@@ -41,100 +41,29 @@
                 <!-- левая колонка -->
                 <div class="col-xs-6">
 
-                    <div class="b_grid_unit-1-2 ta_center">
-                        <? if(is_array($arResult['DETAIL_PICTURE'])):?>
-                            <div id="main-img-container">
-                                <?php
-                                $lteCategories = [];
-                                $lteRegexp = '/^(' .
-                                    'ipad\-5\/[^\/]+\/wifi_4g' .
-                                    '|' .
-                                    'ipad\-pro\/[^\/]+\/cellular' .
-                                    '|' .
-                                    'ipad\-mini4\/[^\/]+\/wi\-fi\-4g' .
-                                    '|' .
-                                    'ipad\-mini\-2\-retina\/[^\/]+\/wi\-fi\-4g' .
-                                    '|' .
-                                    'iphone\-5c\/(8|16|32)gb\/\w+' .
-                                    '|' .
-                                    'iphone\-5s\/(vip\/(color\/)?)?(16|32|64)gb\/\w+' .
-                                    ')/is';
-                                ?>
-                                <?php if (in_array($arResult['IBLOCK_SECTION_ID'], $lteCategories) || preg_match($lteRegexp, $arResult['PROPERTIES']['CML2_CODE']['VALUE'])): ?>
-                                    <div class='lte_on_img'><a href='/lte/'><img src='/images/lte.png'></a></div>
-                                <?php endif; ?>
 
-                                <a id="fancy-box-phantom" rel="" href="<?=$arResult['DETAIL_PICTURE']['SRC']?>" data-id="0">
-                                    <img id="main-img" itemprop="image" src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" style="max-width: 400px; max-height: 400px;" alt="<?=$arResult['NAME']?>">
-                                </a>
-                                <img id="loading-process" src="/bitrix/templates/shop_white/private/images/loading-process.gif" />
-                                <? //if ($USER->IsAdmin()) ?>
-                                <? if($arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']): ?>
-                                    <div id='video-btn-container'>
-                                        <a href='#' onclick='$.fancybox("<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/<?=$arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']?>\" frameborder=\"0\" allowfullscreen></iframe>"); return false;'>
-                                            <img src='/images/video_btn.png'>
-                                        </a>
-                                    </div>
-                                    <?/*        <iframe width="560" height="315" src="//www.youtube.com/embed/<?=$arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']?>" frameborder="0" allowfullscreen></iframe> */?>
-
-                                <? endif ?>
-                            </div>
-                            <? /* <img itemprop="image" src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" width="<?=$arResult['DETAIL_PICTURE']['WIDTH']?>" height="<?=$arResult['DETAIL_PICTURE']['HEIGHT']?>" alt="<?=$arResult['NAME']?>"> */ ?>
-                        <? endif ?>
-                        <? // if ($USER->IsAdmin()): ?>
-                        <?  if ($arResult["ARR_IMAGES"]["VALUE"]): ?>
-                            <div id="img-preview-selector">
-                                <a class="grouped_elements" rel="group1" href="<?=$arResult['DETAIL_PICTURE']['SRC']?>">
-                                    <img itemprop="image" src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" style="max-width:70px; max-height: 100px" alt="<?=$arResult['NAME']?>">
-                                </a>
-                                <?  $iCounter = 0;
-                                foreach($arResult["ARR_IMAGES"]["VALUE"] as $imgCode):
-                                    if(4 < ++$iCounter)
-                                        break;
-                                    ?>
-                                    <?$renderImage = CFile::ResizeImageGet($imgCode, array("width" => 70, "height" => 100));?>
-                                    <? /* <a class="grouped_elements" rel="group1" href="<?=$renderImage['src']?>"> */ ?>
-                                    <?=CFile::ShowImage($renderImage['src'], 70, 100, "imgcode='". $imgCode . "' class='img_showed'", "", false);?>
-                                    <? /* </a> */ ?>
-                                <? endforeach; ?>
-                            </div>
-                            <div id="img-preview-selector-hidden"></div>
-                            <div id="img-preview-selector-border"></div>
-                        <?   endif;   ?>
-                        <? if(preg_match('/apple iphone 5S/is',$arResult['NAME'])): ?>
-                            <br><br><br><br><a href='/show_news_obzor_apple_iphone_5s.html' target="_blank"><img src='/images/read_review_button.png' alt='Обзор iPhone 5s'></a>
-                        <? elseif(preg_match('/apple iphone 5C/is',$arResult['NAME'])): ?>
-                            <br><br><br><br><a href='/show_news_obzor-iphone-5c.html' target="_blank"><img src='/images/read_review_button.png' alt='Обзор iPhone 5C'></a>
-                        <? elseif(preg_match('/apple iphone 6 plus/is',$arResult['NAME'])): ?>
-                            <br><br><br><br><a href='/show_news_iphone6_plus.html' target="_blank"><img src='/images/read_review_button.png' alt='Обзор iPhone 6 Plus'></a>
-                        <? elseif(preg_match('/apple iphone 6/is',$arResult['NAME'])): ?>
-                            <br><br><br><br><a href='/show_news_iphone6.html' target="_blank"><img src='/images/read_review_button.png' alt='Обзор iPhone 6'></a>
-                        <? elseif('gadgets/sport/action_camera/GoPro' == $arResult['SECTION']['CODE']): ?>
-                            <br><br><br><br><a href='/show_news_gopro.html' target="_blank"><img src='/images/read_review_button.png' alt='Обзор камер GoPro'></a>
-                        <? endif ?>
+                    <div class="product-info-img" data-id="0" id="fancy-box-phantom">
+                        <img id="main-img" itemprop="image" src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" alt="<?=$arResult['NAME']?>" title="<?=$arResult['NAME']?>" />
                     </div>
 
-<!--                    <div class="product-info-img">-->
-<!--                        <img src="--><?//=$arResult['DETAIL_PICTURE']['SRC']?><!--" alt="--><?//=$arResult['NAME']?><!--" title="--><?//=$arResult['NAME']?><!--" />-->
-<!--                    </div>-->
-<!---->
-<!--                    --><?//  if ($arResult["ARR_IMAGES"]["VALUE"]): ?>
-<!--                        <div class="product-thumbnail current" rel="group1" href="--><?//=$arResult['DETAIL_PICTURE']['SRC']?><!--">-->
-<!--                            --><?//=CFile::ShowImage($arResult['DETAIL_PICTURE']['SRC'], 70, 70)?>
-<!--                        </div>-->
-<!--                        --><?//  $iCounter = 0; $current=" current";
-//                        foreach($arResult["ARR_IMAGES"]["VALUE"] as $imgCode):
-//                            if(5 < ++$iCounter)
-//                                break;
-//                            ?>
-<!--                            --><?//$renderImage = CFile::ResizeImageGet($imgCode, array("width" => 70, "height" => 100));?>
-<!--                            --><?//$renderImageFull = CFile::ResizeImageGet($imgCode, array("width" => 400, "height" => 400));?>
-<!--                            <div class="product-thumbnail" rel="group1" href="--><?//=$renderImageFull['src']?><!--">-->
-<!--                                <img src="--><?//=$renderImage['src']?><!--" alt="--><?//=$arResult['NAME']?><!--" title="--><?//=$arResult['NAME']?><!--" />-->
-<!--                            </div>-->
-<!--                            --><?////$current="";?>
-<!--                        --><?// endforeach; ?>
-<!--                    --><?// endif ?>
+                    <?  if ($arResult["ARR_IMAGES"]["VALUE"]): ?>
+                        <div class="product-thumbnail" rel="group1" href="<?=$arResult['DETAIL_PICTURE']['SRC']?>">
+                            <?=CFile::ShowImage($arResult['DETAIL_PICTURE']['SRC'], 70, 70)?>
+                        </div>
+                        <?  $iCounter = 0; $current=" current";
+                        foreach($arResult["ARR_IMAGES"]["VALUE"] as $imgCode):
+                            if(5 < ++$iCounter)
+                                break;
+                            ?>
+                            <?$renderImage = CFile::ResizeImageGet($imgCode, array("width" => 70, "height" => 100));?>
+                            <?$renderImageFull = CFile::ResizeImageGet($imgCode, array("width" => 400, "height" => 400));?>
+                            <div class="product-thumbnail" rel="group1" href="<?=$renderImageFull['src']?>">
+                                <img itemprop="image" src="<?=$renderImage['src']?>" alt="<?=$arResult['NAME']?>" title="<?=$arResult['NAME']?>" imgcode="<?=$imgCode?>" />
+                            </div>
+                            <?//$current="";?>
+                        <? endforeach; ?>
+                    <? endif ?>
+                    <div class="product-thumbnail current"></div>
 
                     <div class="product-review mt-4">
                         <a href="#" class="product-button">видео обзор<br /> iPhone 5S<i class="play-icon product-sprite"></i></a>
@@ -168,14 +97,12 @@
                     <div class="additional-services">
                         <h3 class="additional-services-title">Дополнительные услуги:</h3>
         <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
+<!--                        <pre>--><?//print_r($optionGroup)?><!--</pre>-->
             <? if(!empty($optionGroup["ITEMS"])): ?>
                 <div class="option_group">
                 <? if($optionGroup['ID'] == '228' || $optionGroup['ID'] == '304'):?>
                     <a href="/inet" target="_blank" class="option_additional_link">подробнее о тарифах</a>
                 <? endif;?>
-                <? /*if($optionGroup['ID'] == '5902'):?>
-                                            <a href="/tariff" class="option_additional_link">подробнее о тарифах</a>
-                                        <? endif;*/?>
                 <?
                 $someComment = false;
 
@@ -186,39 +113,26 @@
                     $someComment = '<a href="/brands/sony/headset" target="_blank" class="option_additional_comment">выбрать цвет гарнитуры</a>';
 
                 ?>
-<!--                --><?// if(count($optionGroup["ITEMS"]) > 1): ?>
+                <? if(count($optionGroup["ITEMS"]) > 1): ?>
+                    <?=$optionGroup["NAME"]?>
+                        <?foreach($optionGroup["ITEMS"] as $item):?>
                         <div class="additional-services-item clearfix">
-                            <div class="input-checkbox">
-                                <input type="checkbox" value="None" id="input-checkbox" name="check" />
-                                <label for="input-checkbox"></label>
-                            </div>
-                            <div class="additional-services-text">Обрезка сим-карты (бесплатно)</div>
+                            <input type="radio" value="None" id="input-checkbox" name="check" />
+                            <div class="additional-services-text"><?=$item["NAME"]?></div>
                         </div>
+                        <?endforeach?>
+                <? else: ?>
+                    <div class="additional-services-item clearfix">
+                        <div class="input-checkbox">
+                            <input type="checkbox" value="None" id="input-checkbox" name="check" />
+                            <label for="input-checkbox"></label>
+                        </div>
+                        <div class="additional-services-text"><?=$optionGroup["ITEMS"][0]["NAME"]?></div>
+                    </div>
+                <?endif?>
+                </div>
             <?endif?>
         <?endforeach?>
-                        <div class="additional-services-item clearfix">
-                            <div class="input-checkbox">
-                                <input type="checkbox" value="None" id="input-checkbox-2" name="check" />
-                                <label for="input-checkbox-2"></label>
-                            </div>
-                            <span class="additional-services-text">Установка глянцевой пленки на iPhone 5 (500 руб.)</span>
-                        </div>
-
-                        <div class="additional-services-item clearfix">
-                            <div class="input-checkbox">
-                                <input type="checkbox" value="None" id="input-checkbox-3" name="check" />
-                                <label for="input-checkbox-3"></label>
-                            </div>
-                            <span class="additional-services-text">Установка матовой пленки на iPhone 5 (500 руб.)</span>
-                        </div>
-
-                        <div class="additional-services-item clearfix">
-                            <div class="input-checkbox">
-                                <input type="checkbox" value="None" id="input-checkbox-4" name="check" />
-                                <label for="input-checkbox-4"></label>
-                            </div>
-                            <span class="additional-services-text">Установка программ (бесплатно)</span>
-                        </div>
 
                     </div>
     <?endif?>
@@ -226,13 +140,12 @@
                     <!-- кнопки купить -->
                     <div class="product-buy">
                         <a href="#" class="button-buy">Купить</a>
-                        <a href="#" class="button-credit">В кредит</a>
                         <a href="#" class="button-one-click">Купить в один клик</a>
                     </div>
 
 <?endif?>
 
-                    <?if($arResult['CAN_BUY']):?>
+                    <?if(0&&$arResult['CAN_BUY']):?>
                         <div class="margin-top_10px">
                             <span itemprop="availability"content="in_stock"></span>
                             <? if(count($arResult["SECTION"]["OPTIONS"])):?>

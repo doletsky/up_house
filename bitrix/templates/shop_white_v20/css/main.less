@@ -353,7 +353,7 @@ input[type="submit"] {
 }
  
 input[type="radio"], input[type="checkbox"]{
-    display: none;
+    display: block;
  
     &:checked + label:before {
         background: #259ccf;
@@ -1185,6 +1185,9 @@ input[type="radio"], input[type="checkbox"]{
 
         &.current {
             border: 1px solid #259ccf;
+            position: absolute;
+            height: 72px;
+            width: 72px;
         }
     }
 
