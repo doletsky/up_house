@@ -1,8 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<?  //$sec=$arResult["SECTIONS"]["CHILD"][$arResult["SECTION"]["ID"]];
+<?
     $curPage=$APPLICATION->GetCurPage();
     $slideNum=$count=-1;?>
-
+<pre><?print_r($arResult)?></pre>
 <div class="menu-model clearfix">
     <div id="slide-submenu">
 <?foreach($arResult["SECTIONS"]["CHILD"][$arResult["PARENT"]] as $subSect): $count++;?>

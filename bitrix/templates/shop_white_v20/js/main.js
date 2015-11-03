@@ -14,16 +14,30 @@ s.parentNode.insertBefore(m_i, s);
 console.log('ontouchstart' in window);
 
 $(document).ready(function(){
-    $(".product-thumbnail.current").css('left',$(".product-thumbnail:first").position().left+'px');
-    $(".product-thumbnail").unbind("click");
-    $(".product-thumbnail").click(function(){
-        var aClicked = $(this).position().left;
-        var imgSrc=$(this).attr('href');
-        $(".product-thumbnail.current").css('left',aClicked+'px');
-        $("#main-img").fadeTo("fast", 0.1, function(){
-            $("#main-img").attr('src',imgSrc);
+    if($(".product-thumbnail.current").length>0){
+        $(".product-thumbnail.current").css('left',$(".product-thumbnail:first").position().left+'px');
+        $(".product-thumbnail").unbind("click");
+        $(".product-thumbnail").click(function(){
+            var aClicked = $(this).position().left;
+            var imgSrc=$(this).attr('href');
+            $(".product-thumbnail.current").css('left',aClicked+'px');
+            $("#main-img").fadeTo("fast", 0.1, function(){
+                $("#main-img").attr('src',imgSrc);
+            });
+
+            $("#main-img").fadeTo("medium", 1);
         });
 
-        $("#main-img").fadeTo("medium", 1);
-    });
+        $(".input-checkbox label").click(function(){
+            var className=$(this).parent().parent().parent().attr("class");
+            if(className=='group-radio'){
+                var eGroup=$(this).parent().parent().parent();
+                var aFor=$(this).attr('for');
+                eGroup.find("input").removeAttr("checked");
+//                $("input#"+aFor).checked(true);
+//                return false;
+            }
+        });
+    }
+
 })

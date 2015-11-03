@@ -2,12 +2,37 @@
 $curPage=$APPLICATION->GetCurPage();
 $arDirUrl=explode("/",$curPage);
 $sectCode=trim($curPage ,"/");
+if($arParams["DETAIL_PAGE"]=="Y"){
+    unset($arDirUrl[count($arDirUrl)-1]);
+    $sectCode=trim(implode("/",$arDirUrl) ,"/");
+}
+$IBLOCK_ID=$arResult["SECTION"]["IBLOCK_ID"];
 
-$arFilter = Array('IBLOCK_ID'=>$arResult["SECTION"]["IBLOCK_ID"], 'GLOBAL_ACTIVE'=>'Y', 'CODE'=>$sectCode);
+$arFilter = Array('IBLOCK_ID'=>$IBLOCK_ID, 'GLOBAL_ACTIVE'=>'Y', 'CODE'=>$sectCode);
 $db_list = CIBlockSection::GetList(Array($by=>$order), $arFilter);
 if($ar_result = $db_list->GetNext())
 {
     $arResult["SECTION"]= $ar_result;
+}else{
+    $resEl = CIBlockElement::GetByID($arParams["ELEMENT_ID"]);
+    if($ar_res_el = $resEl->GetNext()){
+        $resSec = CIBlockSection::GetByID($ar_res_el['IBLOCK_SECTION_ID']);
+        if($ar_res_sec = $resSec->GetNext())
+            $sectCode = $ar_res_sec['CODE'];
+            $arFilter = Array('IBLOCK_ID'=>$IBLOCK_ID, 'GLOBAL_ACTIVE'=>'Y', 'CODE'=>$sectCode);
+            $db_list = CIBlockSection::GetList(Array($by=>$order), $arFilter);
+            if($ar_result = $db_list->GetNext())
+            {
+                $arResult["SECTION"]= $ar_result;
+            }
+    }
+//        echo $ar_res['NAME'];
+//    $arFilter['CODE']= '%'.$sectCode;
+//    $db_list = CIBlockSection::GetList(Array($by=>$order), $arFilter);
+//    if($ar_result = $db_list->GetNext())
+//    {
+//        $arResult["SECTION"]= $ar_result;
+//    }
 }
 
 

@@ -1,9 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<!--<pre>--><?//print_r($arResult)?><!--</pre>-->
 
 
     <!-- страница карточка товара -->
-    <div id="page-product-info" style="margin-top: 25px;">
+    <div id="page-product-info">
 
     <!-- верхний блок карточки товара -->
     <div class="main-shadow">
@@ -96,10 +95,10 @@
                     <!-- дополнительные услуги -->
                     <div class="additional-services">
                         <h3 class="additional-services-title">Дополнительные услуги:</h3>
+                        <div class="option_group">
         <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
 <!--                        <pre>--><?//print_r($optionGroup)?><!--</pre>-->
             <? if(!empty($optionGroup["ITEMS"])): ?>
-                <div class="option_group">
                 <? if($optionGroup['ID'] == '228' || $optionGroup['ID'] == '304'):?>
                     <a href="/inet" target="_blank" class="option_additional_link">подробнее о тарифах</a>
                 <? endif;?>
@@ -114,26 +113,45 @@
 
                 ?>
                 <? if(count($optionGroup["ITEMS"]) > 1): ?>
-                    <?=$optionGroup["NAME"]?>
-                        <?foreach($optionGroup["ITEMS"] as $item):?>
-                        <div class="additional-services-item clearfix">
-                            <input type="radio" value="None" id="input-checkbox" name="check" />
-                            <div class="additional-services-text"><?=$item["NAME"]?></div>
+                    <div class="additional-services-item clearfix">
+                        <div class="input-checkbox">
+                            <input type="checkbox" value="None" id="input-checkbox-<?=$optionGroup["ID"]?>" name="PROP_<?=$optionGroup["ID"]?>" checked="checked" disabled/>
+                            <label for="input-checkbox-<?=$optionGroup["ID"]?>"></label>
                         </div>
+                        <div class="additional-services-text"><?=$optionGroup["NAME"]?></div>
+                    </div>
+                    <div style="padding-left: 23px" class="group-radio">
+                        <div class="additional-services-item clearfix">
+                            <div class="input-checkbox">
+                                <input type="checkbox" value="None" id="input-checkbox-no-<?=$optionGroup["ID"]?>" name="NO_PROP_<?=$optionGroup["ID"]?>" checked="checked"/>
+                                <label for="input-checkbox-no-<?=$optionGroup["ID"]?>"></label>
+                            </div>
+                            <div class="additional-services-text">не требуется</div>
+                        </div>
+                        <?foreach($optionGroup["ITEMS"] as $item):?>
+                            <div class="additional-services-item clearfix">
+                                <div class="input-checkbox">
+                                    <input type="checkbox" value="None" id="input-checkbox-<?=$item["ID"]?>" name="PROP_<?=$item["ID"]?>" />
+                                    <label for="input-checkbox-<?=$item["ID"]?>"></label>
+                                </div>
+                                <div class="additional-services-text"><?=$item["NAME"]?></div>
+                            </div>
                         <?endforeach?>
+                    </div>
+
                 <? else: ?>
                     <div class="additional-services-item clearfix">
                         <div class="input-checkbox">
-                            <input type="checkbox" value="None" id="input-checkbox" name="check" />
-                            <label for="input-checkbox"></label>
+                            <input type="checkbox" value="None" id="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>" name="PROP_<?=$optionGroup["ITEMS"][0]["ID"]?>" />
+                            <label for="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>"></label>
                         </div>
                         <div class="additional-services-text"><?=$optionGroup["ITEMS"][0]["NAME"]?></div>
                     </div>
                 <?endif?>
-                </div>
+
             <?endif?>
         <?endforeach?>
-
+                    </div>
                     </div>
     <?endif?>
 
@@ -299,9 +317,11 @@
 
 
                     <!-- описание продукта -->
+                    <?if(strlen($arResult["PREVIEW_TEXT"])>0):?>
                     <article class="product-desc">
-                        Новый, совершенный смартфон от компании Apple. Оснащен дисплеем Retina диагональю 4 дюйма, мощным процессором Apple A7, 8-ми мегапиксельной камерой iSight и функцией Touch ID, которая разблокирует устройство с помощью ваших отпечатков пальцев.
+                        <?=$arResult["PREVIEW_TEXT"]?>
                     </article>
+                    <?endif?>
 
                     <div class="product-select-wrapper">
                         <select class="product-select">
@@ -360,6 +380,7 @@
     <!-- /верхний блок карточки товара -->
 
     <!-- преимущества -->
+<? if(!empty($arResult['SECTION']['INFO']['UF_BONUS'])): ?>
     <section class="advantage main-shadow">
         <h2 class="advantage-title">При покупке iPhone 5S 16gb в магазине UP-House Вы получаете:</h2>
 
@@ -413,6 +434,7 @@
             </div>
         </div>
     </section>
+<? endif ?>
     <!-- /преимущества -->
 
     <!-- Описание -->

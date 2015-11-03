@@ -1,4 +1,36 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<!-- bufferig out in header -->
+<?$this->SetViewTarget("submenu_catalog");?>
+<div class="row">
+    <div class="col-xs-12">
+        <?//$firstSectionCode=explode("/",$APPLICATION->GetCurPage());?>
+
+        <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","",
+            Array(
+                "VIEW_MODE" => "TEXT",
+                "SHOW_PARENT_NAME" => "Y",
+                "IBLOCK_TYPE" => "1c_catalog",
+                "IBLOCK_ID" => "8",
+                "SECTION_ID" => "",
+                "SECTION_CODE" => "",//$firstSectionCode[1],
+                "SECTION_URL" => "",
+                "COUNT_ELEMENTS" => "Y",
+                "TOP_DEPTH" => "3",
+                "SECTION_FIELDS" => "",
+                "SECTION_USER_FIELDS" => "",
+                "ADD_SECTIONS_CHAIN" => "Y",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000000",
+                "CACHE_NOTES" => "",
+                "CACHE_GROUPS" => "Y",
+                "ELEMENT_ID" => $arParams['ELEMENT_ID'],
+                "DETAIL_PAGE" => "Y"
+            )
+        );?>
+    </div>
+</div>
+<?$this->EndViewTarget();?>
+
 	<div class="b_grid product-card">
 <? $APPLICATION->IncludeComponent(
 	"apple-house:catalog.element",
@@ -118,52 +150,6 @@
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#"
 	)
 );?>
-<?/* $APPLICATION->IncludeComponent(
-	"apple-house:catalog.reviews",
-	"",
-	Array(
-		"IBLOCK_CAT_TYPE" => "1c_catalog",
-		"IBLOCK_CAT_ID" => "8",
-		"IBLOCK_REVIEW_TYPE" => "services",
-		"IBLOCK_REVIEW_ID" => "13",
-		"ALLOW_ADD" => "N",
-		"DISPLAY_MODE" => "element"
-	),
-false
-);?>
-<? /*
-<?$APPLICATION->IncludeComponent("bitrix:forum.topic.reviews", "reviews", Array(
-	"FORUM_ID" => "1",	// ID форума для отзывов
-	"IBLOCK_TYPE" => "1c_catalog",	// Тип информационного блока (используется только для проверки)
-	"IBLOCK_ID" => "8",	// Код информационного блока
-	"ELEMENT_ID" => $arParams['ELEMENT_ID'],	// ID элемента
-	"POST_FIRST_MESSAGE" => "Y",	// Начинать тему текстом элемента
-	"POST_FIRST_MESSAGE_TEMPLATE" => "#IMAGE#
-[url=#LINK#]#TITLE#[/url]
-#BODY#",	// Шаблон текста для первого сообщения темы
-	"URL_TEMPLATES_READ" => "",	// Страница чтения темы форума
-	"URL_TEMPLATES_DETAIL" => "",	// Страница элемента инфоблока
-	"URL_TEMPLATES_PROFILE_VIEW" => "",	// Страница пользователя
-	"CACHE_TYPE" => "A",	// Тип кеширования
-	"CACHE_TIME" => "0",	// Время кеширования (сек.)
-	"MESSAGES_PER_PAGE" => "10",	// Количество сообщений на одной странице
-	"PAGE_NAVIGATION_TEMPLATE" => "",	// Название шаблона для вывода постраничной навигации
-	"DATE_TIME_FORMAT" => "d.m.Y H:i:s",	// Формат показа даты и времени
-	"NAME_TEMPLATE" => "",	// Формат имени
-	"PATH_TO_SMILE" => "/bitrix/images/forum/smile/",	// Путь относительно корня сайта к папке со смайлами
-	"EDITOR_CODE_DEFAULT" => "Y",	// По умолчанию показывать невизуальный режим редактора
-	"SHOW_AVATAR" => "N",	// Показывать аватары пользователей
-	"SHOW_RATING" => "Y",	// Включить рейтинг
-	"RATING_TYPE" => "like_graphic",	// Вид кнопок рейтинга
-	"SHOW_MINIMIZED" => "N",	// Сворачивать форму добавления отзыва
-	"USE_CAPTCHA" => "N",	// Использовать CAPTCHA
-	"PREORDER" => "Y",	// Выводить сообщения в прямом порядке
-	"SHOW_LINK_TO_FORUM" => "N",	// Показать ссылку на форум
-	"FILES_COUNT" => "0",	// Максимальное количество файлов, прикрепленных к одному сообщению
-	"AJAX_POST" => "Y",	// Использовать AJAX в диалогах
-	),
-	false
-);?>
-*/ ?>
+
 		
 	</div>
