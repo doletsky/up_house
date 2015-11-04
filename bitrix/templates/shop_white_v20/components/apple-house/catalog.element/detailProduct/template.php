@@ -102,7 +102,17 @@
                                 <a class="product-button" href='#' onclick='$.fancybox("<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/<?=$arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']?>\" frameborder=\"0\" allowfullscreen></iframe>"); return false;'>
                                     видео обзор<br /> <?=$arResult["NAME"]?><i class="play-icon product-sprite"></i></a>
                         <? endif ?>
-                        <a href="#" class="product-button">читать обзор<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
+                        <? if(preg_match('/apple iphone 5S/is',$arResult['NAME'])): ?>
+                            <a href='/show_news_obzor_apple_iphone_5s.html' target="_blank" class="product-button">читать обзор<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
+                        <? elseif(preg_match('/apple iphone 5C/is',$arResult['NAME'])): ?>
+                            <a href='/show_news_obzor-iphone-5c.html' target="_blank" class="product-button">читать обзор<br /> iPhone 5C<i class="text-icon product-sprite"></i></a>
+                        <? elseif(preg_match('/apple iphone 6 plus/is',$arResult['NAME'])): ?>
+                            <a href='/show_news_iphone6_plus.html' target="_blank" class="product-button">читать обзор<br /> iPhone 6 Plus<i class="text-icon product-sprite"></i></a>
+                        <? elseif(preg_match('/apple iphone 6/is',$arResult['NAME'])): ?>
+                            <a href='/show_news_iphone6.html' target="_blank" class="product-button">читать обзор<br /> iPhone 6<i class="text-icon product-sprite"></i></a>
+                        <? elseif('gadgets/sport/action_camera/GoPro' == $arResult['SECTION']['CODE']): ?>
+                            <a href='/show_news_gopro.html' target="_blank" class="product-button">читать обзор<br /> камер GoPro<i class="text-icon product-sprite"></i></a>
+                        <? endif ?>
                         <a href="#" class="product-button">инструкция<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
                     </div>
 
