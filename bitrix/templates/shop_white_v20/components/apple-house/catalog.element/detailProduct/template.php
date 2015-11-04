@@ -1,5 +1,38 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
+    <!-- bufferig out in header -->
+<?$this->SetViewTarget("submenu_catalog");?>
+    <div class="row">
+        <div class="col-xs-12">
+            <?//$firstSectionCode=explode("/",$APPLICATION->GetCurPage());?>
+
+            <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list","",
+                Array(
+                    "VIEW_MODE" => "TEXT",
+                    "SHOW_PARENT_NAME" => "Y",
+                    "IBLOCK_TYPE" => "1c_catalog",
+                    "IBLOCK_ID" => "8",
+                    "SECTION_ID" => "",
+                    "SECTION_CODE" => "",//$firstSectionCode[1],
+                    "SECTION_URL" => "",
+                    "COUNT_ELEMENTS" => "Y",
+                    "TOP_DEPTH" => "3",
+                    "SECTION_FIELDS" => "",
+                    "SECTION_USER_FIELDS" => "",
+                    "ADD_SECTIONS_CHAIN" => "Y",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_NOTES" => "",
+                    "CACHE_GROUPS" => "Y",
+                    "CARUSEL_CODE" => $arResult['SECTION']['PATH'][0]["CODE"],
+                    "CUR_CODE" => $arResult['SECTION']['PATH'][1]["CODE"],
+                    "DETAIL_PAGE" => "Y"
+                )
+            );?>
+        </div>
+    </div>
+<?$this->EndViewTarget();?>
+
 
     <!-- страница карточка товара -->
     <div id="page-product-info">
@@ -65,15 +98,39 @@
                     <div class="product-thumbnail current"></div>
 
                     <div class="product-review mt-4">
-                        <a href="#" class="product-button">видео обзор<br /> iPhone 5S<i class="play-icon product-sprite"></i></a>
+                        <? if($arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']): ?>
+                                <a class="product-button" href='#' onclick='$.fancybox("<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/<?=$arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']?>\" frameborder=\"0\" allowfullscreen></iframe>"); return false;'>
+                                    видео обзор<br /> <?=$arResult["NAME"]?><i class="play-icon product-sprite"></i></a>
+                        <? endif ?>
                         <a href="#" class="product-button">читать обзор<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
                         <a href="#" class="product-button">инструкция<br /> iPhone 5S<i class="text-icon product-sprite"></i></a>
                     </div>
 
                     <div class="accept mt-2">
-                        Принимаем к оплате:
-                        <i class="visa-icon product-sprite"></i>
-                        <i class="master-card-icon product-sprite"></i>
+                        <? if($arResult['OTHER_COLORS']){ ?>
+
+                            <div class="element_other_colors">
+                                В других цветах:<br>
+                                <? foreach($arResult['OTHER_COLORS'] as $other_color){
+                                    $color='';
+                                    $secondcolor='';
+                                    $color_name=$other_color['NAME'];
+
+                                    foreach($arResult['colors_hex'] as $cname=>$hex){
+
+                                        if(preg_match('/'.mb_strtolower($cname).'/is', mb_strtolower($other_color['NAME']))){
+                                            if(empty($color)){
+                                                $color=$hex;
+                                            }else{
+                                                $secondcolor=$hex;
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                    <div title='<?=$color_name;?>' class="element_other_color_one" style='background:<?=$color;?>' onclick="location.href='/<?=$other_color['PROPERTY_CML2_CODE_VALUE'];?>'" ><span style='background:<?=$secondcolor;?>' class='element_other_color_one_two'></span></div>
+                                <? } ?>
+                            </div>
+                        <? } ?>
                     </div>
                 </div>
 

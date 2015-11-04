@@ -81,7 +81,7 @@
 <script type="text/javascript" src="/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
-
+<script src="/bitrix/templates/shop_white/private/js/jquery.fancybox.pack.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order-v20.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
