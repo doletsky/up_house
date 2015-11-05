@@ -137,7 +137,7 @@
                                         }
                                     }
                                     ?>
-                                    <div title='<?=$color_name;?>' class="element_other_color_one" style='background:<?=$color;?>' onclick="location.href='/<?=$other_color['PROPERTY_CML2_CODE_VALUE'];?>'" ><span style='background:<?=$secondcolor;?>' class='element_other_color_one_two'></span></div>
+                                    <div title='<?=$color_name;?>' class="element_other_color_one" style='background:<?=$color;?>' onclick="location.href='/<?=$other_color['PROPERTY_CML2_CODE_VALUE'];?>'" ><div style='background:<?=$secondcolor;?>' class='element_other_color_one_two'></div></div>
                                 <? } ?>
                             </div>
                         <? } ?>
@@ -449,56 +449,17 @@
     <!-- преимущества -->
 <? if(!empty($arResult['SECTION']['INFO']['UF_BONUS'])): ?>
     <section class="advantage main-shadow">
-        <h2 class="advantage-title">При покупке iPhone 5S 16gb в магазине UP-House Вы получаете:</h2>
-
-        <div class="advantage-container clearfix">
-            <div class="advantage-item">
-                <div class="advantage-img">
-                    <i class="warranty-icon product-sprite"></i>
-                </div>
-
-                <div class="advantage-text">1 год полной<br /> гарантии</div>
+        <h2 class="advantage-title">При покупке <?=$arResult['SECTION']['NAME']?> в магазине UP-House Вы получаете:</h2>
+    <div class="advantage-container clearfix">
+    <? foreach($arResult['SECTION']['INFO']['UF_BONUS'] as $key => $bonus): ?>
+        <div class="advantage-item">
+            <div class="advantage-img">
+                <i class="<?=$arResult['SECTION']['BONUS'][$bonus]['XML_ID']?> product-sprite"></i>
             </div>
 
-            <div class="advantage-item">
-                <div class="advantage-img">
-                    <i class="exchange-icon product-sprite"></i>
-                </div>
-
-                <div class="advantage-text">2 недели на обмен<br /> в случае брака</div>
-            </div>
-
-            <div class="advantage-item">
-                <div class="advantage-img">
-                    <i class="nanosim-icon product-sprite"></i>
-                </div>
-
-                <div class="advantage-text">Изготовим nano-SIM<br /> из Вашей SIM-карты</div>
-            </div>
-
-            <div class="advantage-item">
-                <div class="advantage-img">
-                    <i class="language-icon product-sprite"></i>
-                </div>
-
-                <div class="advantage-text">Русский язык в<br /> заводской прошивке</div>
-            </div>
-
-            <div class="advantage-item">
-                <div class="advantage-img">
-                    <i class="delivery-icon product-sprite"></i>
-                </div>
-
-                <div class="advantage-text">Срочную доставку<br /> по Москве</div>
-            </div>
-
-            <div class="advantage-item">
-                <div class="advantage-img">
-                    <i class="appstore-icon product-sprite"></i>
-                </div>
-
-                <div class="advantage-text">Более 100 програм<br /> AppStore бесплатно</div>
-            </div>
+            <div class="advantage-text"><?=$arResult['SECTION']['BONUS'][$bonus]['VALUE']?></div>
+        </div>
+    <? endforeach ?>
         </div>
     </section>
 <? endif ?>
@@ -522,71 +483,115 @@
     <div class="tab-content">
         <!-- описание модели -->
         <article class="tab-pane active" id="tab-description-model">
-            <h2 class="tab-title">Под полной защитой</h2>
-            <p>Состояние окружающей среды с каждым днем вызывает все больше опасений. Воздух, которым Вы дышите, еда которую едите – знаете ли Вы насколько они безопасны для Вас и Вашей семьи? Оригинальный набор индикаторов состояния окружающей среды Lapka PEM поможет Вам получить самую полную картину. Не ограничивайте себя измерением лишь одного показателя, ведь все показатели одинаково важны. Температура и относительная влажность воздуха, уровень электромагнитного излучения и даже радиации, количество нитратов во фруктах и овощах – набор индикаторов Lapka PEM создан специально для комплексного отслеживания состояния окружающей среды.</p>
-            <img src="img/product-description-model.jpg" alt="Под полной защитой" />
-            <h2 class="tab-title">Умный контроль</h2>
-            <p>Все показатели, снятые высокоточными датчиками Lapka PEM, будут доступны Вам в любой момент прямо на экране Вашего гаджета. Вам нужно лишь загрузить на Ваш iPhone, iPad или iPod специальное бесплатное приложение с App Store и дальнейший обмен данными через канал Bluetooth в автоматическом режиме не потребует никаких усилий. Однако сухие цифры мало о чем могут поведать. Вот почему Ваши индикаторы не просто собирают показатели, а анализируют их, предоставляя Вам самую полезную информацию. В зависимости от конкретного типа окружающей среды, Вы получаете зафиксированные показатели в сравнении с нормами именно данной среды (показатели в детской, в метро, в самолете будут отличаться). Использование электрических приборов, употребление свежих фруктов и овощей – даже повседневные занятия требуют постоянного контроля.</p>
-            <img src="img/product-description-model-2.jpg" alt="Умный контроль" />
-            <h2 class="tab-title">Максимальный комфорт</h2>
-            <p>Lapka PEM не только займет достойное место в Вашем доме, но и отлично впишется в Ваш интерьер. Интересный дизайн, невероятно маленькие размеры прочных и надежных индикаторов позволят им стать Вашим верным и уникальным помощником в борьбе за максимально качественные условия жизни. И пусть Ваш дом и в самом деле станет Вашей крепостью.</p>
-            <img src="img/product-description-model-3.jpg" alt="Максимальный комфорт" />
-            <h2 class="tab-title">В комплекте </h2>
-            <p>Датчик влажности и температуры; датчик уровня нитратов; датчик электромагнитных излучений; датчик радиации (счётчик Гейгера); чехол.</p>
-            <div class="horizontal-line"> </div>
-            <div class="tab-footer">Lapka PEM - комплект индикаторов состояния окружающей среды в интернет-магазине Apple-House с доставкой и гарантией. На странице Lapka PEM - комплект индикаторов состояния окружающей среды вы так же найдете отзывы покупателей, технические характеристики и фотографии товара. Смотреть все товары <a href="#">Гаджеты.</a></div>
+            <? if($arResult['DETAIL_TEXT']): ?>
+                <div class="b_grid margin-top_20px">
+                    <?=$arResult['DETAIL_TEXT']?>
+                </div>
+            <? endif ?>
+            <? if($arResult['SEO_TEXT']): ?>
 
+                <div class="tab-footer">
+                    <div class="horizontal-line"> </div>
+                    <?=$arResult['SEO_TEXT']?>
+                </div>
+            <? endif ?>
+            <? if(preg_match('/apple iphone 5S/is',$arResult['NAME'])): ?>
+                <br><a href='/show_news_obzor_apple_iphone_5s.html'><img src='/images/read_review_button.png'></a>
+            <? endif ?>
         </article>
         <!-- /описание модели -->
         <!-- характеристики -->
         <div class="tab-pane" id="tab-characteristics">
             <table class="table-container">
                 <tbody>
-                <tr>
-                    <th class="table-title table-characteristics-title" colspan="2">Общие характеристики</th>
-                </tr>
-
-                <tr>
-                    <td class="table-cell">Материал корпуса</td>
-                    <td class="table-cell">Пластик/Металл/Резина</td>
-                </tr>
-                <tr>
-                    <td class="table-cell">Цвет</td>
-                    <td class="table-cell">белый/коричневый</td>
-                </tr>
-                <tr>
-                    <td class="table-cell">Артикул</td>
-                    <td class="table-cell">2042</td>
-                </tr>
-                <tr>
-                    <td class="table-cell">Совместимость</td>
-                    <td class="table-cell">iPhone, iPad, iPad Mini, iPod</td>
-                </tr>
-                <tr>
-                    <td class="table-cell">Датчики</td>
-                    <td class="table-cell">t,радиации, влаж-и, электромаг-о излучение, нитратов</td>
-                </tr>
-                <tr>
-                    <th class="table-title table-connection" colspan="2">Связь</th>
-                </tr>
-
-                <tr>
-                    <td class="table-cell">Bluetooth</td>
-                    <td class="table-cell">+</td>
-                </tr>
-                <tr>
-                    <td class="table-cell">Интерфейсы</td>
-                    <td class="table-cell">Bluetooth</td>
-                </tr>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['OVERALL'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Общие характеристики</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['OVERALL'] as $prop): ?>
+                    <tr>
+                        <td class="table-cell"><?=$prop['NAME']?></td>
+                        <td class="table-cell"><?=$prop['VALUE']?></td>
+                    </tr>
+                    <? endforeach ?>
+                <? endif ?>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['MULTIMEDIA'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Мультимедийные возможности</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['MULTIMEDIA'] as $prop): ?>
+                        <tr>
+                            <td class="table-cell"><?=$prop['NAME']?></td>
+                            <td class="table-cell"><?=$prop['VALUE']?></td>
+                        </tr>
+                    <? endforeach ?>
+                <? endif ?>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['CONNECT'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Связь</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['CONNECT'] as $prop): ?>
+                        <tr>
+                            <td class="table-cell"><?=$prop['NAME']?></td>
+                            <td class="table-cell"><?=$prop['VALUE']?></td>
+                        </tr>
+                    <? endforeach ?>
+                <? endif ?>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['PROC_RAM'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Память и процессор</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['PROC_RAM'] as $prop): ?>
+                        <tr>
+                            <td class="table-cell"><?=$prop['NAME']?></td>
+                            <td class="table-cell"><?=$prop['VALUE']?></td>
+                        </tr>
+                    <? endforeach ?>
+                <? endif ?>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['STORAGE'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Накопители</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['STORAGE'] as $prop): ?>
+                        <tr>
+                            <td class="table-cell"><?=$prop['NAME']?></td>
+                            <td class="table-cell"><?=$prop['VALUE']?></td>
+                        </tr>
+                    <? endforeach ?>
+                <? endif ?>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['AUDIO'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Аудио</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['AUDIO'] as $prop): ?>
+                        <tr>
+                            <td class="table-cell"><?=$prop['NAME']?></td>
+                            <td class="table-cell"><?=$prop['VALUE']?></td>
+                        </tr>
+                    <? endforeach ?>
+                <? endif ?>
+                <? if(!empty($arResult["PROP_GROUP_DISPLAY"]['POWER'])): ?>
+                    <tr>
+                        <th class="table-title table-characteristics-title" colspan="2">Питание</th>
+                    </tr>
+                    <? foreach($arResult["PROP_GROUP_DISPLAY"]['POWER'] as $prop): ?>
+                        <tr>
+                            <td class="table-cell"><?=$prop['NAME']?></td>
+                            <td class="table-cell"><?=$prop['VALUE']?></td>
+                        </tr>
+                    <? endforeach ?>
+                <? endif ?>
                 </tbody>
             </table>
         </div>
         <!-- /характеристики -->
 
         <!--  видео обзор -->
-        <div class="tab-pane" id="tab-video-review">
-            <iframe width="853" height="480" src="//www.youtube.com/embed/hBl3kyX4YME?rel=0" frameborder="0" allowfullscreen></iframe>
-        </div>
+        <? if($arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']): ?>
+            <div class="tab-pane" id="tab-video-review">
+                <iframe width="853" height="480" src="//www.youtube.com/embed/<?=$arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']?>" frameborder="0" allowfullscreen></iframe>
+            </div>
+        <? endif ?>
         <!--  /видео обзор -->
 
         <!-- отзывы -->

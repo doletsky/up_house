@@ -14,6 +14,10 @@ s.parentNode.insertBefore(m_i, s);
 console.log('ontouchstart' in window);
 
 $(document).ready(function(){
+    $('div#page-product-info').find('.font_style_16').removeClass('font_style_16');
+    $('div#page-product-info').find('.font_style_19b').addClass('tab-title');
+    $('div#page-product-info').find('.font_style_19b').removeClass('font_style_19b');
+
     if($(".product-thumbnail.current").length>0){
         $(".product-thumbnail.current").css('left',$(".product-thumbnail:first").position().left+'px');
         $(".product-thumbnail").unbind("click");
@@ -34,8 +38,6 @@ $(document).ready(function(){
                 var eGroup=$(this).parent().parent().parent();
                 var aFor=$(this).attr('for');
                 eGroup.find("input").removeAttr("checked");
-//                $("input#"+aFor).checked(true);
-//                return false;
             }
         });
     }

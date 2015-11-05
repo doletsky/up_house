@@ -123,4 +123,12 @@
     border-radius: 15px;
     border: 1px solid #A7E5FF;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.element_other_color_one_two {
+    width: 15px;
+    height: 28px;
+    position: relative;
+    left: 15px;
 }

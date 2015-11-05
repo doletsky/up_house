@@ -8,6 +8,7 @@ IncludeTemplateLangFile(__FILE__); ?>
     <meta name="description" content="Iphone описание">
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" type="text/css" href="/news/style.css">
     <link href="<?=SITE_TEMPLATE_PATH?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bxslider.css" rel="stylesheet" />
     <link href="<?=SITE_TEMPLATE_PATH?>/css/main.less" rel="stylesheet/less" />
