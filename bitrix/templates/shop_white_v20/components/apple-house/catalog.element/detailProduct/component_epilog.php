@@ -31,20 +31,7 @@ var_dump($arResult['USER_REGION_ID']);
 
 //if($USER->IsAdmin()):
 
-$isAcceptedOwnGet = (  !isset($arResult['PROPERTIES']['SAMOYVYVOZ']['VALUE'])
-                    || trim($arResult['PROPERTIES']['SAMOYVYVOZ']['VALUE']) != "Да"
-                    ) ? true : false;
 
-    $APPLICATION->IncludeComponent("altasib:altasib.geoip",
-        "deliveryInfo",
-        array(
-            'CACHE_TIME' => 0,
-            'CACHE_TYPE' => 'N',
-            'DELIVERY' => $arResult["DELIVERY"],
-            'CAN_BUY' => $arResult['CAN_BUY'],
-            'GET_BY_OWN_ACCEPT' => $isAcceptedOwnGet,
-        ),
-        false);
 
 
 //endif;

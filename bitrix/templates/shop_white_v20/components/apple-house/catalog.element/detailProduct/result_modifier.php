@@ -430,31 +430,9 @@ $arResult['colors_hex'] = array("*TITLE01*"		 => "Reds",
 		"Белый" 		 => "#FFFFFF",
 		);
 
-/*
-if ($_SERVER['HTTP_X_FORWARDED_FOR']){
-    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    $arrIPs = explode(', ', $ip);
-    $xml = simplexml_load_string(file_get_contents("http://ipgeobase.ru:7020/geo?ip={$arrIPs[0]}"));
-    if((string)$xml->ip->message == 'Not found')
-        $xml = simplexml_load_string(file_get_contents("http://ipgeobase.ru:7020/geo?ip={$arrIPs[1]}"));
+if(!empty($arResult['SIMILAR'])){
+    foreach($arResult['SIMILAR'] as $k => $similar)
+        $arResult['SIMILAR'][$k]["PRICE"] = CPrice::GetBasePrice($similar["ID"]);
 }
-else{
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $xml = simplexml_load_string(file_get_contents("http://ipgeobase.ru:7020/geo?ip={$ip}"));
-}
-
-$regionName = iconv('UTF-8', 'windows-1251', (string)$xml->ip->region);
-
-if($regionName == 'Москва' || $regionName == 'Московская область')
-    $arResult['USER_REGION_ID'] = 670;
-elseif($regionName == 'Краснодарский край')
-    $arResult['USER_REGION_ID'] = 1316;
-else
-    $arResult['USER_REGION_ID'] = 1317;
-*/
-//$arResult["CAN_BUY"]=0;
-
-//echo "<pre>";
-//var_dump($arResult);
 
 ?>

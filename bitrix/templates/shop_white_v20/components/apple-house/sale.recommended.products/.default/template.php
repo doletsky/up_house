@@ -5,14 +5,15 @@ global $arRecPrFilter;
 $arRecPrFilter = $arResult;
 if(!empty($arResult))
 {
-	echo "<h3>".GetMessage("SRP_TITLE")."</h3>";
-	$APPLICATION->IncludeComponent("bitrix:catalog.top", "", array(
-		"IBLOCK_TYPE" => "",
-		"IBLOCK_ID" => "",
+	//echo "<h3>".GetMessage("SRP_TITLE")."</h3>";
+	$APPLICATION->IncludeComponent("apple-house:catalog.top", "", array(
+        "IBLOCK_TYPE" => '1c_catalog',
+        "IBLOCK_ID" => 8,
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_COUNT" => $arParams["ELEMENT_COUNT"],
 		"LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
+        "VISIBLE_ELEMENT_COUNT" => ($arParams["LINE_VISIBLE_ELEMENT_COUNT"] ? $arParams["LINE_VISIBLE_ELEMENT_COUNT"] : $arParams["ELEMENT_COUNT"]),
 		"DETAIL_URL" => $arParams["DETAIL_URL"],
 		"BASKET_URL" => $arParams["BASKET_URL"],
 		"ACTION_VARIABLE" => $arParams["ACTION_VARIABLE"],
@@ -30,5 +31,4 @@ if(!empty($arResult))
 		),
 		$component
 	);
-
-}
+}?>

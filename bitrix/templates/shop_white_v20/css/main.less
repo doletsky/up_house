@@ -210,6 +210,9 @@ a {
     margin: -20px 0 30px;
     text-transform: none;
 }
+.similar-products-title.entry-title{
+  font-size: 48px
+}
 .entry-title {
   font-size: 24px;
   font-weight: 400;
@@ -353,11 +356,15 @@ input[type="submit"] {
 }
  
 input[type="radio"], input[type="checkbox"]{
-    display: block;
+    display: none;
  
     &:checked + label:before {
         background: #259ccf;
     }
+}
+
+.input-checkbox input[type="radio"], .input-checkbox input[type="checkbox"]{
+  display: block;
 }
 
 // placeholder
@@ -1199,7 +1206,7 @@ input[type="radio"], input[type="checkbox"]{
         line-height: 16px;
         text-decoration: none;
         margin: 0 10px 13px 0;
-        padding: 14px 60px 14px 20px;
+        padding: 22px 60px 22px 20px;
         border: 1px solid #259ccf;
         width: 167px;
 
