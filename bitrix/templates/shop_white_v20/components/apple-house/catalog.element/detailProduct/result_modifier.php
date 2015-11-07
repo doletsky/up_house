@@ -93,34 +93,6 @@ if($arResult['SECTION']['DEPTH_LEVEL'] > 1) {
 
 
 
-/*
-if($arResult['SECTION']['DEPTH_LEVEL'] == 2 || $arResult['SECTION']['DEPTH_LEVEL'] == 3) {
-    $res = CIBlockSection::GetByID($arResult['SECTION']['ID']);
-    if($ar_res = $res->GetNext()){
-        if($arResult['SECTION']['DEPTH_LEVEL'] == 3){
-            $res = CIBlockSection::GetByID($ar_res['IBLOCK_SECTION_ID']);
-            if($ar_res = $res->GetNext()){
-               // var_dump($ar_res);
-            }
-        }
-    }
-
-    if(isset($ar_res['IBLOCK_SECTION_ID']) && !empty($ar_res['IBLOCK_SECTION_ID'])){
-        $arFilter = Array('IBLOCK_ID'=>$arParams['IBLOCK_ID'], 'GLOBAL_ACTIVE'=>'Y', 'SECTION_ID' => $ar_res['IBLOCK_SECTION_ID'], 'CODE' => '%/options');
-        $db_list = CIBlockSection::GetList(Array("SORT"=>"ASC"), $arFilter, true);
-        if($ar_result = $db_list->GetNext()){
-
-            //$arResult['SECTION']['UF_OPTIONS_GROUP'] = $ar_result['ID'];
-
-/*
-             //var_dump($ar_result);
-        }
-    }
-*/
-//}
-/********************/
-
-
 
 if($arResult['SECTION']['UF_OPTIONS_GROUP']) {
 	$arFilter = array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'GLOBAL_ACTIVE'=>'Y', 'SECTION_ID' => $arResult['SECTION']['UF_OPTIONS_GROUP']);
@@ -195,6 +167,51 @@ if($arResult['SECTION']['UF_SHOW_REVIEWS']) {
 		$arResult['RATING_ROUND'] = round($arResult['RATING']);
 		$arResult['RATING_COUNT'] = $ratingCount;
 	}
+
+    if(!empty($sectionElements)) {
+        $arRate=array(
+            "1" => "1 звезда",
+            "2" => "2 звезды",
+            "3" => "3 звезды",
+            "4" => "4 звезды",
+            "5" => "5 звезд"
+        );
+        $arFilter = array(
+            "IBLOCK_ID" => 13,
+            "ACTIVE" => "Y",
+            "PROPERTY_PRODUCT_ID" => $arResult["ID"]
+        );
+        $arSelectFields=array(
+            "IBLOCK_ID",
+            "ACTIVE",
+            "NAME",
+            "DATE_CREATE",
+            "PREVIEW_TEXT",
+            "PROPERTY_PRODUCT_ID",
+            "PROPERTY_RATING"
+        );
+        $elRatingCount=0;
+        $elRating=0;
+        $arResult['REVIEW'][$arResult["ID"]]=array();
+        $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelectFields);
+        while($ar_fields = $res->GetNext()) {
+            $elRating+=$ar_fields["PROPERTY_RATING_VALUE"];
+            $elRatingCount++;
+            $arResult['REVIEW'][$arResult["ID"]][]= array(
+                "NAME"=>$ar_fields["NAME"],
+                "DATE"=>$ar_fields["DATE_CREATE"],
+                "TEXT"=>$ar_fields["PREVIEW_TEXT"],
+                "RATE_ID"=>$ar_fields["PROPERTY_RATING_VALUE"],
+                "RATE_NAME"=>$arRate[$ar_fields["PROPERTY_RATING_VALUE"]]
+            );
+        }
+        if(count($arResult['REVIEW'][$arResult["ID"]])>0){
+            $arResult['REVIEW']["RATE_ID"]=ceil($elRating/$elRatingCount);
+            $arResult['REVIEW']["RATE_NAME"]=$arRate[$arResult['REVIEW']["RATE_ID"]];
+            $arResult['REVIEW']["COUNT"]=$elRatingCount;
+        }
+
+    }
 }
 
 /*

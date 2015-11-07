@@ -94,8 +94,9 @@
                             </div>
                             <?//$current="";?>
                         <? endforeach; ?>
+                        <div class="product-thumbnail current"></div>
                     <? endif ?>
-                    <div class="product-thumbnail current"></div>
+
 
                     <div class="product-review mt-4">
                         <? if($arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']): ?>
@@ -555,68 +556,44 @@
         <!-- /характеристики -->
 
         <!--  видео обзор -->
-        <? if($arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']): ?>
-            <div class="tab-pane" id="tab-video-review">
+        <div class="tab-pane" id="tab-video-review">
+            <? if($arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']): ?>
                 <iframe width="853" height="480" src="//www.youtube.com/embed/<?=$arResult['PROPERTIES']['VIDEOOBZOR']['VALUE']?>" frameborder="0" allowfullscreen></iframe>
-            </div>
-        <? endif ?>
+            <? endif ?>
+        </div>
         <!--  /видео обзор -->
 
         <!-- отзывы -->
         <div class="tab-pane" id="tab-reviews">
             <div class="reviews">
+                <?if(count($arResult['REVIEW'][$arResult["ID"]])>0):?>
                 <div class="clearfix reviews-section">
                     <div class="pull-left">
-                        <div class="reviews-title">Средняя оценка Lapka PEM</div>
-                        <div class="reviews-img">
-                            <img src="img/reviews-stars.png" alt="5 звёзд" />
+                        <div class="reviews-title"><?=$arResult["NAME"]?></div>
+                        <div class="reviews-img" style="overflow: hidden; width: <?=20*$arResult["REVIEW"]["RATE_ID"]?>px">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/reviews-stars.png" alt="<?=$arResult["REVIEW"]["RATE_NAME"]?>" />
                         </div>
                     </div>
 
-                    <div class="pull-right"><span class="reviews-text">Рейтинг 5 на основе</span> <a href="#">10 отзывов</a></div>
+                    <div class="pull-right"><span class="reviews-text">Рейтинг <?=$arResult["REVIEW"]["RATE_ID"]?> на основе <?=$arResult['REVIEW']["COUNT"]?> отзывов</span></div>
                 </div>
-
+                <?foreach($arResult["REVIEW"][$arResult["ID"]] as $review):?>
                 <div class="reviews-item">
                     <div class="reviews-header clearfix">
-                        <span class="reviews-user">Олег</span>
-                        <time class="reviews-time">07.07.2014</time>
-                        <div class="reviews-img">
-                            <img src="img/reviews-stars.png" alt="5 звёзд" />
+                        <span class="reviews-user"><?=$review["NAME"]?></span>
+                        <time class="reviews-time"><?=substr($review["DATE"], 0, 10)?></time>
+                        <div class="reviews-img" style="overflow: hidden; width: <?=20*$review["RATE_ID"]?>px">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/reviews-stars.png" alt="<?=$review["RATE_NAME"]?>" />
                         </div>
                     </div>
 
-                    <div class="reviews-desc">Аксессуар — это не только наклейка или чехол. В дополнение к телефону можно купить всё что угодно. Портативную акустику, беспроводную зарядку, сканер отпечатков пальцев, миниатюрный принтер. Но и это ещё не всё. Есть, например, устройство для измерения радиации, влажности и даже нитратов в продуктах питания. Называется просто и лаконично — Lapka. Давайте выясним, чем она полезна и как работает.</div>
+                    <div class="reviews-desc"><?=$review["TEXT"]?></div>
                 </div>
-
-                <div class="reviews-item">
-                    <div class="reviews-header clearfix">
-                        <span class="reviews-user">Никита</span>
-                        <time class="reviews-time">13.06.2014</time>
-                        <div class="reviews-img">
-                            <img src="img/reviews-stars.png" alt="5 звёзд" />
-                        </div>
-                    </div>
-
-                    <div class="reviews-desc">
-                        Заслышав название Lapka, можно представить всё, что угодно, только не набор датчиков для измерения параметров окружающей среды. Мы, например, чуть было не подумали, что это брелок в виде кроличьей лапки на удачу, или что-то похожее. Но в действительности всё оказалось гораздо интереснее.
-                    </div>
-                </div>
-
-                <div class="reviews-item">
-                    <div class="reviews-header clearfix">
-                        <span class="reviews-user">Алиса</span>
-                        <time class="reviews-time">11.12.2013</time>
-                        <div class="reviews-img">
-                            <img src="img/reviews-stars.png" alt="5 звёзд" />
-                        </div>
-                    </div>
-
-                    <div class="reviews-desc">
-                        Приложение Lapka предназначено для бытового использования, оно отображает информацию в более простом и понятном виде (фон меняет цвет в зависимости от уровня опасности). Отсюда же можно расшарить результат в социальные сети. Желаете похвастаться тем, что съели экологически чистое яблоко? Жмите кнопку! Обнаружили, что ваш дом «фонит»? Покажите собственнику квартиры и скиньте пару тысяч рублей с арендной платы. Словом, запостить результат в некоторых случаях определенно стоит. Главное —не злоупотреблять.
-                    </div>
-                </div>
-
-                <div class="reviews-more"><a href="#" >Читать все отзывы о Lapka PEM (10)</a></div>
+                <?endforeach;?>
+<!--                <div class="reviews-more"><a href="#" >Читать все отзывы о Lapka PEM (10)</a></div>-->
+                <?else:?>
+                Пока не оставлено отзывов
+                <?endif?>
             </div>
         </div>
         <!-- /отзывы -->
@@ -665,7 +642,7 @@
     <!-- /Описание -->
 
     <!-- похожие товары -->
-<? if(!empty($arResult['SIMILAR'])): ?>
+<? if(count($arResult['SIMILAR'])>0): ?>
     <section class="similar-products main-section">
         <h2 class="similar-products-title entry-title">похожие товары</h2>
 
