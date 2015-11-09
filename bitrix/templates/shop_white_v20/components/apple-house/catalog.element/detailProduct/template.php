@@ -84,7 +84,7 @@
                         </div>
                         <?  $iCounter = 0; $current=" current";
                         foreach($arResult["ARR_IMAGES"]["VALUE"] as $imgCode):
-                            if(5 < ++$iCounter)
+                            if(4 < ++$iCounter)
                                 break;
                             ?>
                             <?$renderImage = CFile::ResizeImageGet($imgCode, array("width" => 70, "height" => 100));?>
@@ -420,7 +420,8 @@
     <section class="advantage main-shadow">
         <h2 class="advantage-title">При покупке <?=$arResult['SECTION']['NAME']?> в магазине UP-House Вы получаете:</h2>
     <div class="advantage-container clearfix">
-    <? foreach($arResult['SECTION']['INFO']['UF_BONUS'] as $key => $bonus): ?>
+    <? foreach($arResult['SECTION']['INFO']['UF_BONUS'] as $key => $bonus):
+        if(!in_array($arResult['SECTION']['BONUS'][$bonus]['XML_ID'], array("check", "round-arrow", "car", "masonry", "ru", "sim"))) continue;?>
         <div class="advantage-item">
             <div class="advantage-img">
                 <i class="<?=$arResult['SECTION']['BONUS'][$bonus]['XML_ID']?> product-sprite"></i>

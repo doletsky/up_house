@@ -40,6 +40,12 @@ $(document).ready(function(){
                 eGroup.find("input").removeAttr("checked");
             }
         });
+
+        $('select.product-select').change(function(){
+            var regId=$('.product-item:selected').val();
+            $('.product-delivery-item').css('display', 'none');
+            $('.region_'+regId).css('display', 'block');
+        });
     }
 
 })
