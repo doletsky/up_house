@@ -114,7 +114,7 @@
                         <? elseif('gadgets/sport/action_camera/GoPro' == $arResult['SECTION']['CODE']): ?>
                             <a href='/show_news_gopro.html' target="_blank" class="product-button">читать обзор<i class="text-icon product-sprite"></i></a>
                         <? endif ?>
-                        <a href="#" class="product-button">инструкция<i class="text-icon product-sprite"></i></a>
+                        <a href="http://www.up-house.ru/faq/" class="product-button">инструкция<i class="text-icon product-sprite"></i></a>
                     </div>
 
                     <div class="accept mt-2">
@@ -147,7 +147,7 @@
 
                 <!-- правая колонка -->
                 <div class="col-xs-6">
-
+<?if($arResult['CAN_BUY']):?>
                     <!-- цена -->
                     <div class="price">
                         <div class="price-text">Цена:</div>
@@ -158,7 +158,7 @@
                         <? endif ?>
                     </div>
 
-<?if($arResult['CAN_BUY']):?>
+
     <? if(count($arResult["SECTION"]["OPTIONS"])):?>
                     <!-- дополнительные услуги -->
                     <div class="additional-services">
@@ -181,12 +181,37 @@
 
                 ?>
                 <? if(count($optionGroup["ITEMS"]) > 1): ?>
+                    <?
+                    $someComment = false;
+                    if($optionGroup['NAME'] == 'Сим-карта в подарок')
+                        $someComment = '<a href="/tariff" target="_blank" class="option_additional_comment">выбрать красивый номер</a>';
+                    if($optionGroup['NAME'] == 'Гарнитура')
+                        $someComment = '<a href="/brands/sony/headset" target="_blank" class="option_additional_comment">выбрать цвет гарнитуры</a>';
+
+                    ?>
                     <div class="additional-services-item clearfix">
                         <div class="input-checkbox">
                             <input type="checkbox" value="None" id="input-checkbox-<?=$optionGroup["ID"]?>" name="PROP_<?=$optionGroup["ID"]?>" checked="checked" disabled/>
                             <label for="input-checkbox-<?=$optionGroup["ID"]?>"></label>
                         </div>
-                        <div class="additional-services-text"><?=$optionGroup["NAME"]?></div>
+                        <div class="additional-services-text">
+                            <?=$optionGroup["NAME"]?>
+                            <? if($optionGroup['NAME'] == 'Комплекты со скидкой'):?>
+                                <? if(  $arResult['SECTION']['ID'] == 261
+                                    || $arResult['SECTION']['ID'] == 263
+                                    || $arResult['SECTION']['ID'] == 377
+                                ):?>
+                                    (<a href="/iphone-6/accessories/set" target="_blank" class="option_additional_comment">подробнее</a>)
+                                <? endif ?>
+                                <? if(  $arResult['SECTION']['ID'] == 385
+                                    || $arResult['SECTION']['ID'] == 386
+                                    || $arResult['SECTION']['ID'] == 387
+                                    || $arResult['SECTION']['ID'] == 384
+                                ):?>
+                                    (<a href="/iphone-6-plus/accessories/set" target="_blank" class="option_additional_comment">подробнее</a>)
+                                <? endif ?>
+                            <? endif ?>
+                        </div>
                     </div>
                     <div style="padding-left: 23px" class="group-radio">
                         <div class="additional-services-item clearfix">
@@ -202,18 +227,60 @@
                                     <input type="checkbox" value="None" id="input-checkbox-<?=$item["ID"]?>" name="PROP_<?=$item["ID"]?>" />
                                     <label for="input-checkbox-<?=$item["ID"]?>"></label>
                                 </div>
-                                <div class="additional-services-text"><?=$item["NAME"]?></div>
+                                <div class="additional-services-text">
+                                    <?=$item["NAME"]?> <? if($item['CATALOG_PRICE_1'] > 0):?>(<?=$item['PRICES']['Продажа']['PRINT_VALUE_VAT']?>)&nbsp;<? endif; ?><? if ($someComment): ?>(<?=$someComment?>)<? endif ?>
+                                </div>
                             </div>
                         <?endforeach?>
                     </div>
 
                 <? else: ?>
+                    <? $option = $optionGroup["ITEMS"][0];
+                    if($option['CATALOG_PRICE_1'] == 0 && $someComment == false) $someComment = 'бесплатно';
+                    ?>
                     <div class="additional-services-item clearfix">
                         <div class="input-checkbox">
                             <input type="checkbox" value="None" id="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>" name="PROP_<?=$optionGroup["ITEMS"][0]["ID"]?>" />
                             <label for="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>"></label>
                         </div>
-                        <div class="additional-services-text"><?=$optionGroup["ITEMS"][0]["NAME"]?></div>
+                        <div class="additional-services-text" style="width: 340px;">
+                            <?=$optionGroup["ITEMS"][0]["NAME"]?> <? if($option['CATALOG_PRICE_1'] > 0):?>(<?=$option['PRICES']['Продажа']['PRINT_VALUE_VAT']?>)&nbsp;<? endif; ?><? if ($someComment): ?>(<?=$someComment?>)<? endif ?>
+                            <? if(  $arResult['SECTION']['ID'] == 502 // Apple Watch
+                                || $arResult['SECTION']['ID'] == 503 // Apple Watch Edition
+                                || $arResult['SECTION']['ID'] == 504 // Apple Watch Sport
+                            ):
+                                ?>
+                                <? if ($optionGroup['ID'] == 889 // Чехол от
+                            ):
+                                ?>
+                                (<a href="/gadgets/watch/iwatch/accessories/cases" target="_blank" class="option_additional_comment">подробнее</a>)
+                            <? endif ?>
+                                <? if ($optionGroup['ID'] == 888 // Сменный ремешок от
+                            ):
+                                ?>
+                                (<a href="/gadgets/watch/iwatch/accessories/bands" target="_blank" class="option_additional_comment">подробнее</a>)
+                            <? endif ?>
+                            <? endif ?>
+                            <?// if(  $arResult['SECTION']['IBLOCK_SECTION_ID'] == 182 // MacBook Air
+                            //   || $arResult['SECTION']['IBLOCK_SECTION_ID'] == 181 // MacBook Pro Retina
+                            //   ):
+                            ?>
+                            <? if ($optionGroup['ID'] == 923 // Чехол от MacBook Air
+                            ):
+                                ?>
+                                (<a href="/macbook/cases/air" target="_blank" class="option_additional_comment">подробнее</a>)
+                            <? endif ?>
+                            <? if ($optionGroup['ID'] == 927 // Чехол от MacBook Pro Retina
+                            ):
+                                ?>
+                                (<a href="/macbook/cases/pro_retina" target="_blank" class="option_additional_comment">подробнее</a>)
+                            <? endif ?>
+                            <? if ($optionGroup['ID'] == 891 // Чехол от MacBook 12
+                            ):
+                                ?>
+                                (<a href="/macbook/12/macbook/cases" target="_blank" class="option_additional_comment">подробнее</a>)
+                            <? endif ?>
+                        </div>
                     </div>
                 <?endif?>
 
@@ -225,163 +292,14 @@
 
                     <!-- кнопки купить -->
                     <div class="product-buy">
-                        <a href="#" class="button-buy">Купить</a>
-                        <a href="#" class="button-one-click">Купить в один клик</a>
+                        <a href="<?=$arResult['ADD_URL']?>" class="button-buy">Купить</a>
+                        <a href="#" class="button-one-click button-credit" data-buyid="<?=$arResult['ID']?>" style="float: none">Купить в один клик</a>
                     </div>
-
+<?else:?>
+    <div class="product-buy">
+        <a style="margin-right: 220px;" href="#" class="button-buy b_button-buy no-style-link addElementPreorderLink" data-buyid="<?=$arResult['ID']?>">Оформить предзаказ</a>
+    </div>
 <?endif?>
-
-                    <?if(0&&$arResult['CAN_BUY']):?>
-                        <div class="margin-top_10px">
-                            <span itemprop="availability"content="in_stock"></span>
-                            <? if(count($arResult["SECTION"]["OPTIONS"])):?>
-                                <div class="color_black fs_14px fs_bold margin-bottom_5px">Дополнительные услуги</div>
-                            <? endif ?>
-                            <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
-                                <? if(!empty($optionGroup["ITEMS"])): ?>
-                                    <div class="option_group">
-                                        <? if($optionGroup['ID'] == '228' || $optionGroup['ID'] == '304'):?>
-                                            <a href="/inet" target="_blank" class="option_additional_link">подробнее о тарифах</a>
-                                        <? endif;?>
-                                        <? /*if($optionGroup['ID'] == '5902'):?>
-                                            <a href="/tariff" class="option_additional_link">подробнее о тарифах</a>
-                                        <? endif;*/?>
-                                        <?
-                                        $someComment = false;
-
-                                        //                                        if($optionGroup['ID'] == '423' || $optionGroup['ID'] == '420' || $optionGroup['ID'] == '421' || $optionGroup['ID'] == '458')
-                                        if($optionGroup['NAME'] == 'Сим-карта в подарок')
-                                            $someComment = '<a href="/tariff" target="_blank" class="option_additional_comment">выбрать красивый номер</a>';
-                                        if($optionGroup['NAME'] == 'Гарнитура')
-                                            $someComment = '<a href="/brands/sony/headset" target="_blank" class="option_additional_comment">выбрать цвет гарнитуры</a>';
-
-                                        ?>
-                                        <? if(count($optionGroup["ITEMS"]) > 1): ?>
-                                            <div class="option_radio_title"><span class="color_black fs_14px"><?=$optionGroup['NAME']?>:</span>
-                                                <? if($optionGroup['NAME'] == 'Комплекты со скидкой'):?>
-                                                    <? if(  $arResult['SECTION']['ID'] == 261
-                                                        || $arResult['SECTION']['ID'] == 263
-                                                        || $arResult['SECTION']['ID'] == 377
-                                                    ):?>
-                                                        (<a href="/iphone-6/accessories/set" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                    <? endif ?>
-                                                    <? if(  $arResult['SECTION']['ID'] == 385
-                                                        || $arResult['SECTION']['ID'] == 386
-                                                        || $arResult['SECTION']['ID'] == 387
-                                                        || $arResult['SECTION']['ID'] == 384
-                                                    ):?>
-                                                        (<a href="/iphone-6-plus/accessories/set" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                    <? endif ?>
-                                                <? endif ?>
-                                            </div>
-                                            <div class="option_radio_group">
-                                                <div class="option_input option_input_radio"><input checked="checked" type="radio" id="option_<?=$optionGroup['ID']?>_0" value="0" name="opiton_<?=$optionGroup['ID']?>" data-price="0"></div>
-                                                <div class="option_name_radio"><label class="option_label" for="option_<?=$optionGroup['ID']?>_0"><span class="color_black fs_14px">не требуется</span></label></div>
-                                            </div>
-                                            <? foreach($optionGroup["ITEMS"] as $option): ?>
-                                                <div class="option_radio_group">
-                                                    <div class="option_input option_input_radio"><input type="radio" id="option_<?=$option['ID']?>" value="<?=$option['ID']?>" name="opiton_<?=$optionGroup['ID']?>" data-price="<?=round($option['CATALOG_PRICE_1'])?>"></div>
-                                                    <div class="option_name_radio"><label class="option_label" for="option_<?=$option['ID']?>"><span class="color_black fs_14px"><?=$option['NAME']?></span></label> <? if($option['CATALOG_PRICE_1'] > 0):?>(<span class="color_79b70d"><?=$option['PRICES']['Продажа']['PRINT_VALUE_VAT']?></span>)<? else: ?>(<span class="color_79b70d">бесплатно</span>)<? endif ?></div>
-                                                </div>
-                                            <? endforeach ?>
-                                        <? elseif(count($optionGroup["ITEMS"]) == 1):?>
-                                            <? $option = $optionGroup["ITEMS"][0];
-                                            if($option['CATALOG_PRICE_1'] == 0 && $someComment == false) $someComment = 'бесплатно';
-                                            ?>
-                                            <div class="option_input option_input_checkbox"><input type="checkbox" id="option_<?=$option['ID']?>" value="<?=$option['ID']?>" name="opiton_<?=$optionGroup['ID']?>" data-price="<?=round($option['CATALOG_PRICE_1'])?>"></div>
-                                            <div class="option_name_checkbox"><label class="option_label" for="option_<?=$option['ID']?>"><span class="color_black fs_14px"><?=$optionGroup['NAME']?></span></label> <? if($option['CATALOG_PRICE_1'] > 0):?>(<span class="color_79b70d"><?=$option['PRICES']['Продажа']['PRINT_VALUE_VAT']?></span>)&nbsp;<? endif; ?><? if ($someComment): ?>(<span class="color_79b70d"><?=$someComment?></span>)<? endif ?>
-                                                <? if(  $arResult['SECTION']['ID'] == 502 // Apple Watch
-                                                    || $arResult['SECTION']['ID'] == 503 // Apple Watch Edition
-                                                    || $arResult['SECTION']['ID'] == 504 // Apple Watch Sport
-                                                ):
-                                                    ?>
-                                                    <? if ($optionGroup['ID'] == 889 // Чехол от
-                                                ):
-                                                    ?>
-                                                    (<a href="/gadgets/watch/iwatch/accessories/cases" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                <? endif ?>
-                                                    <? if ($optionGroup['ID'] == 888 // Сменный ремешок от
-                                                ):
-                                                    ?>
-                                                    (<a href="/gadgets/watch/iwatch/accessories/bands" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                <? endif ?>
-                                                <? endif ?>
-                                                <?// if(  $arResult['SECTION']['IBLOCK_SECTION_ID'] == 182 // MacBook Air
-                                                //   || $arResult['SECTION']['IBLOCK_SECTION_ID'] == 181 // MacBook Pro Retina
-                                                //   ):
-                                                ?>
-                                                <? if ($optionGroup['ID'] == 923 // Чехол от MacBook Air
-                                                ):
-                                                    ?>
-                                                    (<a href="/macbook/cases/air" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                <? endif ?>
-                                                <? if ($optionGroup['ID'] == 927 // Чехол от MacBook Pro Retina
-                                                ):
-                                                    ?>
-                                                    (<a href="/macbook/cases/pro_retina" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                <? endif ?>
-                                                <? if ($optionGroup['ID'] == 891 // Чехол от MacBook 12
-                                                ):
-                                                    ?>
-                                                    (<a href="/macbook/12/macbook/cases" target="_blank" class="option_additional_comment">подробнее</a>)
-                                                <? endif ?>
-                                                <? // endif ?>
-                                            </div>
-                                        <? endif ?>
-                                    </div>
-                                <? endif ?>
-                            <? endforeach ?>
-                            <? /*else: ?>
-                            <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
-                                <? if(!empty($optionGroup["ITEMS"])): ?>
-                                <div class="margin-bottom_5px">
-                                    <span class="color_black fs_14px"><?=$optionGroup['NAME']?>:</span>
-                                    <div class="b_select-styled">
-                                        <select data-group="<?=$optionGroup['ID']?>" class="b_select-styled_select product_options">
-                                            <option value="0" data-price="0" class="b_select-styled_option">Не требуется</option>
-                                            <? foreach($optionGroup["ITEMS"] as $option): ?>
-                                            <option value="<?=$option['ID']?>" data-price="<?=round($option['CATALOG_PRICE_1'])?>" class="b_select-styled_option"><?=$option['NAME']?></option>
-                                            <? endforeach ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <? endif ?>
-                            <? endforeach ?>
-                        <? endif*/ ?>
-                            <? /*
-                        <? foreach($arResult['SERVICE_LIST']['SECTIONS'] as $serviceSection): ?>
-                            <div class="margin-top_5px">
-                                <span class="color_black fs_14px"><?=$serviceSection['NAME']?>:</span>
-                                <div class="b_select-styled">
-                                    <select data-service="<?=$serviceSection['ID']?>" class="b_select-styled_select additional_service">
-                                        <option value="0" data-price="0" class="b_select-styled_option">Не требуется</option>
-                                        <? foreach($arResult['SERVICE_LIST']['SERVICES'][$serviceSection['ID']] as $service): ?>
-                                        <option value="<?=$service['ID']?>" data-price="<?=round($service['CATALOG_PRICE_1'])?>" class="b_select-styled_option"><?=$service['PROPERTY_LIST_NAME_VALUE']?></option>
-                                        <? endforeach ?>
-                                    </select>
-                                </div>
-                            </div>
-                        <? endforeach ?>
-                        */ ?>
-                        </div>
-                        <? if($arResult['SECTION']['UF_BUY_DISABLE']): ?>
-                            <a class="b_button-buy button-buy_preorder no-style-link" id="addElementLink" href="<?=$arResult['ADD_URL']?>&preorder=Y"></a>
-                        <? else: ?>
-                            <a class="b_button-buy button-buy_buy no-style-link" id="addElementLink" href="<?=$arResult['ADD_URL']?>" onclick="ga('send', 'event', 'Acc window', 'Open', '');"></a>
-                            <? if(false): ?>
-                                <a class="b_button-buy button-buy_buy-credit no-style-link" id="addElementCreditLink" href="<?=$arResult['ADD_URL']?>&credit=Y"></a>
-                            <? endif;?>
-                            <a class="b_button-buy button-buy_buy-one-click no-style-link" id="oneClickBuyLink" data-buyid="<?=$arResult["ID"]?>" href="<?=$arResult['ADD_URL']?>"></a>
-                        <? endif ?>
-                    <? else: ?>
-                        <span itemprop="availability" content="out_of_stock"></span>
-                        <? //if($USER->IsAdmin()): ?>
-                        <?  /* <a class="b_button-buy button-buy_buy no-style-link" id="addElementLink" href="<?=$arResult['ADD_URL']?>" onclick="_gaq.push(['_trackEvent', 'Acc window', 'Open', '']);"></a> */ ?>
-                        <a class="b_button-buy button-buy_preorder no-style-link" id="addElementPreorderLink" data-buyid="<?=$arResult["ID"]?>" href="#"></a>
-                        <?  /* <a class="b_button-buy button-buy_buy-one-click no-style-link" id="oneClickBuyLink" data-buyid="<?=$arResult["ID"]?>" href="<?=$arResult['ADD_URL']?>"></a> */ ?>
-                        <? //endif;?>
-                    <? endif ?>
-
 
 
                     <!-- описание продукта -->
@@ -667,8 +585,8 @@
                 </a>
                 <div class="product-price"><?=number_format($similar['PRICE']['PRICE'], 0, '', ' ')?>, -</div>
                 <div class="clearfix">
-                    <input type="submit" class="button-buy" value="Купить" />
-                    <a href="#" class="button-credit">В 1 клик</a>
+                    <input type="submit" onclick="location.href='<?=$similar['ADD_URL']?>'" class="button-buy" value="Купить" />
+                    <a href="#" class="button-credit" data-buyid="<?=$similar['ID']?>">В 1 клик</a>
                 </div>
             </div>
         <?endforeach?>

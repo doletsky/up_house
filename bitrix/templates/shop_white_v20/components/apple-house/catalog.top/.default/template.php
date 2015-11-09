@@ -12,8 +12,8 @@
             <?if($arItem["CAN_BUY"]):?>
                 <div class="product-price"><?=number_format($arItem["PRICE_MATRIX"]["MATRIX"][1][0]["DISCOUNT_PRICE"], 0, ',', ' ')?>, -</div>
                 <div class="clearfix">
-                    <input type="submit" class="button-buy" value="Купить" />
-                    <a href="#" class="button-credit">В 1 клик</a>
+                    <input type="submit" onclick="location.href='<?=$arItem['ADD_URL']?>'" class="button-buy" value="Купить" />
+                    <a href="#" class="button-credit" data-buyid="<?=$arItem["ID"]?>">В 1 клик</a>
                 </div>
             <?endif;?>
 
