@@ -173,7 +173,6 @@
                 <?
                 $someComment = false;
 
-                //                                        if($optionGroup['ID'] == '423' || $optionGroup['ID'] == '420' || $optionGroup['ID'] == '421' || $optionGroup['ID'] == '458')
                 if($optionGroup['NAME'] == 'Сим-карта в подарок')
                     $someComment = '<a href="/tariff" target="_blank" class="option_additional_comment">выбрать красивый номер</a>';
                 if($optionGroup['NAME'] == 'Гарнитура')
@@ -224,7 +223,7 @@
                         <?foreach($optionGroup["ITEMS"] as $item):?>
                             <div class="additional-services-item clearfix">
                                 <div class="input-checkbox">
-                                    <input type="checkbox" value="None" id="input-checkbox-<?=$item["ID"]?>" name="PROP_<?=$item["ID"]?>" />
+                                    <input type="checkbox" value="<?=$item["ID"]?>" id="input-checkbox-<?=$item["ID"]?>" name="PROP_<?=$item["ID"]?>" />
                                     <label for="input-checkbox-<?=$item["ID"]?>"></label>
                                 </div>
                                 <div class="additional-services-text">
@@ -240,7 +239,7 @@
                     ?>
                     <div class="additional-services-item clearfix">
                         <div class="input-checkbox">
-                            <input type="checkbox" value="None" id="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>" name="PROP_<?=$optionGroup["ITEMS"][0]["ID"]?>" />
+                            <input type="checkbox" value="<?=$optionGroup["ITEMS"][0]["ID"]?>" id="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>" name="PROP_<?=$optionGroup["ITEMS"][0]["ID"]?>" />
                             <label for="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>"></label>
                         </div>
                         <div class="additional-services-text" style="width: 340px;">
@@ -583,11 +582,17 @@
                         <figcaption class="product-desc"><?=$similar['NAME']?></figcaption>
                     </figure>
                 </a>
+                <?if($similar['PRICE']['PRICE']>1):?>
                 <div class="product-price"><?=number_format($similar['PRICE']['PRICE'], 0, '', ' ')?>, -</div>
                 <div class="clearfix">
                     <input type="submit" onclick="location.href='<?=$similar['ADD_URL']?>'" class="button-buy" value="Купить" />
                     <a href="#" class="button-credit" data-buyid="<?=$similar['ID']?>">В 1 клик</a>
                 </div>
+                <?else:?>
+                    <div class="clearfix" style="margin-top: 59px;">
+                        <input type="submit" class="button-buy addElementPreorderLink"  data-buyid="<?=$similar["ID"]?>" value="Оформить предзаказ" />
+                    </div>
+                <?endif?>
             </div>
         <?endforeach?>
 
