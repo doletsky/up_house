@@ -38,6 +38,7 @@ $(document).ready(function(){
     if($(".input-checkbox label").length>0){
 
         $(".input-checkbox label").click(function(){
+            var price=$('.price-num').data('price');
             var curVal=$(this).parent().children('input').val();
             var noVal='';
             var className=$(this).parent().parent().parent().attr("class");
@@ -53,17 +54,30 @@ $(document).ready(function(){
                 }
             }
             var option='';
+            var oPrice=0;
             $(".input-checkbox input:checked").each(function(){
                 var iVal=$(this).val();
                 if(iVal!='None' && iVal!=noVal){
                     option+='option[]='+iVal+'&';
+                    if($(this).data('price')!='undefined')oPrice+=$(this).data('price');
                 }
 
             });
             if(curVal!='None'){
                 option+='option[]='+curVal;
+                oPrice+=$('#input-checkbox-'+curVal).data('price');
             }
             $('div.product-buy a.button-buy').attr('href', linkAddBasket+'&'+option);
+            price+=oPrice;
+            if(price.toString().length>3){
+                var tmpPrice=price.toString().slice(0,-3)+' '+price.toString().slice(-3);
+                price=tmpPrice;
+                if(price.length>7){
+                    var tmpPrice=price.slice(0,-7)+' '+price.slice(-7);
+                    price=tmpPrice;
+                }
+            }
+            $('.price-num').html(price+' <span class="rub">руб.</span>');
         });
     }
     if($('select.product-select').length>0){

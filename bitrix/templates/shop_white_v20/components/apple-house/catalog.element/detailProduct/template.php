@@ -58,9 +58,9 @@
                 <div class="pull-right">
                     <!-- социальные иконки -->
                     <div class="social-button">
-                        <a href="#" class="social-icon facebook" title="facebook"></a>
-                        <a href="#" class="social-icon vk" title="vk"></a>
-                        <a href="#" class="social-icon twitter" title="twitter"></a>
+                        <a href="#" class="social-icon facebook" title="facebook" onclick="window.open('http://www.facebook.com/sharer.php?u=<?=$_SERVER['HTTP_ORIGIN'].$APPLICATION->GetCurPage()?>', '', 'scrollbars=yes,resizable=no,width=560,height=350,top='+Math.floor((screen.height - 350)/2-14)+',left='+Math.floor((screen.width - 560)/2-5)); return false;"></a>
+                        <a href="#" class="social-icon vk" title="vk" onclick="window.open('http://vkontakte.ru/share.php?url=<?=$_SERVER['HTTP_ORIGIN'].$APPLICATION->GetCurPage()?>&title=<?=$arResult['NAME']?>&image=<?=$arResult["DETAIL_PICTURE"]['SRC']?>&description=', '', 'scrollbars=yes,resizable=no,width=560,height=350,top='+Math.floor((screen.height - 350)/2-14)+',left='+Math.floor((screen.width - 560)/2-5)); return false;"></a>
+                        <a href="#" class="social-icon twitter" title="twitter" onclick="window.open('http://twitter.com/share?text=<?=mb_convert_encoding($arResult['NAME'], "utf-8", "windows-1251")?>&url=<?=$_SERVER['HTTP_ORIGIN'].$APPLICATION->GetCurPage()?>', '', 'scrollbars=yes,resizable=no,width=560,height=350,top='+Math.floor((screen.height - 350)/2-14)+',left='+Math.floor((screen.width - 560)/2-5)); return false;"></a>
                     </div>
                     <!-- /социальные иконки -->
                     <? if(!empty($arResult['PROPERTIES']['CML2_ARTICLE']['VALUE'])):?>
@@ -152,9 +152,9 @@
                     <div class="price">
                         <div class="price-text">Цена:</div>
                         <? if($arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE']):?>
-                        <div class="price-num"><?=str_replace('руб.', '<span class="rub">руб.</span>', $arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE'])?></div>
+                        <div class="price-num" data-price="<?=$arResult['PRICES']['Продажа']['DISCOUNT_VALUE']?>"><?=str_replace('руб.', '<span class="rub">руб.</span>', $arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE'])?></div>
                         <? elseif($arResult['PRICES']['Продажа']['PRINT_VALUE']):?>
-                            <div class="price-num"><?=str_replace('руб.', '<span class="rub">руб.</span>',$arResult['PRICES']['Продажа']['PRINT_VALUE'])?></div>
+                            <div class="price-num" data-price="<?=$arResult['PRICES']['Продажа']['VALUE']?>"><?=str_replace('руб.', '<span class="rub">руб.</span>',$arResult['PRICES']['Продажа']['PRINT_VALUE'])?></div>
                         <? endif ?>
                     </div>
 
@@ -223,7 +223,7 @@
                         <?foreach($optionGroup["ITEMS"] as $item):?>
                             <div class="additional-services-item clearfix">
                                 <div class="input-checkbox">
-                                    <input type="checkbox" value="<?=$item["ID"]?>" id="input-checkbox-<?=$item["ID"]?>" name="PROP_<?=$item["ID"]?>" />
+                                    <input type="checkbox" value="<?=$item["ID"]?>" id="input-checkbox-<?=$item["ID"]?>" name="PROP_<?=$item["ID"]?>"<? if($item['CATALOG_PRICE_1'] > 0):?> data-price="<?=$item['PRICES']['Продажа']['VALUE_VAT']?>"<?else:?> data-price="0"<? endif; ?> />
                                     <label for="input-checkbox-<?=$item["ID"]?>"></label>
                                 </div>
                                 <div class="additional-services-text">
@@ -239,7 +239,7 @@
                     ?>
                     <div class="additional-services-item clearfix">
                         <div class="input-checkbox">
-                            <input type="checkbox" value="<?=$optionGroup["ITEMS"][0]["ID"]?>" id="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>" name="PROP_<?=$optionGroup["ITEMS"][0]["ID"]?>" />
+                            <input type="checkbox" value="<?=$optionGroup["ITEMS"][0]["ID"]?>" id="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>" name="PROP_<?=$optionGroup["ITEMS"][0]["ID"]?>"<? if($option['CATALOG_PRICE_1'] > 0):?> data-price="<?=$option['PRICES']['Продажа']['VALUE_VAT']?>"<?else:?> data-price="0"<? endif; ?> />
                             <label for="input-checkbox-<?=$optionGroup["ITEMS"][0]["ID"]?>"></label>
                         </div>
                         <div class="additional-services-text" style="width: 340px;">
