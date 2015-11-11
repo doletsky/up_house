@@ -291,7 +291,7 @@
 
                     <!-- кнопки купить -->
                     <div class="product-buy">
-                        <a href="<?=$arResult['ADD_URL']?>" class="button-buy">Купить</a>
+                        <a href="<?=$arResult['ADD_URL']?>" class="button-buy" onclick="ga('send', 'event', 'Acc window', 'Open', '');">Купить</a>
                         <a href="#" class="button-one-click button-credit" data-buyid="<?=$arResult['ID']?>" style="float: none">Купить в один клик</a>
                     </div>
 <?else:?>
