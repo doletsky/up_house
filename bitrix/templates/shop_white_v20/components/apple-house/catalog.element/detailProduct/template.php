@@ -291,7 +291,7 @@
 
                     <!-- кнопки купить -->
                     <div class="product-buy">
-                        <a href="<?=$arResult['ADD_URL']?>" class="button-buy" onclick="ga('send', 'event', 'Acc window', 'Open', '');">Купить</a>
+                        <a href="<?=$arResult['ADD_URL']?>" class="button-buy" onclick="var h=$(this).attr('href');$.get(h);RefreshBasketAmount();addCartPopup();return false;">Купить</a>
                         <a href="#" class="button-one-click button-credit" data-buyid="<?=$arResult['ID']?>" style="float: none">Купить в один клик</a>
                     </div>
 <?else:?>
@@ -604,3 +604,85 @@
     </div>
     <!-- /страница карточка товара -->
 
+<?$this->SetViewTarget("add_cart_popup");?>
+<!-- вы добавили в корзину pop-up -->
+<div class="pop-up-bg" id="add_cart_popup"></div>
+<div class="pop-up-section" id="add_cart_popup_content">
+    <div class="pop-up-container">
+        <div class="pop-up">
+            <div class="clearfix pop-up-header">
+                <h1 class="pull-left pop-up-title">Вы добавили в <a href="#">корзину</a></h1>
+                <div class="pull-right pop-up-close">
+                    <a href="#"><i class="pop-up-close-icon"></i></a>
+                </div>
+            </div>
+
+            <div class="horizontal-line horizontal-line-main"></div>
+
+            <div class="pop-up-product-item clearfix">
+                <div class="pop-up-product-img">
+                    <a href="#" onclick="return false;">
+                        <img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" alt="<?=$arResult['NAME']?>" width="80" />
+                    </a>
+                </div>
+                <div class="pop-up-product-title">
+                    <a href="#" class="pop-up-product-title-link"><?=$arResult['NAME']?></a>
+                </div>
+                <div class="pop-up-product-price">
+                    <? if($arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE']):?>
+                        <?=str_replace('руб.', '', $arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE'])?>
+                    <? elseif($arResult['PRICES']['Продажа']['PRINT_VALUE']):?>
+                        <?=str_replace('руб.', '',$arResult['PRICES']['Продажа']['PRINT_VALUE'])?>
+                    <? endif ?>
+                    <span class="pop-up-product-price-cy">руб.</span>
+                </div>
+
+            </div>
+
+            <div class="horizontal-line horizontal-line-main"></div>
+
+            <div class="pop-up-content">
+                <h2 class="pop-up-content-title">с этим товаром покупают</h2>
+                <div class="also-bought">
+
+                    <div class="product-container clearfix">
+                        <?  $APPLICATION->IncludeComponent("apple-house:sale.recommended.products", "in_popup", Array(
+                                "IBLOCK_TYPE" => '1c_catalog',
+                                "IBLOCK_ID" => 8,
+                                "ID" => $arResult["ID"],    // Идентификатор товара
+                                "MIN_BUYES" => "1",    // Минимальное количество покупок товара
+                                "DETAIL_URL" => $arResult["DETAIL_PICTURE"],    // URL, ведущий на страницу с содержимым элемента
+                                "BASKET_URL" => "/personal/basket.php",    // URL, ведущий на страницу с корзиной покупателя
+                                "ACTION_VARIABLE" => "action",    // Название переменной, в которой передается действие
+                                "PRODUCT_ID_VARIABLE" => "id",    // Название переменной, в которой передается код товара для покупки
+                                "ELEMENT_COUNT" => "10",    // Количество элементов для отображения
+                                "LINE_ELEMENT_COUNT" => "10",    // Количество элементов выводимых в одной строке таблицы
+                                "LINE_VISIBLE_ELEMENT_COUNT" => "5",    // Количество видимых элементов выводимых -1
+                                "PRICE_CODE" => array(),    // Тип цены
+                                "USE_PRICE_COUNT" => "Y",    // Использовать вывод цен с диапазонами
+                                "SHOW_PRICE_COUNT" => "1",    // Выводить цены для количества
+                                "PRICE_VAT_INCLUDE" => "Y",    // Включать НДС в цену
+                                "CACHE_TYPE" => "A",    // Тип кеширования
+                                "CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                                "CONVERT_CURRENCY" => "Y",    // Показывать цены в одной валюте
+                                "CURRENCY_ID" => "RUB",    // Валюта, в которую будут сконвертированы цены
+                            ),
+                            false
+                        );  ?>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="pop-up-footer">
+                <div class="pull-right">
+                    <a href="#" class="button-link-underline">закрыть и продолжить покупки</a>
+                    <a href="#" class="button-bg">оформить заказ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /вы добавили в корзину pop-up -->
+<?$this->EndViewTarget();?>

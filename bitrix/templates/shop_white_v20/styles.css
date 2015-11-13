@@ -132,3 +132,11 @@
     position: relative;
     left: 15px;
 }
+
+#add_cart_popup_content {
+    z-index: 9999;
+}
+
+#add_cart_popup_content .pop-up-container .pop-up {
+    height: 800px;
+}
