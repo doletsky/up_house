@@ -677,8 +677,8 @@
             </div>
             <div class="pop-up-footer">
                 <div class="pull-right">
-                    <a href="#" class="button-link-underline">закрыть и продолжить покупки</a>
-                    <a href="#" class="button-bg">оформить заказ</a>
+                    <a href="javascript:$('#add_cart_popup_content').find('.pop-up-close-icon').click();" class="button-link-underline">закрыть и продолжить покупки</a>
+                    <a href="/personal/basket/" class="button-bg">оформить заказ</a>
                 </div>
             </div>
         </div>

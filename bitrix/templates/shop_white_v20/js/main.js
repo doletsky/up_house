@@ -97,40 +97,41 @@ $(document).ready(function(){
 
 });
 
-//function addCartPopup() {
-//        ga('send', 'event', 'Acc window', 'Open', '');
-//    $('#add_cart_popup_content').css('top',$(document).scrollTop());
-//    $('#add_cart_popup').show();
-//    $('#add_cart_popup_content').show();
-//    return false;
-//}
-//
-//function RefreshBasketAmount(){
-//    $.ajax({
-//        type: "POST",
-//        url: '/formrequest.php',
-//        data: { action: 'BASKET_AMOUNT' }
-//    }).done(function(data){
-//        if(data.length)
-//            $('.header-section-5 .cart').text(data);
-//    });
-//}
-//
-//function AddToBasketAjax(productId){
-//    $.ajax({
-//        type: "POST",
-//        url: '/formrequest.php',
-//        data: { action: 'ADD2BASKET', id: productId }
-//    }).done(function(data){
-//        if(parseInt(data) > 0){
-//            $buyBtn = $('input[data-product-id='+ productId +']');
-//            $buyBtn.val('В корзине');
-//            $buyBtn.attr('onclick','return false');
-//
-//        }
-//
-//        else
-//            alert('Ошибка добавления товара в корзину. Попробуйте позже');
-//
-//    });
-//}
+function addCartPopup() {
+        ga('send', 'event', 'Acc window', 'Open', '');
+    $('#add_cart_popup_content').css('top',$(document).scrollTop());
+    $('#add_cart_popup').show();
+    $('#add_cart_popup_content').show();
+    return false;
+}
+
+function RefreshBasketAmount(){
+    $.ajax({
+        type: "POST",
+        url: '/formrequest.php',
+        data: { action: 'BASKET_AMOUNT' }
+    }).done(function(data){
+        if(data.length)
+            $('.header-section-5 .cart').text(data);
+    });
+}
+
+function AddToBasketAjax(productId){
+    $.ajax({
+        type: "POST",
+        url: '/formrequest.php',
+        data: { action: 'ADD2BASKET', id: productId }
+    }).done(function(data){
+        if(parseInt(data) > 0){
+            $buyBtn = $('input[data-product-id='+ productId +']');
+            $buyBtn.val('В корзине');
+            $buyBtn.addClass('in_cart');
+            $buyBtn.attr('onclick','return false');
+
+        }
+
+        else
+            alert('Ошибка добавления товара в корзину. Попробуйте позже');
+
+    });
+}

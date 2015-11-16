@@ -77,7 +77,7 @@
 </div>
 <!-- /pop-up-quick-order -->
 
-<?//$APPLICATION->ShowViewContent('add_cart_popup');?>
+<?$APPLICATION->ShowViewContent('add_cart_popup');?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js"></script>

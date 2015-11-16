@@ -95,9 +95,9 @@ while ($arSubSect = $rsSubSect->GetNext())
 //        $pos = strpos($fName, " ");
 //        $fName=substr_replace($fName, "&nbsp", $pos, 1);
 //    }
-    $fName= str_replace("_", "&nbsp", $fName);//сохраняем пробелы
-    $fName=str_replace(" ", "<br/>", $fName);//оставшиеся пробелы заменяем <br>
-    $arSubSect["FILTER_NAME"]=$fName;
+//    $fName= str_replace("_", "&nbsp", $fName);//сохраняем пробелы
+//    $fName=str_replace(" ", "<br/>", $fName);//оставшиеся пробелы заменяем <br>
+//    $arSubSect["FILTER_NAME"]=$fName;
     $arSelectFilters = Array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM","PROPERTY_SECTION");
     $arFilterFilters = Array("IBLOCK_ID"=>16, "ACTIVE"=>"Y", "PROPERTY_SECTION"=>$arSubSect['ID']);
     $resFilters = CIBlockElement::GetList(Array(), $arFilterFilters, false, false, $arSelectFilters);

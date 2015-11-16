@@ -140,3 +140,7 @@
 #add_cart_popup_content .pop-up-container .pop-up {
     height: 800px;
 }
+
+input.button-buy.in_cart {
+    padding: 5px 30px;
+}
