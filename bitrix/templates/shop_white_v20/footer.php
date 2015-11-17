@@ -175,25 +175,6 @@
 </script>
 <!-- /carousel script -->
 
-<!-- slider submenu -->
-<script>
-    $(document).ready(function () {
-        var countSlide=$('#slide-submenu a').length;
-        slideSubmenu=$('#slide-submenu').bxSlider({
-            slideWidth: 89,
-            minSlides: 1,
-            maxSlides: 5,
-            moveSlides: 1,
-            slideMargin: 85,
-            pager: false,
-            onSliderLoad: function(){
-                if(countSlide<6) $('.bx-controls-direction a').addClass('disabled');//console.log(this);
-            }
-        });
-        if(slideNum>0){slideSubmenu.goToSlide(slideNum);console.log('sNm='+slideNum);}
-    });
-</script>
-<!-- /slider submenu -->
 <!-- menu catalog -->
 
 <script>

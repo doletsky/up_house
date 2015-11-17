@@ -146,13 +146,14 @@ IncludeTemplateLangFile(__FILE__); ?>
                 <div class="col-xs-12">
                     <nav class="menu-catalog-block clearfix">
                         <ul class="menu-catalog-list">
+                            <?$TOP_DEPTH=1;if($APPLICATION->GetCurDir()=='/personal/basket/')$TOP_DEPTH=3;?><!-- <?=$TOP_DEPTH?> -->
                             <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "mainCatalogMenuV20", array(
                                     "IBLOCK_TYPE" => "1c_catalog",
                                     "IBLOCK_ID" => "8",
                                     "SECTION_ID" => "",
                                     "SECTION_CODE" => "",
                                     "COUNT_ELEMENTS" => "N",
-                                    "TOP_DEPTH" => "1",
+                                    "TOP_DEPTH" => $TOP_DEPTH,
                                     "SECTION_FIELDS" => array(
                                         0 => "",
                                         1 => "",
