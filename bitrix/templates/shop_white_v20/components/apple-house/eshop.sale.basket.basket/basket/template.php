@@ -212,7 +212,7 @@
 		</div>
 	</div>
 	
-	<form method="post" action="<?=POST_FORM_ACTION_URI?>" name="basket_form" id="basket_form">
+
 	<div class="b_cart fs_18px">
 		<div class="b_grid">
 <?

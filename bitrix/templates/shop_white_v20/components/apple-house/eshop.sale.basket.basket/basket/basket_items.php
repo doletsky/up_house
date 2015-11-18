@@ -8,145 +8,78 @@
     </div>
     <!-- /breadcrumbs -->
 
+    <form method="post" action="<?=POST_FORM_ACTION_URI?>" name="basket_form" id="basket_form">
+        <input type="hidden" value="Y" name="BasketRefresh">
     <section class="cart-section section-container">
         <div class="row">
             <div class="col-xs-6"><h1 class="cart-title entry-title">корзина</h1></div>
             <div class="col-xs-6"><a href="#" class="cart-continue-shop button-link-underline">Продолжить покупки</a></div>
         </div>
-<pre><?print_r($arResult)?></pre>
+<pre><?print_r($arResult['allSum_FORMATED'])?></pre>
         <div class="cart-container">
             <table class="table-cart">
                 <tbody>
-                <tr class="table-row-product">
-                    <td class="table-cart-chill table-cart-product-title">
-                        <div class="cart-product-title">
-                            <a href="#" class="cart-product-title-link">
-                                Apple iPhone 5S 16GB White&Silver (Белый) А1530/1457
-                            </a>
-                        </div>
-                    </td>
+                <?foreach($arResult['ITEMS']['BASKET_LIST'] as $item):?>
+                    <tr class="table-row-product">
+                        <td class="table-cart-chill table-cart-product-title">
+                            <div class="cart-product-title">
+                                <a href="<?=$item['DETAIL_PAGE_URL']?>" class="cart-product-title-link">
+                                    <?=$item['NAME']?>
+                                </a>
+                            </div>
+                        </td>
 
-                    <td class="table-cart-chill table-cart-product-select">
-                        <div class="cart-product-select">
-                            <a href="#" class="minus-icon product-sprite"></a>
-                            <div class="cart-product-select-num">1</div>
-                            <a href="#" class="plus-icon product-sprite"></a>
-                        </div>
-                    </td>
+                        <td class="table-cart-chill table-cart-product-select">
+                            <div class="cart-product-select">
+                                <input class="QUANTITY_<?=$item['ID']?>" type="hidden" name="QUANTITY_<?=$item['ID']?>" value="<?=$item['QUANTITY']?>">
+                                <a href="#" class="minus-icon product-sprite" onclick="$('.QUANTITY_<?=$item['ID']?>').val(parseInt($('.QUANTITY_<?=$item['ID']?>').val())-1);$('#basket_form').submit();"></a>
+                                <div class="cart-product-select-num"><?=$item['QUANTITY']?></div>
+                                <a href="#" class="plus-icon product-sprite" onclick="$('.QUANTITY_<?=$item['ID']?>').val(parseInt($('.QUANTITY_<?=$item['ID']?>').val())+1);$('#basket_form').submit();"></a>
+                            </div>
+                        </td>
 
-                    <td class="table-cart-chill table-cart-product-price">
-                        <div class="cart-product-price-num">
-                            26 700 <span class="cart-product-price-cy">руб.</span>
-                        </div>
-                    </td>
+                        <td class="table-cart-chill table-cart-product-price">
+                            <div class="cart-product-price-num">
+                                <?=$item['PRICE']?> <span class="cart-product-price-cy">руб.</span>
+                            </div>
+                        </td>
 
-                    <td class="table-cart-chill table-cart-product-del">
-                        <a href="#" class="del-product-icon product-sprite"></a>
-                    </td>
-                </tr>
+                        <td class="table-cart-chill table-cart-product-del">
+                            <a href="?action=delete&id=<?=$item['ID']?>" class="del-product-icon product-sprite"></a>
+                        </td>
+                    </tr>
+                    <?
+                    $count_p=count($item['PROPS']);
+                    if($count_p>0):
+                        foreach($item['PROPS'] as $prop_p):
+                            $count_p--;?>
+                            <tr class="table-row-addition<?if($count_p==0):?> table-row-last<?endif?>">
+                            <td class="table-cart-chill table-cart-product-title">
+                                <div class="cart-product-title">
+                                    <div class="tick-icon product-sprite"></div>
+                                    <a href="#" class="cart-additiont-title-link">
+                                        <?=$prop_p['NAME']?>
+                                    </a>
+                                </div>
+                            </td>
 
-                <tr class="table-row-addition">
-                    <td class="table-cart-chill table-cart-product-title">
-                        <div class="cart-product-title">
-                            <div class="tick-icon product-sprite"></div>
-                            <a href="#" class="cart-additiont-title-link">
-                                Кабель Apple USB to Lightning
-                            </a>
-                        </div>
-                    </td>
+                            <td class="table-cart-chill table-cart-product-select">
+                                <input type="hidden" name="QUANTITY_<?=$prop_p['ID']?>" value="<?=$prop_p['QUANTITY']?>">
+                            </td>
 
-                    <td class="table-cart-chill table-cart-product-select">
+                            <td class="table-cart-chill table-cart-product-price">
+                                <div class="cart-addition-price-num">
+                                    <?=$prop_p['PRICE']?> <span class="cart-product-price-cy">руб.</span>
+                                </div>
+                            </td>
 
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-price">
-                        <div class="cart-addition-price-num">
-                            890 <span class="cart-product-price-cy">руб.</span>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-del">
-                        <a href="#" class="del-additiont-icon product-sprite"></a>
-                    </td>
-                </tr>
-
-                <tr class="table-row-addition table-row-last">
-                    <td class="table-cart-chill table-cart-product-title">
-                        <div class="cart-product-title">
-                            <div class="tick-icon product-sprite"></div>
-                            <a href="#" class="cart-additiont-title-link">
-                                Автомобильное зарядное устройство
-                            </a>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-select">
-
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-price">
-                        <div class="cart-addition-price-num">
-                            990 <span class="cart-product-price-cy">руб.</span>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-del">
-                        <a href="#" class="del-additiont-icon product-sprite"></a>
-                    </td>
-                </tr>
-
-                <tr class="table-row-product">
-                    <td class="table-cart-chill table-cart-product-title">
-                        <div class="cart-product-title">
-                            <a href="#" class="cart-product-title-link">
-                                Браслет Jawbone Up24 Lemon Lime (Лимонный) M
-                            </a>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-select">
-                        <div class="cart-product-select">
-                            <a href="#" class="minus-icon product-sprite"></a>
-                            <div class="cart-product-select-num">1</div>
-                            <a href="#" class="plus-icon product-sprite"></a>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-price">
-                        <div class="cart-product-price-num">
-                            5 990 <span class="cart-product-price-cy">руб.</span>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-del">
-                        <a href="#" class="del-product-icon product-sprite"></a>
-                    </td>
-                </tr>
-
-                <tr class="table-row-addition table-row-last">
-                    <td class="table-cart-chill table-cart-product-title">
-                        <div class="cart-product-title">
-                            <div class="tick-icon product-sprite"></div>
-                            <a href="#" class="cart-additiont-title-link">
-                                Сменный колпачок
-                            </a>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-select">
-
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-price">
-                        <div class="cart-addition-price-num">
-                            620 <span class="cart-product-price-cy">руб.</span>
-                        </div>
-                    </td>
-
-                    <td class="table-cart-chill table-cart-product-del">
-                        <a href="#" class="del-additiont-icon product-sprite"></a>
-                    </td>
-                </tr>
+                            <td class="table-cart-chill table-cart-product-del">
+                                <a href="?action=delete&id=<?=$prop_p['ID']?>" class="del-additiont-icon product-sprite"></a>
+                            </td>
+                        </tr>
+                        <?endforeach?>
+                    <?endif?>
+                <?endforeach?>
 
                 </tbody>
             </table>
@@ -166,13 +99,14 @@
             <div class="cart-total-section-2">
                 <div class="cart-total-content">
                     <span class="cart-total-text">итого:</span>
-                    <span class="cart-total-num">35 190</span>
+                    <span class="cart-total-num"><?=number_format($arResult['allSum'], 0, ',', ' ')?></span>
                     <span class="cart-total-cy">руб.</span>
                 </div>
             </div>
         </div>
 
     </section>
+        </form>
 </div>
 
 

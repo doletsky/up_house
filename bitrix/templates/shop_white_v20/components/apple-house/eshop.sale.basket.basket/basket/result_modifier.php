@@ -108,4 +108,27 @@ if(!empty($recommendItemsIDs)) {
 	}
 	$arResult['RECCOMEND_PAGES'] = ceil(count($arResult['RECCOMEND'])/4);
 }
+
+foreach($arResult['ITEMS']['AnDelCanBuy'] as $key => $basketItems) {
+    $arResult['ITEMS']['BASKET_LIST'][$basketItems['ID']]=array(
+        'ID' => $basketItems['ID'],
+        'NAME' => $basketItems['NAME'],
+        'PRODUCT_ID' => $basketItems['PRODUCT_ID'],
+        'QUANTITY' => $basketItems['QUANTITY'],
+        'PRICE' => $basketItems['PRICE'],
+        'DETAIL_PAGE_URL' => '/'.$basketItems['CATALOG']['PROPERTY_117_VALUE'][0]
+    );
+
+}
+foreach($arResult['ITEMS']['AnDelCanBuy'] as $key => $basketItems) {
+    if(count($basketItems['PROPS'])>0){
+        foreach($basketItems['PROPS'] as $prop){
+            if($prop['CODE']=='OPTIONS'){
+                $arResult['ITEMS']['BASKET_LIST'][$basketItems['ID']]['PROPS'][$prop['VALUE']]=$arResult['ITEMS']['BASKET_LIST'][$prop['VALUE']];
+                unset($arResult['ITEMS']['BASKET_LIST'][$prop['VALUE']]);
+            }
+
+        }
+    }
+}
 ?>
