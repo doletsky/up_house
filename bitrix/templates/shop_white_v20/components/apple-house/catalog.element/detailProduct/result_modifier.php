@@ -448,8 +448,11 @@ $arResult['colors_hex'] = array("*TITLE01*"		 => "Reds",
 		);
 
 if(!empty($arResult['SIMILAR'])){
-    foreach($arResult['SIMILAR'] as $k => $similar)
+    foreach($arResult['SIMILAR'] as $k => $similar){
         $arResult['SIMILAR'][$k]["PRICE"] = CPrice::GetBasePrice($similar["ID"]);
+        $arResult['SIMILAR'][$k]['ADD_URL']='/'.$arResult['SIMILAR'][$k]['PROPERTY_CML2_CODE_VALUE'].'?action=ADD2BASKET&id='.$arResult['SIMILAR'][$k]['ID'];
+    }
+
 }
 
 ?>

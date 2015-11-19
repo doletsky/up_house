@@ -13,9 +13,9 @@
     <section class="cart-section section-container">
         <div class="row">
             <div class="col-xs-6"><h1 class="cart-title entry-title">корзина</h1></div>
-            <div class="col-xs-6"><a href="#" class="cart-continue-shop button-link-underline">Продолжить покупки</a></div>
+            <div class="col-xs-6"><a href="/" class="cart-continue-shop button-link-underline">Продолжить покупки</a></div>
         </div>
-<pre><?print_r($arResult['allSum_FORMATED'])?></pre>
+
         <div class="cart-container">
             <table class="table-cart">
                 <tbody>
@@ -85,11 +85,18 @@
             </table>
         </div>
 
+<? if($arResult["COUPON"]): ?>
+    <div>
+        Купон на скидку активирован. Размер скидки Вам сообщит наш менеджер во время уточнения информации по Вашему заказу.
+    </div>
+    <br/>
+<? else: ?>
         <!-- код купона -->
         <div class="coupon-code-block mb-4">
-            <input type="text" class="coupon-code-input" placeholder="введите код купона" />
+            <input type="text" class="coupon-code-input" placeholder="введите код купона" name="COUPON" />
             <a href="#" class="button-transparent coupon-code-button">применить</a>
         </div>
+<? endif ?>
 
         <!-- итого -->
         <div class="cart-total clearfix">
@@ -109,6 +116,25 @@
         </form>
 </div>
 
+<? if(count($arResult["ITEMS"]["AnDelCanBuy"])): ?>
+    <?$this->SetViewTarget("script_cart_buttons");?>
+    <script>
+        $(document).ready(function(e) {
+            $('.coupon-code-button').click(function(e) {
+                e.preventDefault();
+                $('.cart-total-section').append('<input type="hidden"" value="<?=GetMessage("SALE_ORDER")?>" name="BasketOrder">');
+                $('.cart-total-section').append('<input type="hidden"" value="Y" name="ApplyCoupon">');
+                $('#basket_form').submit();
+            });
+            $('.cart-total-button').click(function(e) {
+                e.preventDefault();
+                $('.cart-total-section').append('<input type="hidden"" value="<?=GetMessage("SALE_ORDER")?>" name="BasketOrder">');
+                $('#basket_form').submit();
+            });
+        });
+    </script>
+    <?$this->EndViewTarget();?>
+<?endif?>
 
 <?if(0):?>
 <?

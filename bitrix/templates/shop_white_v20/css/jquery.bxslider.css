@@ -106,6 +106,10 @@
     background: url("../img/carousel-arrow.png") -50px 0 no-repeat;
 }
 
+#page-cart .bx-wrapper .bx-prev {
+    left: auto;
+}
+
 .bx-wrapper .bx-prev:hover {
 
 }
