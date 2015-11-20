@@ -15,6 +15,7 @@ IncludeTemplateLangFile(__FILE__); ?>
     <link href="<?=SITE_TEMPLATE_PATH?>/css/pop-up-quick-order-v20.css" rel="stylesheet/less" />
     <link rel="stylesheet" type="text/css" href="/bitrix/templates/shop_white/private/style/jquery.fancybox.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="<?=SITE_TEMPLATE_PATH?>/js/less-1.7.3.min.js" type="text/javascript"></script>
     <script src="<?=SITE_TEMPLATE_PATH?>/js/modernizr-2.6.2.min.js"></script>
 
@@ -146,7 +147,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                 <div class="col-xs-12">
                     <nav class="menu-catalog-block clearfix">
                         <ul class="menu-catalog-list">
-                            <?$TOP_DEPTH=1;if($APPLICATION->GetCurDir()=='/personal/basket/')$TOP_DEPTH=3;?><!-- <?=$TOP_DEPTH?> -->
+                            <?$TOP_DEPTH=1;if($APPLICATION->GetCurDir()=='/personal/basket/' || $APPLICATION->GetCurDir()=='/personal/order/make/')$TOP_DEPTH=3;?>
                             <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "mainCatalogMenuV20", array(
                                     "IBLOCK_TYPE" => "1c_catalog",
                                     "IBLOCK_ID" => "8",

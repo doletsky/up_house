@@ -79,7 +79,7 @@
 
 <?$APPLICATION->ShowViewContent('add_cart_popup');?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <script type="text/javascript" src="/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
@@ -174,7 +174,7 @@
     });
 </script>
 <!-- /carousel script -->
-<?if($APPLICATION->GetCurDir()!='/personal/basket/'):?>
+<?if($APPLICATION->GetCurDir()!='/personal/basket/' && $APPLICATION->GetCurDir()!='/personal/order/make/'):?>
     <!-- slider submenu -->
     <script>
         $(document).ready(function () {

@@ -15,7 +15,6 @@
             <div class="col-xs-6"><h1 class="cart-title entry-title">корзина</h1></div>
             <div class="col-xs-6"><a href="/" class="cart-continue-shop button-link-underline">Продолжить покупки</a></div>
         </div>
-
         <div class="cart-container">
             <table class="table-cart">
                 <tbody>

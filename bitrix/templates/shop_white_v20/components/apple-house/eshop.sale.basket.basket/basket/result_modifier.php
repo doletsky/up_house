@@ -123,7 +123,7 @@ foreach($arResult['ITEMS']['AnDelCanBuy'] as $key => $basketItems) {
 foreach($arResult['ITEMS']['AnDelCanBuy'] as $key => $basketItems) {
     if(count($basketItems['PROPS'])>0){
         foreach($basketItems['PROPS'] as $prop){
-            if($prop['CODE']=='OPTIONS'){
+            if($prop['CODE']=='OPTIONS' && count($arResult['ITEMS']['BASKET_LIST'][$prop['VALUE']])>0){
                 $arResult['ITEMS']['BASKET_LIST'][$basketItems['ID']]['PROPS'][$prop['VALUE']]=$arResult['ITEMS']['BASKET_LIST'][$prop['VALUE']];
                 unset($arResult['ITEMS']['BASKET_LIST'][$prop['VALUE']]);
             }
