@@ -96,7 +96,7 @@ else
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/private/libs/jquery.inputmask.bundle.min.js"></script>
 			<form action="<?=$APPLICATION->GetCurPage();?>" method="POST" name="ORDER_FORM" id="ORDER_FORM">
 			<?=bitrix_sessid_post()?>
-
+<?if(0):?>
             <!-- страница корзина оформление заказа -->
             <div id="page-cart" style="margin-top: 25px">
 
@@ -431,7 +431,7 @@ else
 
             </div>
             <!-- /страница корзина оформление заказа -->
-
+<?endif?>
 <!--            <div class="b_grid">-->
 <!--				<div class="b_grid_unit-1-2">-->
 <!--					<h1 class="fs_36px margin-top_20px">Оформление заказа</h1>-->
@@ -499,7 +499,7 @@ else
                             </div>
                             <!-- /тип плательщика -->
                             <!-- контактные данные -->
-                            <div class="col-xs-6">
+                            <div class="col-xs-6" id="load-person">
 
                                 <?
                                 if($curUserType == 1)
@@ -594,4 +594,15 @@ else
 <!-- /оформления заказа -->
 
 </div>
-<!-- /страница корзина оформление заказа
+<!-- /страница корзина оформление заказа-->
+<script>
+        $('input[name="PERSON_TYPE"]').click(function(){
+            if($(this).val()==1){
+                $('#load-person').load('<?=$templateFolder?>/userfizprops.php');
+            }
+            if($(this).val()==2){
+                $('#load-person').load('<?=$templateFolder?>/userjuzprops.php');
+            }
+        });
+
+</script>
