@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <? if($USER->IsAdmin() && $arResult['USER_VALS']['DELIVERY_ID'] == 1):?>
+    <? if(0 && $USER->IsAdmin() && $arResult['USER_VALS']['DELIVERY_ID'] == 1):?>
         <script type="text/javascript">
             <? $maskedPhoneInput = ($_REQUEST['masked_phone_input'] == $arResult["ORDER_PROP"]["USER_PROPS_Y"][3]["VALUE"]) ? $_REQUEST['masked_phone_input'] : $arResult["ORDER_PROP"]["USER_PROPS_Y"][3]["VALUE"];?>
             $('.order_phone_blc').append('<input id="masked_phone_input" name="masked_phone_input" class="b_input-text input-text_width_240px" value="<?=$maskedPhoneInput?>">');

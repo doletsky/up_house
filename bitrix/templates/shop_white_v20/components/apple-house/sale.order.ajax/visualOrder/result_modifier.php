@@ -137,4 +137,26 @@ $arResult["ECOMMERSE"]=$_REQUEST["ECOMMERSE"];
 
 }
 
+foreach($arResult["BASKET_ITEMS"] as $key => $basketItems) {
+    $arResult['BASKET_LIST'][$basketItems['ID']]=array(
+        'ID' => $basketItems['ID'],
+        'NAME' => $basketItems['NAME'],
+        'PRODUCT_ID' => $basketItems['PRODUCT_ID'],
+        'QUANTITY' => $basketItems['QUANTITY'],
+        'PRICE' => $basketItems['PRICE'],
+        'DETAIL_PAGE_URL' => '/'.$basketItems['CATALOG']['PROPERTY_117_VALUE'][0]
+    );
+
+}
+foreach($arResult["BASKET_ITEMS"] as $key => $basketItems) {
+    if(count($basketItems['PROPS'])>0){
+        foreach($basketItems['PROPS'] as $prop){
+            if($prop['CODE']=='OPTIONS' && count($arResult['BASKET_LIST'][$prop['VALUE']])>0){
+                $arResult['BASKET_LIST'][$basketItems['ID']]['PROPS'][$prop['VALUE']]=$arResult['BASKET_LIST'][$prop['VALUE']];
+                unset($arResult['BASKET_LIST'][$prop['VALUE']]);
+            }
+
+        }
+    }
+}
 ?>

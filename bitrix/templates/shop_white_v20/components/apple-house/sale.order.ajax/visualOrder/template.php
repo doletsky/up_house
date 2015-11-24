@@ -157,8 +157,9 @@ else
                         ?>
                     </div>
                     <div class="b_line"></div>
+
                 </div>
-                <div class="horizontal-line horizontal-line-main"></div>
+
                 <? if($curUserType == 2): ?>
                     <div class="b_grid">
                         <div class="b_grid_level grid_level_30px">
@@ -167,48 +168,53 @@ else
                         <div class="b_line"></div>
                     </div>
                 <? endif ?>
-                <div class="b_grid_level grid_level_30px">
-                    <?
-                    /*
-                    if ($arParams["DELIVERY_TO_PAYSYSTEM"] == "p2d")
-                    {
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/paysystem.php");
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/delivery.php");
-                    }
-                    else
-                    {
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/delivery.php");
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/paysystem.php");
-                    }
-                    */
-                    ?>
-                    <div class="b_grid_unit-11-24 bottom_part">
-                        <?
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/delivery.php");
-                        ?>
-                        <?
-                        //if($USER->IsAdmin())
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/coupon.php");
-                        ?>
-                    </div>
-                    <div class="b_grid_unit-11-24 bottom_part">
-                        <?
-                        include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/paysystem.php");
-                        ?>
-                    </div>
-                    <div class="b_grid_unit-1-24"></div>
+                <div class="horizontal-line horizontal-line-main"></div>
+                <div class="cart-container-2">
+                    <div class="row">
+                        <div class="col-xs-6 b_grid_unit-11-24 bottom_part">
+                            <?
+                            include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/delivery.php");
+                            ?>
+                        </div>
+                        <div class="col-xs-6 b_grid_unit-11-24 bottom_part" id="paysystem">
+                            <?
+                            include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/paysystem.php");
+                            ?>
 
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <?$APPLICATION->ShowViewContent('addres_deliver');?>
+                        </div>
+                        <!-- купон на скидку -->
+                        <div class="col-xs-6">
+                            <?
+                            include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/coupon.php");
+                            ?>
+                        </div>
+                        <!-- /купон на скидку -->
+                    </div>
+
+                    <div class="b_line"></div>
                 </div>
-                <div class="b_line"></div>
+                <div class="horizontal-line horizontal-line-main"></div>
+
+                <div class="cart-container-2">
+
                 <?
 
-                include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/summary.php");
-                if(strlen($arResult["PREPAY_ADIT_FIELDS"]) > 0)
-                    echo $arResult["PREPAY_ADIT_FIELDS"];
-                ?>
-                <?if($_POST["is_ajax_post"] != "Y")
-                {
-                ?>
+                    include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/summary.php");
+                    if(strlen($arResult["PREPAY_ADIT_FIELDS"]) > 0)
+                        echo $arResult["PREPAY_ADIT_FIELDS"];
+                    ?>
+                    <?if($_POST["is_ajax_post"] != "Y")
+                    {
+                    ?>
+                </div>
+
             </div>
             <input type="hidden" name="confirmorder" id="confirmorder" value="Y">
             <input type="hidden" name="profile_change" id="profile_change" value="N">
@@ -233,6 +239,7 @@ else
     }
 }
 ?>
+
     </section>
     </div>
 </div>
