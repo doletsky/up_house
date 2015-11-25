@@ -1,4 +1,8 @@
 $(document).ready(function(e) {
+    var positionStyle='absolute';
+    if(!!('ontouchstart' in window)){
+        positionStyle='fixed';
+    }
     $('.button-credit').click(function(e) {
         e.preventDefault();
         $('#modal_overlay').bPopup({
@@ -8,6 +12,7 @@ $(document).ready(function(e) {
             closeClass: 'modal_oneClickBuy_close_v20',
             speed: 450,
             transition: 'slideDown',
+            positionStyle: positionStyle,
             modalClose: false,
             onOpen: function() {
 
@@ -16,8 +21,7 @@ $(document).ready(function(e) {
 
             }
         });
-        $('.pop-up-bg').css('display','block');
-        $('.pop-up-section').css('display','block');
+        $('#modal_overlay').css('display','block');
     });
 
 
@@ -31,6 +35,7 @@ $(document).ready(function(e) {
             closeClass: 'modal_preOrder_close',
             speed: 450,
             transition: 'slideDown',
+            positionStyle: positionStyle,
             modalClose: false,
             onOpen: function() {
 

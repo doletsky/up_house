@@ -11,7 +11,7 @@ if (!!('ontouchstart' in window))
 //}
 var s = document.getElementsByTagName('script')[0];
 s.parentNode.insertBefore(m_i, s);
-console.log('ontouchstart' in window);
+//console.log('ontouchstart' in window);
 
 $(document).ready(function(){
     $('div#page-product-info').find('.font_style_16').removeClass('font_style_16');
