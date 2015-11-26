@@ -127,7 +127,7 @@
         <?}
 	}
 	?>
-            <a href="#" class="button-link-underline">подробнее об оплате</a>
+            <a href="/payment/" class="button-link-underline">подробнее об оплате</a>
 
         </div>
 </div>

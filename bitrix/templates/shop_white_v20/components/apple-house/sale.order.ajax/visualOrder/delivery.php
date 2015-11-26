@@ -169,7 +169,7 @@ $ml=1;
                     <input type="hidden" name="<?=$arResult["ORDER_PROP"]["USER_PROPS_Y"][41]["FIELD_NAME"]?>"  id="<?=$arResult["ORDER_PROP"]["USER_PROPS_Y"][41]["FIELD_NAME"]?>" value="" />
                 </div>
             <? endif;?>
-            <a href="#" class="button-link-underline">подробнее о доставке</a>
+            <a href="/delivery/" class="button-link-underline">подробнее о доставке</a>
 
             <?$this->SetViewTarget("addres_deliver");?>
             <!-- адрес доставки -->

@@ -605,11 +605,11 @@
     <!-- /страница карточка товара -->
 
 <?$this->SetViewTarget("add_cart_popup");?>
-<!-- вы добавили в корзину pop-up -->
+<!-- вы добавили в корзину pop-up 123-->
 <div class="pop-up-bg" id="add_cart_popup"></div>
 <div class="pop-up-section" id="add_cart_popup_content">
     <div class="pop-up-container">
-        <div class="pop-up">
+        <div class="pop-up" style="height: auto;">
             <div class="clearfix pop-up-header">
                 <h1 class="pull-left pop-up-title">Вы добавили в <a href="#">корзину</a></h1>
                 <div class="pull-right pop-up-close">
@@ -638,6 +638,42 @@
                 </div>
 
             </div>
+            <? foreach($arResult["SECTION"]["OPTIONS"] as $optionGroup): ?>
+                <? if(!empty($optionGroup["ITEMS"])): ?>
+                    <? if(count($optionGroup["ITEMS"]) > 1): ?>
+                        <?foreach($optionGroup["ITEMS"] as $item):?>
+                            <div class="pop-up-product-item clearfix" id="pop-up-product-item-<?=$item["ID"]?>" style="display: none;margin-top: 0;">
+                                <div class="pop-up-product-title">
+                                    <a href="#" class="pop-up-product-title-link"><?=$item["NAME"]?></a>
+                                </div>
+                                <div class="pop-up-product-price">
+                                    <? if($item['CATALOG_PRICE_1'] > 0):?>
+                                        <?=str_replace('руб.', '',$item['PRICES']['Продажа']['PRINT_VALUE_VAT'])?>
+                                        <span class="pop-up-product-price-cy">руб.</span>
+                                    <? endif; ?>
+
+                                </div>
+
+                            </div>
+                        <?endforeach?>
+                    <? else: $option = $optionGroup["ITEMS"][0]; ?>
+                        <div class="pop-up-product-item clearfix" id="pop-up-product-item-<?=$option["ID"]?>" style="display: none;margin-top: 0;">
+                            <div class="pop-up-product-title">
+                                <a href="#" class="pop-up-product-title-link"><?=$optionGroup["ITEMS"][0]["NAME"]?></a>
+                            </div>
+                            <div class="pop-up-product-price">
+                                <? if($option['CATALOG_PRICE_1'] > 0):?>
+                                    <?=str_replace('руб.', '',$option['PRICES']['Продажа']['PRINT_VALUE_VAT'])?>
+                                    <span class="pop-up-product-price-cy">руб.</span>
+                                <? endif; ?>
+
+                            </div>
+
+                        </div>
+                    <?endif?>
+
+                <?endif?>
+            <?endforeach?>
 
             <div class="horizontal-line horizontal-line-main"></div>
 

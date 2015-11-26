@@ -7,7 +7,7 @@ foreach($arResult['SECTIONS']['TOP'] as $id=>$sectData):
         <a href="/<?=$sectData['CODE']?>" class="menu-catalog-item"><?=$sectData['NAME']?></a>
 
         <?if(count($arResult['SECTIONS']['CHILD'][$id])>0):?>
-        <ul class="submenu-catalog js-submenu-catalog">
+        <ul class="submenu-catalog js-submenu-catalog" style="display: none">
             <?foreach($arResult['SECTIONS']['CHILD'][$id] as $idSub=>$sectSubData):?>
                 <li class="submenu-catalog-item">
                     <a href="/<?=$sectSubData['CODE']?>" class="submenu-catalog-link"<?if(count($arResult['SECTIONS']['CHILD'][$idSub])>0):?> style="width: 182px;"<?endif?>><?=$sectSubData['NAME']?></a>

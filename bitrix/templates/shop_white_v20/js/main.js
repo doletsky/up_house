@@ -59,6 +59,7 @@ $(document).ready(function(){
                 var iVal=$(this).val();
                 if(iVal!='None' && iVal!=noVal){
                     option+='option[]='+iVal+'&';
+                    $('#pop-up-product-item-'+iVal).css('display','block');
                     if($(this).data('price')!='undefined')oPrice+=$(this).data('price');
                 }
 
