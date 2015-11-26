@@ -3,7 +3,9 @@
         <h3 class="entry-title-3">платежная система</h3>
         <div class="input-row">
 
-	<?// var_dump($arResult);
+<?// var_dump($arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]);
+//    var_dump($arResult);
+//    var_dump($_REQUEST);
 	if ($arResult["PAY_FROM_ACCOUNT"]=="Y")
 	{
 		?>
@@ -25,7 +27,7 @@
 		<?
 	}
 
-//var_dump($arResult["PAY_SYSTEM"]);
+
 	foreach($arResult["PAY_SYSTEM"] as $arPaySystem)
 	{
 		if(count($arResult["PAY_SYSTEM"]) == 1)
@@ -104,9 +106,11 @@
              ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] == '1317' && $arPaySystem["ID"] != '8')
           && ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] != '1317' && $arPaySystem["ID"] != '1')
           || ($arPaySystem["ID"] == '12')
+            || ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] == '1320' && $arPaySystem["ID"] == '8')
 
         )
         {
+
             ?>
             <div class="b_grid_level grid_level_15px">
                 <div class="b_grid_unit-1">
