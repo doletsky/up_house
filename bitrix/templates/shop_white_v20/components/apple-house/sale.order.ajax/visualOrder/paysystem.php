@@ -105,8 +105,9 @@
              if(
              ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] == '1317' && $arPaySystem["ID"] != '8')
           && ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] != '1317' && $arPaySystem["ID"] != '1')
-          || ($arPaySystem["ID"] == '12')
-            || ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] == '1320' && $arPaySystem["ID"] == '8')
+          || ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][25]["FIELD_NAME"]] != '1320' && $_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] != '1320' && $arPaySystem["ID"] == '12')
+            || ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][6]["FIELD_NAME"]] == '1320' && $arPaySystem["ID"] == '13')
+             || ($_REQUEST[$arResult["ORDER_PROP"]["USER_PROPS_Y"][25]["FIELD_NAME"]] == '1320' && $arPaySystem["ID"] == '13')
 
         )
         {

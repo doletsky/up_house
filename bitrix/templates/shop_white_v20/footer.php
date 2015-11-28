@@ -173,8 +173,8 @@
         });
     });
 </script>
-<!-- /carousel script -->
-<?if($APPLICATION->GetCurDir()!='/personal/basket/' && $APPLICATION->GetCurDir()!='/personal/order/make/'):?>
+<!-- /carousel script -- <?=$TOP_DEPTH?> -->
+<?if($TOP_DEPTH!=3):?>
     <!-- slider submenu -->
     <script>
         $(document).ready(function () {

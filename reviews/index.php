@@ -2,6 +2,8 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Отзывы");
 ?>
+    <!-- страница отзывов -->
+<div id="page-cart" style="margin-top: 25px;">
 <? $APPLICATION->IncludeComponent(
 	"apple-house:catalog.reviews",
 	"",
@@ -15,4 +17,5 @@ $APPLICATION->SetTitle("Отзывы");
 	),
 false
 );?>
+</div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

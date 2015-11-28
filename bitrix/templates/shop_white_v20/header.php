@@ -142,12 +142,15 @@ IncludeTemplateLangFile(__FILE__); ?>
                 </div>
             </div>
 
-            <!-- menu catalog -->
+            <!-- menu catalog --<?=substr_count($APPLICATION->GetCurDir(), '/reviews/')?> -->
             <div class="row">
                 <div class="col-xs-12">
                     <nav class="menu-catalog-block clearfix">
                         <ul class="menu-catalog-list">
-                            <?$TOP_DEPTH=1;if($APPLICATION->GetCurDir()=='/personal/basket/' || $APPLICATION->GetCurDir()=='/personal/order/make/')$TOP_DEPTH=3;?>
+                            <?$TOP_DEPTH=1;
+                            if($APPLICATION->GetCurDir()=='/personal/basket/'
+                                || $APPLICATION->GetCurDir()=='/personal/order/make/'
+                            || substr_count($APPLICATION->GetCurDir(), '/reviews/')>0)$TOP_DEPTH=3;?>
                             <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "mainCatalogMenuV20", array(
                                     "IBLOCK_TYPE" => "1c_catalog",
                                     "IBLOCK_ID" => "8",
