@@ -147,7 +147,7 @@
 
                 <!-- правая колонка -->
                 <div class="col-xs-6">
-<?if($arResult['CAN_BUY']):?>
+<?if($arResult['CAN_BUY'] && $arResult["PROPERTIES"]["ZAPRET_POKUPKI"]["VALUE"] != "Да"):?>
                     <!-- цена -->
                     <div class="price">
                         <div class="price-text">Цена:</div>
@@ -295,7 +295,15 @@
                         <a href="#" class="button-one-click button-credit" data-buyid="<?=$arResult['ID']?>" style="float: none">Купить в один клик</a>
                     </div>
 <?else:?>
-    <div class="product-buy">
+    <div class="price">
+        <div class="price-text">Цена:</div>
+        <? if($arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE']):?>
+            <div class="price-num" data-price="<?=$arResult['PRICES']['Продажа']['DISCOUNT_VALUE']?>"><?=str_replace('руб.', '<span class="rub">руб.</span>', $arResult['PRICES']['Продажа']['PRINT_DISCOUNT_VALUE'])?></div>
+        <? elseif($arResult['PRICES']['Продажа']['PRINT_VALUE']):?>
+            <div class="price-num" data-price="<?=$arResult['PRICES']['Продажа']['VALUE']?>"><?=str_replace('руб.', '<span class="rub">руб.</span>',$arResult['PRICES']['Продажа']['PRINT_VALUE'])?></div>
+        <? endif ?>
+    </div>
+    <div class="product-buy" style="margin-bottom: 60px">
         <a style="margin-right: 220px;" href="#" class="button-buy b_button-buy no-style-link addElementPreorderLink" data-buyid="<?=$arResult['ID']?>">Оформить предзаказ</a>
     </div>
 <?endif?>

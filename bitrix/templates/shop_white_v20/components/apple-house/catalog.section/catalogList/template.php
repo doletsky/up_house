@@ -44,6 +44,7 @@
         </div>
     <?endif?>
     </div>
+<!--        <pre>--><?//print_r($arResult['PATH'][1])?><!--</pre>-->
 <?if(count($arResult["SUBSECTION"])>0):?>
     <nav class="catalog-menu-apps clearfix">
        <?$curPage=$APPLICATION->GetCurPage();?>
@@ -99,7 +100,7 @@
                 <li>Артикул: <span class="article"><?=$arItem['PROPERTIES']['CML2_ARTICLE']['VALUE']?></span>, есть в наличии</li>
             <? endif ?>
         </ul>
-        <? if($arItem['CAN_BUY']):?>
+        <? if($arItem['CAN_BUY'] && $arItem["PROPERTIES"]["ZAPRET_POKUPKI"]["VALUE"] != "Да"):?>
         <div class="catalog-pr-buy">
             <a href="<?=$arItem['ADD_URL']?>" class="button-buy button-bg ">купить</a>
             <a href="<?=$arItem['ADD_URL']?>" class="button-buy button-one-click button-credit" data-buyid="<?=$arItem['ID']?>">в 1 клик</a>

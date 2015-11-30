@@ -1,4 +1,4 @@
-.underline_dotted
+.underline_dotted, .ft_n a
 {
 	border-bottom: 1px dotted #3399cc;
     padding-bottom: 5px;
@@ -6,4 +6,43 @@
 .b_news-item{
     height: 220px;
 }
-
+.b_news-item_date{
+    color: #3399cc;
+    border: 1px solid #3399cc;
+    padding: 2px;
+}
+.b_news-item_header{
+    margin: 20px 0;
+}
+.nav_string_nums{
+    float: left;
+    padding-right: 15px;
+}
+.nav_string_btns{
+    float: right;
+    height: 36px;
+    position: relative;
+    top:-8px;
+}
+.b_prev-next-button.prev-next-button_next{
+    float: right;
+    border: 0px;
+}
+.b_prev-next-button.prev-next-button_next div{
+    background: url("/bitrix/templates/index_v20/img/carousel-arrow.png") -50px 0 no-repeat;
+    width: 36px;
+    height: 36px;
+}
+.b_prev-next-button.prev-next-button_prev{
+    float: left;
+    margin-right: 2px;
+    border: 0px;
+}
+.b_prev-next-button.prev-next-button_prev div{
+    background: url("/bitrix/templates/index_v20/img/carousel-arrow.png") 0px 0 no-repeat;
+    width: 36px;
+    height: 36px;
+}
+.row table {
+    margin: 0 20px;
+}
