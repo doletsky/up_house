@@ -2,6 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Официальная информация");
 ?>
+<div id="page-cart" style="margin-top: 25px;">
 <?$APPLICATION->IncludeComponent("apple-house:news.list", "newsList", array(
 	"IBLOCK_TYPE" => "news",
 	"IBLOCK_ID" => "1",
@@ -53,4 +54,6 @@ $APPLICATION->SetTitle("Официальная информация");
 	"AJAX_OPTION_ADDITIONAL" => ""
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+</div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

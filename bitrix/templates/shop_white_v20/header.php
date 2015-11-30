@@ -150,6 +150,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                             <?$TOP_DEPTH=1;
                             if($APPLICATION->GetCurDir()=='/personal/basket/'
                                 || $APPLICATION->GetCurDir()=='/personal/order/make/'
+                                || $APPLICATION->GetCurDir()=='/news/'
                             || substr_count($APPLICATION->GetCurDir(), '/reviews/')>0)$TOP_DEPTH=3;?>
                             <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "mainCatalogMenuV20", array(
                                     "IBLOCK_TYPE" => "1c_catalog",

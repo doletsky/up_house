@@ -1,0 +1,9 @@
+.underline_dotted
+{
+	border-bottom: 1px dotted #3399cc;
+    padding-bottom: 5px;
+}
+.b_news-item{
+    height: 220px;
+}
+
