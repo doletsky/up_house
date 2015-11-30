@@ -44,7 +44,7 @@
         </div>
     <?endif?>
     </div>
-<!--        <pre>--><?//print_r($arResult['PATH'][1])?><!--</pre>-->
+<!--        <pre>--><?//print_r($arResult['SUBSECTION'])?><!--</pre>-->
 <?if(count($arResult["SUBSECTION"])>0):?>
     <nav class="catalog-menu-apps clearfix">
        <?$curPage=$APPLICATION->GetCurPage();?>
