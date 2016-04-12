@@ -690,7 +690,7 @@
                 <div class="also-bought">
 
                     <div class="product-container clearfix">
-                        <?  $APPLICATION->IncludeComponent("apple-house:sale.recommended.products", "in_popup", Array(
+                        <?  $APPLICATION->IncludeComponent("apple-house:sale.recommended.products", "in_popup_v20", Array(
                                 "IBLOCK_TYPE" => '1c_catalog',
                                 "IBLOCK_ID" => 8,
                                 "ID" => $arResult["ID"],    // Идентификатор товара
