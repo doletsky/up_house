@@ -28,25 +28,24 @@ if($arResult["bDisplayButtons"])
 //array_chunk
 $arResult["ROWS"] = array();
 
-//section recomended
-$resSec = CIBlockElement::GetByID($arParams["ID"]);
-if($ar_res_sec = $resSec->GetNext()){
-    $arSecTree['ID']=$ar_res_sec['IBLOCK_SECTION_ID'];
-    $arSecFilter = Array('IBLOCK_ID'=>$arParams['IBLOCK_ID'],'ID'=>$arSecTree['ID']);
-    $arSecSelect = Array('UF_RECOMMEND');
-    $rsSect = CIBlockSection::GetList(array('sort' => 'asc'),$arSecFilter, false, $arSecSelect);
-    if($arSect = $rsSect->GetNext()){
-        foreach($arSect['UF_RECOMMEND'] as $idRecom){
-            $resRecom = CIBlockElement::GetByID($idRecom);
-            if($ar_res_recom = $resRecom->GetNext()){
-                $arSecTree['RECOM'][]=$ar_res_recom;
-            }
-        }
+//sort result
+$arResultSort=array();
+global ${$arParams["FILTER_NAME"]};
+$arrFilter = ${$arParams["FILTER_NAME"]};
+$countAddItem=count($arrFilter['PRIOR']);
+foreach($arResult["ITEMS"] as $item){
+    if(in_array($item['ID'],$arrFilter['PRIOR'])){
+        $key = array_search($item['ID'], $arrFilter['PRIOR']);
+        $arResultSort[$key]= $item;
+    }
+    else{
+        $arResultSort[$countAddItem]= $item;
+        $countAddItem++;
     }
 }
-    $arResult["SECTION_TREE"][] = $arSecTree;
-$arResult["ITEMS"]=array_merge($arSecTree['RECOM'],$arResult["ITEMS"]);
-//$arResult["ROWS"]=$arSecTree['RECOM'];
+ksort($arResultSort);
+$arResult["ITEMS"]=$arResultSort;
+//section recomended
 while(count($arResult["ITEMS"])>0)
 {
 	$arRow = array_splice($arResult["ITEMS"], 0, $arParams["LINE_ELEMENT_COUNT"]);
@@ -70,5 +69,5 @@ foreach($arResult["ROWS"] as $rKey => $arItems):
         endif;
     endforeach;
 endforeach;
-//$arResult["ROWS"][0]=array_merge($arSecTree['RECOM'],$arResult["ROWS"][0]);
+
 ?>
