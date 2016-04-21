@@ -1,6 +1,6 @@
 // Theme: Up house
 // Date: 28.06.2014
-// Description: 
+// Description:
 // ------------------------------------------------------------------------------------------------
 
 // MIXINS
@@ -318,7 +318,7 @@ input[type="submit"] {
     font-weight: normal;
     font-size: 16px;
 
-    
+
     &:before,
     &:after {
         content: '';
@@ -326,10 +326,10 @@ input[type="submit"] {
         position: absolute;
     }
 }
- 
+
 .input-helper--radio {
     padding-left: 18px;
- 
+
     &:before {
         top: 10px;
         left: -25px;
@@ -347,10 +347,10 @@ input[type="submit"] {
         left: -30px;
     }
 }
- 
+
 input[type="radio"] {
     display: none;
- 
+
     &:checked + label:before {
         background: #259ccf;
     }
@@ -493,11 +493,15 @@ input[type="radio"] {
         font-size: 27px;
         line-height: 29px;
         margin: -6px 0 8px 0;
+        a {
+            color: White;
+            text-decoration: none;
+        }
     }
     .tel-bold {
         font-family: 'Segoe UI Bold';
     }
-    
+
     // nav menu pages
     .menu-page-block {
         margin: -7px 0 10px;
@@ -519,7 +523,7 @@ input[type="radio"] {
             margin-right: 0;
         }
     }
-    
+
 
     .skype-icon {
         background: url("@{img}/header-sprite.png") no-repeat;
@@ -530,6 +534,7 @@ input[type="radio"] {
     }
 
     .skype-text {
+        color: White;
         font-family: 'Segoe UI Bold';
     }
 
@@ -547,7 +552,7 @@ input[type="radio"] {
         margin-top: 8px;
         outline: none;
     }
-    
+
     .cart {
         margin-right: 10px;
         font-family: 'Segoe UI Italic';
@@ -581,7 +586,7 @@ input[type="radio"] {
         padding: 0 20px;
         float: none;
     }
-    
+
     .search-block {
         position: relative;
     }
@@ -646,7 +651,7 @@ input[type="radio"] {
         font-family: 'Segoe UI Bold';
         padding: 10px 6px;
         display: inline-block;
-        
+
         text-decoration: none;
 
         &.current,
@@ -725,6 +730,15 @@ input[type="radio"] {
     .glyphicon-chevron-right {
         color: #999;
         margin-right: 5px;
+        background-image: url("/images/submenu_arrow_n.png");
+        height: 24px;
+        position: absolute;
+        right: 4px;
+        top: 8px;
+        width: 12px;
+        &:before {
+            content: "" !important;
+        }
     }
 }
 
@@ -792,7 +806,7 @@ input[type="radio"] {
     }
 
     .bx-controls {
-        
+
     }
 
     // arrow
@@ -833,10 +847,10 @@ input[type="radio"] {
     }
 
     .news-reviews-title {
-        
+
     }
 
-    
+
 
     .news-reviews-item {
         float: left;
@@ -955,7 +969,7 @@ input[type="radio"] {
         text-decoration: none;
         text-transform: lowercase;
         float: left;
-        
+
         .transition();
 
         &:hover {
@@ -1097,7 +1111,7 @@ input[type="radio"] {
 
     .footer-nav-list-item {
         font-size: 12px;
-        
+
 
         &:first-child {
             font-family: "Segoe UI Bold";
@@ -1202,7 +1216,7 @@ input[type="radio"] {
             background: #E0F6FF;
             border: 1px solid #E0F6FF;
         }
-        
+
         .play-icon {
             position: absolute;
             right: 20px;
@@ -1365,7 +1379,7 @@ input[type="radio"] {
             height: auto;
         }
     }
-    
+
     .product-select-wrapper {
         width: 280px;
         overflow: hidden;
@@ -1382,12 +1396,12 @@ input[type="radio"] {
     }
 
     .product-item {
-        
+
     }
 
     // dostavka
     .product-delivery {
-        
+
     }
 
     .product-delivery-item {
@@ -1432,7 +1446,7 @@ input[type="radio"] {
     }
 
     .advantage-container {
-        
+
     }
 
     .advantage-img {
@@ -1824,7 +1838,7 @@ input[type="radio"] {
     left: 0;
     background: #fff;
     border: 1px solid #797979;
-    
+
 }
 
 .input-checkbox label:after {
@@ -1841,7 +1855,7 @@ input[type="radio"] {
     border: 3px solid #333;
     border-top: none;
     border-right: none;
-    
+
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -1862,38 +1876,38 @@ input[type="radio"] {
 }
 
 // page cart
-#page-cart { 
+#page-cart {
 
     .table-cart {
         width: 100%;
-        
+
     }
 
     .table-cart-chill {
         margin: 0;
         padding: 0 0 20px;
         vertical-align: middle;
-        
+
     }
 
     .table-cart-product-title {
         width: 50%;
-        
+
     }
 
     .table-cart-product-select {
         width: 18%;
-        
+
     }
 
     .table-cart-product-price {
         width: 21%;
-        
+
     }
 
     .table-cart-product-del {
         width: 2%;
-        
+
     }
 
     .cart-continue-shop {
@@ -1988,7 +2002,7 @@ input[type="radio"] {
         font-size: 20px;
         text-align: center;
 
-    } 
+    }
 
     .cart-total-section,
     .cart-total-section-2 {
@@ -2187,7 +2201,7 @@ input[type="radio"] {
             width: 425px;
         }
     }
-    
+
     // itogo
     .cart-total {
         &.ordering {
@@ -2274,7 +2288,7 @@ input[type="radio"] {
         color: #000;
     }
 
-    .pop-up-close-icon { 
+    .pop-up-close-icon {
         margin: 10px 0 0;
     }
 
@@ -2370,7 +2384,7 @@ input[type="radio"] {
         position: relative;
         top: -5px;
     }
-    
+
     .button-bg {
         width: 260px;
         height: 54px;
@@ -2384,7 +2398,7 @@ input[type="radio"] {
     }
 
     .pop-up-footer {
-        margin: 35px 0 0; 
+        margin: 35px 0 0;
     }
 
 }
@@ -2570,7 +2584,7 @@ input[type="radio"] {
             width: 100%;
             border-bottom: 1px dotted #ccc;
         }
-        
+
         &:before {
             margin: -21px 0 0;
         }
@@ -2685,7 +2699,7 @@ input[type="radio"] {
 
         &:hover {
             border: 1px solid #259ccf;
-            
+
 
             .catalog-pr-buy {
                 background: #fff;
@@ -2734,7 +2748,7 @@ input[type="radio"] {
         color: #828282;
         text-decoration: none;
     }
-    
+
     .catalog-pr-price-text {
         display: inline-block;
         margin-right: 5px;
@@ -2766,7 +2780,7 @@ input[type="radio"] {
         &:before {
             content: "";
             display: inline-block;
-            background: url("@{img}/4G-LTE1.png");
+            /*background: url("@{img}/4G-LTE1.png");*/
             width: 40px;
             height: 40px;
             position: absolute;
@@ -2790,7 +2804,7 @@ input[type="radio"] {
         margin-left: 15px;
     }
 
-    // pagination 
+    // pagination
     .catalog-pagination {
         width: 295px;
     }
@@ -2837,7 +2851,7 @@ input[type="radio"] {
             background: #E0F6FF;
             border: 1px solid #E0F6FF;
         }
-        
+
         .play-icon {
             position: absolute;
             right: 20px;
@@ -2889,7 +2903,7 @@ input[type="radio"] {
     }
 
     .input-helper--radio {
- 
+
     &:after {
         width: 13px;
         height: 13px;
