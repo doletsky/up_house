@@ -3,24 +3,26 @@ IncludeTemplateLangFile(__FILE__); ?>
 <!DOCTYPE html>
 <html class="no-js home">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--
+It's a DEV version!
+-->
     <title><?$APPLICATION->ShowTitle()?></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Iphone описание">
     <meta name="viewport" content="width=device-width">
 
-    <link href="<?=SITE_TEMPLATE_PATH?>/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bxslider.css" rel="stylesheet" />
-    <link href="<?=SITE_TEMPLATE_PATH?>/css/main.less" rel="stylesheet/less" />
-    <link href="<?=SITE_TEMPLATE_PATH?>/css/pop-up-quick-order-v20.css" rel="stylesheet/less" />
+    <link href="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/css/bootstrap.min.css?ver=2.1.0.0a4a22d" rel="stylesheet">
+    <link href="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/css/jquery.bxslider.css?ver=2.1.0.0a4a22d" rel="stylesheet" />
+    <link href="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/css/main.less?ver=2.1.0.0a4a22d" rel="stylesheet/less" />
+    <link href="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/css/pop-up-quick-order-v20.css?ver=2.1.0.0a4a22d" rel="stylesheet/less" />
 
-    <script src="<?=SITE_TEMPLATE_PATH?>/js/less-1.7.3.min.js" type="text/javascript"></script>
-    <script src="<?=SITE_TEMPLATE_PATH?>/js/modernizr-2.6.2.min.js"></script>
+    <script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/less-1.7.3.min.js?ver=2.1.0.0a4a22d" type="text/javascript"></script>
+    <script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/modernizr-2.6.2.min.js?ver=2.1.0.0a4a22d"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <script src="//service.dialogwidget.ru/widget/dialogw.js" charset="windows-1251" id="dw_script" data-dwk="lrL7hw6fq08WSfg"></script>
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"> -->
     <? $APPLICATION->ShowHead(); ?>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,7 +35,7 @@ IncludeTemplateLangFile(__FILE__); ?>
         ga('require', 'ecommerce', 'ecommerce.js');
 
     </script>
-    <link rel="shortcut icon"  href="/favicon.ico" />
+    <link rel="shortcut icon"  href="/favicon.ico?ver=2.1.0.0a4a22d" />
 </head>
 <body>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
@@ -41,7 +43,7 @@ IncludeTemplateLangFile(__FILE__); ?>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div class="site-container">
+<!--<div class="site-container">-->
 <!-- header -->
 <header id="header" role="banner">
 <div class="container">
@@ -51,7 +53,7 @@ IncludeTemplateLangFile(__FILE__); ?>
             <div class="header-section">
                 <!-- logo -->
                 <a href="/">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/logo.png" alt="iphone" title="iphone" />
+                    <img src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/img/logo.png?ver=2.1.0.0a4a22d" alt="iphone" title="iphone" />
                 </a>
             </div>
             <div class="header-section-2">
@@ -61,7 +63,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                 <div class="pull-left">
                     <!-- vcard -->
                     <div class="vcard">
-                        <div class="tel">+7 (495) <span class="tel-bold">966 1234</span></div>
+                        <div class="tel"><a href="tel:+7 (495) 9661234">+7 (495) <span class="tel-bold">966 1234</span></a></div>
                     </div>
 
                     <!-- social button -->
@@ -107,7 +109,7 @@ IncludeTemplateLangFile(__FILE__); ?>
                     <div class="header-section-4">
                         <div class="skype-block">
                             <span class="skype-icon"></span>
-                            <span class="skype-text">up-house</span>
+                            <a href="skype:up-house?call" class="skype-text">up-house</a>
                         </div>
 
                         <div class="vcard">

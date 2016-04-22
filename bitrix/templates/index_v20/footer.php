@@ -3,12 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-2">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/logo-footer.png" alt="up house" title="up house" class="footer-logo" />
+                <img src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/img/logo-footer.png?ver=2.1.0.0a4a22d" alt="up house" title="up house" class="footer-logo" />
             </div>
 
             <div class="col-xs-6">
                 <div class="copy">
-                    © UP-House, 2014<br />
+                    © UP-House, 2016<br />
                     Все права защищены.<br />
                     Информация, представленная на данном сайте не является офертой,<br />
                     определяемой положениями статей 435, 437 Гражданского Кодекса РФ
@@ -39,7 +39,7 @@
     </div>
 </footer>
 <!-- /footer -->
-</div>
+<!--</div>-->
 
 <!-- pop-up-quick-order -->
 
@@ -49,19 +49,23 @@
 </div>
 <!-- /pop-up-quick-order -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/plugins.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order-v20.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
-<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js?ver=2.1.0.0a4a22d"></script>
+<!-- MOBILE VERSION -->
+<script src="/include/mobit/mobit.php?js=1&amp;ver=2.1.0.0a4a22d" charset="UTF-8"></script>
+<!-- /mobile version -->
+<script type="text/javascript" src="//<?=STATIC_HOST?>/bitrix/templates/shop_white/private/libs/jQueryBPopup/js/jquery.bpopup.min.js?ver=2.1.0.0a4a22d"></script>
+<script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/jquery.mask.js?ver=2.1.0.0a4a22d"></script>
+<script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/plugins.js?ver=2.1.0.0a4a22d"></script>
+<script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/main.js?ver=2.1.0.0a4a22d"></script>
+<script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/pop-up-quick-order-v20.js?ver=2.1.0.0a4a22d"></script>
+<script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js?ver=2.1.0.0a4a22d"></script>
+<script src="//<?=STATIC_HOST?><?=SITE_TEMPLATE_PATH?>/js/jquery.bxslider.min.js?ver=2.1.0.0a4a22d"></script>
 
 <!-- slider script -->
 <script>
+    var bxsl_slider;
     $(document).ready(function () {
-        $('.bxslider').bxSlider({
+        bxsl_slider = $('.bxslider').bxSlider({
             mode: 'fade',   // включаем, эффект затухания
             auto: true,     // включаем, автоматическую смену слайдов, через каждые 4 секунды
             captions: true, // включаем, контент в слайде
@@ -73,13 +77,15 @@
 
 <!-- carousel script -->
 <script>
-    $(document).ready(function () {
-        $('.carousel').bxSlider({
-            slideWidth: 195,
-            minSlides: 4,
-            maxSlides: 4,
-            slideMargin: 30
-        });
+    var carousel_slider;
+    $('.carousel').ready(function () {
+            carousel_slider = $('.carousel').bxSlider({
+                slideWidth: 195,
+                minSlides: 4,
+                maxSlides: 4,
+                slideMargin: 30,
+                preloadImages: 'all'
+            });
     });
 </script>
 <!-- /carousel script -->
@@ -121,7 +127,7 @@
     });
     // обработчик спрятать/показать форму обратной связи
     $('#call_back').bind("click", function(){
-        var bFlagShowed = $("#call_back_form").css('display') == 'block';console.log(bFlagShowed);
+        var bFlagShowed = $("#call_back_form").css('display') == 'block';
         if(!bFlagShowed)
             $('#call_back_form').show();
 
